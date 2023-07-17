@@ -72,6 +72,7 @@ module.exports = {
   ],
   resolve: {
     alias: {
+      '@elements': path.resolve(__dirname, 'src/elements/'),
       '@polyfill': path.resolve(__dirname, 'src/polyfill/'),
       '@standard': path.resolve(__dirname, 'src/standard/')
     },

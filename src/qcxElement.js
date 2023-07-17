@@ -1,6 +1,6 @@
+import Carousel from './carousel'
 import define from '@standard/define'
 import h, { Fragment, render } from '@standard/h'
-import Metro from './metro'
 import { Style } from '@standard/css'
 
 @define('qcx-carousel')
@@ -15,11 +15,7 @@ class QCXElement extends HTMLElement {
       this.shadowRoot,
       <>
         <Style />
-        <section>
-          <Metro>
-            QCX Carousel
-          </Metro>
-        </section>
+        <Carousel />
       </>
     )
     return this
