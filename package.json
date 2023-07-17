@@ -12,6 +12,7 @@
     "eslint-plugin-import": "^2.25.2",
     "eslint-plugin-n": "^15.0.0 || ^16.0.0 ",
     "eslint-plugin-promise": "^6.0.0",
+    "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.3",
     "husky": "^8.0.0",
     "lint-staged": "^13.2.3",

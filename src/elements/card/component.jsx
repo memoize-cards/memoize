@@ -3,9 +3,7 @@ import style from './style'
 
 function component () {
   return (
-    <div className={style.card}>
-      QCX Card of Carousel
-    </div>
+    <div className={style.card__poster} />
   )
 }
 

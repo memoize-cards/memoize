@@ -31,6 +31,18 @@ module.exports = {
           }
         }],
         exclude: '/node_modules/'
+      },
+      {
+        test: /\.(?<ext>ico|png|svg|jpg|jpeg|gif|mp4|ogg|webm|woff|woff2|eot|ttf|otf)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[contenthash].[ext]'
+            }
+          }
+        ],
+        exclude: '/node_modules/'
       }
     ]
   },
