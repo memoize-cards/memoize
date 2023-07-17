@@ -5,10 +5,14 @@ import style from './style'
 function component () {
   return (
     <section className={style.card}>
-      <div className={style.card__poster}>
-        <h1 className={style.card__discipline}>Como refinar paragrafo de desenvolvimento!</h1>
+      <div className={style.card__thumbnail}>
+        <span className={style.card__discipline}>Como refinar paragrafo de desenvolvimento!</span>
         <img src={divisor} lazy='loading' />
-        <p className={style.card__teacher}>Heittor Ferreira</p>
+        <span className={style.card__teacher}>Prof. Heittor Ferreira</span>
+      </div>
+      <div className={style.card__caption}>
+        <span className={style.card__discipline}>Como refinar paragrafo de desenvolvimento!</span>
+        <span className={style.card__teacher}>Prof. Heittor Ferreira</span>
       </div>
     </section>
   )

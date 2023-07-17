@@ -2,7 +2,7 @@ import css from '@standard/css'
 import poster from './poster.svg'
 
 const style = css`
-  .card__poster {
+  .card__thumbnail {
     align-items: flex-start;
     aspect-ratio: 288 / 162;
     background-image: url(${poster});
@@ -18,7 +18,7 @@ const style = css`
     width: 288px;
   }
 
-  .card__poster::before {
+  .card__thumbnail::before {
     aspect-ratio: inherit;
     background: #479ED3;
     border-radius: inherit;
