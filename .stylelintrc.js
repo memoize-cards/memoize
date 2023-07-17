@@ -20,6 +20,7 @@ module.exports = {
       'custom-properties',
       'declarations'
     ],
-    'order/properties-alphabetical-order': true
+    'order/properties-alphabetical-order': true,
+    'selector-class-pattern': null
   }
 }
