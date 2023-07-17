@@ -14,7 +14,7 @@ const style = css`
   }
 
   .metro__container {
-    display: inline-flex;
+    display: flex;
     gap: 16px;
     min-width: 100%;
     text-align: inherit;
