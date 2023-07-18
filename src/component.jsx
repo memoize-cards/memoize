@@ -1,21 +1,11 @@
-import Card from '@elements/card'
 import h from '@standard/h'
 import Metro from '@elements/metro'
 
-function component () {
+function component (carousel) {
   return (
     <section>
       <Metro>
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        {carousel.cards}
       </Metro>
     </section>
   )

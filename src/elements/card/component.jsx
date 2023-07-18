@@ -3,16 +3,16 @@ import h, { Fragment } from '@standard/h'
 import style from './style'
 import Thumbnail from '@elements/thumbnail'
 
-function component () {
+function component (props) {
   return (
     <section className={style.card}>
       <Thumbnail>
-        <Fragment slot='discipline'>Como refinar paragrafo de desenvolvimento!</Fragment>
-        <Fragment slot='teacher'>Heittor Ferreira</Fragment>
+        <Fragment slot='discipline'>{props.discipline}</Fragment>
+        <Fragment slot='teacher'>{props.teacher}</Fragment>
       </Thumbnail>
       <Caption>
-        <Fragment slot='discipline'>Como refinar paragrafo de desenvolvimento!</Fragment>
-        <Fragment slot='teacher'>Heittor Ferreira</Fragment>
+        <Fragment slot='discipline'>{props.discipline}</Fragment>
+        <Fragment slot='teacher'>{props.teacher}</Fragment>
       </Caption>
     </section>
   )
