@@ -4,7 +4,7 @@ import css from '@standard/css'
  * CSS-in-JS tokens for opacity values.
  */
 const style = css`
-  :root {
+  :host {
     --opacity-level-semiopaque: 0.72;
     --opacity-level-intense: 0.64;
     --opacity-level-medium: 0.32;

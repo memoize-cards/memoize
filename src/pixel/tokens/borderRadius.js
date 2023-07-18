@@ -4,7 +4,7 @@ import css from '@standard/css'
  * CSS-in-JS tokens for border radius values.
  */
 const style = css`
-  :root {
+  :host {
     --border-radius-none: 0;
     --border-radius-sm: 8px;
     --border-radius-md: 16px;

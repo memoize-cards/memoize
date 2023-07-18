@@ -8,6 +8,7 @@ import css from '@standard/css'
  */
 const style = css`
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap');
 
   *,
   *::after,

@@ -15,7 +15,7 @@ const style = css`
 
   .metro__container {
     display: flex;
-    gap: 12px;
+    gap: var(--spacing_inset-xs);
     min-width: 100%;
     text-align: inherit;
     white-space: nowrap;

@@ -3,5 +3,6 @@ import '@polyfill/requestAnimationFrame'
 import '@polyfill/setImmediate'
 
 import '@pixel/reset'
+import '@pixel/tokens'
 
 import './qcxElement'
