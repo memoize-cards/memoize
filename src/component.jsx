@@ -6,7 +6,7 @@ import style from './style'
 function component (carousel) {
   return (
     <div className={style.carousel}>
-      <Header />
+      <Header category={carousel.category} />
       <Metro>
         {carousel.cards}
       </Metro>

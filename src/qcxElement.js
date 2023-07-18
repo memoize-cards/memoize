@@ -19,7 +19,7 @@ class QCXElement extends HTMLElement {
     this.attachShadow({ mode: 'open' })
   }
 
-  attributeChangedCallback (key, value) {
+  attributeChangedCallback (key, _, value) {
     Reflect.set(this.#props, key, value)
     return this
   }
