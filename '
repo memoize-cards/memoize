@@ -2,13 +2,13 @@ import css from '@standard/css'
 import poster from './poster.svg'
 
 const style = css`
-  .thumbnail__poster {
+  .thumbnail {
     align-items: flex-start;
     aspect-ratio: 288 / 162;
     background-image: url(${poster});
     background-repeat: no-repeat;
     background-size: cover;
-    border-radius: inherit;
+    border-radius: var(--border-radius-sm);
     display: flex;
     flex-direction: column;
     gap: var(--spacing_inset-nano);
@@ -19,9 +19,17 @@ const style = css`
     width: 100%;
   }
 
-  .thumbnail {
+  .thumbnail__poster {
     background: #479ED3;
-    border-radius: var(--border-radius-sm);
+    border-radius: inherit;
+    content: '';
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -1;
   }
 `
 
