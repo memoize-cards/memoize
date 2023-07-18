@@ -15,7 +15,7 @@ const style = css`
     justify-content: center;
     padding: var(--spacing-xxxs) 40% var(--spacing-xxxs) var(--spacing-xxxs);
     position: relative;
-    white-space: wrap;
+    white-space: normal;
     width: 100%;
   }
 

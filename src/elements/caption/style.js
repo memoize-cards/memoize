@@ -7,7 +7,7 @@ const style = css`
     flex-direction: column;
     gap: var(--spacing_inset-nano);
     padding-top: var(--spacing-xxxs); 
-    white-space: wrap;
+    white-space: normal;
   }
 `
 
