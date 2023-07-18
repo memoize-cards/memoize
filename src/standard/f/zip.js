@@ -19,7 +19,7 @@ import resolveDunders from './internal/resolveDunders'
  * const result = zip(x, y); // result: [[1, 'a'], [2, 'b'], [3, 'c']]
  */
 function zip (x, y) {
-  const n = Math.max(x.length, y.length)
+  const n = Math.max(x.length ?? 0, y.length ?? 0)
   return Array(n).fill(undefined).map((_, i) => [x[i], y[i]])
 }
 
