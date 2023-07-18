@@ -48,6 +48,10 @@ class Events {
     return this.#eventList
   }
 
+  * [Symbol.iterator] () {
+    yield * this.#eventList
+  }
+
   static create (attrList, target) {
     attrList = Event.mapper(attrList)
     return new Events(attrList, target)
