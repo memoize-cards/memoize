@@ -18,7 +18,7 @@ class Carousel {
   }
 
   get category () {
-    return (this.#category ?? category.Professor)
+    return (this.#category ?? category.MoreView)
   }
 
   get type () {
