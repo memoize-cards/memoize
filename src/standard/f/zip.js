@@ -1,5 +1,6 @@
 import arity from './arity'
 import curry from './curry'
+import magic from '@standard/magic'
 import resolveDunders from './internal/resolveDunders'
 
 /**
@@ -23,4 +24,8 @@ function zip (x, y) {
   return Array(n).fill(undefined).map((_, i) => [x[i], y[i]])
 }
 
-export default curry(arity(2, resolveDunders(zip, 'zip')))
+Object.assign(zip, {
+  __: magic.zip
+})
+
+export default curry(arity(2, resolveDunders(zip)))

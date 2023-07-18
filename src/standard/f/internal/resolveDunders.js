@@ -1,5 +1,3 @@
-import magic from '@standard/magic'
-
 /**
  * Resolves double underscores (dunders) for the given function reference.
  *
@@ -18,14 +16,14 @@ import magic from '@standard/magic'
  *
  * @see magic
  */
-function resolveDunders (functionRef, name) {
+function resolveDunders (functionRef) {
   /**
    * @param {...*} args - Arguments to be resolved for double underscores (dunders).
    * @returns {*} The result of the original function after resolving the double underscores (dunders).
    */
   return function (...args) {
-    const method = magic[name]
-    const evaluate = (value) => (value[method]?.() ?? value)
+    const dunderMethod = functionRef.__
+    const evaluate = (value) => (value[dunderMethod]?.() ?? value)
     return functionRef(...args.map(evaluate))
   }
 }
