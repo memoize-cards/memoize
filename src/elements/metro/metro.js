@@ -3,10 +3,12 @@ import { paint } from '@standard/h'
 import component from './component'
 import event from './event'
 import Rect from './rect'
+import resize from './resize'
 import translateX from './translateX'
 
 @paint(component)
 @event
+@resize
 class Metro {
   #channel
   #rect = new Rect(this)
@@ -43,6 +45,12 @@ class Metro {
       .pipe(f.add(this.#rect.deadZone))
       .pipe(f.min(0))
       .done()
+    return this
+  }
+
+  @translateX
+  rewind () {
+    this.#x = 0
     return this
   }
 }

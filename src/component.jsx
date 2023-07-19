@@ -8,8 +8,8 @@ function component (carousel) {
   return (
     <div className={style.carousel}>
       <Header category={carousel.category} />
-      <Pagination channel={carousel.id} />
-      <Metro channel={carousel.id}>
+      <Pagination channel={carousel.channel} />
+      <Metro channel={carousel.channel}>
         {carousel.cards}
       </Metro>
     </div>

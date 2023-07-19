@@ -15,16 +15,16 @@ class Carousel {
   #id
   #type
 
+  get channel () {
+    return (this.#id ??= f.guid())
+  }
+
   get cards () {
     return (this.#cards ?? [])
   }
 
   get category () {
     return (this.#category ?? category.MoreView)
-  }
-
-  get id () {
-    return (this.#id ??= f.guid())
   }
 
   get type () {
