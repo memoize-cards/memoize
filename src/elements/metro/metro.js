@@ -7,11 +7,11 @@ import resize from './resize'
 @event
 @resize
 class Metro {
-  #id
+  #channel
   #x
 
-  get id () {
-    return this.#id
+  get channel () {
+    return this.#channel
   }
 
   get x () {
@@ -29,7 +29,7 @@ class Metro {
   }
 
   constructor (props) {
-    this.#id = props.id
+    this.#channel = props.channel
   }
 
   next () {

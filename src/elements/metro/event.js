@@ -10,8 +10,8 @@ const event = middleware(function (metro) {
   let prev = () => metro.prev()
 
   override(metro, didMount, (_args, done) => (
-    echo.on(`next:${metro.id}`, next),
-    echo.on(`prev:${metro.id}`, prev),
+    echo.on(`next:${metro.channel}`, next),
+    echo.on(`prev:${metro.channel}`, prev),
     done()
   ))
 
