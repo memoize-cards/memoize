@@ -1,10 +1,10 @@
 import h from '@standard/h'
 import style from './style'
 
-function component (_props, children) {
+function component (metro, children) {
   return (
-    <div className={style.metro} data-metro>
-      <div className={style.metro__container} data-metro-container>
+    <div className={style.metro}>
+      <div className={style.metro__container}>
         {children}
       </div>
     </div>

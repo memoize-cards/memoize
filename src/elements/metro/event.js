@@ -1,6 +1,7 @@
 import echo from '@standard/echo'
 import magic from '@standard/magic'
 import middleware from '@standard/middleware'
+import override from '@standard/override'
 
 const event = middleware(function (metro) {
   const { didMount, willUnmount } = magic
@@ -8,12 +9,16 @@ const event = middleware(function (metro) {
   let next = () => metro.next()
   let prev = () => metro.prev()
 
-  metro[didMount] = () => (
+  override(metro, didMount, (_args, done) => (
     echo.on(`next:${metro.id}`, next),
-    echo.on(`prev:${metro.id}`, prev)
-  )
+    echo.on(`prev:${metro.id}`, prev),
+    done()
+  ))
 
-  metro[willUnmount] = () => (next = prev = () => undefined)
+  override(metro, willUnmount, (_args, done) => (
+    next = prev = () => undefined,
+    done()
+  ))
 })
 
 export default event
