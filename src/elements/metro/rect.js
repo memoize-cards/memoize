@@ -1,17 +1,18 @@
 import * as f from '@standard/f'
 import { paint } from '@standard/h'
+import style from './style'
 
 class Rect {
   #metro
 
   get deadZone () {
-    return this.#metro[paint.rootElement]().getClientRects()[0].x * 2
+    return 16
   }
 
   get limit () {
     return f.sub(
       this.#metro[paint.rootElement]().offsetWidth,
-      this.#metro[paint.rootElement]().querySelector('div').scrollWidth
+      this.#metro[paint.rootElement]().getElementsByClassName(style.metro__container)[0].scrollWidth
     )
   }
 

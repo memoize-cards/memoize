@@ -24,7 +24,7 @@ const style = css`
     gap: var(--spacing_inset-xs);
     min-width: 100%;
     text-align: inherit;
-    transition: transform .618s ease-out;
+    transition: all .618s ease-out;
     white-space: nowrap;
   }
 `
