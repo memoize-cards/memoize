@@ -1,3 +1,4 @@
+import * as f from '@standard/f'
 import { paint, repaint } from '@standard/h'
 import category from './category'
 import component from './component'
@@ -11,6 +12,7 @@ import Video from './video'
 class Carousel {
   #cards
   #category
+  #id
   #type
 
   get cards () {
@@ -19,6 +21,10 @@ class Carousel {
 
   get category () {
     return (this.#category ?? category.MoreView)
+  }
+
+  get id () {
+    return (this.#id ??= f.guid())
   }
 
   get type () {

@@ -1,4 +1,5 @@
 export { __ } from './curry'
 export { default as arity } from './arity'
+export { default as guid } from './guid'
 export { default as curry } from './curry'
 export { default as zip } from './zip'
