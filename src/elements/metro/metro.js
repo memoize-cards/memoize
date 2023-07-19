@@ -31,7 +31,7 @@ class Metro {
     this.#x = f
       .from(this.x)
       .pipe(f.sub(this.#rect.width))
-      .pipe(f.sub(-this.#rect.deadZone))
+      .pipe(f.sub(f.negate(this.#rect.deadZone)))
       .pipe(f.max(this.#rect.limit))
       .done()
     return this
