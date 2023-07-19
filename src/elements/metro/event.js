@@ -6,18 +6,18 @@ import override from '@standard/override'
 const event = middleware(function (metro) {
   const { didMount, willUnmount } = magic
 
-  let next = () => metro.next()
-  let prev = () => metro.prev()
+  let moveForward = () => metro.moveForward()
+  let moveBack = () => metro.moveBack()
 
-  override(metro, didMount, (_args, done) => (
-    echo.on(`next:${metro.channel}`, next),
-    echo.on(`prev:${metro.channel}`, prev),
-    done()
+  override(metro, didMount, (args, next) => (
+    echo.on(`next:${metro.channel}`, moveForward),
+    echo.on(`prev:${metro.channel}`, moveBack),
+    next(...args)
   ))
 
-  override(metro, willUnmount, (_args, done) => (
-    next = prev = () => undefined,
-    done()
+  override(metro, willUnmount, (args, next) => (
+    moveForward = moveBack = () => undefined,
+    next(...args)
   ))
 })
 

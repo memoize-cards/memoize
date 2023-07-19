@@ -9,6 +9,12 @@ const style = css`
     width: 100%;
   }
 
+  @media (width >= 448px) {
+    .metro {
+      overflow-x: hidden;
+    }
+  }
+
   .metro::-webkit-scrollbar {
     display: none;
   }

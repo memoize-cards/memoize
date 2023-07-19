@@ -1,13 +1,15 @@
+import * as f from '@standard/f'
 import { paint } from '@standard/h'
 import component from './component'
 import event from './event'
-import resize from './resize'
+import Rect from './rect'
+import translateX from './translateX'
 
 @paint(component)
 @event
-@resize
 class Metro {
   #channel
+  #rect = new Rect(this)
   #x
 
   get channel () {
@@ -18,35 +20,29 @@ class Metro {
     return (this.#x ?? 0)
   }
 
-  get #xLimit () {
-    const offsetWidth = this[paint.rootElement]().offsetWidth
-    const scrollWidth = this[paint.rootElement]().querySelector('div').scrollWidth
-    return (offsetWidth - scrollWidth)
-  }
-
-  get #xWidth () {
-    return this[paint.rootElement]().offsetWidth
-  }
-
   constructor (props) {
     this.#channel = props.channel
   }
 
-  next () {
-    this.#x = Math.max(this.x - this.#xWidth - 16, this.#xLimit)
-    this[paint.rootElement]().querySelector('div').style = `transform: translateX(${this.#x}px)`
+  @translateX
+  moveForward () {
+    this.#x = f
+      .from(this.x)
+      .pipe(f.sub(this.#rect.width))
+      .pipe(f.sub(this.#rect.deadZone))
+      .pipe(f.max(this.#rect.limit))
+      .done()
     return this
   }
 
-  prev () {
-    this.#x = Math.min(this.x + this.#xWidth + 16, 0)
-    this[paint.rootElement]().querySelector('div').style = `transform: translateX(${this.#x}px)`
-    return this
-  }
-
-  rewind () {
-    this.#x = 0
-    this[paint.rootElement]().querySelector('div').style = `transform: translateX(${0}px)`
+  @translateX
+  moveBack () {
+    this.#x = f
+      .from(this.x)
+      .pipe(f.add(this.#rect.width))
+      .pipe(f.add(this.#rect.deadZone))
+      .pipe(f.min(0))
+      .done()
     return this
   }
 }
