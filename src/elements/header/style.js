@@ -5,11 +5,13 @@ const style = css`
     display: flex;
     flex-direction: column;
     gap: var(--spacing_inset-nano);
+    height: 48.8px;
+    justify-content: center;
   }
 
   @media (width >= 448px) {
     .header {
-      padding-right: calc(var(--spacing_inset-xs) + 96px);
+      padding-right: 113.59px;
     }
   }
 

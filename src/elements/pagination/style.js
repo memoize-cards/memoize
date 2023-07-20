@@ -2,6 +2,7 @@ import css from '@standard/css'
 
 const style = css`
   .pagination {
+    align-items: center;
     display: none;
     gap: var(--spacing_inset-xs);
     position: absolute;
@@ -21,9 +22,9 @@ const style = css`
     border: none;
     cursor: pointer;
     display: flex;
-    height: 38px;
+    height: 48.8px;
     justify-content: center;
-    width: 38px;
+    width: 48.8px;
   }
 `
 

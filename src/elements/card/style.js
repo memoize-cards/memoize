@@ -2,7 +2,7 @@ import css from '@standard/css'
 
 const style = css`
   .card {
-    min-width: 100%;
+    min-width: 85%;
   }
 
   @media (width >= 448px) {
