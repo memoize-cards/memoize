@@ -4,7 +4,7 @@ import mock from './mock.json'
 import result from '@standard/result'
 
 const storage = middleware(async function (carousel) {
-  const url = location.href
+  const url = '/b/explore-aulas'
   const { category, type } = carousel
   const { data, error } = await http.post(url).body({ category, type }).json()
   error
