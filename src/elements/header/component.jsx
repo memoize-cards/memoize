@@ -1,4 +1,4 @@
-import category from '@/category'
+import category from '@components/carousel/category'
 import Choose from '@directive/choose'
 import h from '@standard/h'
 import icon from '@elements/icon'

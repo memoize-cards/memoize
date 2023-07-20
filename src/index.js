@@ -5,4 +5,4 @@ import '@polyfill/setImmediate'
 import '@pixel/reset'
 import '@pixel/tokens'
 
-import './qcxElement'
+import '@components/carousel'
