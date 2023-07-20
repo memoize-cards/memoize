@@ -1,7 +1,7 @@
 const category = {
   KeepWatching: 'keep_watching',
   MoreView: 'more_view',
-  Professor: 'professor'
+  Professor: 'professors'
 }
 
 export default category

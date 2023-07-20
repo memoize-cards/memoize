@@ -1,4 +1,4 @@
-import Divisor from '@elements/divisor'
+import Divisor from '@components/carousel/divisor'
 import h from '@standard/h'
 import style from './style'
 import text from '@elements/text'

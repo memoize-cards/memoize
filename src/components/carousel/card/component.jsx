@@ -1,7 +1,7 @@
-import Caption from '@elements/caption'
+import Caption from '@components/carousel/caption'
 import h, { Fragment } from '@standard/h'
 import style from './style'
-import Thumbnail from '@elements/thumbnail'
+import Thumbnail from '@components/carousel/thumbnail'
 
 function component (props) {
   return (

@@ -1,5 +1,5 @@
 import { paint } from '@standard/h'
-import Card from '@elements/card'
+import Card from './card'
 
 @paint(Card)
 class Video {

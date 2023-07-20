@@ -4,11 +4,12 @@ import mock from './mock.json'
 import result from '@standard/result'
 
 const storage = middleware(async function (carousel) {
+  const url = location.href
   const { category, type } = carousel
-  const { error } = await http.post('/').body({ category, type }).json()
+  const { data, error } = await http.post(url).body({ category, type }).json()
   error
-    ? carousel[result.Ok](mock)
-    : carousel[result.Ok](mock)
+    ? carousel[result.Error]?.(mock)
+    : carousel[result.Ok]?.(mock)
 })
 
 export default storage
