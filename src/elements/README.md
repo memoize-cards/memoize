@@ -6,6 +6,7 @@ Workspace Elements is a collection of reusable and customizable React components
 
 The Standard Workspace includes the following packages:
 
+- **icon**: 
 - **text**: The text package is a utility for generating styled text components with dynamic styles based on the properties accessed.
 
 ### Contributing

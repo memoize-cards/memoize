@@ -1,7 +1,7 @@
 import h from '@standard/h'
-import Header from '@elements/header'
-import Metro from '@elements/metro'
-import Pagination from '@elements/pagination'
+import Header from './header'
+import Metro from './metro'
+import Pagination from './pagination'
 import style from './style'
 
 function component (carousel) {
