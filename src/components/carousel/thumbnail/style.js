@@ -22,6 +22,14 @@ const style = css`
     white-space: normal;
     width: 100%;
   }
+
+  .thumbnail__discipline {
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    white-space: pre-wrap;
+  }
 `
 
 export default style
