@@ -14,10 +14,16 @@ const category = {
   KeepWatching: 'keep_watching',
 
   /**
-   * Represents the "more_view" category for the carousel.
+   * Represents the "more_viewed" category for the carousel.
    * @type {category}
    */
-  MoreView: 'more_view',
+  MoreView: 'most_viewed',
+
+  /**
+   * Represents the "trending" category for the carousel.
+   * @type {category}
+   */
+  Trending: 'trending',
 
   /**
    * Represents the "professors" category for the carousel.

@@ -52,7 +52,7 @@ class Carousel {
    * @readonly
    */
   get category () {
-    return (this.#category ?? category.MoreView)
+    return (this.#category ?? category.Trending)
   }
 
   /**
@@ -90,6 +90,7 @@ class Carousel {
    */
   @repaint
   [result.Ok] (cards) {
+    console.log(this.category)
     this.#cards = cards.map(Video.create)
     return this
   }

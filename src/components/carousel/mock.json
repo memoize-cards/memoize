@@ -1,14 +1,338 @@
-[
-  {},
-  {},
-  {},
-  {},
-  {},
-  {},
-  {},
-  {},
-  {},
-  {},
-  {},
-  {}
-]
+{
+  "keep_watching": [
+    {
+      "id": "176f62cb-5b56-5fd6-9ada-27bb6d818feb",
+      "avatar_url": "https://res.cloudinary.com/qconcursos/image/upload/t_perfil/v1/production/000/175/732/avatar.jpg",
+      "careers": [],
+      "name": "Responsabilidade do Presidente da República e Lei nº 1.079 de 1950 (Crimes de Responsabilidade) - Parte 02",
+      "professor_id": 120,
+      "professor_name": "Liz Rodrigues",
+      "resource_id": 5598,
+      "resource_type": "Ils::Video"
+    },
+    {
+      "id": "c817a793-d5e5-56e9-ad2e-7d807ff86286",
+      "avatar_url": "https://res.cloudinary.com/qconcursos/image/upload/t_perfil/v1/production/000/365/567/avatar.jpg",
+      "careers": [],
+      "name": "Mandado de Segurança - Parte 1 e Habeas Data",
+      "professor_id": 64,
+      "professor_name": "Alexandre Demidoff",
+      "resource_id": 5661,
+      "resource_type": "Ils::Video"
+    },
+    {
+      "id": "40336424-0857-5143-8076-5d6cc3c4d8ad",
+      "avatar_url": "https://res.cloudinary.com/qconcursos/image/upload/t_perfil/v1/production/003/810/207/avatar",
+      "careers": [],
+      "name": "Teoria das Nulidades: Causas de Nulidade e de Anulabilidade - Parte 2",
+      "professor_id": 112,
+      "professor_name": "Rafael da Mota Mendonça",
+      "resource_id": 5698,
+      "resource_type": "Ils::Video"
+    },
+    {
+      "id": "158c179b-a594-5718-8be9-1d89b0f43e2b",
+      "avatar_url": "https://res.cloudinary.com/qconcursos/image/upload/t_perfil/v1/production/003/810/207/avatar",
+      "careers": [],
+      "name": "Teoria das Nulidades: Causas de Nulidade e de Anulabilidade - Parte 1",
+      "professor_id": 112,
+      "professor_name": "Rafael da Mota Mendonça",
+      "resource_id": 5701,
+      "resource_type": "Ils::Video"
+    },
+    {
+      "id": "bdfc3098-bceb-5968-a328-4adf3be839b5",
+      "avatar_url": "https://res.cloudinary.com/qconcursos/image/upload/t_perfil/v1/production/003/676/568/avatar",
+      "careers": [],
+      "name": "Prova Pericial e Exame de Corpo de Delito - Parte 5",
+      "professor_id": 2,
+      "professor_name": "Letícia Delgado",
+      "resource_id": 6591,
+      "resource_type": "Ils::Video"
+    },
+    {
+      "id": "878dd18f-b427-527a-8ce5-cd28af108aa9",
+      "avatar_url": "https://res.cloudinary.com/qconcursos/image/upload/t_perfil/v1/production/000/829/689/avatar.jpg",
+      "careers": [],
+      "name": "Certificação digital - Parte 1",
+      "professor_id": 147,
+      "professor_name": "Flávio Lima",
+      "resource_id": 6613,
+      "resource_type": "Ils::Video"
+    },
+    {
+      "id": "1c67925e-a779-5bfb-8870-5f31cc460f84",
+      "avatar_url": "https://res.cloudinary.com/qconcursos/image/upload/t_perfil/v1/production/000/381/039/avatar",
+      "careers": [],
+      "name": "Sistemas de Numeração e Operações Fundamentais - Parte 3",
+      "professor_id": 62,
+      "professor_name": "Renato Oliveira",
+      "resource_id": 6643,
+      "resource_type": "Ils::Video"
+    },
+    {
+      "id": "06af9c6f-9ea2-5335-8022-177c27a2c60e",
+      "avatar_url": "https://res.cloudinary.com/qconcursos/image/upload/t_perfil/v1/production/001/000/481/avatar",
+      "careers": [],
+      "name": "Sítios de busca e pesquisa na internet - Parte 1",
+      "professor_id": 53,
+      "professor_name": "Frank Mattos",
+      "resource_id": 6657,
+      "resource_type": "Ils::Video"
+    }
+  ],
+  "trending": [
+    {
+      "id": "2105e8bd-10d4-5d22-9afc-30bb76c28656",
+      "avatar_url": null,
+      "careers": [],
+      "name": "Técnicas de análise",
+      "professor_id": 34,
+      "professor_name": "Pedro Campos",
+      "resource_id": 1630,
+      "resource_type": "Mjolnir::Video"
+    },
+    {
+      "id": "66a28df0-2484-5a2d-89af-e0cd3e29f56b",
+      "avatar_url": null,
+      "careers": [],
+      "name": "Decisões programadas",
+      "professor_id": 34,
+      "professor_name": "Pedro Campos",
+      "resource_id": 1631,
+      "resource_type": "Mjolnir::Video"
+    },
+    {
+      "id": "46efbb4c-ce94-5d70-b66c-2558d328a29f",
+      "avatar_url": null,
+      "careers": [],
+      "name": "Matriz SWOT",
+      "professor_id": 34,
+      "professor_name": "Pedro Campos",
+      "resource_id": 1637,
+      "resource_type": "Mjolnir::Video"
+    },
+    {
+      "id": "caf204ef-8022-5216-8b8d-f921c3b7e9ce",
+      "avatar_url": null,
+      "careers": [],
+      "name": "Organização",
+      "professor_id": 34,
+      "professor_name": "Pedro Campos",
+      "resource_id": 1640,
+      "resource_type": "Mjolnir::Video"
+    },
+    {
+      "id": "caa4a5a4-c69c-5ef6-aabc-6768d967ee38",
+      "avatar_url": null,
+      "careers": [],
+      "name": "",
+      "professor_id": null,
+      "professor_name": null,
+      "resource_id": 1647,
+      "resource_type": "Mjolnir::Video"
+    },
+    {
+      "id": "00e5d468-4db6-508c-886e-0645825b5d72",
+      "avatar_url": null,
+      "careers": [],
+      "name": "Pontos negativos de Cloud",
+      "professor_id": 17,
+      "professor_name": "Eduardo Newman",
+      "resource_id": 1649,
+      "resource_type": "Mjolnir::Video"
+    },
+    {
+      "id": "73feac5c-2641-5ba6-bade-83fa13f18af6",
+      "avatar_url": null,
+      "careers": [],
+      "name": "Softwares maliciosos - Parte 2",
+      "professor_id": 17,
+      "professor_name": "Eduardo Newman",
+      "resource_id": 1650,
+      "resource_type": "Mjolnir::Video"
+    },
+    {
+      "id": "0545da14-053a-536e-ab75-706d4de27bdc",
+      "avatar_url": null,
+      "careers": [],
+      "name": "Visão de Tarefas",
+      "professor_id": 17,
+      "professor_name": "Eduardo Newman",
+      "resource_id": 1658,
+      "resource_type": "Mjolnir::Video"
+    }
+  ],
+  "most_viewed": [
+    {
+      "id": "f4d9fdbc-5c0f-5be8-8a00-6c11bafcde86",
+      "avatar_url": null,
+      "careers": [],
+      "name": "Topologia STAR",
+      "professor_id": 17,
+      "professor_name": "Eduardo Newman",
+      "resource_id": 1724,
+      "resource_type": "Mjolnir::Video"
+    },
+    {
+      "id": "2e92a459-885b-5434-a202-caf525be4697",
+      "avatar_url": null,
+      "careers": [],
+      "name": "Topologia MESH",
+      "professor_id": 17,
+      "professor_name": "Eduardo Newman",
+      "resource_id": 1725,
+      "resource_type": "Mjolnir::Video"
+    },
+    {
+      "id": "797470fc-2001-5308-aeef-1ce6531042d3",
+      "avatar_url": null,
+      "careers": [],
+      "name": "Serviços Cloud",
+      "professor_id": 17,
+      "professor_name": "Eduardo Newman",
+      "resource_id": 1730,
+      "resource_type": "Mjolnir::Video"
+    },
+    {
+      "id": "a6a4d230-fecb-5e4f-86e3-333874f0915c",
+      "avatar_url": null,
+      "careers": [],
+      "name": "Criptografia",
+      "professor_id": 17,
+      "professor_name": "Eduardo Newman",
+      "resource_id": 1736,
+      "resource_type": "Mjolnir::Video"
+    },
+    {
+      "id": "526489fd-74d9-542c-a5e5-ace632e33efd",
+      "avatar_url": null,
+      "careers": [],
+      "name": "Programas de correio eletrônico",
+      "professor_id": 17,
+      "professor_name": "Eduardo Newman",
+      "resource_id": 1743,
+      "resource_type": "Mjolnir::Video"
+    },
+    {
+      "id": "2e994484-7056-5b1d-b78c-60c89a90da90",
+      "avatar_url": null,
+      "careers": [],
+      "name": "Placa-mãe",
+      "professor_id": 17,
+      "professor_name": "Eduardo Newman",
+      "resource_id": 1665,
+      "resource_type": "Mjolnir::Video"
+    },
+    {
+      "id": "799a3a73-3e7b-5250-86e7-614a42fe30a1",
+      "avatar_url": null,
+      "careers": [],
+      "name": "Validação de dados",
+      "professor_id": 17,
+      "professor_name": "Eduardo Newman",
+      "resource_id": 1667,
+      "resource_type": "Mjolnir::Video"
+    },
+    {
+      "id": "96061311-4c7b-5090-84a2-cc22af8e0c4b",
+      "avatar_url": null,
+      "careers": [],
+      "name": "Referências relativas, absolutas e referências externas",
+      "professor_id": 17,
+      "professor_name": "Eduardo Newman",
+      "resource_id": 1669,
+      "resource_type": "Mjolnir::Video"
+    }
+  ],
+  "professors": [
+    {
+      "id": "1",
+      "avatar_url": "a_avatar_url",
+      "disciplines": [
+        "a good",
+        "and a bad",
+        "discipline"
+      ],
+      "lesson_count": 42,
+      "name": "Tom Riddle"
+    },
+    {
+      "id": "1",
+      "avatar_url": "a_avatar_url",
+      "disciplines": [
+        "a good",
+        "and a bad",
+        "discipline"
+      ],
+      "lesson_count": 42,
+      "name": "Tom Riddle"
+    },
+    {
+      "id": "1",
+      "avatar_url": "a_avatar_url",
+      "disciplines": [
+        "a good",
+        "and a bad",
+        "discipline"
+      ],
+      "lesson_count": 42,
+      "name": "Tom Riddle"
+    },
+    {
+      "id": "1",
+      "avatar_url": "a_avatar_url",
+      "disciplines": [
+        "a good",
+        "and a bad",
+        "discipline"
+      ],
+      "lesson_count": 42,
+      "name": "Tom Riddle"
+    },
+    {
+      "id": "1",
+      "avatar_url": "a_avatar_url",
+      "disciplines": [
+        "a good",
+        "and a bad",
+        "discipline"
+      ],
+      "lesson_count": 42,
+      "name": "Tom Riddle"
+    },
+    {
+      "id": "1",
+      "avatar_url": "a_avatar_url",
+      "disciplines": [
+        "a good",
+        "and a bad",
+        "discipline"
+      ],
+      "lesson_count": 42,
+      "name": "Tom Riddle"
+    },
+    {
+      "id": "1",
+      "avatar_url": "a_avatar_url",
+      "disciplines": [
+        "a good",
+        "and a bad",
+        "discipline"
+      ],
+      "lesson_count": 42,
+      "name": "Tom Riddle"
+    },
+    {
+      "id": "1",
+      "avatar_url": "a_avatar_url",
+      "disciplines": [
+        "a good",
+        "and a bad",
+        "discipline"
+      ],
+      "lesson_count": 42,
+      "name": "Tom Riddle"
+    }
+  ]
+}

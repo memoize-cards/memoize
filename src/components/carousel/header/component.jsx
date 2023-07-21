@@ -10,9 +10,9 @@ function component (props) {
     <div className={style.header}>
       <Choose when={props.category}>
         <text.Span equal={category.KeepWatching} neutral m900 sm bold>Continuar assistindo <icon.CaretRight /></text.Span>
-        <text.Span equal={category.MoreView} neutral m900 sm bold><icon.TrendUp large /> Em alta <icon.CaretRight /></text.Span>
-        <text.Span equal={category.MoreView} neutral m900 xxs medium>Últimos editais, trending topics, etc...</text.Span>
-        <text.Span equal={category.Professor} neutral m900 sm bold>Professores <icon.CaretRight /></text.Span>
+        <text.Span equal={category.Trending} neutral m900 sm bold><icon.TrendUp large /> Em alta <icon.CaretRight /></text.Span>
+        <text.Span equal={category.Trending} neutral m900 xxs medium>Últimos editais, trending topics, etc...</text.Span>
+        <text.Span equal={category.MoreView} neutral m900 sm bold>Mais vistos<icon.CaretRight /></text.Span>
       </Choose>
     </div>
   )
