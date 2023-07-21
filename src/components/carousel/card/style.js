@@ -2,6 +2,7 @@ import css from '@standard/css'
 
 const style = css`
   .card {
+    cursor: pointer;
     min-width: 85%;
   }
 

@@ -5,7 +5,7 @@ import Thumbnail, { Avatar } from '@components/carousel/thumbnail'
 
 function component (props) {
   return (
-    <section className={style.card}>
+    <div className={style.card} onClick={() => props.redirect()}>
       <Thumbnail theme={props.discipline}>
         <Fragment slot='discipline'>{props.discipline}</Fragment>
         <Fragment slot='professor'>{props.professor}</Fragment>
@@ -15,7 +15,7 @@ function component (props) {
         <Fragment slot='discipline'>{props.discipline}</Fragment>
         <Fragment slot='professor'>{props.professor}</Fragment>
       </Caption>
-    </section>
+    </div>
   )
 }
 

@@ -75,7 +75,7 @@ class Video {
    * @returns {Video} The current Video instance.
    */
   redirect () {
-    // TODO: redirect to link
+    location.assign(`/b/explore-aulas/${this.#id}`)
     return this
   }
 
