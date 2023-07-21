@@ -90,7 +90,6 @@ class Carousel {
    */
   @repaint
   [result.Ok] (cards) {
-    console.log(this.category)
     this.#cards = cards.map(Video.create)
     return this
   }

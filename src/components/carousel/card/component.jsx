@@ -8,11 +8,11 @@ function component (props) {
     <section className={style.card}>
       <Thumbnail>
         <Fragment slot='discipline'>{props.discipline}</Fragment>
-        <Fragment slot='teacher'>{props.teacher}</Fragment>
+        <Fragment slot='professor'>{props.professor}</Fragment>
       </Thumbnail>
       <Caption>
         <Fragment slot='discipline'>{props.discipline}</Fragment>
-        <Fragment slot='teacher'>{props.teacher}</Fragment>
+        <Fragment slot='professor'>{props.professor}</Fragment>
       </Caption>
     </section>
   )

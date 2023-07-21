@@ -3,16 +3,42 @@ import Card from './card'
 
 @paint(Card)
 class Video {
+  #avatar
+  #discipline
+  #id
+  #professor
+
+  get avatar () {
+    return this.#avatar
+  }
+
   get discipline () {
-    return 'Como refinar paragrafo de desenvolvimento!'
+    return this.#discipline
   }
 
-  get teacher () {
-    return 'Heittor Ferreira'
+  get professor () {
+    return this.#professor
   }
 
-  static create () {
-    return new Video()
+  constructor (id, avatar, discipline, professor) {
+    this.#id = id
+    this.#avatar = avatar
+    this.#discipline = discipline
+    this.#professor = professor
+  }
+
+  redirect () {
+    // TODO: redirect to link
+    return this
+  }
+
+  static create (data) {
+    return new Video(
+      data.id,
+      data.avatar_url,
+      data.name,
+      data.professor_name
+    )
   }
 }
 

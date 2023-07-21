@@ -9,7 +9,7 @@ function component (_props, children) {
       <div className={style.thumbnail__poster}>
         <text.Span white bold xs highlight>{children.discipline}</text.Span>
         <Divisor />
-        <text.Span white medium xxxs highlight>Prof. {children.teacher}</text.Span>
+        <text.Span white medium xxxs highlight>Prof. {children.professor}</text.Span>
       </div>
     </div>
   )
