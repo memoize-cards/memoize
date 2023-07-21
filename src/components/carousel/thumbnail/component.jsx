@@ -11,6 +11,7 @@ function component (props, children) {
         <text.Span className={style.thumbnail__discipline} white bold xs highlight>{children.discipline}</text.Span>
         <Divisor />
         <text.Span white medium xxxs highlight>Prof. {children.professor}</text.Span>
+        {children.avatar}
       </div>
     </div>
   )
