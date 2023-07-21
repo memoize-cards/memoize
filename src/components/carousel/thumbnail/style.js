@@ -2,6 +2,10 @@ import css from '@standard/css'
 import poster from './poster.svg'
 
 const style = css`
+  .thumbnail {
+    border-radius: var(--border-radius-sm);
+  }
+
   .thumbnail__poster {
     align-items: flex-start;
     aspect-ratio: 288 / 162;
@@ -17,11 +21,6 @@ const style = css`
     position: relative;
     white-space: normal;
     width: 100%;
-  }
-
-  .thumbnail {
-    background: #479ED3;
-    border-radius: var(--border-radius-sm);
   }
 `
 

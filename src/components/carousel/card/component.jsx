@@ -6,7 +6,7 @@ import Thumbnail from '@components/carousel/thumbnail'
 function component (props) {
   return (
     <section className={style.card}>
-      <Thumbnail>
+      <Thumbnail theme={props.discipline}>
         <Fragment slot='discipline'>{props.discipline}</Fragment>
         <Fragment slot='professor'>{props.professor}</Fragment>
       </Thumbnail>
