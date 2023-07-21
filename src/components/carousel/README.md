@@ -7,7 +7,7 @@ The Web Component Carousel is a custom carousel component that allows you to dis
 Once the Web Component Carousel is included or imported, you can use it in your HTML as follows:
 
 ```js
-<qcx-carousel category="KeepWatching" type="Video"></qcx-carousel>
+<qcx-carousel category="keep_watching" type="video"></qcx-carousel>
 ```
 
 The carousel component accepts two attributes: category and type. These attributes specify the category and type of videos you want to display in the carousel.
@@ -17,12 +17,12 @@ The carousel component accepts two attributes: category and type. These attribut
 **category (required)**
 - Type: String
 - Description: The category of videos to be displayed in the carousel.
-- Possible values: "KeepWatching", "MoreView", "Professor" (customizable)
+- Possible values: "keep_watching", "more_view", "professors" (customizable)
 
 **type (required)**
 - Type: String
 - Description: The type of videos to be displayed in the carousel.
-- Possible values: "Playlist", "Professor", "Video" (customizable)
+- Possible values: "playlist", "professors", "video" (customizable)
 
 ### Contributing
 
