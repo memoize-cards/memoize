@@ -12,7 +12,7 @@ import result from '@standard/result'
  * @returns {Promise<void>} A Promise that resolves once the carousel data is fetched and processed.
  */
 const storage = middleware(async function (carousel) {
-  const url = location.href
+  const url = '/b/api/carousel'
   const headers = { 'Content-Type': 'application/json' }
   const { category, type } = carousel
   const { data } = await http.post(url).headers(headers).body({ category, type }).json()
