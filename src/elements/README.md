@@ -1,12 +1,12 @@
 # Elements
 
-Workspace Elements is a collection of reusable and customizable React components designed to simplify the development of web applications within your workspace. It provides a set of UI components that adhere to a consistent design system, making it easy to create visually appealing and cohesive user interfaces.
+Workspace Elements is a collection of reusable and customizable components designed to simplify the development of web applications within your workspace. It provides a set of UI components that adhere to a consistent design system, making it easy to create visually appealing and cohesive user interfaces.
 
 ### Packages
 
 The Standard Workspace includes the following packages:
 
-- **icon**: 
+- **icon**: The `Icon` component is a versatile and customizable icon library that provides a collection of SVG icons for use in your web applications.
 - **text**: The text package is a utility for generating styled text components with dynamic styles based on the properties accessed.
 
 ### Contributing
