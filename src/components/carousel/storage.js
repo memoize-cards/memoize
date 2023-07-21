@@ -15,7 +15,7 @@ const storage = middleware(async function (carousel) {
   const url = location.href
   const headers = { 'Content-Type': 'application/json' }
   const { category, type } = carousel
-  const { data } = await http.post(url).header(headers).body({ category, type }).json()
+  const { data } = await http.post(url).headers(headers).body({ category, type }).json()
   carousel[result.Ok](data ?? mock[category])
 })
 
