@@ -2,6 +2,7 @@ require('dotenv').config({ override: true })
 
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const path = require('path')
 const TerserJSPlugin = require('terser-webpack-plugin')
@@ -10,7 +11,7 @@ const webpack = require('webpack')
 module.exports = {
   devServer: {
     static: {
-      directory: path.join(__dirname, 'dist'),
+      directory: path.join(__dirname, 'public'),
       serveIndex: true
     },
     historyApiFallback: true,
@@ -18,7 +19,7 @@ module.exports = {
     port: process.env.PORT
   },
   entry: {
-    lib: './src/index.js'
+    app: './src/index.js'
   },
   module: {
     rules: [
@@ -58,10 +59,9 @@ module.exports = {
   },
   output: {
     clean: true,
-    filename: 'qcx-carousel.js',
-    library: 'qcxCarousel',
-    libraryTarget: 'umd',
-    path: path.resolve(__dirname, 'dist'),
+    chunkFilename: '[name].[contenthash].js',
+    filename: '[name].[contenthash].js',
+    path: path.resolve(__dirname, 'public'),
     publicPath: process.env.PUBLIC_PATH
   },
   performance: {
@@ -73,7 +73,15 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env': JSON.stringify(process.env)
     }),
+    new webpack.EnvironmentPlugin({
+      SW_CACHE: Math.random().toString(32)
+    }),
     new CleanWebpackPlugin(),
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: path.resolve(__dirname, 'assets'), to: '.' }
+      ]
+    }),
     new HtmlWebpackPlugin({
       inject: 'body',
       template: 'index.html'
@@ -84,10 +92,10 @@ module.exports = {
   ],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, 'src/'),
       '@components': path.resolve(__dirname, 'src/components/'),
       '@directive': path.resolve(__dirname, 'src/directive/'),
       '@elements': path.resolve(__dirname, 'src/elements/'),
+      '@pages': path.resolve(__dirname, 'src/pages/'),
       '@pixel': path.resolve(__dirname, 'src/pixel/'),
       '@polyfill': path.resolve(__dirname, 'src/polyfill/'),
       '@standard': path.resolve(__dirname, 'src/standard/')

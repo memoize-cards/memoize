@@ -4,9 +4,9 @@ Workspace Components is a collection of reusable and customizable React componen
 
 ### Packages
 
-The Standard Workspace includes the following packages:
+The Coponenets Workspace includes the following packages:
 
-- **carousel**: The Web Component Carousel is a custom carousel component that allows you to display videos in a slider.
+- **header**: 
 
 ### Contributing
 

@@ -1,55 +1,37 @@
-# QCX Web Components (QCX WC)
+# Memoize
 
-QCX Web Components is a comprehensive package that contains all the web components of the Kratos project. These web components are designed to be reusable, self-contained, and easily integratable into various parts of the application. By providing a unified collection of components, QCX WC promotes code reusability, maintainability, and consistency across the entire project.
+> Aprenda, Memorize, Domine!
 
-### Setup `.env` Configuration
+### Introdução
 
-Create a `.env` file at the root of the project and add the following environment variables with their respective values:
+Olá a todos! Hoje, estou entusiasmado em apresentar a vocês o nosso novo aplicativo revolucionário de aprendizado: Memoize! Se você está em busca de uma maneira eficiente e eficaz de memorizar informações importantes, este é o aplicativo perfeito para você. Com o poderoso algoritmo Anki trabalhando nos bastidores, o Memoize irá ajudá-lo a aprender, memorizar e dominar qualquer conteúdo de forma rápida e duradoura.
 
-```env
-ANALYZER_MODE=
-HINTS=warning
-MAX_ASSET_SIZE=2000000
-MAX_ENTRYPOINT_SIZE=2000000
-PORT=5001
-PUBLIC_PATH=/
-```
+### Problema
 
-Here's a description of each variable:
+Sabemos que aprender e memorizar informações nem sempre é uma tarefa fácil. Ficamos sobrecarregados com uma enorme quantidade de dados todos os dias, tornando desafiador reter o que é realmente importante. Além disso, a abordagem tradicional de estudo pode ser entediante e pouco eficiente.
 
-- **ANALYZER_MODE**: This variable determines the mode for the code analyzer and accepts specific values. (Provide details about possible values if applicable)
-- **HINTS**: This variable controls the level of hints generated during the build process and accepts specific values. (Provide details about possible values if applicable)
-- **MAX_ASSET_SIZE**: This variable sets the maximum size of an asset and is measured in bytes. (Specify the unit of measurement if different)
-- **MAX_ENTRYPOINT_SIZE**: This variable sets the maximum size of an entry point and is measured in bytes. (Specify the unit of measurement if different)
-- **PORT**: This variable defines the port number on which the development server will run. (Specify any default value if applicable)
-- **PUBLIC_PATH**: This variable determines the public path of the project and its default value. (Specify any default value if applicable)
+### Solução
 
-Please ensure to provide appropriate values for each variable according to your project's requirements.
+É aqui que entra o Memoize! Nosso aplicativo oferece uma solução inovadora, baseada em flashcards, combinada com o poder do algoritmo Anki, amplamente reconhecido em todo o mundo por sua eficácia. Com Memoize, você criará seus próprios flashcards ou escolherá entre uma vasta biblioteca de conteúdos disponíveis. O algoritmo Anki, por sua vez, ajustará o ritmo do seu aprendizado, garantindo que você foque nas áreas que mais precisa reforçar, tornando o processo de memorização muito mais eficiente e duradouro.
 
-### Getting Started
+### Recursos-Chave
 
-To start the project and run a development server, execute the following command:
+- **Flashcards Personalizados**: Crie seus próprios flashcards com texto, imagens ou até mesmo áudio, adaptando-os ao seu estilo de aprendizado.
+- **Biblioteca de Conteúdo**: Explore uma extensa biblioteca com diversos temas, disponibilizados por especialistas, para que você possa aprender sobre os mais variados assuntos.
+- **Algoritmo Anki**: Aproveite o poder do algoritmo Anki, que identifica as informações que você precisa revisar com mais frequência e ajusta automaticamente o ritmo de aprendizado.
+- **Aprendizado Adaptativo**: O Memoize aprende com você! À medida que você progride e responde aos flashcards, o aplicativo se adapta ao seu conhecimento e às suas áreas de maior dificuldade.
+- **Acompanhamento de Progresso**: Visualize seu progresso, estatísticas de acertos e erros, e receba insights valiosos para melhorar seu desempenho.
 
-```bash
-yarn start
-```
+### Benefícios
 
-This command will launch the development server, allowing you to experience the QCX Web Components in real-time.
+- Aprendizado mais eficiente e rápido.
+- Memória duradoura para informações importantes.
+- Estudo personalizado de acordo com as suas necessidades.
+- Acesso a uma vasta gama de conteúdos educacionais.
+- Aprendizado divertido e envolvente.
 
-### Building the Project
+### Conclusão
 
-To build the QCX Web Components for production, use the following command:
+Com o Memoize, estamos transformando a maneira como aprendemos e memorizamos. Seja para estudantes, profissionais ou entusiastas do conhecimento, nosso aplicativo está aqui para apoiar seu crescimento intelectual e tornar o aprendizado uma experiência gratificante. Então, junte-se a nós nessa jornada para dominar novos assuntos, expandir horizontes e construir um futuro mais brilhante. Faça do Memoize seu parceiro no caminho do conhecimento e do sucesso!
 
-```bash
-yarn build
-```
-
-The build process will generate optimized and minified bundles ready for deployment to your production environment.
-
-### Contributing
-
-Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request on the GitHub repository for this package.
-
-### License
-
-This package is licensed under the [MIT License](https://opensource.org/licenses/MIT).
+Obrigado a todos por ouvirem! Estamos ansiosos para trazer o Memoize ao mundo e ajudar milhões de pessoas a alcançarem seu potencial máximo. Vamos juntos construir uma comunidade que valoriza o conhecimento e a aprendizagem contínua. Vamos Memoize - Aprenda, Memorize, Domine!

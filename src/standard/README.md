@@ -7,7 +7,6 @@ The Standard Workspace is a collection of packages that form the foundation of t
 The Standard Workspace includes the following packages:
 
 - **css**: The css package is a lightweight utility that simplifies working with CSS code in JavaScript projects.
-- **define**: The define function is a utility function that simplifies the process of defining a custom element using the `customElements.define` method.
 - **echo**: The Echo module is a simple JavaScript module that implements a basic publish/subscribe pattern, allowing communication between different parts of your application using events.
 - **f**: Is a functional programming utility package that provides a set of utility functions for working with JavaScript functions and function arguments.
 - **h**: The h package provides a lightweight and efficient h rendering library for use in your projects.

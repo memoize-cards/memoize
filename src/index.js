@@ -20,4 +20,3 @@ import '@pixel/tokens'
  *
  * @module Components
  */
-import '@components/carousel'

@@ -6,6 +6,7 @@
     "@typescript-eslint/eslint-plugin": "^5.60.1",
     "@typescript-eslint/parser": "^5.60.1",
     "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^11.0.0",
     "dotenv": "^16.3.1",
     "eslint": "^8.44.0",
     "eslint-config-standard": "latest",
@@ -31,7 +32,7 @@
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^4.15.1"
   },
-  "name": "qcx-wc",
+  "name": "memoize",
   "packageManager": "yarn@3.6.0",
   "private": true,
   "scripts": {
