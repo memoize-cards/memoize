@@ -5,7 +5,7 @@
 
 ### Usage
 
-You can import individual functions from the "f" package as needed. For example:
+You can import individual functions from the `f` package as needed. For example:
 
 ```js
 import * as f from '@standard/f'
