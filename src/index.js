@@ -22,6 +22,9 @@ import '@pixel/tokens'
  *
  * @module Pages
  */
-import '@pages/home'
+import '@pages/card'
 
+/**
+ * Handles the router to manage navigation and page rendering.
+ */
 router.handle()
