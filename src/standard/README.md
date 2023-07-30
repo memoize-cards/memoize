@@ -16,7 +16,6 @@ The Standard Workspace includes the following packages:
 - **middleware**: The middleware function is a utility that allows you to apply middleware to a class constructor.
 - **overload**: The overload package provides a utility function for overloading methods in an object or class prototype.
 - **override**: The override package provides a simple function for overriding the implementation of an existing function or method in an object or class prototype.
-- **polished**: Polished is a JavaScript utility library that complements styled-components, a popular CSS-in-JS library, by providing a set of functions to work with colors, typography, and other styling operations.
 - **result**: The Result package provides an enum-like object for representing result values in JavaScript.
 - **revoke**: Revoke is a JavaScript utility that provides a decorator function for revoking class instantiation and property access using the Proxy API.
 - **router**: The Router Package is a lightweight JavaScript library designed to manage routes and handle navigation within your web application.

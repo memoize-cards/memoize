@@ -1,5 +1,9 @@
-import * as p from '@standard/polished'
+import align from './align'
+import color from './color'
+import family from './family'
+import size from './size'
 import styled from '@standard/styled'
+import weight from './weight'
 
 /**
  * A Proxy object that returns styled text components with dynamic styles based on the properties accessed.
@@ -16,12 +20,12 @@ const text = new Proxy({}, {
    */
   get (_target, key) {
     return styled[key]`
-      color: ${p.color};
-      font-family: ${p.family};
-      font-size: ${p.size};
-      font-weight: ${p.weight};
+      color: ${color};
+      font-family: ${family};
+      font-size: ${size};
+      font-weight: ${weight};
       line-height: 1.2;
-      text-align: ${p.align};
+      text-align: ${align};
     `
   }
 })
