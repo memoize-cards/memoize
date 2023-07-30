@@ -1,3 +1,5 @@
+import router from '@standard/router'
+
 /**
  * Imports polyfill modules to add functionality in browsers that don't support them natively.
  *
@@ -16,7 +18,10 @@ import '@pixel/reset'
 import '@pixel/tokens'
 
 /**
- * Imports custom component modules.
+ * Imports pages modules.
  *
- * @module Components
+ * @module Pages
  */
+import '@pages/home'
+
+router.handle()
