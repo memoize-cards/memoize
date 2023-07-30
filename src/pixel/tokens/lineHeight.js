@@ -4,7 +4,7 @@ import css from '@standard/css'
  * CSS-in-JS tokens for line height values.
  */
 const style = css`
-  :host {
+  :root {
     --line-height-default: 100%;
     --line-height-xs: 115%;
     --line-height-sm: 120%;

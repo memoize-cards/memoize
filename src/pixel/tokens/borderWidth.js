@@ -4,7 +4,7 @@ import css from '@standard/css'
  * CSS-in-JS tokens for border width values.
  */
 const style = css`
-  :host {
+  :root {
     --border-width-none: 0;
     --border-width-hairline: 1px;
     --border-width-thin: 2px;

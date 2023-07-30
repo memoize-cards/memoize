@@ -1,9 +1,7 @@
 import h, { render } from '@standard/h'
 import router from '@standard/router'
 
-router('/', function home () {
-  render(
-    document.body,
-    <h1>Memoize</h1>
-  )
+router('/', async function home () {
+  const { default: Card } = await import('./fresh' /* webpackChunkName: "card" */)
+  render(document.body, <Card />)
 })

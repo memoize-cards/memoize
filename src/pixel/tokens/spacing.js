@@ -4,7 +4,7 @@ import css from '@standard/css'
  * CSS-in-JS tokens for spacing values.
  */
 const style = css`
-  :host {
+  :root {
     --spacing-quarck: 4px;
     --spacing-nano: 8px;
     --spacing-xxxs: 16px;

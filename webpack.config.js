@@ -95,6 +95,7 @@ module.exports = {
       '@components': path.resolve(__dirname, 'src/components/'),
       '@directive': path.resolve(__dirname, 'src/directive/'),
       '@elements': path.resolve(__dirname, 'src/elements/'),
+      '@models': path.resolve(__dirname, 'src/models/'),
       '@pages': path.resolve(__dirname, 'src/pages/'),
       '@pixel': path.resolve(__dirname, 'src/pixel/'),
       '@polyfill': path.resolve(__dirname, 'src/polyfill/'),
