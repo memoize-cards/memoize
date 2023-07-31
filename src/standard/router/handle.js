@@ -15,24 +15,11 @@ import findMatchingRoute from './findMatchingRoute'
  * @returns {void}
  */
 function handle () {
-  /**
-   * Find a matching route and destructure its 'page' and 'path' properties (if available)
-   */
   const { page, path } = findMatchingRoute()
 
-  /**
-   * Extract query parameters from the URL and store them in the 'args' object
-   */
   extractArgs()
-
-  /**
-   * Extract route parameters from the URL path and store them in the 'params' object
-   */
   extractParams(path)
 
-  /**
-   * Call the 'page' function of the matched route (if available)
-   */
   page?.()
 }
 

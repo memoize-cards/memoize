@@ -24,6 +24,7 @@ import '@pixel/sw'
  * @module Pages
  */
 import '@pages/fresh'
+import '@pages/learn'
 
 /**
  * Handles the router to manage navigation and page rendering.

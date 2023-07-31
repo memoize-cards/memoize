@@ -13,8 +13,7 @@ import args from './args'
  * @returns {void}
  */
 function extractArgs () {
-  const url = new URL(location.href)
-  const search = new URLSearchParams(url.search)
+  const search = new URLSearchParams(location.search)
   Array.from(search.entries()).forEach(([key, value]) => Reflect.set(args, key, value))
 }
 

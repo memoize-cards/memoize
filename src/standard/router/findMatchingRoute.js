@@ -12,10 +12,11 @@ import listeners from './listeners'
  * @returns {Object} The matched route object, or an empty object if no match is found.
  */
 function findMatchingRoute () {
-  const url = new URL(location.href)
-  const path = url.pathname.replace(/:\w+/g, '([a-z0-9-_]+)')
-  const pattern = new RegExp(`^${path}$`, 'i')
-  return listeners.find(({ path }) => pattern.test(path)) ?? {}
+  return listeners.find(({ path }) => {
+    const rule = path.replace(/:\w+/g, '([a-z0-9-_]+)')
+    const pattern = new RegExp(`^${rule}$`, 'i')
+    return pattern.test(location.pathname)
+  })
 }
 
 export default findMatchingRoute

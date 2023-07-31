@@ -3,7 +3,9 @@ import style from './style'
 
 function component (front) {
   return (
-    <div className={style.front} onInput={(e) => front.change(e)} contenteditable />
+    <div className={style.front}>
+      {front.value}
+    </div>
   )
 }
 

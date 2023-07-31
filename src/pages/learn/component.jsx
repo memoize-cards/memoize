@@ -8,7 +8,6 @@ function component (card) {
       <stack.Div column>
         {card.front}
         {card.back}
-        <button onClick={() => card.create()}>Create</button>
       </stack.Div>
     </Master>
   )

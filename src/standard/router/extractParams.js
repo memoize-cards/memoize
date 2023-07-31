@@ -13,9 +13,8 @@ import params from './params'
  * @returns {void}
  */
 function extractParams (path) {
-  const url = new URL(location.href)
   const keys = path?.split('/')
-  const values = url.pathname.split('/')
+  const values = location.pathname.split('/')
   keys?.forEach((key, i) => /^:/.test(key) && Reflect.set(params, key.slice(1), values[i]))
 }
 

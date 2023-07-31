@@ -4,6 +4,7 @@ const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const InlineChunkHtmlPlugin = require('inline-chunk-html-plugin')
 const path = require('path')
 const TerserJSPlugin = require('terser-webpack-plugin')
 const webpack = require('webpack')
@@ -86,12 +87,14 @@ module.exports = {
       inject: 'body',
       template: 'index.html'
     }),
+    new InlineChunkHtmlPlugin(HtmlWebpackPlugin, [/(app)/]),
     new BundleAnalyzerPlugin({
       analyzerMode: process.env.ANALYZER_MODE
     })
   ],
   resolve: {
     alias: {
+      '@artifact': path.resolve(__dirname, 'src/artifact/'),
       '@components': path.resolve(__dirname, 'src/components/'),
       '@directive': path.resolve(__dirname, 'src/directive/'),
       '@elements': path.resolve(__dirname, 'src/elements/'),
