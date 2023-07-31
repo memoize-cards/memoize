@@ -26,7 +26,7 @@ class Fresh {
       deck: Deck.id,
       front: this.front.value,
       back: this.back.value,
-      interval: Interval.value,
+      interval: Interval.oneMinute,
       type: type.LEARN
     }
   }

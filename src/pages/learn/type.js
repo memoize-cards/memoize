@@ -1,5 +1,5 @@
 const type = {
-  learn: 'LEARN'
+  REVIEW: 2
 }
 
 export default type
