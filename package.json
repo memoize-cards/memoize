@@ -16,6 +16,7 @@
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.3",
     "husky": "^8.0.0",
+    "inline-chunk-html-plugin": "^1.1.1",
     "lint-staged": "^13.2.3",
     "postcss": "^8.4.24",
     "postcss-styled": "^0.34.0",

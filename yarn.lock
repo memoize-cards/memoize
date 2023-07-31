@@ -4180,6 +4180,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"inline-chunk-html-plugin@npm:^1.1.1":
+  version: 1.1.1
+  resolution: "inline-chunk-html-plugin@npm:1.1.1"
+  checksum: 92b20a049f074fc1133306b59c284f4642315232b9420f4a0fbde22bca19eae32af094da33ea5bf9ec996a78a5ffe5a4aa4ebba9641db4695513c4ac4a803386
+  languageName: node
+  linkType: hard
+
 "internal-slot@npm:^1.0.5":
   version: 1.0.5
   resolution: "internal-slot@npm:1.0.5"
@@ -5025,6 +5032,7 @@ __metadata:
     file-loader: ^6.2.0
     html-webpack-plugin: ^5.5.3
     husky: ^8.0.0
+    inline-chunk-html-plugin: ^1.1.1
     lint-staged: ^13.2.3
     postcss: ^8.4.24
     postcss-styled: ^0.34.0
