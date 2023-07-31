@@ -1,13 +1,14 @@
 import h from '@standard/h'
 import Master from '@models/master'
 import stack from '@elements/stack'
-import text from '@elements/text'
 
-function component () {
+function component (fresh) {
   return (
     <Master>
-      <stack.Div center middle>
-        <text.Strong master darker md medium>Computador</text.Strong>
+      <stack.Div column>
+        {fresh.front}
+        {fresh.back}
+        <button onClic={() => fresh.create()}>Create</button>
       </stack.Div>
     </Master>
   )

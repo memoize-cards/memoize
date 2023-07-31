@@ -24,7 +24,7 @@ const text = new Proxy({}, {
       font-family: ${family};
       font-size: ${size};
       font-weight: ${weight};
-      line-height: 1.2;
+      line-height: var(--line-height-sm);
       text-align: ${align};
     `
   }
