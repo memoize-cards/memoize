@@ -16,6 +16,7 @@ import '@polyfill/setImmediate'
  */
 import '@pixel/reset'
 import '@pixel/tokens'
+import '@pixel/sw'
 
 /**
  * Imports pages modules.

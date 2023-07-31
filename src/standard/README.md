@@ -8,6 +8,7 @@ The Standard Workspace includes the following packages:
 
 - **css**: The css package is a lightweight utility that simplifies working with CSS code in JavaScript projects.
 - **echo**: The Echo module is a simple JavaScript module that implements a basic publish/subscribe pattern, allowing communication between different parts of your application using events.
+- **env**: The env package is a JavaScript library that provides access to the Node.js execution environment, allowing you to easily check the current environment.
 - **f**: Is a functional programming utility package that provides a set of utility functions for working with JavaScript functions and function arguments.
 - **h**: The h package provides a lightweight and efficient h rendering library for use in your projects.
 - **http**: The http package is a lightweight utility for making HTTP requests in JavaScript.
