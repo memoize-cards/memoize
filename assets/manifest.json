@@ -1,7 +1,7 @@
 {
-  "name": "memoize",
-	"short_name" : "memoize",
-  "description": "Aprenda, Memorize, Domine!",
+  "name": "Memoize",
+	"short_name" : "Memoize",
+  "description": "O Memoize é um aplicativo avançado de flashcards projetado para otimizar o processo de aprendizado e memorização. Nossa plataforma oferece aos estudantes, profissionais em constante aprendizado e educadores uma abordagem inovadora e personalizada para aprimorar suas habilidades de estudo e retenção de informações essenciais",
 	"display" : "standalone",
   "display_override": ["window-control-overlay", "minimal-ui"],
   "orientation" : "portrait",
@@ -9,8 +9,8 @@
 	"scope" : "/",
   "id": "/?source=pwa",
 	"start_url" : "/?utm_source=pwa",
-	"theme_color" : "#ffffff",
-	"background_color" : "#ffffff",
+	"theme_color" : "#fafafa",
+	"background_color" : "#fafafa",
 	"icons" : [
     {
       "src": "memoize_512x512.png",
@@ -54,7 +54,7 @@
     {
       "name": "Home",
       "short_name": "Home",
-      "description": "Aprenda, Memorize, Domine!",
+      "description": "O Memoize é um aplicativo avançado de flashcards projetado para otimizar o processo de aprendizado e memorização. Nossa plataforma oferece aos estudantes, profissionais em constante aprendizado e educadores uma abordagem inovadora e personalizada para aprimorar suas habilidades de estudo e retenção de informações essenciais",
       "url": "/?utm_source=pwa",
       "icons": [
         {

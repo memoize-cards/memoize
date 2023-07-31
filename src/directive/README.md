@@ -4,7 +4,7 @@ Workspace Directives is a set of reusable and configurable custom directives for
 
 ### Packages
 
-The Standard Workspace includes the following packages:
+The Directive Workspace includes the following packages:
 
 - **choose**: `Choose` is a directive that allows you to choose child elements based on an attribute called `equal`.
 - **hide**: `Hide` is a directive that allows you to hide child elements based on a condition specified by the `when` attribute.

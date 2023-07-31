@@ -4,7 +4,7 @@ Workspace Components is a collection of reusable and customizable React componen
 
 ### Packages
 
-The Coponenets Workspace includes the following packages:
+The Componenets Workspace includes the following packages:
 
 - **header**: 
 
