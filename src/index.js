@@ -23,7 +23,7 @@ import '@pixel/sw'
  *
  * @module Pages
  */
-import '@pages/card'
+import '@pages/fresh'
 
 /**
  * Handles the router to manage navigation and page rendering.
