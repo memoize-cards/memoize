@@ -23,8 +23,8 @@ import '@pixel/sw'
  *
  * @module Pages
  */
-import '@pages/fresh'
-import '@pages/review'
+import '@pages/create'
+import '@pages/study'
 
 /**
  * Handles the router to manage navigation and page rendering.
