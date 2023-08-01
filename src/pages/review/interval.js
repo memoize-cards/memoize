@@ -1,5 +1,5 @@
 class Review {
-  static get interval () {
+  static get expired () {
     return new Date().getTime()
   }
 }

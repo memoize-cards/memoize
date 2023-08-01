@@ -1,15 +1,9 @@
-import { paint, repaint } from '@standard/h'
-import component from './component'
-import Deck from './deck'
 import EasyFactor from './easyFactor'
 import Interval from './interval'
 import Lapse from './lapse'
-import result from '@standard/result'
 import storage from './storage'
 import type from './type'
 
-@paint(component)
-@storage
 class Card {
   #back
   #front
@@ -17,10 +11,6 @@ class Card {
 
   get back () {
     return (this.#back ??= '')
-  }
-
-  get deck () {
-    return Deck.id
   }
 
   get front () {
@@ -31,12 +21,20 @@ class Card {
     return this.#id
   }
 
+  constructor (id, back, front) {
+    this.#id = id
+    this.#back = back
+    this.#front = front
+  }
+
+  @storage
   again () {
     return {
       interval: Interval.temMinutes
     }
   }
 
+  @storage
   easy () {
     return {
       easyFactor: EasyFactor.value,
@@ -46,6 +44,7 @@ class Card {
     }
   }
 
+  @storage
   good () {
     return {
       easyFactor: EasyFactor.value,
@@ -55,18 +54,19 @@ class Card {
     }
   }
 
+  @storage
   hard () {
     return {
       interval: Interval.twelveHours
     }
   }
 
-  @repaint
-  [result.Ok] (data) {
-    this.#back = data.back
-    this.#front = data.front
-    this.#id = data.id
-    return this
+  static create (data) {
+    return new Card(
+      data.id,
+      data.front,
+      data.back
+    )
   }
 }
 

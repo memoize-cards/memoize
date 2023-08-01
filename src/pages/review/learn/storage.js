@@ -7,7 +7,8 @@ function storage (args, next) {
     const { default: supabase } = await import('@artifact/supabase' /* webpackChunkName: "supabase" */)
     await supabase
       .from('card')
-      .insert([card])
+      .update(card)
+      .eq('id', this.id)
   })
 
   return card
