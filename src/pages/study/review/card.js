@@ -6,19 +6,28 @@ import type from './type'
 
 class Card {
   #id
+  #easyFactor
+  #lapse
 
   get id () {
     return this.#id
   }
 
-  constructor (id) {
+  constructor (id, easyFactor, lapse) {
     this.#id = id
+    this.#easyFactor = easyFactor
+    this.#lapse = lapse
   }
 
   @storage
   again () {
+    this.#easyFactor.again()
+    this.#lapse.again()
     return {
-      interval: Interval.temMinutes
+      easyFactor: this.#easyFactor.value,
+      interval: Interval.oneDay,
+      lapse: this.#lapse.value,
+      type: type.RELEARN
     }
   }
 
@@ -27,8 +36,7 @@ class Card {
     return {
       easyFactor: EasyFactor.value,
       interval: Interval.fourDays,
-      lapse: Lapse.value,
-      type: type.REVIEW
+      lapse: Lapse.value
     }
   }
 
@@ -37,21 +45,24 @@ class Card {
     return {
       easyFactor: EasyFactor.value,
       interval: Interval.oneDay,
-      lapse: Lapse.value,
-      type: type.REVIEW
+      lapse: Lapse.value
     }
   }
 
   @storage
   hard () {
+    this.#easyFactor.hard()
     return {
-      interval: Interval.twelveHours
+      easyFactor: this.#easyFactor.value,
+      interval: 0 /* IVL * HF */
     }
   }
 
   static create (data) {
     return new Card(
-      data.id
+      data.id,
+      EasyFactor.create(data.easyFactor),
+      Lapse.create(data.lapse)
     )
   }
 }
