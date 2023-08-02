@@ -45,9 +45,7 @@ class Card {
   @storage
   good () {
     return {
-      easyFactor: EasyFactor.value,
-      interval: Interval.oneDay,
-      lapse: Lapse.value
+      interval: 0 /* IVL * EF */
     }
   }
 
