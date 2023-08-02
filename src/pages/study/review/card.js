@@ -8,44 +8,43 @@ class Card {
   #id
   #easyFactor
   #interval
-  #lapse
 
   get id () {
     return this.#id
   }
 
-  constructor (id, easyFactor, interval, lapse) {
+  constructor (id, easyFactor, interval) {
     this.#id = id
     this.#easyFactor = easyFactor
     this.#interval = interval
-    this.#lapse = lapse
   }
 
   @storage
   again () {
     this.#easyFactor.again()
-    this.#lapse.again()
     return {
       easyFactor: this.#easyFactor.value,
       interval: Interval.oneDay,
-      lapse: this.#lapse.value,
+      lapse: Lapse.one,
       type: type.RELEARN
     }
   }
 
   @storage
   easy () {
+    this.#easyFactor.easy()
+    this.#interval.easy()
     return {
-      easyFactor: EasyFactor.value,
-      interval: Interval.fourDays,
-      lapse: Lapse.value
+      easyFactor: this.#easyFactor.value,
+      interval: this.#nterval.value
     }
   }
 
   @storage
   good () {
+    this.#interval.good()
     return {
-      interval: 0 /* IVL * EF */
+      easyFactor: this.#interval.value
     }
   }
 
@@ -60,12 +59,10 @@ class Card {
   }
 
   static create (data) {
-    return new Card(
-      data.id,
-      EasyFactor.create(data.easyFactor),
-      Interval.create(data.interval),
-      Lapse.create(data.lapse)
-    )
+    const { id } = data
+    const easyFactor = EasyFactor.create(data.easyFactor)
+    const interval = Interval.create(data.interval, easyFactor)
+    return new Card(id, easyFactor, interval)
   }
 }
 

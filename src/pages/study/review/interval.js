@@ -1,7 +1,9 @@
 import * as f from '@standard/f'
+import EasyBonus from './easyBonus'
 import Hard from './hard'
 
 class Interval {
+  #easyFactor
   #value
 
   get value () {
@@ -12,8 +14,19 @@ class Interval {
     return f.add(new Date().getTime(), (1 * 24 * 60 * 60 * 1000))
   }
 
-  constructor (value) {
+  constructor (value, easyFactor) {
+    this.#easyFactor = easyFactor
     this.#value = value
+  }
+
+  easy () {
+    this.#value = f.multiply(this.value, this.#easyFactor.value, EasyBonus.factor)
+    return this
+  }
+
+  good () {
+    this.#value = f.multiply(this.value, this.#easyFactor.value)
+    return this
   }
 
   hard () {
@@ -21,8 +34,8 @@ class Interval {
     return this
   }
 
-  static create (value) {
-    return new Interval(value)
+  static create (value, easyFactor) {
+    return new Interval(value, easyFactor)
   }
 }
 

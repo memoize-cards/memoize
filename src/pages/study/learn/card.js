@@ -1,6 +1,5 @@
 import EasyFactor from './easyFactor'
 import Interval from './interval'
-import Lapse from './lapse'
 import storage from './storage'
 import type from './type'
 
@@ -27,7 +26,6 @@ class Card {
     return {
       easyFactor: EasyFactor.value,
       interval: Interval.fourDays,
-      lapse: Lapse.value,
       type: type.REVIEW
     }
   }
@@ -37,7 +35,6 @@ class Card {
     return {
       easyFactor: EasyFactor.value,
       interval: Interval.oneDay,
-      lapse: Lapse.value,
       type: type.REVIEW
     }
   }
@@ -50,9 +47,7 @@ class Card {
   }
 
   static create (data) {
-    return new Card(
-      data.id
-    )
+    return new Card(data.id)
   }
 }
 
