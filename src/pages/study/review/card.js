@@ -7,15 +7,17 @@ import type from './type'
 class Card {
   #id
   #easyFactor
+  #interval
   #lapse
 
   get id () {
     return this.#id
   }
 
-  constructor (id, easyFactor, lapse) {
+  constructor (id, easyFactor, interval, lapse) {
     this.#id = id
     this.#easyFactor = easyFactor
+    this.#interval = interval
     this.#lapse = lapse
   }
 
@@ -52,9 +54,10 @@ class Card {
   @storage
   hard () {
     this.#easyFactor.hard()
+    this.#interval.hard()
     return {
       easyFactor: this.#easyFactor.value,
-      interval: 0 /* IVL * HF */
+      interval: this.#interval.value
     }
   }
 
@@ -62,6 +65,7 @@ class Card {
     return new Card(
       data.id,
       EasyFactor.create(data.easyFactor),
+      Interval.create(data.interval),
       Lapse.create(data.lapse)
     )
   }
