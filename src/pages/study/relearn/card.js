@@ -19,7 +19,7 @@ class Card {
 
   @storage
   again () {
-    this.#lapse.again()
+    this.#lapse.inc1()
     return {
       interval: Interval.temMinutes,
       lapse: this.#lapse.value
@@ -54,9 +54,8 @@ class Card {
   }
 
   static create (data) {
-    const { id } = data
     const lapse = Lapse.create(data.lapse)
-    return new Card(id, lapse)
+    return new Card(data.id, lapse)
   }
 }
 

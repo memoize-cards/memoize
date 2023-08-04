@@ -21,7 +21,7 @@ class Card {
 
   @storage
   again () {
-    this.#easyFactor.again()
+    this.#easyFactor.dec20()
     return {
       easyFactor: this.#easyFactor.value,
       interval: Interval.oneDay,
@@ -32,8 +32,8 @@ class Card {
 
   @storage
   easy () {
-    this.#easyFactor.easy()
-    this.#interval.easy()
+    this.#easyFactor.inc15()
+    this.#interval.xEFxEB()
     return {
       easyFactor: this.#easyFactor.value,
       interval: this.#nterval.value
@@ -42,7 +42,7 @@ class Card {
 
   @storage
   good () {
-    this.#interval.good()
+    this.#interval.xEF()
     return {
       easyFactor: this.#interval.value
     }
@@ -50,8 +50,8 @@ class Card {
 
   @storage
   hard () {
-    this.#easyFactor.hard()
-    this.#interval.hard()
+    this.#easyFactor.dec15()
+    this.#interval.dec20()
     return {
       easyFactor: this.#easyFactor.value,
       interval: this.#interval.value
@@ -59,10 +59,9 @@ class Card {
   }
 
   static create (data) {
-    const { id } = data
     const easyFactor = EasyFactor.create(data.easyFactor)
     const interval = Interval.create(data.interval, easyFactor)
-    return new Card(id, easyFactor, interval)
+    return new Card(data.id, easyFactor, interval)
   }
 }
 

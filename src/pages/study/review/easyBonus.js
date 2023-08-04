@@ -1,5 +1,5 @@
 class EasyBonus {
-  static get factor () {
+  static get value () {
     return 1.3
   }
 }

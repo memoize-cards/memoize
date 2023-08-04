@@ -15,7 +15,7 @@ class Lapse {
     return this.#value = value
   }
 
-  again () {
+  inc1 () {
     this.#value = f.inc(this.value)
     return this
   }

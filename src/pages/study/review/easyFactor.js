@@ -7,17 +7,37 @@ class EasyFactor {
     return (this.#value ?? 2.5)
   }
 
+  static get #minValue () {
+    return 1.3
+  }
+
   constructor (value) {
     this.#value = value
   }
 
-  again () {
-    this.#value = f.sub(this.value, 0.20)
+  dec20 () {
+    this.#value = f
+      .from(this.value)
+      .pipe(f.sub(0.20))
+      .pipe(f.max(EasyFactor.#minValue))
+      .done()
     return this
   }
 
-  hard () {
-    this.#value = f.sub(this.value, 0.15)
+  inc15 () {
+    this.#value = f
+      .from(this.value)
+      .pipe(f.add(0.15))
+      .done()
+    return this
+  }
+
+  dec15 () {
+    this.#value = f
+      .from(this.value)
+      .pipe(f.sub(0.15))
+      .pipe(f.max(EasyFactor.#minValue))
+      .done()
     return this
   }
 

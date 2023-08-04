@@ -1,6 +1,6 @@
 import * as f from '@standard/f'
 import EasyBonus from './easyBonus'
-import Hard from './hard'
+import HardFactor from './hardFactor'
 
 class Interval {
   #easyFactor
@@ -14,23 +14,40 @@ class Interval {
     return f.add(new Date().getTime(), (1 * 24 * 60 * 60 * 1000))
   }
 
+  static get #oneYear () {
+    return f.add(new Date().getTime(), (365 * 24 * 60 * 60 * 1000))
+  }
+
   constructor (value, easyFactor) {
     this.#easyFactor = easyFactor
     this.#value = value
   }
 
-  easy () {
-    this.#value = f.multiply(this.value, this.#easyFactor.value, EasyBonus.factor)
+  xEFxEB () {
+    this.#value = f
+      .from(this.value)
+      .pipe(f.multiply(this.#easyFactor.value))
+      .pipe(f.multiply(EasyBonus.value))
+      .pipe(f.min(Interval.#oneYear))
+      .done()
     return this
   }
 
-  good () {
-    this.#value = f.multiply(this.value, this.#easyFactor.value)
+  xEF () {
+    this.#value = f
+      .from(this.value)
+      .pipe(f.multiply(this.#easyFactor.value))
+      .pipe(f.min(Interval.#oneYear))
+      .done()
     return this
   }
 
-  hard () {
-    this.#value = f.multiply(this.value, Hard.factor)
+  xHF () {
+    this.#value = f
+      .from(this.value)
+      .pipe(f.multiply(HardFactor.value))
+      .pipe(f.min(Interval.#oneYear))
+      .done()
     return this
   }
 
