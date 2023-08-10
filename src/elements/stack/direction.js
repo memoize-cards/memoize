@@ -1,19 +1,19 @@
 /**
- * @typedef {'row'|'column'} DirectionModifier - One of the valid direction modifiers.
+ * @typedef {'row'|'column'} Directions - One of the valid direction values.
  */
-const modifiers = [
+const directions = [
   'row',
   'column'
 ]
 
 /**
- * Returns the first direction modifier present in the properties or the default value 'row'.
+ * Returns the first direction value present in the properties or the default value 'row'.
  *
- * @param {Object.<DirectionModifier, boolean>} props - The component properties containing the direction modifiers.
- * @returns {DirectionModifier} The first direction modifier found or 'row' if none is present.
+ * @param {Object.<Directions, boolean>} props - The component properties containing the direction values.
+ * @returns {string} The calculated direction. One of: 'row', 'column' or 'row' (default).
  */
 function direction (props) {
-  return modifiers.find((modifier) => props[modifier]) ?? 'row'
+  return directions.find((key) => props[key]) ?? 'row'
 }
 
 export default direction

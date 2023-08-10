@@ -1,43 +1,39 @@
 /**
- * Array of allowed color names.
- * @type {string[]}
+ * @typedef {'complete'|'danger'|'info'|'master'|'menu'|'primary'|'success'|'warning'} Color - One of the valid color.
  */
 const colors = [
-  'neutral',
-  'black',
-  'white'
+  'complete',
+  'danger',
+  'info',
+  'master',
+  'menu',
+  'primary',
+  'success',
+  'warning'
 ]
 
 /**
- * Array of allowed color modifiers.
- * @type {string[]}
+ * @typedef {'darkest'|'darker'|'dark'|'light'|'lighter'|'lightest'} Modifier - One of the valid color modifiers.
  */
 const modifiers = [
-  'm50',
-  'm100',
-  'm200',
-  'm300',
-  'm400',
-  'm500',
-  'm600',
-  'm700',
-  'm800',
-  'm900',
-  'a100',
-  'a200',
-  'a400',
-  'a700'
+  'darkest',
+  'darker',
+  'dark',
+  'light',
+  'lighter',
+  'lightest'
 ]
 
 /**
  * Computes the CSS variable representing the desired color based on the provided props.
  *
- * @param {Object} props - The props object containing color and modifier properties.
- * @returns {string} The CSS variable representing the desired color with the applied modifier (if any).
+ * @param {Object.<Color, boolean>} props - The props object containing color properties.
+ * @param {Object.<Modifier, boolean>} props - The props object containing modifier properties.
+ * @returns {string} The calculated color. One of: 'complete', 'danger', 'info', 'master', 'menu', 'primary', 'success', 'warning' or 'master' (default).
  */
 function color (props) {
-  const color = colors.find((color) => props[color]) ?? 'black'
-  const modifier = modifiers.find((modifier) => props[modifier])
+  const color = colors.find((key) => props[key]) ?? 'master'
+  const modifier = modifiers.find((key) => props[key])
   return `var(--color-${[color, modifier].filter(Boolean).join('-')})`
 }
 

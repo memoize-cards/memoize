@@ -1,20 +1,20 @@
 /**
- * @typedef {'start'|'center'|'end'} ContentModifier - One of the valid content modifiers.
+ * @typedef {'start'|'center'|'end'} Contents - One of the valid content values.
  */
-const modifiers = [
+const contents = [
   'start',
   'center',
   'end'
 ]
 
 /**
- * Returns the first content modifier present in the properties or the default value 'start'.
+ * Returns the first content value present in the properties or the default value 'start'.
  *
- * @param {Object.<ContentModifier, boolean>} props - The component properties containing the content modifiers.
- * @returns {ContentModifier} The first content modifier found or 'start' if none is present.
+ * @param {Object.<Contents, boolean>} props - The component properties containing the content values.
+ * @returns {string} The calculated content. One of: 'start', 'center', 'end', or 'start' (default).
  */
 function content (props) {
-  return modifiers.find((modifier) => props[modifier]) ?? 'start'
+  return contents.find((key) => props[key]) ?? 'start'
 }
 
 export default content

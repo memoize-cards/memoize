@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`@elements/stack Should create an stack based on the tag name 1`] = `
+<div
+  style="align-items: start; display: flex; flex-direction: row; gap: var(--spacing_inset-xs); justify-content: start;"
+/>
+`;

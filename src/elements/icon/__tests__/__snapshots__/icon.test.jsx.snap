@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`@elements/icon Should create an icon based on the tag name 1`] = `
+<img
+  class="class-name-mock"
+  loading="lazy"
+  src="/url-mock.svg"
+/>
+`;
+
+exports[`@elements/icon Should pass the className to the icon 1`] = `
+<img
+  class="class-name-mock custom-class-name"
+  loading="lazy"
+  src="/url-mock.svg"
+/>
+`;

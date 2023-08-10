@@ -1,8 +1,7 @@
 /**
- * Array of allowed font weight modifiers.
- * @type {string[]}
+ * @typedef {'bold'|'medium'|'regular'} Weight - One of the valid weight
  */
-const modifiers = [
+const weights = [
   'bold',
   'medium',
   'regular'
@@ -11,12 +10,12 @@ const modifiers = [
 /**
  * Computes the CSS variable representing the desired font weight based on the provided props.
  *
- * @param {Object} props - The props object containing font weight modifier properties.
- * @returns {string} The CSS variable representing the desired font weight.
+ * @param {Object.<Weight, boolean>} props - The props object containing font weight value properties.
+ * @returns {string} The calculated weight. One of: 'bold', 'medium', 'regular' or 'regular' (default).
  */
 function weight (props) {
-  const modifier = modifiers.find((modifier) => props[modifier]) ?? 'regular'
-  return `var(--font-weight-${modifier})`
+  const weight = weights.find((key) => props[key]) ?? 'regular'
+  return `var(--font-weight-${weight})`
 }
 
 export default weight

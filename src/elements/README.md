@@ -6,7 +6,7 @@ Workspace Elements is a collection of reusable and customizable components desig
 
 The Elements Workspace includes the following packages:
 
-- **icon**: The `Icon` component is a versatile and customizable icon library that provides a collection of SVG icons for use in your web applications.
+- **icon**: The `icon` component is a versatile and customizable icon library that provides a collection of SVG icons for use in your web applications.
 - **stack**: The `stack` component is a flexible and versatile styled component that utilizes flexbox properties for layout management.
 - **text**: The `text` package is a utility for generating styled text components with dynamic styles based on the properties accessed.
 

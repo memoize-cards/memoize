@@ -1,16 +1,16 @@
 /**
- * @typedef {'top'|'middle'|'bottom'} AlignmentModifier - One of the valid alignment modifiers.
+ * @typedef {'top'|'middle'|'bottom'} Alignments - One of the valid align values.
  */
-const modifiers = [
+const alignments = [
   'top',
   'middle',
   'bottom'
 ]
 
 /**
- * Maps alignment modifiers to alignment keywords.
+ * Maps alignment values to alignment keywords.
  *
- * @type {Object.<AlignmentModifier, string>}
+ * @type {Object.<Alignments, string>}
  */
 const mapper = {
   top: 'start',
@@ -21,11 +21,11 @@ const mapper = {
 /**
  * Returns the alignment keyword based on the provided properties.
  *
- * @param {Props} props - The component properties containing the alignment modifiers.
- * @returns {string} The corresponding alignment keyword.
+ * @param {Object.<Alignments, boolean>} props - The component properties containing the alignment values.
+ * @returns {string} The calculated alignment. One of: 'top', 'middle', 'bottom', or 'top' (default).
  */
 function align (props) {
-  return mapper[modifiers.find((modifier) => props[modifier]) ?? mapper.top]
+  return mapper[alignments.find((key) => props[key])] ?? mapper.top
 }
 
 export default align

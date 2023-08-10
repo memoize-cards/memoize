@@ -1,5 +1,6 @@
 import CaretLeft from './media/caretLeft.svg'
 import CaretRight from './media/caretRight.svg'
+import Live from './media/live.svg'
 import TrendUp from './media/trendUp.svg'
 
 /**
@@ -9,7 +10,7 @@ import TrendUp from './media/trendUp.svg'
  * @returns {import('path/to/icon/component')} The icon component corresponding to the provided key.
  */
 function mapper (key) {
-  return { CaretLeft, CaretRight, TrendUp }[key]
+  return { CaretLeft, CaretRight, Live, TrendUp }[key]
 }
 
 export default mapper
