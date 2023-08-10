@@ -1,8 +1,5 @@
 import css from '@standard/css'
 
-/**
- * CSS-in-JS tokens for colors values.
- */
 const style = css`
   :root {
     --color-master-darkest: #0a0a0a;

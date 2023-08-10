@@ -1,8 +1,5 @@
 import css from '@standard/css'
 
-/**
- * CSS-in-JS tokens for border radius values.
- */
 const style = css`
   :root {
     --border-radius-none: 0;

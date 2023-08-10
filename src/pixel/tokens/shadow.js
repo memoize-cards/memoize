@@ -1,8 +1,5 @@
 import css from '@standard/css'
 
-/**
- * CSS-in-JS tokens for shadow values.
- */
 const style = css`
   :root {
     --shadow-level-0: none;

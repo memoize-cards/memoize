@@ -1,8 +1,5 @@
 import css from '@standard/css'
 
-/**
- * CSS-in-JS tokens for spacing values.
- */
 const style = css`
   :root {
     --spacing-quarck: 4px;

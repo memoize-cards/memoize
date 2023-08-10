@@ -1,8 +1,5 @@
 import css from '@standard/css'
 
-/**
- * CSS-in-JS tokens for line height values.
- */
 const style = css`
   :root {
     --line-height-default: 100%;

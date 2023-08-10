@@ -1,8 +1,5 @@
 import css from '@standard/css'
 
-/**
- * CSS-in-JS tokens for font size values.
- */
 const style = css`
   :root {
     --font-size-xxxs: 12px;

@@ -1,8 +1,5 @@
 import css from '@standard/css'
 
-/**
- * CSS-in-JS tokens for opacity values.
- */
 const style = css`
   :root {
     --opacity-level-semiopaque: 0.72;

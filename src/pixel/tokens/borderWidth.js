@@ -1,8 +1,5 @@
 import css from '@standard/css'
 
-/**
- * CSS-in-JS tokens for border width values.
- */
 const style = css`
   :root {
     --border-width-none: 0;
