@@ -51,7 +51,7 @@ class Card {
   @storage
   hard () {
     this.#easyFactor.dec15()
-    this.#interval.dec20()
+    this.#interval.xHF()
     return {
       easyFactor: this.#easyFactor.value,
       interval: this.#interval.value
