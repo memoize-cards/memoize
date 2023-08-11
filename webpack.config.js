@@ -58,9 +58,13 @@ module.exports = {
         }
       })
     ],
-    runtimeChunk: 'single',
+    runtimeChunk: 'multiple',
     splitChunks: {
       cacheGroups: {
+        commons: {
+          chunks: 'all',
+          name: 'commons'
+        },
         vendor: {
           chunks: 'all',
           name: 'vendors',
