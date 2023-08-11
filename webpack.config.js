@@ -61,10 +61,6 @@ module.exports = {
     runtimeChunk: 'multiple',
     splitChunks: {
       cacheGroups: {
-        commons: {
-          chunks: 'all',
-          name: 'commons'
-        },
         vendor: {
           chunks: 'all',
           name: 'vendors',
@@ -102,7 +98,7 @@ module.exports = {
       inject: 'body',
       template: 'index.html'
     }),
-    new InlineChunkHtmlPlugin(HtmlWebpackPlugin, [/(app|commons)/]),
+    new InlineChunkHtmlPlugin(HtmlWebpackPlugin, [/(app)/]),
     new BundleAnalyzerPlugin({
       analyzerMode: process.env.ANALYZER_MODE
     }),
