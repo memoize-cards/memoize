@@ -1,6 +1,7 @@
 require('dotenv').config({ override: true })
 
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
+const { BundleStatsWebpackPlugin } = require('bundle-stats-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
@@ -56,7 +57,17 @@ module.exports = {
           safari10: true
         }
       })
-    ]
+    ],
+    runtimeChunk: 'single',
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          chunks: 'all',
+          name: 'vendors',
+          test: /[\\/]node_modules[\\/]/
+        }
+      }
+    }
   },
   output: {
     clean: true,
@@ -90,7 +101,8 @@ module.exports = {
     new InlineChunkHtmlPlugin(HtmlWebpackPlugin, [/(app)/]),
     new BundleAnalyzerPlugin({
       analyzerMode: process.env.ANALYZER_MODE
-    })
+    }),
+    new BundleStatsWebpackPlugin()
   ],
   resolve: {
     alias: {
@@ -99,6 +111,7 @@ module.exports = {
       '@directive': path.resolve(__dirname, 'src/directive/'),
       '@elements': path.resolve(__dirname, 'src/elements/'),
       '@models': path.resolve(__dirname, 'src/models/'),
+      '@oauth': path.resolve(__dirname, 'src/oauth/'),
       '@pages': path.resolve(__dirname, 'src/pages/'),
       '@pixel': path.resolve(__dirname, 'src/pixel/'),
       '@polyfill': path.resolve(__dirname, 'src/polyfill/'),

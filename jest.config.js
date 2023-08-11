@@ -95,6 +95,7 @@ module.exports = {
     '^@directive/(.*)$': '<rootDir>/directive/$1',
     '^@elements/(.*)$': '<rootDir>/elements/$1',
     '^@models/(.*)$': '<rootDir>/models/$1',
+    '^@oauth/(.*)$': '<rootDir>/oauth/$1',
     '^@pages/(.*)$': '<rootDir>/pages/$1',
     '^@pixel/(.*)$': '<rootDir>/pixel/$1',
     '^@polyfill/(.*)$': '<rootDir>/polyfill/$1',

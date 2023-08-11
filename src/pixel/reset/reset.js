@@ -8,6 +8,10 @@ const style = css`
     margin: 0;
     padding: 0;
   }
+
+  body {
+    background-color: var(--color-master-lightest);
+  }
 `
 
 export default style

@@ -12,6 +12,7 @@ const stack = new Proxy({}, {
       flex-direction: ${direction};
       gap: ${gap};
       justify-content: ${content};
+      width: 100%;
     `
   }
 })

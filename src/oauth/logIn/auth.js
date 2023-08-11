@@ -9,7 +9,6 @@ import user from './user'
 class Auth {
   #email
   #password
-  #state
 
   get email () {
     return (this.#email ??= '')
@@ -17,10 +16,6 @@ class Auth {
 
   get password () {
     return (this.#password ??= '')
-  }
-
-  get state () {
-    return (this.#state ??= '')
   }
 
   @filter.prevent
@@ -41,7 +36,6 @@ class Auth {
   @repaint
   [user.onInvalid] () {
     this.#password = ''
-    this.#state = 'invalid'
     return this
   }
 }

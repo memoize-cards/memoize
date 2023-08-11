@@ -1,11 +1,12 @@
 import { urlFor } from '@standard/router'
 import h from '@standard/h'
-import Link from '@elements/link'
 import style from './style'
+import text from '@elements/text'
+import translate from './translate'
 
 function component () {
   return (
-    <Link className={style.login__forgotPassword} href={urlFor('forgotPassword')}>Forgot password</Link>
+    <text.A className={style.login__forgotPassword} href={urlFor('forgotPassword')} primary xxs medium>{translate.forgotPassword}</text.A>
   )
 }
 

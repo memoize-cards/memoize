@@ -23,6 +23,10 @@ import '@pixel/sw'
  *
  * @module Pages
  */
+import '@oauth/checkYourEmail'
+import '@oauth/forgotPassword'
+import '@oauth/logIn'
+import '@oauth/signUp'
 import '@pages/create'
 import '@pages/study'
 

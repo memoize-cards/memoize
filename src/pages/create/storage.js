@@ -1,10 +1,10 @@
 import interceptor from '@standard/interceptor'
+import supabase from '@artifact/supabase'
 
 function storage (args, next) {
   const card = next(...args)
 
   setImmediate(async () => {
-    const { default: supabase } = await import('@artifact/supabase' /* webpackChunkName: "supabase" */)
     await supabase
       .from('card')
       .insert([card])
