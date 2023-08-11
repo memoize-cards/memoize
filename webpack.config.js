@@ -99,7 +99,7 @@ module.exports = {
       inject: 'body',
       template: 'index.html'
     }),
-    new InlineChunkHtmlPlugin(HtmlWebpackPlugin, [/(app)/]),
+    new InlineChunkHtmlPlugin(HtmlWebpackPlugin, [/(app|common|runtime)/]),
     new BundleAnalyzerPlugin({
       analyzerMode: process.env.ANALYZER_MODE
     }),
