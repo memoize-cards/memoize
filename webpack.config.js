@@ -66,7 +66,8 @@ module.exports = {
           name: 'vendors',
           test: /[\\/]node_modules[\\/]/
         }
-      }
+      },
+      name: 'common'
     }
   },
   output: {
