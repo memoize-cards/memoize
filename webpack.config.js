@@ -58,7 +58,7 @@ module.exports = {
         }
       })
     ],
-    runtimeChunk: 'multiple',
+    runtimeChunk: 'single',
     splitChunks: {
       cacheGroups: {
         vendor: {
