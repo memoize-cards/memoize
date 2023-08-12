@@ -1,0 +1,12 @@
+import Button from '@elements/button'
+import h from '@standard/h'
+import style from './style'
+import translate from './translate'
+
+function component () {
+  return (
+    <Button className={style.passwordReset__continue} primary>{translate.continue}</Button>
+  )
+}
+
+export default component
