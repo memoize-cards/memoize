@@ -1,4 +1,4 @@
-import h from '@kuba/h'
+import h from '@standard/h'
 
 function component () {
   return (
