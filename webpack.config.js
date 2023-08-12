@@ -103,7 +103,9 @@ module.exports = {
     new BundleAnalyzerPlugin({
       analyzerMode: process.env.ANALYZER_MODE
     }),
-    new BundleStatsWebpackPlugin()
+    new BundleStatsWebpackPlugin({
+      baselineFilepath: './../baseline.json'
+    })
   ],
   resolve: {
     alias: {
