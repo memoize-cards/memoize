@@ -5,11 +5,11 @@ import Header from './header'
 import Main from './main'
 import OpenEmailApp from './openEmailApp'
 
-function component () {
+function component (auth) {
   return (
     <Main>
       <Header />
-      <Form>
+      <Form onSubmit={() => auth.openEmailApp()}>
         <OpenEmailApp />
       </Form>
       <Footer />
