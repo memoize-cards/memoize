@@ -21,13 +21,13 @@ class Auth {
   }
 
   @repaint
-  [user.onError] () {
+  [user.onError] (_error) {
     this.#email = ''
     return this
   }
 
   [user.onPasswordReset] () {
-    location.assign(urlFor('checkYourEmail'))
+    location.assign(`${urlFor('checkYourEmail')}?email=${this.email}`)
     return this
   }
 }
