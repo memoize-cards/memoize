@@ -17,6 +17,7 @@ import '@oauth/setNewPassword'
 import '@oauth/signUp'
 
 import '@pages/create'
+import '@pages/home'
 import '@pages/study'
 
 router.handle()
