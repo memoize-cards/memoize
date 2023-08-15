@@ -1,15 +1,12 @@
 import h from '@standard/h'
-import Master from '@models/master'
 import stack from '@elements/stack'
 import style from './style'
 
 function component (_props, children) {
   return (
-    <Master>
-      <stack.Main className={style.signUp__main} column middle center giant>
-        {children}
-      </stack.Main>
-    </Master>
+    <stack.Main className={style.signUp__main} column middle center giant>
+      {children}
+    </stack.Main>
   )
 }
 

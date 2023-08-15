@@ -90,15 +90,15 @@ module.exports = {
 
   // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
   moduleNameMapper: {
+    '^@app/(.*)$': '<rootDir>/app/$1',
     '^@artifact/(.*)$': '<rootDir>/artifact/$1',
     '^@components/(.*)$': '<rootDir>/components/$1',
     '^@directive/(.*)$': '<rootDir>/directive/$1',
     '^@elements/(.*)$': '<rootDir>/elements/$1',
-    '^@models/(.*)$': '<rootDir>/models/$1',
     '^@oauth/(.*)$': '<rootDir>/oauth/$1',
-    '^@pages/(.*)$': '<rootDir>/pages/$1',
     '^@pixel/(.*)$': '<rootDir>/pixel/$1',
     '^@polyfill/(.*)$': '<rootDir>/polyfill/$1',
+    '^@site/(.*)$': '<rootDir>/site/$1',
     '^@standard/(.*)$': '<rootDir>/standard/$1'
   },
 

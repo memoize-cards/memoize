@@ -1,5 +1,3 @@
-import router from '@standard/router'
-
 import '@polyfill/group'
 import '@polyfill/requestAnimationFrame'
 import '@polyfill/setImmediate'
@@ -16,8 +14,11 @@ import '@oauth/passwordReset'
 import '@oauth/setNewPassword'
 import '@oauth/signUp'
 
-import '@pages/create'
-import '@pages/home'
-import '@pages/study'
+import '@app/create'
+import '@app/study'
+
+import '@site/home'
+
+import router from '@standard/router'
 
 router.handle()

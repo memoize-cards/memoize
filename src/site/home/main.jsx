@@ -4,7 +4,7 @@ import style from './style'
 
 function component (_props, children) {
   return (
-    <stack.Main className={style.checkYourEmail__main} column middle center giant>
+    <stack.Main className={style.home__main} column middle center giant>
       {children}
     </stack.Main>
   )
