@@ -20,6 +20,7 @@ import '@app/study'
 
 import '@site/home'
 import '@site/privacyPolicy'
+import '@site/termsOfUse'
 
 import router from '@standard/router'
 
