@@ -2,8 +2,8 @@ import { paint } from '@standard/h'
 import component from './component'
 
 @paint(component)
-class Dashboard {
+class PrivacyPolicy {
 
 }
 
-export default Dashboard
+export default PrivacyPolicy
