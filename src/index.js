@@ -19,6 +19,7 @@ import '@app/dashboard'
 import '@app/study'
 
 import '@site/home'
+import '@site/privacyPolicy'
 
 import router from '@standard/router'
 
