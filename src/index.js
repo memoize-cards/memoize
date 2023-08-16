@@ -15,6 +15,7 @@ import '@oauth/setNewPassword'
 import '@oauth/signUp'
 
 import '@app/create'
+import '@app/dashboard'
 import '@app/study'
 
 import '@site/home'
