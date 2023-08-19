@@ -1,4 +1,5 @@
-<svg width="426" height="426" viewBox="0 0 426 426" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="40.4853" y="213.019" width="244" height="244" transform="rotate(-45 40.4853 213.019)" stroke="#6D5CAE" stroke-width="12"/>
-<line x1="212.88" y1="38.7438" x2="212.88" y2="212.744" stroke="#6D5CAE" stroke-width="12"/>
+<svg width="490" height="490" viewBox="0 0 490 490" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="490" height="490" rx="8" fill="#FAFAFA"/>
+<rect x="72.4853" y="245.019" width="244" height="244" transform="rotate(-45 72.4853 245.019)" stroke="#6D5CAE" stroke-width="12"/>
+<line x1="244.88" y1="70.7438" x2="244.88" y2="244.744" stroke="#6D5CAE" stroke-width="12"/>
 </svg>
