@@ -24,4 +24,10 @@ describe('@elements/text/align', () => {
     const value = align(props)
     expect(value).toBe('right')
   })
+
+  test('It should return justify when the right position is declared', () => {
+    const props = { justify: true }
+    const value = align(props)
+    expect(value).toBe('justify')
+  })
 })

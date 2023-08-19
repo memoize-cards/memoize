@@ -1,7 +1,8 @@
 const modifiers = [
   'left',
   'center',
-  'right'
+  'right',
+  'justify'
 ]
 
 function align (props) {
