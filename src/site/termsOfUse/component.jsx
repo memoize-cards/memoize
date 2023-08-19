@@ -1,3 +1,4 @@
+import { urlFor } from '@standard/router'
 import h from '@standard/h'
 import HistoryBack from '@components/historyBack'
 import stack from '@elements/stack'
@@ -40,6 +41,9 @@ function component () {
           By proceeding with the creation of an account on the Memoize App, the User expresses their consent and agreement with the above-established terms. If the User does not agree with these terms, they should not proceed with the creation of an account on the App.
         </text.P>
       </stack.Article>
+      <stack.Footer className={style.termsOfUse__footer} middle center>
+        <text.A href={urlFor('home')} primary xxs medium>Back to home</text.A>
+      </stack.Footer>
     </stack.Main>
   )
 }
