@@ -1,7 +1,7 @@
 {
   "name": "Memoize",
 	"short_name" : "Memoize",
-  "description": "O Memoize é um aplicativo avançado de flashcards projetado para otimizar o processo de aprendizado e memorização",
+  "description": "An advanced flashcard application designed to optimize the learning and memorization process",
 	"display" : "standalone",
   "orientation" : "portrait",
 	"url" : "https://memoize.cards",
