@@ -5,16 +5,12 @@ import supabase from '@artifact/supabase'
 const { onCreated, onInvalid } = magic
 
 const create = interceptor(function (args, next) {
-  setImmediate(() => {
+  setImmediate(async () => {
     const { email, name, password } = this
-    supabase
-      .auth
-      .signUp({ email, password, options: { data: { name } } })
-      .then(({ data, error }) => (
-        error
-          ? this[onInvalid]?.(error)
-          : this[onCreated]?.(data)
-      ))
+    const { data, error } = await supabase.auth.signUp({ email, password, options: { data: { name } } })
+    error
+      ? this[onInvalid]?.(error)
+      : this[onCreated]?.(data)
   })
   return next(...args)
 })

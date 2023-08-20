@@ -29,7 +29,7 @@ class Auth {
 
   @cookie.setUser
   [user.onAuthenticated] (_user) {
-    location.assign(urlFor('home'))
+    location.assign(urlFor('dashboard'))
     return this
   }
 

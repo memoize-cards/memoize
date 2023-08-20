@@ -2,6 +2,7 @@ import * as filter from '@standard/filter'
 import { paint, repaint } from '@standard/h'
 import { urlFor } from '@standard/router'
 import component from './component'
+import cookie from './cookie'
 import user from './user'
 
 @paint(component)
@@ -32,13 +33,14 @@ class Auth {
     return this
   }
 
+  @cookie.setUser
   [user.onCreated] (_user) {
-    location.assign(urlFor('login'))
+    location.assign(urlFor('dashboard'))
     return this
   }
 
   @repaint
-  [user.onInvalid] () {
+  [user.onInvalid] (_error) {
     this.#password = ''
     return this
   }
