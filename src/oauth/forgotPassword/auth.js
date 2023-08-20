@@ -26,7 +26,7 @@ class Auth {
     return this
   }
 
-  [user.onPasswordReset] () {
+  [user.onPasswordReset] (_data) {
     location.assign(`${urlFor('checkYourEmail')}?email=${this.email}`)
     return this
   }

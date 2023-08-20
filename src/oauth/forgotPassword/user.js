@@ -6,17 +6,13 @@ import supabase from '@artifact/supabase'
 const { onError, onPasswordReset } = magic
 
 const resetPassword = interceptor(function (args, next) {
-  setImmediate(() => {
+  setImmediate(async () => {
     const { email } = this
-    const redirectTo = urlFor('setNewPassword')
-    supabase
-      .auth
-      .resetPasswordForEmail(email, { redirectTo })
-      .then(({ data, error }) => (
-        error
-          ? this[onError]?.(error)
-          : this[onPasswordReset]?.(data)
-      ))
+    const redirectTo = `https://memoize.cards${urlFor('setNewPassword')}`
+    const { data, error } = await supabase.auth.resetPasswordForEmail(email, { redirectTo })
+    error
+      ? this[onError]?.(error)
+      : this[onPasswordReset]?.(data)
   })
   return next(...args)
 })
