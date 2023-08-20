@@ -3,7 +3,9 @@ import Main from './main'
 
 function component () {
   return (
-    <Main />
+    <Main>
+      Ola, deMGoncalves
+    </Main>
   )
 }
 

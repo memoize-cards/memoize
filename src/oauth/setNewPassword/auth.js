@@ -15,16 +15,16 @@ class Auth {
   @filter.prevent
   @filter.formData
   @user.setNewPassword
-  SetNewPassword (data) {
+  setNewPassword (data) {
     this.#password = data.password
     return this
   }
 
-  [user.onError] () {
+  [user.onError] (_error) {
     return this
   }
 
-  [user.onPasswordReset] () {
+  [user.onPasswordReset] (_data) {
     location.assign(urlFor('passwordReset'))
     return this
   }

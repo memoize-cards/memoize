@@ -9,7 +9,7 @@ function component (auth) {
   return (
     <Main>
       <Header />
-      <Form onSubmit={() => auth.continue()}>
+      <Form onSubmit={(e) => auth.continue(e)}>
         <Continue />
       </Form>
       <Footer />

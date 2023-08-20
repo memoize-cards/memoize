@@ -7,7 +7,7 @@ import component from './component'
 class Auth {
   @filter.prevent
   continue () {
-    location.assign(urlFor('home'))
+    location.assign(urlFor('logIn'))
     return this
   }
 }
