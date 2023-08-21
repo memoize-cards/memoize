@@ -3,11 +3,13 @@ import h from '@standard/h'
 import Main from './main'
 import text from '@elements/text'
 import User from './user'
+import Stats from './stats'
 
 function component () {
   return (
     <Main>
       <User />
+      <Stats />
       <text.A href={urlFor('logOut')} xxxs>logout</text.A>
     </Main>
   )
