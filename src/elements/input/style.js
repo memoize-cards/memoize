@@ -24,9 +24,9 @@ const style = css`
     width: 100%;
   }
 
-  .input:hover,
+  .input:active,
   .input:focus,
-  .input:active {
+  .input:hover {
     outline: 0;
   }
 

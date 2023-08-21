@@ -2,11 +2,12 @@ import { urlFor } from '@standard/router'
 import h from '@standard/h'
 import Main from './main'
 import text from '@elements/text'
+import User from './user'
 
-function component (dashboard) {
+function component () {
   return (
     <Main>
-      <text.H1 master dark lg bold>Ola, {dashboard.name}</text.H1><br />
+      <User />
       <text.A href={urlFor('logOut')} xxxs>logout</text.A>
     </Main>
   )
