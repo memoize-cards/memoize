@@ -34,10 +34,12 @@ Este aplicativo é open source e estamos super animados para ver você colaboran
 
 ### Doações e Apoio 💖
 
-Se você ama o Memoize e quer nos ajudar a continuar melhorando, considere fazer uma doação em nosso apoia.se. Cada contribuição faz uma enorme diferença no nosso projeto!
+Se você ama o Memoize e quer nos ajudar a continuar melhorando, considere fazer uma doação em nosso ["Buy Me a Coffe"](https://www.buymeacoffee.com/memoize). Cada contribuição faz uma enorme diferença no nosso projeto!
+
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/yellow_img.png)](https://www.buymeacoffee.com/memoize)
 
 ### Vamos Começar! 🚀
 
-Não perca mais tempo! Baixe o Memoize agora mesmo e comece sua jornada de aprendizado incrível. Junte-se a nós e vamos dominar o conhecimento juntos!
+Não perca mais tempo! Acesse o Memoize agora mesmo e comece sua jornada de aprendizado incrível. Junte-se a nós e vamos dominar o conhecimento juntos!
 
 Agradecemos por fazer parte da família Memoize! 🎉📘
