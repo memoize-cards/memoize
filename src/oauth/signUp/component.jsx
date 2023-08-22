@@ -4,13 +4,13 @@ import Form from '@elements/form'
 import GetStarted from './getStarted'
 import h from '@standard/h'
 import Header from './header'
-import Main from './main'
+import Main from '@elements/main'
 import Name from '@components/name'
 import Password from '@components/password'
 
 function component (auth) {
   return (
-    <Main>
+    <Main tall>
       <Header />
       <Form onSubmit={(e) => auth.signUp(e)}>
         <Name value={auth.name} />

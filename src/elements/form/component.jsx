@@ -4,7 +4,7 @@ import validity from './validity'
 
 function component (props, children) {
   return (
-    <stack.Form {...props} onSubmit={(e) => (validity(e) && props.onSubmit?.(e))} column sm novalidate>
+    <stack.Form {...props} onSubmit={(e) => (validity(e) && props.onSubmit?.(e))} column sm wide novalidate>
       {children}
     </stack.Form>
   )

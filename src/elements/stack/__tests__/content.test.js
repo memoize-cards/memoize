@@ -1,14 +1,14 @@
 import content from '@elements/stack/content'
 
 describe('@elements/stack/content', () => {
-  test('It should return start when no position is declared', () => {
+  test('It should return left when no position is declared', () => {
     const props = {}
     const value = content(props)
     expect(value).toBe('start')
   })
 
-  test('It should return start when the start position is declared', () => {
-    const props = { start: true }
+  test('It should return left when the start position is declared', () => {
+    const props = { left: true }
     const value = content(props)
     expect(value).toBe('start')
   })
@@ -19,8 +19,8 @@ describe('@elements/stack/content', () => {
     expect(value).toBe('center')
   })
 
-  test('It should return and when the end position is declared', () => {
-    const props = { end: true }
+  test('It should return and when the right position is declared', () => {
+    const props = { right: true }
     const value = content(props)
     expect(value).toBe('end')
   })

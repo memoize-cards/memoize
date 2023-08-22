@@ -1,11 +1,17 @@
-const contents = [
-  'start',
+const alignments = [
+  'left',
   'center',
-  'end'
+  'right'
 ]
 
+const mapper = {
+  left: 'start',
+  center: 'center',
+  right: 'end'
+}
+
 function content (props) {
-  return contents.find((key) => props[key]) ?? 'start'
+  return mapper[alignments.find((key) => props[key])] ?? mapper.left
 }
 
 export default content

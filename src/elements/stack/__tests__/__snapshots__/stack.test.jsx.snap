@@ -2,6 +2,6 @@
 
 exports[`@elements/stack Should create an stack based on the tag name 1`] = `
 <div
-  style="align-items: start; display: flex; flex-direction: row; gap: var(--spacing_inset-xs); justify-content: start; width: 100%;"
+  style="align-items: start; display: flex; flex-direction: row; gap: var(--spacing_inset-xs); height: auto; justify-content: start; width: auto;"
 />
 `;

@@ -1,7 +1,7 @@
 import { urlFor } from '@standard/router'
 import Calendar from '@components/calendar'
 import h from '@standard/h'
-import Main from './main'
+import Main from '@elements/main'
 import text from '@elements/text'
 import User from './user'
 
