@@ -30,7 +30,7 @@ O Memoize é a resposta! Nós combinamos a magia dos flashcards com a potência 
 
 ### Como Contribuir 🙌
 
-Este aplicativo é open source e estamos super animados para ver você colaborando! Leia nosso [guia de contribuição](https://github.com/memoize-cards/memoize/blob/master/CONTRIBUTING.md) para saber como você pode fazer parte dessa revolução no aprendizado.
+Este aplicativo é open source e estamos super animados para ver você colaborando! Leia nosso [Guia de contribuição](https://github.com/memoize-cards/memoize/blob/master/CONTRIBUTING.md) para saber como você pode fazer parte dessa revolução no aprendizado.
 
 ### Doações e Apoio 💖
 
