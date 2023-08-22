@@ -1,4 +1,4 @@
-import Avatar from '@components/avatar'
+import Avatar from '@elements/avatar'
 import cookie from '@standard/cookie'
 import h from '@standard/h'
 import stack from '@elements/stack'
