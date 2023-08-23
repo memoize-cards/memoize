@@ -1,12 +1,15 @@
+import align from './align'
+import content from './content'
+import height from './height'
 import styled from '@standard/styled'
 
 const main = styled.main`
-  align-items: ${(props) => props.tall ? 'center' : 'start'};
+  align-items: ${align};
   display: flex;
   flex-direction: column;
   gap: var(--spacing_inset-giant);
-  height: ${(props) => props.tall ? '100vh' : 'auto'};
-  justify-content: ${(props) => props.tall ? 'center' : 'start'};
+  height: ${height};
+  justify-content: ${content};
   margin: 0 auto;
   max-width: 425px;
   padding: var(--spacing_inset-xs);
