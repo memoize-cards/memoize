@@ -6,7 +6,7 @@ import Main from '@elements/main'
 
 function component () {
   return (
-    <Main>
+    <Main tall>
       <Header />
       <GetStarted />
       <Footer />
