@@ -1,11 +1,17 @@
-import { urlFor } from '@standard/router'
 import cookie from '@standard/cookie'
+import magic from '@standard/magic'
 import middleware from '@standard/middleware'
 import supabase from '@artifact/supabase'
 
-const user = middleware(async function () {
+const { onAuthenticated } = magic
+
+const user = middleware(async function (home) {
   const { data: { user } } = await supabase.auth.getUser(cookie.access_token)
-  user && location.assign(urlFor('dashboard'))
+  user && home[onAuthenticated]?.(user)
+})
+
+Object.assign(user, {
+  onAuthenticated
 })
 
 export default user
