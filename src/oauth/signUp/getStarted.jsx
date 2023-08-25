@@ -1,11 +1,10 @@
 import Button from '@elements/button'
 import h from '@standard/h'
-import style from './style'
 import translate from './translate'
 
 function component () {
   return (
-    <Button className={style.signUp__getStarted} primary>{translate.getStarted}</Button>
+    <Button primary wide>{translate.getStarted}</Button>
   )
 }
 
