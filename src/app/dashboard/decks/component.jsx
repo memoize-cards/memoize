@@ -1,9 +1,11 @@
 import h from '@standard/h'
 import stack from '@elements/stack'
 
-function component () {
+function component (decks) {
   return (
-    <stack.Section column />
+    <stack.Div column>
+      {decks.collection}
+    </stack.Div>
   )
 }
 
