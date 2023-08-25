@@ -1,45 +1,88 @@
-# Memoize: Acelere sua Jornada de Aprendizado! 🚀
+# Memoize
 
-> Aprenda, Memorize, Domine!
+[https://memoize.cards](https://memoize.cards)
 
-Bem-vindo(a) ao Memoize, o aplicativo que vai revolucionar a forma como você aprende e memoriza! Se você está em busca de uma maneira eficaz e empolgante de absorver informações importantes, você está no lugar certo. Com o Memoize, você não só vai aprender, mas vai dominar o conhecimento de uma forma incrível. 🧠💡
+Bem-vindo ao Memoize, o aplicativo de flashcards que utiliza a arquitetura de desenvolvimento web Kuba como base. Enquanto o Kuba desempenha um papel crucial na estrutura do aplicativo, é o Memoize que traz a inovação para a experiência de aprendizado.
 
-### O Desafio 🧐
+[Introdução](https://www.notion.so/Introdu-o-d8e79a6779db49088bfc418d63d41f91?pvs=21)
+[Arquitetura](https://www.notion.so/Arquitetura-29ee972f93264d6eb52592011d623b2b?pvs=21)
+[Contribuição](https://www.notion.so/Contribui-o-3204b1af162b41f29ae7f5566dbea61c?pvs=21)
 
-Aprender e memorizar pode ser uma tarefa desafiadora. Às vezes, parece que esquecemos tudo logo depois de estudar, não é mesmo? E não há nada mais frustrante do que investir tempo em métodos tradicionais de estudo e não ver os resultados desejados. É hora de mudar isso!
+## Pré-requisitos
 
-### A Solução 💡
+Antes de começar, certifique-se de ter as seguintes ferramentas instaladas em seu ambiente de desenvolvimento:
 
-O Memoize é a resposta! Nós combinamos a magia dos flashcards com a potência do algoritmo Anki, famoso por sua eficácia. O resultado? Um aplicativo que vai transformar seu jeito de aprender. Com Memoize, você vai criar seus próprios flashcards personalizados ou explorar nossa incrível biblioteca de conteúdo. E o melhor de tudo: o algoritmo Anki vai te guiar para que você aprenda de forma inteligente e duradoura.
+- [Git](https://git-scm.com/)
+- [Node.js](https://nodejs.org/)
+- [Yarn](https://yarnpkg.com/)
 
-### Principais Recursos 🌟
+## Variáveis de ambiente
 
-- **Flashcards Personalizados**: Crie seus próprios flashcards com texto, imagens e até áudio, do jeito que você gosta.
-- **Biblioteca de Conteúdo**: Explore nossa biblioteca diversificada com temas incríveis, oferecidos por especialistas de diversas áreas.
-- **Algoritmo Anki**: Deixe o Anki trabalhar para você! Ele vai identificar o que você precisa revisar mais e ajustar seu ritmo de estudos.
-- **Aprendizado Adaptativo**: O Memoize aprende com você! Conforme você avança, o aplicativo se adapta ao seu conhecimento.
-- **Acompanhamento de Progresso**: Veja seu progresso, acertos e erros, e receba insights valiosos para melhorar ainda mais.
+O Memoize utiliza algumas variáveis de ambiente para configurar o comportamento da aplicação. Elas podem ser definidas no sistema operacional ou em um arquivo `.env` na raiz do projeto.
 
-### Benefícios Incríveis 🚀
+Aqui estão as variáveis de ambiente utilizadas pelo Memoize:
 
-- Aprendizado mais rápido e eficiente.
-- Memória de longo prazo para o que realmente importa.
-- Estudo personalizado para suas necessidades.
-- Uma gama vasta de conteúdo educacional.
-- Aprendizado divertido e envolvente.
+| ANALYZER_MODE | Define o modo de análise para o webpack-bundle-analyzer. |  |
+| --- | --- | --- |
+| COOKIE_DOMAIN | Define o domínio no qual os valores do cookie são acessíveis. | localhost |
+| HINTS | Define o nível de detalhe dos avisos na compilação. | warning |
+| MAX_ASSET_SIZE | Define o tamanho máximo (em bytes) para um arquivo estático. | 2000000 |
+| MAX_ENTRYPOINT_SIZE | Define o tamanho máximo (em bytes) para um ponto de entrada. | 2000000 |
+| PORT | Define a porta na qual o servidor da aplicação será executado. | 6001 |
+| PUBLIC_PATH | Define o caminho público para os arquivos da aplicação. | / |
+| BUNDLE_STATS_BASELINE | Define se o baseline das estatísticas do pacote será usado. | true |
+| SUPABASE_KEY | Chave de autenticação para o Supabase. |  |
+| SUPABASE_URL | URL do servidor do Supabase. |  |
 
-### Como Contribuir 🙌
+```
+ANALYZER_MODE=
+BUNDLE_STATS_BASELINE=true
+COOKIE_DOMAIN=localhost
+HINTS=warning
+MAX_ASSET_SIZE=2000000
+MAX_ENTRYPOINT_SIZE=2000000
+PORT=6001
+PUBLIC_PATH=/
+SUPABASE_KEY=
+SUPABASE_URL=
+```
 
-Este aplicativo é open source e estamos super animados para ver você colaborando! Leia nosso [Guia de contribuição](https://github.com/memoize-cards/memoize/blob/master/CONTRIBUTING.md) para saber como você pode fazer parte dessa revolução no aprendizado.
+> Lembre-se de adicionar o arquivo .`env` no seu `.gitignore` para que as informações confidenciais não sejam versionadas.
 
-### Doações e Apoio 💖
+## Comece aqui
 
-Se você ama o Memoize e quer nos ajudar a continuar melhorando, considere fazer uma doação em nosso [Buy Me a Coffe](https://www.buymeacoffee.com/memoize). Cada contribuição faz uma enorme diferença no nosso projeto!
+Para começar a usar o Memoize, siga os seguintes passos:
 
-[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/yellow_img.png)](https://www.buymeacoffee.com/memoize)
+1. Clone o repositório do Memoize em seu computador, usando o seguinte comando no terminal:
 
-### Vamos Começar! 🚀
+```bash
+git clone https://github.com/memoize-cards/memoize.git
+```
 
-Não perca mais tempo! Acesse o Memoize agora mesmo e comece sua jornada de aprendizado incrível. Junte-se a nós e vamos dominar o conhecimento juntos!
+1. Acesse o diretório do projeto usando o seguinte comando:
 
-Agradecemos por fazer parte da família Memoize! 🎉📘
+```bash
+cd memoize
+```
+
+1. Instale as dependências do projeto usando o seguinte comando:
+
+```bash
+yarn install
+```
+
+1. Inicie o servidor de desenvolvimento usando o seguinte comando:
+
+```bash
+yarn start
+```
+
+1. Agora, você pode acessar a aplicação em seu navegador, acessando a URL [http://localhost:6001](http://localhost:3000/).
+
+## Licença
+
+O Memoize é um projeto de código aberto licenciado sob a licença MIT. Isso significa que você **pode utilizá-lo livremente em seus projetos pessoais ou comerciais**, desde que mantenha a atribuição do autor original.
+
+## Contato
+
+Caso você tenha alguma dúvida ou sugestão, sinta-se à vontade para entrar em contato com **deMGoncalves** através do email [cleber.engineer@gmail.com](mailto:cleber.engineer@gmail.com).
