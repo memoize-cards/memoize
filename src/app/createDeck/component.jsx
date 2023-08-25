@@ -1,14 +1,14 @@
+import Form from '@elements/form'
 import h from '@standard/h'
-import HistoryBack from '@components/historyBack'
+import Header from './header'
 import Main from '@elements/main'
-import stack from '@elements/stack'
 
-function component () {
+function component (deck) {
   return (
     <Main>
-      <stack.Header>
-        <HistoryBack />
-      </stack.Header>
+      <Header />
+      <Form onSubmit={(e) => deck.create(e)}>
+      </Form>
     </Main>
   )
 }
