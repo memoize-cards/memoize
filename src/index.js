@@ -15,7 +15,7 @@ import '@oauth/setNewPassword'
 import '@oauth/signUp'
 
 import '@app/card'
-import '@app/createDeck'
+import '@app/createCard'
 import '@app/dashboard'
 
 import '@site/home'
