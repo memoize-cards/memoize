@@ -1,4 +1,5 @@
 import { paint } from '@standard/h'
+import { urlFor } from '@standard/router'
 import component from './component'
 
 @paint(component)
@@ -19,6 +20,11 @@ class Deck {
     this.#description = description
     this.#id = id
     this.#name = name
+  }
+
+  select () {
+    location.assign(urlFor('deck', { id: this.#id }))
+    return this
   }
 
   static create (data) {

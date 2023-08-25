@@ -13,7 +13,7 @@ function background (props) {
   const color = colors.find((key) => props[key])
   return color
     ? `var(--color-${color})`
-    : 'var(--color-pure-white)'
+    : 'transparent'
 }
 
 export default background

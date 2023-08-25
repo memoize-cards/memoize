@@ -2,6 +2,7 @@ import background from './background'
 import border from './border'
 import color from './color'
 import styled from '@standard/styled'
+import wide from './wide'
 
 const button = styled.button`
   align-items: center;
@@ -19,6 +20,7 @@ const button = styled.button`
   justify-content: center;
   line-height: var(--line-height-default);
   padding: var(--spacing_inset-nano) var(--spacing_inset-xs);
+  width: ${wide};
 `
 
 export default button

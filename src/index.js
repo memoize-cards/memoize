@@ -14,9 +14,9 @@ import '@oauth/passwordReset'
 import '@oauth/setNewPassword'
 import '@oauth/signUp'
 
-import '@app/create'
+import '@app/card'
+import '@app/createDeck'
 import '@app/dashboard'
-import '@app/study'
 
 import '@site/home'
 import '@site/privacyPolicy'

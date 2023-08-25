@@ -1,4 +1,5 @@
 import Calendar from './calendar'
+import CreateDeck from './createDeck'
 import Decks from './decks'
 import Footer from './footer'
 import h from '@standard/h'
@@ -11,6 +12,7 @@ function component () {
       <User />
       <Calendar />
       <Decks />
+      <CreateDeck />
       <Footer />
     </Main>
   )

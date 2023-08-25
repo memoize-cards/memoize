@@ -9,7 +9,6 @@ const style = css`
 
   .calendar__dayOfTheWeek {
     align-items: center;
-    background-color: var(--color-pure-white);
     border-radius: var(--border-radius-sm);
     display: flex;
     flex-direction: column;
