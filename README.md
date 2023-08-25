@@ -4,9 +4,9 @@
 
 Bem-vindo ao Memoize, o aplicativo de flashcards que utiliza a arquitetura de desenvolvimento web Kuba como base. Enquanto o Kuba desempenha um papel crucial na estrutura do aplicativo, é o Memoize que traz a inovação para a experiência de aprendizado.
 
-[Introdução](https://www.notion.so/Introdu-o-d8e79a6779db49088bfc418d63d41f91?pvs=21)
-[Arquitetura](https://www.notion.so/Arquitetura-29ee972f93264d6eb52592011d623b2b?pvs=21)
-[Contribuição](https://www.notion.so/Contribui-o-3204b1af162b41f29ae7f5566dbea61c?pvs=21)
+- [Introdução](https://www.notion.so/Introdu-o-d8e79a6779db49088bfc418d63d41f91?pvs=21)
+- [Arquitetura](https://www.notion.so/Arquitetura-29ee972f93264d6eb52592011d623b2b?pvs=21)
+- [Contribuição](https://www.notion.so/Contribui-o-3204b1af162b41f29ae7f5566dbea61c?pvs=21)
 
 ## Pré-requisitos
 
