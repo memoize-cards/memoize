@@ -16,6 +16,7 @@ import '@oauth/signUp'
 
 import '@app/card'
 import '@app/createCard'
+import '@app/createDeck'
 import '@app/dashboard'
 
 import '@site/home'
