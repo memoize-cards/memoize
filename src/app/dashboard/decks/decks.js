@@ -2,8 +2,8 @@ import { paint } from '@standard/h'
 import component from './component'
 
 @paint(component)
-class Dashboard {
+class Decks {
 
 }
 
-export default Dashboard
+export default Decks
