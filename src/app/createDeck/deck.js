@@ -5,7 +5,6 @@ import component from './component'
 import storage from './storage'
 
 @paint(component)
-@storage
 class Deck {
   #description
   #name
