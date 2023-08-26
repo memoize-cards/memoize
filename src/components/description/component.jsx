@@ -1,10 +1,10 @@
 import Choose from '@directive/choose'
 import h from '@standard/h'
-import Input, { Label, Supporting } from '@elements/input'
+import Textarea, { Label, Supporting } from '@elements/textarea'
 
 function component (description) {
   return (
-    <Input
+    <Textarea
       type='text'
       id='description'
       name='description'
@@ -18,7 +18,7 @@ function component (description) {
       <Choose when={description.validity}>
         <Supporting equal='required'>Description is required</Supporting>
       </Choose>
-    </Input>
+    </Textarea>
   )
 }
 

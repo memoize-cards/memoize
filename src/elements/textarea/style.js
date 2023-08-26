@@ -11,23 +11,23 @@ const style = css`
 
   .textarea {
     appearance: none;
-    background-color: var(--color-pure-white);
-    border: none;
-    border-bottom: var(--border-width-hairline) solid var(--color-master-light);
+    background-color: transparent;
+    border: var(--border-width-hairline) solid var(--color-master);
+    border-radius: var(--border-radius-sm);
     color: var(--color-master-dark);
     font-family: var(--font-family-base);
     font-size: var(--font-size-xs);
     font-weight: var(--font-weight-regular);
     height: 128px;
     line-height: var(--line-height-default);
+    padding: 0 var(--spacing_inset-xs);
     resize: none;
     width: 100%;
   }
 
-  .textarea:hover,
+  .textarea:active,
   .textarea:focus,
-  .textarea:active {
-    border-color: var(--color-master);
+  .textarea:hover {
     outline: 0;
   }
 
