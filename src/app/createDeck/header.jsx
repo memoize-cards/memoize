@@ -1,11 +1,15 @@
 import h from '@standard/h'
-import HistoryBack from '@components/historyBack'
 import stack from '@elements/stack'
+import text from '@elements/text'
+import translate from './translate'
 
 function component () {
   return (
-    <stack.Header>
-      <HistoryBack />
+    <stack.Header column center giant>
+      <stack.HGroup column center quarck>
+        <text.H1 master dark highlight md bold>{translate.title}</text.H1>
+        <text.H2 master dark xxs>{translate.description}</text.H2>
+      </stack.HGroup>
     </stack.Header>
   )
 }

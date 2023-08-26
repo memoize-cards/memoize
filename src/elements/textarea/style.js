@@ -20,7 +20,7 @@ const style = css`
     font-weight: var(--font-weight-regular);
     height: 128px;
     line-height: var(--line-height-default);
-    padding: 0 var(--spacing_inset-xs);
+    padding: var(--spacing_inset-xs);
     resize: none;
     width: 100%;
   }
