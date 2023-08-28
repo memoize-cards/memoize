@@ -1,5 +1,5 @@
 function height (props) {
-  return props.tall ? '100vh' : 'auto'
+  return props.tall ? 'calc(100vh - 148px)' : 'auto'
 }
 
 export default height

@@ -1,16 +1,23 @@
 import Footer from './footer'
 import GetStarted from './getStarted'
-import h from '@standard/h'
+import h, { Fragment } from '@standard/h'
 import Header from './header'
-import Main from '@elements/main'
+import Main from './main'
+import PrivacyPolicy from './privacyPolicy'
+import TermsOfUse from './termsOfUse'
 
 function component () {
   return (
-    <Main tall>
-      <Header />
-      <GetStarted />
-      <Footer />
-    </Main>
+    <>
+      <Main>
+        <Header />
+        <GetStarted />
+      </Main>
+      <Footer>
+        <PrivacyPolicy />
+        <TermsOfUse />
+      </Footer>
+    </>
   )
 }
 
