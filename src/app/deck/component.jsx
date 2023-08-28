@@ -1,21 +1,21 @@
-import Create from './create'
+import CreateCard from './createCard'
 import Footer from './footer'
 import h from '@standard/h'
 import Header from './header'
-import Main from '@elements/main'
+import Master from '@app/master'
 import stack from '@elements/stack'
 import Study from './study'
 
 function component () {
   return (
-    <Main tall>
+    <Master>
       <Header />
       <stack.Div column>
         <Study />
-        <Create />
+        <CreateCard />
       </stack.Div>
       <Footer />
-    </Main>
+    </Master>
   )
 }
 

@@ -7,15 +7,15 @@ const dictionary = {
     [lang.ES]: 'Cancel',
     [lang.PT]: 'Cancel'
   },
-  clickToEdit: {
-    [lang.EN]: 'Click to edit',
-    [lang.ES]: 'Click to edit',
-    [lang.PT]: 'Click to edit'
-  },
-  create: {
+  createCard: {
     [lang.EN]: 'Create card',
     [lang.ES]: 'Create card',
     [lang.PT]: 'Create card'
+  },
+  edit: {
+    [lang.EN]: 'Edit',
+    [lang.ES]: 'Edit',
+    [lang.PT]: 'Edit'
   },
   footer: {
     [lang.EN]: 'Need to edit the deck,',

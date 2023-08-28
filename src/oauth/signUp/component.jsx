@@ -1,12 +1,12 @@
-import Email from '@components/email'
+import Email from '@oauth/email'
 import Footer from './footer'
 import Form from '@elements/form'
 import GetStarted from './getStarted'
 import h from '@standard/h'
 import Header from './header'
 import Master from '@oauth/master'
-import Name from '@components/name'
-import Password from '@components/password'
+import Name from '@oauth/name'
+import Password from '@oauth/password'
 
 function component (auth) {
   return (

@@ -3,7 +3,7 @@ import Form from '@elements/form'
 import h from '@standard/h'
 import Header from './header'
 import Master from '@oauth/master'
-import Password from '@components/password'
+import Password from '@oauth/password'
 import ResetPassword from './resetPassword'
 
 function component (auth) {

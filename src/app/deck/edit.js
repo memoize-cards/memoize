@@ -5,7 +5,7 @@ import translate from './translate'
 
 function component () {
   return (
-    <text.A href={urlFor('dashboard')} primary xxs medium>{translate.cancel}</text.A>
+    <text.A href={urlFor('editDeck')} primary xxs medium>{translate.edit}</text.A>
   )
 }
 

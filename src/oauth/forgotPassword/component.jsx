@@ -1,4 +1,4 @@
-import Email from '@components/email'
+import Email from '@oauth/email'
 import Footer from './footer'
 import Form from '@elements/form'
 import h from '@standard/h'
