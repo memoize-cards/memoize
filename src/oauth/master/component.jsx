@@ -1,11 +1,14 @@
+import container from '@elements/container'
 import h from '@standard/h'
 import Main from './main'
 
 function component (_props, children) {
   return (
-    <Main>
-      {children}
-    </Main>
+    <container.Div>
+      <Main>
+        {children}
+      </Main>
+    </container.Div>
   )
 }
 

@@ -7,8 +7,6 @@ const main = styled.main`
   gap: var(--spacing_inset-giant);
   height: 100vh;
   justify-content: center;
-  margin: 0 auto;
-  max-width: 425px;
   padding: var(--spacing_inset-xs);
   width: 100%;
 `
