@@ -1,6 +1,4 @@
-import '@polyfill/group'
-import '@polyfill/requestAnimationFrame'
-import '@polyfill/setImmediate'
+import '@polyfill'
 
 import '@pixel/reset'
 import '@pixel/tokens'
