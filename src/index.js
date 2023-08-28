@@ -20,9 +20,7 @@ import '@app/createDeck'
 import '@app/dashboard'
 import '@app/deck'
 
-import '@site/home'
-import '@site/privacyPolicy'
-import '@site/termsOfUse'
+import '@site'
 
 import router from '@standard/router'
 

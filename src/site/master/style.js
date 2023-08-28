@@ -1,7 +1,7 @@
 import css from '@standard/css'
 
 const style = css`
-  .historyBack {
+  .master__backToHome {
     align-items: center;
     background-color: transparent;
     border: none;
