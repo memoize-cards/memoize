@@ -1,6 +1,6 @@
 import Email from './email'
 import h from '@standard/h'
-import Logo from '@components/logo'
+import Logo from '@elements/logo'
 import stack from '@elements/stack'
 import text from '@elements/text'
 import translate from './translate'
