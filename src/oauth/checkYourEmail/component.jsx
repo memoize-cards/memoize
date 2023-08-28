@@ -2,18 +2,18 @@ import Footer from './footer'
 import Form from '@elements/form'
 import h from '@standard/h'
 import Header from './header'
-import Main from '@elements/main'
+import Master from '@oauth/master'
 import OpenEmailApp from './openEmailApp'
 
 function component (auth) {
   return (
-    <Main tall>
+    <Master>
       <Header />
       <Form onSubmit={() => auth.openEmailApp()}>
         <OpenEmailApp />
       </Form>
       <Footer />
-    </Main>
+    </Master>
   )
 }
 

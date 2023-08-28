@@ -1,0 +1,7 @@
+import './checkYourEmail'
+import './forgotPassword'
+import './logIn'
+import './logOut'
+import './passwordReset'
+import './setNewPassword'
+import './signUp'

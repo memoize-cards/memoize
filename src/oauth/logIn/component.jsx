@@ -4,13 +4,13 @@ import ForgotPassword from './forgotPassword'
 import Form from '@elements/form'
 import h from '@standard/h'
 import Header from './header'
-import Main from '@elements/main'
+import Master from '@oauth/master'
 import Password from '@components/password'
 import SignIn from './signIn'
 
 function component (auth) {
   return (
-    <Main tall>
+    <Master>
       <Header />
       <Form onSubmit={(e) => auth.logIn(e)}>
         <Email value={auth.email} />
@@ -19,7 +19,7 @@ function component (auth) {
         <SignIn />
       </Form>
       <Footer />
-    </Main>
+    </Master>
   )
 }
 
