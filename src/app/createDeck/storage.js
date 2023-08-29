@@ -1,24 +1,22 @@
 import cookie from '@standard/cookie'
 import interceptor from '@standard/interceptor'
-import magic from '@standard/magic'
+import result from '@standard/result'
 import supabase from '@artifact/supabase'
 
-const { onCreated, onError } = magic
+const request = async function (deck) {
+  const { id } = cookie
+  const { name, description } = deck
+  const { data, error } = await supabase.from('deck').insert([{ name, description, user_id: id }]).select()
+  error
+    ? deck[result.Error]?.(error)
+    : deck[result.Ok]?.(data)
+}
 
-const create = interceptor(function (args, next) {
-  setImmediate(async () => {
-    const { id } = cookie
-    const { name, description } = this
-    const { data, error } = await supabase.from('deck').insert([{ name, description, user_id: id }]).select()
-    error
-      ? this[onError]?.(error)
-      : this[onCreated]?.(data)
-  })
+const pull = interceptor(function (args, next) {
+  setImmediate(() => request(this))
   return next(...args)
 })
 
 export default {
-  create,
-  onCreated,
-  onError
+  pull
 }

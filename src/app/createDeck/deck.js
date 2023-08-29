@@ -2,6 +2,7 @@ import * as filter from '@standard/filter'
 import { paint } from '@standard/h'
 import { urlFor } from '@standard/router'
 import component from './component'
+import result from '@standard/result'
 import storage from './storage'
 
 @paint(component)
@@ -19,14 +20,14 @@ class Deck {
 
   @filter.prevent
   @filter.formData
-  @storage.create
+  @storage.pull
   create (data) {
     this.#description = data.description
     this.#name = data.name
     return this
   }
 
-  [storage.onCreated] (data) {
+  [result.Ok] (data) {
     location.assign(urlFor('deck', { id: data.id }))
     return this
   }
