@@ -2,12 +2,12 @@ import { willMount, paint } from '@standard/h'
 import { urlFor } from '@standard/router'
 import component from './component'
 import cookie from './cookie'
-import user from './user'
+import storage from './storage'
 
 @paint(component)
 class Auth {
   @willMount
-  @user.deauthenticate
+  @storage.pull
   @cookie.removeUser
   logOut () {
     location.assign(urlFor('logIn'))

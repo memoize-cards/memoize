@@ -3,7 +3,8 @@ import { paint, repaint } from '@standard/h'
 import { urlFor } from '@standard/router'
 import cookie from './cookie'
 import component from './component'
-import user from './user'
+import result from '@standard/result'
+import storage from './storage'
 
 @paint(component)
 class Auth {
@@ -20,22 +21,22 @@ class Auth {
 
   @filter.prevent
   @filter.formData
-  @user.authenticate
+  @storage.pull
   logIn (data) {
     this.#email = data.email
     this.#password = data.password
     return this
   }
 
-  @cookie.setUser
-  [user.onAuthenticated] (_user) {
-    location.assign(urlFor('dashboard'))
+  @repaint
+  [result.Error] () {
+    this.#password = ''
     return this
   }
 
-  @repaint
-  [user.onInvalid] () {
-    this.#password = ''
+  @cookie.setUser
+  [result.Ok] (_storage) {
+    location.assign(urlFor('dashboard'))
     return this
   }
 }

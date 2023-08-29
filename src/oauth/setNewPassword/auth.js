@@ -2,7 +2,8 @@ import * as filter from '@standard/filter'
 import { paint } from '@standard/h'
 import { urlFor } from '@standard/router'
 import component from './component'
-import user from './user'
+import result from '@standard/result'
+import storage from './storage'
 
 @paint(component)
 class Auth {
@@ -14,17 +15,17 @@ class Auth {
 
   @filter.prevent
   @filter.formData
-  @user.setNewPassword
+  @storage.pull
   setNewPassword (data) {
     this.#password = data.password
     return this
   }
 
-  [user.onError] (_error) {
+  [result.Error] (_error) {
     return this
   }
 
-  [user.onPasswordReset] (_data) {
+  [result.Ok] (_data) {
     location.assign(urlFor('passwordReset'))
     return this
   }
