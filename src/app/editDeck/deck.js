@@ -40,8 +40,8 @@ class Deck {
   }
 
   @repaint
-  [result.Ok] (data) {
-    location.assign(urlFor('deck', { id: data.id }))
+  [result.Ok] (_deck) {
+    location.assign(urlFor('deck', { id: this.id }))
     return this
   }
 }

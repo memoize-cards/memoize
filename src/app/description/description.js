@@ -17,6 +17,10 @@ class Description {
     return (this.#value ??= '')
   }
 
+  constructor (props) {
+    this.#value = props.value
+  }
+
   @filter.value
   @validator.required
   onChange (value) {

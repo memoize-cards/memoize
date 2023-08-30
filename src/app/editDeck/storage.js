@@ -13,6 +13,7 @@ const pull = middleware(async function (args, next) {
 const push = interceptor(function (args, next) {
   setImmediate(async () => {
     const { id, name, description } = this
+    console.log(this)
     const { data, error } = await supabase.from('deck').update({ name, description }).eq('id', id).select()
     error
       ? this[result.Error]?.(error)
