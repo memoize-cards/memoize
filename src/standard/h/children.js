@@ -53,10 +53,16 @@ class Children {
   }
 
   static create (childList, parent) {
-    childList = childList.filter(Boolean)
     childList = Text.mapper(childList)
     childList = Instance.mapper(childList)
     return new Children(childList, parent)
+  }
+
+  static async evaluate (children) {
+    children = await Promise.all(children)
+    children = children.flat(Infinity)
+    children = children.filter(Boolean)
+    return children
   }
 }
 

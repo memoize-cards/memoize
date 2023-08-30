@@ -81,21 +81,22 @@ class Element {
     return this
   }
 
-  after (child) {
-    const node = child[render.flow]()
-    this.#node.after(node)
+  async after (child) {
+    child = (await child)[render.flow]()
+    this.#node.after(child)
     return this
   }
 
-  append (childList) {
-    const nodeList = childList.map((child) => child[render.flow]())
-    this.#node.append(...nodeList)
+  async append (children) {
+    children = await Promise.all(children)
+    children = children.map((child) => child[render.flow]())
+    this.#node.append(...children)
     return this
   }
 
-  appendChild (child) {
-    const node = child[render.flow]()
-    this.#node.appendChild(node)
+  async appendChild (child) {
+    child = (await child)[render.flow]()
+    this.#node.appendChild(child)
     return this
   }
 

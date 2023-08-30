@@ -1,10 +1,9 @@
 function middleware (functionRef) {
   return function (ClassRef) {
     return new Proxy(
-      function () {
-        const instance = new ClassRef(...arguments)
-        setImmediate(() => functionRef(instance))
-        return instance
+      async function (...args) {
+        const next = async (...args) => await new ClassRef(...args)
+        return await functionRef(args, next)
       },
       {
         get: (_, key) => Reflect.get(ClassRef, key),

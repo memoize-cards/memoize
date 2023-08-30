@@ -43,23 +43,22 @@ class Fragment {
     'appendChild'
   )
   after (child) {
-    const [...childList] = this.#children
-    const lastChild = childList.pop()
+    const lastChild = Array.from(this.#children).pop()
     lastChild.after(child)
     return this
   }
 
-  append (childList) {
-    const nodeList = childList.map((child) => child[render.flow]())
-    this.#node.append(...nodeList)
+  append (children) {
+    children = children.map((child) => child[render.flow]())
+    this.#node.append(...children)
     return this
   }
 
   @didUnmount
   @willUnmount
   remove () {
-    const [...childList] = this.#children
-    childList.forEach((child) => child.remove())
+    const children = Array.from(this.#children)
+    children.forEach((child) => child.remove())
     return this
   }
 

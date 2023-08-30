@@ -18,8 +18,8 @@ class Text {
   }
 
   after (child) {
-    const node = child[render.flow]()
-    this.#node.after(node)
+    child = child[render.flow]()
+    this.#node.after(child)
     return this
   }
 
