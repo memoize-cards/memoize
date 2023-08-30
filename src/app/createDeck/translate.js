@@ -2,11 +2,6 @@ import i18n from '@standard/i18n'
 import lang from '@standard/lang'
 
 const dictionary = {
-  cancel: {
-    [lang.EN]: 'Cancel',
-    [lang.ES]: 'Cancel',
-    [lang.PT]: 'Cancel'
-  },
   create: {
     [lang.EN]: 'Create deck',
     [lang.ES]: 'Create deck',

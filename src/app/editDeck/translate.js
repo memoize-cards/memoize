@@ -2,25 +2,25 @@ import i18n from '@standard/i18n'
 import lang from '@standard/lang'
 
 const dictionary = {
-  cancel: {
-    [lang.EN]: 'Cancel',
-    [lang.ES]: 'Cancel',
-    [lang.PT]: 'Cancel'
-  },
-  create: {
-    [lang.EN]: 'Create deck',
-    [lang.ES]: 'Create deck',
-    [lang.PT]: 'Create deck'
+  delete: {
+    [lang.EN]: 'Remove',
+    [lang.ES]: 'Remove',
+    [lang.PT]: 'Remove'
   },
   description: {
-    [lang.EN]: 'Create new deck, start learning now',
-    [lang.ES]: 'Create new deck, start learning now',
-    [lang.PT]: 'Create new deck, start learning now'
+    [lang.EN]: 'Edit deck, go back to studying',
+    [lang.ES]: 'Edit deck, go back to studying',
+    [lang.PT]: 'Edit deck, go back to studying'
+  },
+  save: {
+    [lang.EN]: 'Save',
+    [lang.ES]: 'Save',
+    [lang.PT]: 'Save'
   },
   title: {
-    [lang.EN]: 'New deck',
-    [lang.ES]: 'New deck',
-    [lang.PT]: 'New deck'
+    [lang.EN]: 'Edit deck',
+    [lang.ES]: 'Edit deck',
+    [lang.PT]: 'Edit deck'
   }
 }
 

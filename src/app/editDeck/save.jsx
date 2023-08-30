@@ -4,7 +4,7 @@ import translate from './translate'
 
 function component () {
   return (
-    <Button primary wide>{translate.create}</Button>
+    <Button primary wide>{translate.save}</Button>
   )
 }
 

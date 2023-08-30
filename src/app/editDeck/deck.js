@@ -8,6 +8,7 @@ import storage from './storage'
 @paint(component)
 @storage.pull
 class Deck {
+  #id
   #description
   #name
 
@@ -15,8 +16,18 @@ class Deck {
     return (this.#description ??= '')
   }
 
+  get id () {
+    return (this.#id ??= '')
+  }
+
   get name () {
     return (this.#name ??= '')
+  }
+
+  constructor (id, name, description) {
+    this.#description = description
+    this.#id = id
+    this.#name = name
   }
 
   @filter.prevent

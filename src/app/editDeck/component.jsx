@@ -1,20 +1,22 @@
-import Create from './create'
 import Description from '@app/description'
+import Footer from './footer'
 import Form from '@elements/form'
 import h from '@standard/h'
 import Header from './header'
 import Master from '@app/master'
 import Name from '@app/name'
+import Save from './save'
 
 function component (deck) {
   return (
     <Master>
       <Header />
-      <Form onSubmit={(e) => deck.create(e)}>
+      <Form onSubmit={(e) => deck.save(e)}>
         <Name value={deck.name} />
         <Description value={deck.description} />
-        <Create />
+        <Save />
       </Form>
+      <Footer />
     </Master>
   )
 }
