@@ -3,9 +3,9 @@ import lang from '@standard/lang'
 
 const dictionary = {
   delete: {
-    [lang.EN]: 'Remove',
-    [lang.ES]: 'Remove',
-    [lang.PT]: 'Remove'
+    [lang.EN]: 'Delete',
+    [lang.ES]: 'Delete',
+    [lang.PT]: 'Delete'
   },
   description: {
     [lang.EN]: 'Edit deck, go back to studying',
