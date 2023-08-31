@@ -1,7 +1,7 @@
 import { render } from '@standard/h'
 
-function renderer (element) {
-  return element[render.flow]?.()
+async function renderer (element) {
+  return (await element)[render.flow]?.()
 }
 
 export default renderer
