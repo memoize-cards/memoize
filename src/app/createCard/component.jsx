@@ -1,13 +1,13 @@
 import h from '@standard/h'
-import stack from '@elements/stack'
+import Master from '@app/master'
 
 function component (card) {
   return (
-    <stack.Div column>
+    <Master>
       {card.front}
       {card.back}
       <button onClick={() => card.create()}>Create</button>
-    </stack.Div>
+    </Master>
   )
 }
 
