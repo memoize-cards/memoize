@@ -5,7 +5,7 @@ import translate from './translate'
 
 function component () {
   return (
-    <text.A href={urlFor('deleteCard', { id: params.id })} primary xxs medium>{translate.delete}</text.A>
+    <text.A href={urlFor('deleteCard', { deck: params.deck, id: params.id })} primary xxs medium>{translate.delete}</text.A>
   )
 }
 
