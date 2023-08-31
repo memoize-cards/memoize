@@ -7,14 +7,16 @@ import result from '@standard/result'
 @paint(component)
 @queue
 class Card {
+  #back
+  #front
   #target
 
   get back () {
-    return this.#target?.back
+    return (this.#back ??= '')
   }
 
   get front () {
-    return this.#target?.front
+    return (this.#front ??= '')
   }
 
   @queue.next
@@ -43,7 +45,8 @@ class Card {
 
   @repaint
   [result.Ok] (data) {
-    console.log(data)
+    this.#back = data.back
+    this.#front = data.front
     this.#target = Learn.create(data)
     return this
   }

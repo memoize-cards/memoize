@@ -1,13 +1,13 @@
 import h from '@standard/h'
-import stack from '@elements/stack'
+import Master from '@app/master'
 import text from '@elements/text'
 
 function component (card) {
   return (
-    <stack.Div column>
+    <Master>
       <text.Div master dark md medium>{card.front}</text.Div>
       <text.Div master dark md medium>{card.back}</text.Div>
-    </stack.Div>
+    </Master>
   )
 }
 
