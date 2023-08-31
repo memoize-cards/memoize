@@ -5,7 +5,7 @@ import result from '@standard/result'
 import storage from './storage'
 
 @paint(component)
-@storage.delete
+@storage.push
 class Auth {
   [result.Ok] () {
     location.assign(urlFor('dashboard'))
