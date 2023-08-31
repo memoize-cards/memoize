@@ -5,7 +5,7 @@ import result from '@standard/result'
 import storage from './storage'
 
 @paint(component)
-@storage
+@storage.pull
 class Decks {
   #collection
 

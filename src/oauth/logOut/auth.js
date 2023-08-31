@@ -7,7 +7,7 @@ import storage from './storage'
 @paint(component)
 class Auth {
   @willMount
-  @storage.pull
+  @storage.push
   @cookie.removeUser
   logOut () {
     location.assign(urlFor('logIn'))

@@ -20,7 +20,7 @@ class Deck {
 
   @filter.prevent
   @filter.formData
-  @storage.pull
+  @storage.push
   create (data) {
     this.#description = data.description
     this.#name = data.name

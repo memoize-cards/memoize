@@ -3,10 +3,10 @@ import { urlFor } from '@standard/router'
 import cookie from './cookie'
 import component from './component'
 import result from '@standard/result'
-import oauth from './oauth'
+import storage from './storage'
 
 @paint(component)
-@oauth
+@storage.pull
 class Home {
   @cookie.setUser
   [result.Ok] (_user) {

@@ -12,11 +12,11 @@ const request = async function (deck) {
     : deck[result.Ok]?.(data)
 }
 
-const pull = interceptor(function (args, next) {
+const push = interceptor(function (args, next) {
   setImmediate(() => request(this))
   return next(...args)
 })
 
 export default {
-  pull
+  push
 }

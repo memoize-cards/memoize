@@ -26,7 +26,7 @@ class Auth {
 
   @filter.prevent
   @filter.formData
-  @storage.pull
+  @storage.push
   signUp (data) {
     this.#email = data.email
     this.#name = data.name

@@ -15,7 +15,7 @@ class Auth {
 
   @filter.prevent
   @filter.formData
-  @storage.pull
+  @storage.push
   setNewPassword (data) {
     this.#password = data.password
     return this

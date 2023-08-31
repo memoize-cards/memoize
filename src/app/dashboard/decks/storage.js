@@ -2,7 +2,7 @@ import middleware from '@standard/middleware'
 import supabase from '@artifact/supabase'
 import result from '@standard/result'
 
-const storage = middleware(async function (args, next) {
+const pull = middleware(async function (args, next) {
   const decks = await next(...args)
   const { data, error } = await supabase.from('deck').select('id, name, description')
   error
@@ -11,4 +11,6 @@ const storage = middleware(async function (args, next) {
   return decks
 })
 
-export default storage
+export default {
+  pull
+}

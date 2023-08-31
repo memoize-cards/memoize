@@ -15,7 +15,7 @@ class Auth {
 
   @filter.prevent
   @filter.formData
-  @storage.pull
+  @storage.push
   forgotPassword (data) {
     this.#email = data.email
     return this

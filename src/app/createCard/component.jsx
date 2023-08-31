@@ -1,12 +1,20 @@
+import Back from '@app/back'
+import Create from './create'
+import Form from '@elements/form'
+import Front from '@app/front'
 import h from '@standard/h'
+import Header from './header'
 import Master from '@app/master'
 
 function component (card) {
   return (
     <Master>
-      {card.front}
-      {card.back}
-      <button onClick={() => card.create()}>Create</button>
+      <Header />
+      <Form onSubmit={(e) => card.create(e)}>
+        <Front value={card.front} />
+        <Back value={card.back} />
+        <Create />
+      </Form>
     </Master>
   )
 }
