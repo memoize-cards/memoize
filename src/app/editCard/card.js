@@ -3,12 +3,11 @@ import { paint } from '@standard/h'
 import { urlFor } from '@standard/router'
 import component from './component'
 import Deck from './deck'
-import Interval from './interval'
 import result from '@standard/result'
 import storage from './storage'
-import type from './type'
 
 @paint(component)
+@storage.pull
 class Card {
   #back
   #front
@@ -17,26 +16,24 @@ class Card {
     return (this.#back ??= '')
   }
 
-  get deck () {
-    return Deck.id
-  }
-
   get front () {
     return (this.#front ??= '')
   }
 
-  get interval () {
-    return Interval.oneMinute
+  get id () {
+    return (this.#id ??= '')
   }
 
-  get type () {
-    return type.LEARN
+  constructor (id, front, back) {
+    this.#back = back
+    this.#front = front
+    this.#id = id
   }
 
   @filter.prevent
   @filter.formData
   @storage.push
-  create (data) {
+  save (data) {
     this.#back = data.back
     this.#front = data.front
     return this
@@ -47,7 +44,7 @@ class Card {
   }
 
   [result.Ok] (_card) {
-    location.assign(urlFor('deck', { id: this.deck }))
+    location.assign(urlFor('deck', { id: Deck.id }))
     return this
   }
 }

@@ -1,5 +1,5 @@
 import * as filter from '@standard/filter'
-import { paint, repaint } from '@standard/h'
+import { paint } from '@standard/h'
 import { urlFor } from '@standard/router'
 import component from './component'
 import result from '@standard/result'
@@ -39,7 +39,10 @@ class Deck {
     return this
   }
 
-  @repaint
+  [result.Error] (_deck) {
+    return this
+  }
+
   [result.Ok] (_deck) {
     location.assign(urlFor('deck', { id: this.id }))
     return this
