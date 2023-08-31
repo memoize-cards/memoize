@@ -43,6 +43,7 @@ class Card {
 
   @repaint
   [result.Ok] (data) {
+    console.log(data)
     this.#target = Learn.create(data)
     return this
   }
