@@ -11,6 +11,7 @@ import storage from './storage'
 class Card {
   #back
   #front
+  #id
 
   get back () {
     return (this.#back ??= '')
