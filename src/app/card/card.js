@@ -69,6 +69,11 @@ class Card {
     return this
   }
 
+  [result.Error] () {
+    location.assign(urlFor('deck', { deck: Deck.id }))
+    return this
+  }
+
   @repaint
   [result.Ok] (data) {
     this.#back = data.back

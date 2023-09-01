@@ -7,9 +7,9 @@ import supabase from '@artifact/supabase'
 
 async function request (card) {
   const { data, error } = await supabase.from('card').select('*').eq('deck', Deck.id).lte('interval', Interval.expired).single()
-  error
-    ? card[result.Error]?.(error)
-    : card[result.Ok]?.(data)
+  data
+    ? card[result.Ok]?.(data)
+    : card[result.Error]?.(error)
 }
 
 const queue = middleware(async function (args, next) {
