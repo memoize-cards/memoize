@@ -16,11 +16,12 @@ function component (card) {
   return (
     <Master>
       <Choose when={card.position}>
-        <stack.Div equal={position.FRONT} column center>
+        <stack.Div equal={position.FRONT} column>
           <text.Span master dark highlight md bold>{card.front}</text.Span>
           <Reveal onClick={() => card.reveal()} />
         </stack.Div>
         <stack.Div equal={position.BACK} column>
+          <text.Span master dark highlight md bold>{card.front}</text.Span>
           <text.Span master dark xxs>{card.back}</text.Span>
           <text.Span master dark highlight xs bold>Did you remember the answer?</text.Span>
           <Easy onClick={() => card.easy()} />
