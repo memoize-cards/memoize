@@ -1,3 +1,4 @@
+import * as f from '@standard/f'
 import EasyFactor from './easyFactor'
 import Interval from './interval'
 import Lapse from './lapse'
@@ -56,6 +57,10 @@ class Card {
   static create (data) {
     const lapse = Lapse.create(data.lapse)
     return new Card(data.id, lapse)
+  }
+
+  static is (data) {
+    return f.equals(data.type, type.RELEARN)
   }
 }
 

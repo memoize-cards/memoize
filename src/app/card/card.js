@@ -1,7 +1,13 @@
+import * as f from '@standard/f'
 import { paint, repaint } from '@standard/h'
+import { urlFor } from '@standard/router'
 import component from './component'
+import Deck from './deck'
 import Learn from './learn'
 import queue from './queue'
+import position from './position'
+import Relearn from './relearn'
+import Review from './review'
 import result from '@standard/result'
 
 @paint(component)
@@ -9,6 +15,7 @@ import result from '@standard/result'
 class Card {
   #back
   #front
+  #position
   #target
 
   get back () {
@@ -17,6 +24,14 @@ class Card {
 
   get front () {
     return (this.#front ??= '')
+  }
+
+  get id () {
+    return this.#target.id
+  }
+
+  get position () {
+    return (this.#position ??= position.FRONT)
   }
 
   @queue.next
@@ -28,6 +43,11 @@ class Card {
   @queue.next
   easy () {
     this.#target.easy()
+    return this
+  }
+
+  edit () {
+    location.assign(urlFor('editCard', { deck: Deck.id, id: this.id }))
     return this
   }
 
@@ -44,10 +64,21 @@ class Card {
   }
 
   @repaint
+  reveal () {
+    this.#position = position.BACK
+    return this
+  }
+
+  @repaint
   [result.Ok] (data) {
     this.#back = data.back
     this.#front = data.front
-    this.#target = Learn.create(data)
+    this.#position = position.FRONT
+    this.#target = f.cond(
+      [Review.is, Review.create],
+      [Learn.is, Learn.create],
+      [Relearn.is, Relearn.create]
+    )(data)
     return this
   }
 }

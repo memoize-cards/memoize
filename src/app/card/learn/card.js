@@ -1,3 +1,4 @@
+import * as f from '@standard/f'
 import EasyFactor from './easyFactor'
 import Interval from './interval'
 import storage from './storage'
@@ -48,6 +49,10 @@ class Card {
 
   static create (data) {
     return new Card(data.id)
+  }
+
+  static is (data) {
+    return f.equals(data.type, type.LEARN)
   }
 }
 

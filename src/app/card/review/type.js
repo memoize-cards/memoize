@@ -1,5 +1,6 @@
 const type = {
-  RELEARN: 3
+  RELEARN: 3,
+  REVIEW: 2
 }
 
 export default type

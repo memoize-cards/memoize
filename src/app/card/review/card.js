@@ -1,3 +1,4 @@
+import * as f from '@standard/f'
 import EasyFactor from './easyFactor'
 import Interval from './interval'
 import Lapse from './lapse'
@@ -36,7 +37,7 @@ class Card {
     this.#interval.xEFxEB()
     return {
       easyFactor: this.#easyFactor.value,
-      interval: this.#nterval.value
+      interval: this.#interval.value
     }
   }
 
@@ -62,6 +63,10 @@ class Card {
     const easyFactor = EasyFactor.create(data.easyFactor)
     const interval = Interval.create(data.interval, easyFactor)
     return new Card(data.id, easyFactor, interval)
+  }
+
+  static is (data) {
+    return f.equals(data.type, type.REVIEW)
   }
 }
 

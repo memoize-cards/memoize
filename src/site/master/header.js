@@ -1,6 +1,6 @@
 import styled from '@standard/styled'
 
-const main = styled.main`
+const main = styled.header`
   align-items: center;
   display: flex;
   justify-content: start;
