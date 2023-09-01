@@ -117,8 +117,8 @@ class Element {
     return this
   }
 
-  replace (child, nChild) {
-    child.after(nChild)
+  async replace (child, nChild) {
+    await child.after(nChild)
     child.remove()
     return this
   }
