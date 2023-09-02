@@ -7,8 +7,21 @@ import storage from './storage'
 @paint(component)
 @storage.pull
 class Deck {
+  #description
+  #name
+
+  get description () {
+    return (this.#description ??= '')
+  }
+
+  get name () {
+    return (this.#name ??= '')
+  }
+
   @repaint
   [result.Ok] (data) {
+    this.#description = data.description
+    this.#name = data.name
     setGlobal(data)
     return this
   }
