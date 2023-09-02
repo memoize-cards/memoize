@@ -18,7 +18,7 @@ const queue = middleware(async function (args, next) {
   return card
 })
 
-const next = interceptor((args, next) => {
+const next = interceptor(function (args, next) {
   setImmediate(() => request(this))
   return next(...args)
 })

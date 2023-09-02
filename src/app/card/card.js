@@ -69,7 +69,7 @@ class Card {
     return this
   }
 
-  [result.Error] () {
+  [result.Error] (_error) {
     location.assign(urlFor('deck', { id: Deck.id }))
     return this
   }
