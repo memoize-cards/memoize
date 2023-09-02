@@ -11,6 +11,10 @@ class Card {
     return this.#id
   }
 
+  get type () {
+    return 'Learn'
+  }
+
   constructor (id) {
     this.#id = id
   }

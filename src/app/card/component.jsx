@@ -13,16 +13,19 @@ import Master from '@app/master'
 import position from './position'
 import Reveal from './reveal'
 import stack from '@elements/stack'
+import Type from './type'
 
 function component (card) {
   return (
     <Master>
       <Choose when={card.position}>
         <stack.Div equal={position.FRONT} column>
+          <Type>{card.type}</Type>
           <Front>{card.front}</Front>
           <Reveal onClick={() => card.reveal()} />
         </stack.Div>
         <stack.Div equal={position.BACK} column>
+          <Type>{card.type}</Type>
           <Front>{card.front}</Front>
           <Back>{card.back}</Back>
           <Feedback />

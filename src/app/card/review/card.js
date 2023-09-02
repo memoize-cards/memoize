@@ -14,6 +14,10 @@ class Card {
     return this.#id
   }
 
+  get type () {
+    return 'Review'
+  }
+
   constructor (id, easyFactor, interval) {
     this.#id = id
     this.#easyFactor = easyFactor

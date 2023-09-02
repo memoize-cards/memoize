@@ -13,6 +13,10 @@ class Card {
     return this.#id
   }
 
+  get type () {
+    return 'Relearn'
+  }
+
   constructor (id, lapse) {
     this.#id = id
     this.#lapse = lapse

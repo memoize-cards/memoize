@@ -34,6 +34,10 @@ class Card {
     return (this.#position ??= position.FRONT)
   }
 
+  get type () {
+    return this.#target?.type
+  }
+
   @queue.next
   again () {
     this.#target.again()
