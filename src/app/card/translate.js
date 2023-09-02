@@ -17,6 +17,11 @@ const dictionary = {
     [lang.ES]: 'Edit',
     [lang.PT]: 'Edit'
   },
+  feedback: {
+    [lang.EN]: 'Did you remember the answer?',
+    [lang.ES]: 'Did you remember the answer?',
+    [lang.PT]: 'Did you remember the answer?'
+  },
   good: {
     [lang.EN]: 'Recalled with Effort',
     [lang.ES]: 'Recalled with Effort',
