@@ -1,5 +1,4 @@
 import { paint, repaint } from '@standard/h'
-import { setGlobal } from '@standard/global'
 import component from './component'
 import result from '@standard/result'
 import storage from './storage'
@@ -22,7 +21,6 @@ class Deck {
   [result.Ok] (data) {
     this.#description = data.description
     this.#name = data.name
-    setGlobal(data)
     return this
   }
 }
