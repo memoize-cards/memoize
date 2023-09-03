@@ -4,11 +4,11 @@ import HistoryBack from './historyBack'
 import Header from './header'
 import Main from './main'
 
-function component (_props, children) {
+function component (props, children) {
   return (
     <container.Div>
       <Header>
-        <HistoryBack />
+        <HistoryBack onBack={props.onBack} />
       </Header>
       <Main>
         {children}

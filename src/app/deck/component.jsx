@@ -5,13 +5,14 @@ import h from '@standard/h'
 import Header from './header'
 import Master from '@app/master'
 import Name from './name'
+import redirectTo from './redirectTo'
 import stack from '@elements/stack'
 import Stats from './stats'
 import Study from './study'
 
 function component (deck) {
   return (
-    <Master>
+    <Master onBack={() => redirectTo.dashboard()}>
       <Header>
         <Name>{deck.name}</Name>
         <Description>{deck.description}</Description>
