@@ -6,7 +6,7 @@ import result from '@standard/result'
 import supabase from '@artifact/supabase'
 
 async function request (card) {
-  const { data, error } = await supabase.from('card').select('*').eq('deck', Deck.id).lte('interval', Interval.expired).range(1, 1).single()
+  const { data, error } = await supabase.from('card').select('*').eq('deck', Deck.id).lte('interval', Interval.expired).limit(1).single()
   data
     ? card[result.Ok]?.(data)
     : card[result.Error]?.(error)
