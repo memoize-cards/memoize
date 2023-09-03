@@ -39,14 +39,14 @@ class Card {
   }
 
   @queue.next
-  again () {
-    this.#target.again()
+  async again () {
+    await this.#target.again()
     return this
   }
 
   @queue.next
-  easy () {
-    this.#target.easy()
+  async easy () {
+    await this.#target.easy()
     return this
   }
 
@@ -56,14 +56,14 @@ class Card {
   }
 
   @queue.next
-  good () {
-    this.#target.good()
+  async good () {
+    await this.#target.good()
     return this
   }
 
   @queue.next
-  hard () {
-    this.#target.hard()
+  async hard () {
+    await this.#target.hard()
     return this
   }
 

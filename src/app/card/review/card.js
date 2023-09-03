@@ -24,7 +24,7 @@ class Card {
     this.#interval = interval
   }
 
-  @storage
+  @storage.push
   again () {
     this.#easyFactor.dec20()
     return {
@@ -35,7 +35,7 @@ class Card {
     }
   }
 
-  @storage
+  @storage.push
   easy () {
     this.#easyFactor.inc15()
     this.#interval.xEFxEB()
@@ -45,7 +45,7 @@ class Card {
     }
   }
 
-  @storage
+  @storage.push
   good () {
     this.#interval.xEF()
     return {
@@ -53,7 +53,7 @@ class Card {
     }
   }
 
-  @storage
+  @storage.push
   hard () {
     this.#easyFactor.dec15()
     this.#interval.xHF()

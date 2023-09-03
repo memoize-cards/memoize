@@ -22,7 +22,7 @@ class Card {
     this.#lapse = lapse
   }
 
-  @storage
+  @storage.push
   again () {
     this.#lapse.inc1()
     return {
@@ -31,7 +31,7 @@ class Card {
     }
   }
 
-  @storage
+  @storage.push
   easy () {
     return {
       easyFactor: EasyFactor.value,
@@ -41,7 +41,7 @@ class Card {
     }
   }
 
-  @storage
+  @storage.push
   good () {
     return {
       easyFactor: EasyFactor.value,
@@ -51,7 +51,7 @@ class Card {
     }
   }
 
-  @storage
+  @storage.push
   hard () {
     return {
       interval: Interval.twelveHours

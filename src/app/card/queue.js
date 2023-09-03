@@ -14,13 +14,14 @@ async function request (card) {
 
 const queue = middleware(async function (args, next) {
   const card = await next(...args)
-  setImmediate(() => request(card))
+  await request(card)
   return card
 })
 
-const next = interceptor(function (args, next) {
-  setImmediate(() => request(this))
-  return next(...args)
+const next = interceptor(async function (args, next) {
+  const output = await next(...args)
+  await request(this)
+  return output
 })
 
 Object.assign(queue, {

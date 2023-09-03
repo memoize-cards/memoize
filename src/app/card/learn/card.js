@@ -19,14 +19,14 @@ class Card {
     this.#id = id
   }
 
-  @storage
+  @storage.push
   again () {
     return {
       interval: Interval.temMinutes
     }
   }
 
-  @storage
+  @storage.push
   easy () {
     return {
       easyFactor: EasyFactor.value,
@@ -35,7 +35,7 @@ class Card {
     }
   }
 
-  @storage
+  @storage.push
   good () {
     return {
       easyFactor: EasyFactor.value,
@@ -44,7 +44,7 @@ class Card {
     }
   }
 
-  @storage
+  @storage.push
   hard () {
     return {
       interval: Interval.twelveHours
