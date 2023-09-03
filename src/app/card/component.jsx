@@ -28,6 +28,8 @@ function component (card) {
           <Type>{card.type}</Type>
           <Front>{card.front}</Front>
           <Back>{card.back}</Back>
+        </stack.Div>
+        <stack.Div equal={position.BACK} column>
           <Feedback />
           <Easy onClick={() => card.easy()} />
           <Good onClick={() => card.good()} />
