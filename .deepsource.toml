@@ -1,10 +1,9 @@
 version = 1
 
 [[analyzers]]
-name = "shell"
-
-[[analyzers]]
 name = "javascript"
+enabled = true
 
-  [analyzers.meta]
-  environment = ["jest"]
+[[transformers]]
+name = "standardjs"
+enabled = true
