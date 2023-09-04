@@ -9,7 +9,7 @@
 
 [https://memoize.cards](https://memoize.cards)
 
-Bem-vindo ao Memoize, o aplicativo de flashcards que utiliza a arquitetura de desenvolvimento web Kuba como base. Enquanto o Kuba desempenha um papel crucial na estrutura do aplicativo, é o Memoize que traz a inovação para a experiência de aprendizado.
+Bem-vindo ao Memoize, um aplicativo avançado de flashcards projetado para otimizar o processo de aprendizado e memorização. Nossa plataforma oferece aos estudantes, profissionais em constante aprendizado e educadores uma abordagem inovadora e personalizada para aprimorar suas habilidades de estudo e retenção de informações essenciais.
 
 - [Introdução](https://www.notion.so/demgoncalves/Introdu-o-d8e79a6779db49088bfc418d63d41f91)
 - [Valores](https://www.notion.so/demgoncalves/Valores-33425cfac5064e618dc566e9e7eaa144)
