@@ -1,3 +1,6 @@
+[![DeepSource](https://app.deepsource.com/gh/memoize-cards/memoize.svg/?label=active+issues&show_trend=true&token=evWWUbzWfQCPjI9yCA1KeHxk)](https://app.deepsource.com/gh/memoize-cards/memoize/?ref=repository-badge)
+[![DeepSource](https://app.deepsource.com/gh/memoize-cards/memoize.svg/?label=resolved+issues&show_trend=true&token=evWWUbzWfQCPjI9yCA1KeHxk)](https://app.deepsource.com/gh/memoize-cards/memoize/?ref=repository-badge)
+
 # Memoize
 
 [https://memoize.cards](https://memoize.cards)
