@@ -8,9 +8,9 @@ const dictionary = {
     [lang.PT]: 'Delete'
   },
   description: {
-    [lang.EN]: 'Edit deck, go back to studying',
-    [lang.ES]: 'Edit deck, go back to studying',
-    [lang.PT]: 'Edit deck, go back to studying'
+    [lang.EN]: 'Edit card, go back to studying',
+    [lang.ES]: 'Edit card, go back to studying',
+    [lang.PT]: 'Edit card, go back to studying'
   },
   save: {
     [lang.EN]: 'Save',
@@ -18,9 +18,9 @@ const dictionary = {
     [lang.PT]: 'Save'
   },
   title: {
-    [lang.EN]: 'Edit deck',
-    [lang.ES]: 'Edit deck',
-    [lang.PT]: 'Edit deck'
+    [lang.EN]: 'Edit card',
+    [lang.ES]: 'Edit card',
+    [lang.PT]: 'Edit card'
   }
 }
 
