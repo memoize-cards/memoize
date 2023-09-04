@@ -2,7 +2,8 @@
 [![DeepSource](https://app.deepsource.com/gh/memoize-cards/memoize.svg/?label=resolved+issues&show_trend=true&token=evWWUbzWfQCPjI9yCA1KeHxk)](https://app.deepsource.com/gh/memoize-cards/memoize/?ref=repository-badge)<br />
 [![Maintainability](https://api.codeclimate.com/v1/badges/a70488e2fdca047de298/maintainability)](https://codeclimate.com/github/memoize-cards/memoize/maintainability)<br />
 [![Test Coverage](https://api.codeclimate.com/v1/badges/a70488e2fdca047de298/test_coverage)](https://codeclimate.com/github/memoize-cards/memoize/test_coverage)<br />
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/f2d4e015f8984454a45ae9b0b68a1e1d)](https://app.codacy.com/gh/memoize-cards/memoize/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/f2d4e015f8984454a45ae9b0b68a1e1d)](https://app.codacy.com/gh/memoize-cards/memoize/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)<br />
+[![JS Standard Style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com)
 
 # Memoize
 
