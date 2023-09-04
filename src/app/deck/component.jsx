@@ -12,7 +12,7 @@ import Study from './study'
 
 function component (deck) {
   return (
-    <Master onBack={() => redirectTo.dashboard()}>
+    <Master onBack={() => redirectTo.back()}>
       <Header>
         <Name>{deck.name}</Name>
         <Description>{deck.description}</Description>

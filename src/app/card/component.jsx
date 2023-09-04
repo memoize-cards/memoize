@@ -11,13 +11,14 @@ import h from '@standard/h'
 import Hard from './hard'
 import Master from '@app/master'
 import position from './position'
+import redirectTo from './redirectTo'
 import Reveal from './reveal'
 import stack from '@elements/stack'
 import Type from './type'
 
 function component (card) {
   return (
-    <Master>
+    <Master onBack={() => redirectTo.back()}>
       <Choose when={card.position}>
         <stack.Div equal={position.FRONT} column>
           <Type>{card.type}</Type>
@@ -38,7 +39,7 @@ function component (card) {
         </stack.Div>
       </Choose>
       <Footer>
-        <Edit onClick={() => card.edit()} />
+        <Edit onClick={() => redirectTo.edit(card.id)} />
       </Footer>
     </Master>
   )

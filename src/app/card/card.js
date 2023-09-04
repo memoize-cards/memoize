@@ -1,11 +1,10 @@
 import * as f from '@standard/f'
 import { paint, repaint } from '@standard/h'
-import { urlFor } from '@standard/router'
 import component from './component'
-import Deck from './deck'
 import Learn from './learn'
 import queue from './queue'
 import position from './position'
+import redirectTo from './redirectTo'
 import Relearn from './relearn'
 import Review from './review'
 import result from '@standard/result'
@@ -50,11 +49,6 @@ class Card {
     return this
   }
 
-  edit () {
-    location.assign(urlFor('editCard', { deck: Deck.id, id: this.id }))
-    return this
-  }
-
   @queue.next
   async good () {
     await this.#target.good()
@@ -74,7 +68,7 @@ class Card {
   }
 
   [result.Error] (_error) {
-    location.assign(urlFor('deck', { id: Deck.id }))
+    redirectTo.back()
     return this
   }
 

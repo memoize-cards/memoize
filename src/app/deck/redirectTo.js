@@ -1,7 +1,7 @@
 import { params, urlFor } from '@standard/router'
 
 const redirectTo = {
-  dashboard () {
+  back () {
     location.assign(urlFor('dashboard'))
     return this
   },
