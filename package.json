@@ -46,6 +46,7 @@
   "private": true,
   "scripts": {
     "build": "webpack --mode production",
+    "codacy": "bash codacy",
     "postinstall": "husky install",
     "start": "webpack server --mode development --open",
     "test": "jest --passWithNoTests"
