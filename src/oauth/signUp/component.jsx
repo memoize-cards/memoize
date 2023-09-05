@@ -18,7 +18,7 @@ function component (auth) {
         <Password value={auth.password} />
         <GetStarted />
       </Form>
-      <Footer/ >
+      <Footer />
     </Master>
   )
 }

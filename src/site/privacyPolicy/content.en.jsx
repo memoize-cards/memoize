@@ -7,7 +7,7 @@ function component () {
     <stack.Article column>
       <text.H1 master dark highlight md bold>Privacy Policy</text.H1>
       <text.P master xxs>
-       This Privacy Policy outlines how Memoize ("we," "our," or "us") collects, uses, and safeguards your personal information when you use the Memoize application (the "App"). We are committed to protecting your privacy and ensuring the security of your personal data. By using the App, you consent to the practices described in this Privacy Policy.
+        This Privacy Policy outlines how Memoize ("we," "our," or "us") collects, uses, and safeguards your personal information when you use the Memoize application (the "App"). We are committed to protecting your privacy and ensuring the security of your personal data. By using the App, you consent to the practices described in this Privacy Policy.
       </text.P>
       <text.H2 master dark highlight xs bold>Information We Collect</text.H2>
       <text.P master xxs>
