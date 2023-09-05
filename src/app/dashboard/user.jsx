@@ -9,7 +9,7 @@ function component () {
     <stack.Div middle>
       <Avatar large />
       <stack.Div column quarck>
-        <text.Span master dark xxs>Let's study</text.Span>
+        <text.Span master dark xxs>Let&apos;s study</text.Span>
         <text.Span master dark md highlight bold>{cookie.name}</text.Span>
       </stack.Div>
     </stack.Div>
