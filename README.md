@@ -12,9 +12,15 @@
 
 Bem-vindo ao Memoize, um aplicativo avançado de flashcards projetado para otimizar o processo de aprendizado e memorização. Nossa plataforma oferece aos estudantes, profissionais em constante aprendizado e educadores uma abordagem inovadora e personalizada para aprimorar suas habilidades de estudo e retenção de informações essenciais.
 
-- [Introdução](https://www.notion.so/demgoncalves/Introdu-o-d8e79a6779db49088bfc418d63d41f91)
-- [Valores](https://www.notion.so/demgoncalves/Valores-33425cfac5064e618dc566e9e7eaa144)
-- [Arquitetura](https://www.notion.so/demgoncalves/Arquitetura-200cfcf567de4702bebeabc183b213f3)
+- [app](https://www.notion.so/app-8a4c96af66fc407da065cd75f338f92b?pvs=21)
+- [artifact](https://www.notion.so/artifact-9987a261e1c240a1b5b181a8414636e6?pvs=21)
+- [directive](https://www.notion.so/directive-9b509e7bea7943c1bdb0a30f011cfbd9?pvs=21)
+- [elements](https://www.notion.so/elements-3ff5e4c1a6c6418f9c862674c98afc1a?pvs=21)
+- [oauth](https://www.notion.so/oauth-5f60f938e6044f4faa00a7e796eb5e6f?pvs=21)
+- [pixel](https://www.notion.so/pixel-2775a55095c548d1901440b342dbbc84?pvs=21)
+- [polyfill](https://www.notion.so/polyfill-1e28c3f5681e43ab96869dc592a1eca2?pvs=21)
+- [site](https://www.notion.so/site-e1ad4d41dda048af8cfd30baee0c0af9?pvs=21)
+- [standard](https://www.notion.so/standard-6dac1889956f4fc3b280f43dae2e94ac?pvs=21)
 
 ## Pré-requisitos
 
