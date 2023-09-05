@@ -14,6 +14,7 @@ const text = new Proxy({}, {
       font-weight: ${weight};
       line-height: var(--line-height-sm);
       text-align: ${align};
+      white-space: pre-wrap;
     `
   }
 })

@@ -5,9 +5,9 @@ import stack from '@elements/stack'
 import text from '@elements/text'
 import translate from './translate'
 
-function component (props) {
+function component () {
   return (
-    <stack.Div {...props} column>
+    <stack.Div column>
       <text.Span master dark highlight xs bold>{translate.title}</text.Span>
       <Button onClick={() => hook.easy()} complete wide>{translate.easy}</Button>
       <Button onClick={() => hook.good()} success wide>{translate.good}</Button>

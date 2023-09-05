@@ -83,7 +83,7 @@ class Element {
 
   async after (child) {
     child = (await child)[render.flow]()
-    this.#node.after(child)
+    this.#node?.after(child)
     return this
   }
 
@@ -96,19 +96,19 @@ class Element {
 
   async appendChild (child) {
     child = (await child)[render.flow]()
-    this.#node.appendChild(child)
+    this.#node?.appendChild(child)
     return this
   }
 
   @didUnmount
   @willUnmount
   remove () {
-    this.#node.remove()
+    this.#node?.remove()
     return this
   }
 
   removeAttribute (attr) {
-    this.#node.removeAttribute(attr?.key)
+    this.#node?.removeAttribute(attr?.key)
     return this
   }
 
@@ -124,7 +124,7 @@ class Element {
   }
 
   setAttribute (attr) {
-    this.#node.setAttribute(...attr)
+    this.#node?.setAttribute(...attr)
     return this
   }
 

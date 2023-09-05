@@ -5,7 +5,6 @@ import global from './global'
 import hook from '@standard/hook'
 import Learn from './learn'
 import queue from './queue'
-import position from './position'
 import redirectTo from './redirectTo'
 import Relearn from './relearn'
 import Review from './review'
@@ -17,7 +16,6 @@ import result from '@standard/result'
 class Card {
   #back
   #front
-  #position
   #target
 
   get back () {
@@ -30,10 +28,6 @@ class Card {
 
   get id () {
     return this.#target.id
-  }
-
-  get position () {
-    return (this.#position ??= position.FRONT)
   }
 
   get type () {
@@ -64,12 +58,6 @@ class Card {
     return this
   }
 
-  @repaint
-  reveal () {
-    this.#position = position.BACK
-    return this
-  }
-
   [result.Error] (_error) {
     redirectTo.back()
     return this
@@ -80,7 +68,6 @@ class Card {
   [result.Ok] (data) {
     this.#back = data.back
     this.#front = data.front
-    this.#position = position.FRONT
     this.#target = f.cond(
       [Review.is, Review.create],
       [Learn.is, Learn.create],
