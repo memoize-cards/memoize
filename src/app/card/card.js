@@ -1,6 +1,7 @@
 import * as f from '@standard/f'
 import { paint, repaint } from '@standard/h'
 import component from './component'
+import global from './global'
 import hook from '@standard/hook'
 import Learn from './learn'
 import queue from './queue'
@@ -75,6 +76,7 @@ class Card {
   }
 
   @repaint
+  @global
   [result.Ok] (data) {
     this.#back = data.back
     this.#front = data.front

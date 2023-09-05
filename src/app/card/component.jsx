@@ -1,6 +1,5 @@
 import Back from './back'
 import Choose from '@directive/choose'
-import Edit from './edit'
 import Feedback from './feedback'
 import Footer from './footer'
 import Front from './front'
@@ -28,9 +27,7 @@ function component (card) {
         </stack.Div>
         <Feedback equal={position.BACK} />
       </Choose>
-      <Footer>
-        <Edit onClick={() => redirectTo.edit(card.id)} />
-      </Footer>
+      <Footer />
     </Master>
   )
 }
