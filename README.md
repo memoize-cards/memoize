@@ -36,8 +36,9 @@ O Memoize utiliza algumas variáveis de ambiente para configurar o comportamento
 
 Aqui estão as variáveis de ambiente utilizadas pelo Memoize:
 
-| ANALYZER_MODE | Define o modo de análise para o webpack-bundle-analyzer. |  |
+| Key | Description | Value |
 | --- | --- | --- |
+| ANALYZER_MODE | Define o modo de análise para o webpack-bundle-analyzer. |  |
 | COOKIE_DOMAIN | Define o domínio no qual os valores do cookie são acessíveis. | localhost |
 | HINTS | Define o nível de detalhe dos avisos na compilação. | warning |
 | MAX_ASSET_SIZE | Define o tamanho máximo (em bytes) para um arquivo estático. | 2000000 |
