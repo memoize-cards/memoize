@@ -1,0 +1,256 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Code coverage report for src/site/privacyPolicy/content.en.jsx</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../../favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+    
+<body>
+<div class='wrapper'>
+    <div class='pad1'>
+        <h1><a href="../../../index.html">All files</a> / <a href="index.html">src/site/privacyPolicy</a> content.en.jsx</h1>
+        <div class='clearfix'>
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">0% </span>
+                <span class="quiet">Statements</span>
+                <span class='fraction'>0/57</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">0% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>0/1</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">0% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>0/1</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">0% </span>
+                <span class="quiet">Lines</span>
+                <span class='fraction'>0/57</span>
+            </div>
+        
+            
+        </div>
+        <p class="quiet">
+            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
+        </p>
+        <template id="filterTemplate">
+            <div class="quiet">
+                Filter:
+                <input oninput="onInput()" type="search" id="fileSearch">
+            </div>
+        </template>
+    </div>
+    <div class='status-line low'></div>
+    <pre><table class="coverage">
+<tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
+<a name='L2'></a><a href='#L2'>2</a>
+<a name='L3'></a><a href='#L3'>3</a>
+<a name='L4'></a><a href='#L4'>4</a>
+<a name='L5'></a><a href='#L5'>5</a>
+<a name='L6'></a><a href='#L6'>6</a>
+<a name='L7'></a><a href='#L7'>7</a>
+<a name='L8'></a><a href='#L8'>8</a>
+<a name='L9'></a><a href='#L9'>9</a>
+<a name='L10'></a><a href='#L10'>10</a>
+<a name='L11'></a><a href='#L11'>11</a>
+<a name='L12'></a><a href='#L12'>12</a>
+<a name='L13'></a><a href='#L13'>13</a>
+<a name='L14'></a><a href='#L14'>14</a>
+<a name='L15'></a><a href='#L15'>15</a>
+<a name='L16'></a><a href='#L16'>16</a>
+<a name='L17'></a><a href='#L17'>17</a>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import h from '@standard/h'</span></span></span>
+<span class="cstat-no" title="statement not covered" >import stack from '@elements/stack'</span>
+<span class="cstat-no" title="statement not covered" >import text from '@elements/text'</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >function component () {</span>
+<span class="cstat-no" title="statement not covered" >  return (</span>
+<span class="cstat-no" title="statement not covered" >    &lt;stack.Article column&gt;</span>
+<span class="cstat-no" title="statement not covered" >      &lt;text.H1 master dark highlight md bold&gt;Privacy Policy&lt;/text.H1&gt;</span>
+<span class="cstat-no" title="statement not covered" >      &lt;text.P master xxs&gt;</span>
+<span class="cstat-no" title="statement not covered" >       This Privacy Policy outlines how Memoize ("we," "our," or "us") collects, uses, and safeguards your personal information when you use the Memoize application (the "App"). We are committed to protecting your privacy and ensuring the security of your personal data. By using the App, you consent to the practices described in this Privacy Policy.</span>
+<span class="cstat-no" title="statement not covered" >      &lt;/text.P&gt;</span>
+<span class="cstat-no" title="statement not covered" >      &lt;text.H2 master dark highlight xs bold&gt;Information We Collect&lt;/text.H2&gt;</span>
+<span class="cstat-no" title="statement not covered" >      &lt;text.P master xxs&gt;</span>
+<span class="cstat-no" title="statement not covered" >        We may collect various types of personal information from you, including but not limited to your name, email address, and usage data when you use the App.</span>
+<span class="cstat-no" title="statement not covered" >      &lt;/text.P&gt;</span>
+<span class="cstat-no" title="statement not covered" >      &lt;text.H2 master dark highlight xs bold&gt;How We Use Your Information&lt;/text.H2&gt;</span>
+<span class="cstat-no" title="statement not covered" >      &lt;text.P master xxs&gt;</span>
+<span class="cstat-no" title="statement not covered" >        We use the collected information to provide and improve the App's functionality and user experience, including personalizing your learning experience and providing feedback. We may also use your information for communication purposes, to send important updates, announcements, and promotional content related to the App.</span>
+<span class="cstat-no" title="statement not covered" >      &lt;/text.P&gt;</span>
+<span class="cstat-no" title="statement not covered" >      &lt;text.H2 master dark highlight xs bold&gt;Data Security&lt;/text.H2&gt;</span>
+<span class="cstat-no" title="statement not covered" >      &lt;text.P master xxs&gt;</span>
+<span class="cstat-no" title="statement not covered" >        We implement security measures to protect your personal information from unauthorized access, use, or disclosure. However, please note that no method of data transmission over the internet is entirely secure, and we cannot guarantee the absolute security of your data.</span>
+<span class="cstat-no" title="statement not covered" >      &lt;/text.P&gt;</span>
+<span class="cstat-no" title="statement not covered" >      &lt;text.H2 master dark highlight xs bold&gt;Third-Party Services&lt;/text.H2&gt;</span>
+<span class="cstat-no" title="statement not covered" >      &lt;text.P master xxs&gt;</span>
+<span class="cstat-no" title="statement not covered" >        We may use third-party services to assist us in operating the App and may share your information with them for those purposes. These third-party services are subject to their own privacy policies, and we encourage you to review their policies before using the App.</span>
+<span class="cstat-no" title="statement not covered" >      &lt;/text.P&gt;</span>
+<span class="cstat-no" title="statement not covered" >      &lt;text.H2 master dark highlight xs bold&gt;Data Retention&lt;/text.H2&gt;</span>
+<span class="cstat-no" title="statement not covered" >      &lt;text.P master xxs&gt;</span>
+<span class="cstat-no" title="statement not covered" >        We will retain your personal information for as long as necessary to fulfill the purposes for which it was collected and to comply with legal obligations.</span>
+<span class="cstat-no" title="statement not covered" >      &lt;/text.P&gt;</span>
+<span class="cstat-no" title="statement not covered" >      &lt;text.H2 master dark highlight xs bold&gt;Your Rights&lt;/text.H2&gt;</span>
+<span class="cstat-no" title="statement not covered" >      &lt;text.P master xxs&gt;</span>
+<span class="cstat-no" title="statement not covered" >        You have the right to access, correct, update, or delete your personal information stored by us. You may also choose to withdraw your consent for certain processing activities.</span>
+<span class="cstat-no" title="statement not covered" >      &lt;/text.P&gt;</span>
+<span class="cstat-no" title="statement not covered" >      &lt;text.H2 master dark highlight xs bold&gt;Children's Privacy&lt;/text.H2&gt;</span>
+<span class="cstat-no" title="statement not covered" >      &lt;text.P master xxs&gt;</span>
+<span class="cstat-no" title="statement not covered" >        The App is not intended for use by children under the age of 13. We do not knowingly collect personal information from children under 13. If we become aware that we have collected personal information from a child under 13 without appropriate parental consent, we will take steps to delete the information.</span>
+<span class="cstat-no" title="statement not covered" >      &lt;/text.P&gt;</span>
+<span class="cstat-no" title="statement not covered" >      &lt;text.H2 master dark highlight xs bold&gt;Changes to Privacy Policy&lt;/text.H2&gt;</span>
+<span class="cstat-no" title="statement not covered" >      &lt;text.P master xxs&gt;</span>
+<span class="cstat-no" title="statement not covered" >        We may update this Privacy Policy to reflect changes in our practices. It is your responsibility to review this page periodically for any changes.</span>
+<span class="cstat-no" title="statement not covered" >      &lt;/text.P&gt;</span>
+<span class="cstat-no" title="statement not covered" >      &lt;text.P master xxs&gt;</span>
+<span class="cstat-no" title="statement not covered" >        By using the Memoize App, you acknowledge that you have read and understood this Privacy Policy and agree to its terms. If you do not agree with this Privacy Policy, please do not use the App.</span>
+<span class="cstat-no" title="statement not covered" >      &lt;/text.P&gt;</span>
+<span class="cstat-no" title="statement not covered" >      &lt;text.P master xxs&gt;</span>
+<span class="cstat-no" title="statement not covered" >        If you have any questions about this Privacy Policy, please contact us at &lt;text.A href='mailtocleber.engineer@gmail.com' primary xxs medium&gt;cleger.engineer@gmail.com&lt;/text.A&gt;.</span>
+<span class="cstat-no" title="statement not covered" >      &lt;/text.P&gt;</span>
+<span class="cstat-no" title="statement not covered" >      &lt;text.P master xxs&gt;</span>
+<span class="cstat-no" title="statement not covered" >        Last updated August 18, 2023.</span>
+<span class="cstat-no" title="statement not covered" >      &lt;/text.P&gt;</span>
+<span class="cstat-no" title="statement not covered" >    &lt;/stack.Article&gt;</span>
+<span class="cstat-no" title="statement not covered" >  )</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >export default component</span>
+&nbsp;</pre></td></tr></table></pre>
+
+                <div class='push'></div><!-- for sticky footer -->
+            </div><!-- /wrapper -->
+            <div class='footer quiet pad2 space-top1 center small'>
+                Code coverage generated by
+                <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
+                at 2023-09-05T21:43:18.855Z
+            </div>
+        <script src="../../../prettify.js"></script>
+        <script>
+            window.onload = function () {
+                prettyPrint();
+            };
+        </script>
+        <script src="../../../sorter.js"></script>
+        <script src="../../../block-navigation.js"></script>
+    </body>
+</html>
+    
