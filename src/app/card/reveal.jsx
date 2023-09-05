@@ -1,10 +1,11 @@
 import Button from '@elements/button'
 import h from '@standard/h'
+import hook from '@standard/hook'
 import translate from './translate'
 
-function component (props) {
+function component () {
   return (
-    <Button {...props} wide>{translate.reveal}</Button>
+    <Button onClick={() => hook.reveal()} wide>{translate.reveal}</Button>
   )
 }
 

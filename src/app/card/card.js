@@ -1,6 +1,7 @@
 import * as f from '@standard/f'
 import { paint, repaint } from '@standard/h'
 import component from './component'
+import hook from '@standard/hook'
 import Learn from './learn'
 import queue from './queue'
 import position from './position'
@@ -11,6 +12,7 @@ import result from '@standard/result'
 
 @paint(component)
 @queue
+@hook
 class Card {
   #back
   #front
