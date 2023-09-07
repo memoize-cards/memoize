@@ -49,7 +49,7 @@ class Card {
   good () {
     this.#interval.xEF()
     return {
-      easyFactor: this.#interval.value
+      interval: this.#interval.value
     }
   }
 
