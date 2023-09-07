@@ -15,7 +15,7 @@ const tag = styled.span`
   font-size: var(--font-size-xxs);
   font-weight: var(--font-weight-medium);
   gap: var(--spacing_inset-nano);
-  height: 30px;
+  height: 22px;
   justify-content: center;
   line-height: var(--line-height-default);
   padding: var(--spacing_inset-quarck) var(--spacing_inset-xs);
