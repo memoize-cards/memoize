@@ -5,7 +5,7 @@ import translate from './translate'
 
 function component () {
   return (
-    <Button onClick={() => hook.reveal()} wide>{translate.reveal}</Button>
+    <Button onClick={() => hook.reveal()} slot='front' wide>{translate.reveal}</Button>
   )
 }
 
