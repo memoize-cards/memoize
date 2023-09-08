@@ -7,7 +7,7 @@ import supabase from '@artifact/supabase'
 const pull = middleware(async function (args, next) {
   const { data } = await supabase.from('card').select('id, back, front').eq('id', params.id).single()
   const { id, front, back } = data
-  return await next(id, front, back)
+  return next(id, front, back)
 })
 
 const push = interceptor(function (args, next) {
