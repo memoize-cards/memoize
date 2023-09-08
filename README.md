@@ -92,6 +92,13 @@ yarn install
 yarn start
 ```
 
+
+# Histórico de Lançamentos
+
+Aqui estão os detalhes dos lançamentos do Memoize, incluindo as principais mudanças e atualizações em cada versão.
+
+- [releases](https://www.notion.so/demgoncalves/Hist-rico-de-Lan-amentos-702fd38a5b044f77a10f92e9c7e77ae8pvs=21)
+
 1. Agora, você pode acessar a aplicação em seu navegador, acessando a URL [http://localhost:6001](http://localhost:3000/).
 
 ## Licença
