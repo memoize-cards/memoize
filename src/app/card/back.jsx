@@ -8,7 +8,7 @@ function component () {
     <Fragment slot='back'>
       <Tag info>{global.type}</Tag>
       <text.Pre master dark md medium>{global.front}</text.Pre>
-      <text.Pre master dark xxs>{global.back}</text.Pre>
+      <m-markdown>{global.back}</m-markdown>
     </Fragment>
   )
 }
