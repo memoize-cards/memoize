@@ -74,32 +74,31 @@ Para começar a usar o Memoize, siga os seguintes passos:
 git clone https://github.com/memoize-cards/memoize.git
 ```
 
-1. Acesse o diretório do projeto usando o seguinte comando:
+2. Acesse o diretório do projeto usando o seguinte comando:
 
 ```bash
 cd memoize
 ```
 
-1. Instale as dependências do projeto usando o seguinte comando:
+3. Instale as dependências do projeto usando o seguinte comando:
 
 ```bash
 yarn install
 ```
 
-1. Inicie o servidor de desenvolvimento usando o seguinte comando:
+4. Inicie o servidor de desenvolvimento usando o seguinte comando:
 
 ```bash
 yarn start
 ```
 
+5. Agora, você pode acessar a aplicação em seu navegador, acessando a URL [http://localhost:6001](http://localhost:3000/).
 
-# Histórico de Lançamentos
+## Histórico de Lançamentos
 
 Aqui estão os detalhes dos lançamentos do Memoize, incluindo as principais mudanças e atualizações em cada versão.
 
 - [releases](https://www.notion.so/demgoncalves/Hist-rico-de-Lan-amentos-702fd38a5b044f77a10f92e9c7e77ae8pvs=21)
-
-1. Agora, você pode acessar a aplicação em seu navegador, acessando a URL [http://localhost:6001](http://localhost:3000/).
 
 ## Licença
 
