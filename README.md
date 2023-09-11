@@ -100,6 +100,12 @@ Aqui estão os detalhes dos lançamentos do Memoize, incluindo as principais mud
 
 - [releases](https://www.notion.so/demgoncalves/releases-702fd38a5b044f77a10f92e9c7e77ae8?pvs=21)
 
+## Evolução do UX do Projeto
+
+Visite nossa página de Evolução do UX para obter mais detalhes sobre como o Memoize evoluiu ao longo do tempo. Explore capturas de tela, relatórios de pesquisa e testes de usabilidade que destacam nosso compromisso com aprimorar a experiência do usuário.
+
+- [UX Timeline](https://www.notion.so/demgoncalves/UX-Timeline-c1d250cc91ef437d91adb362f0831452?pvs=21)
+
 ## Licença
 
 O Memoize é um projeto de código aberto licenciado sob a licença MIT. Isso significa que você **pode utilizá-lo livremente em seus projetos pessoais ou comerciais**, desde que mantenha a atribuição do autor original.
