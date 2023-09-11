@@ -1,6 +1,6 @@
 const position = {
-  BACK: 2,
-  FRONT: 1
+  BACK: 'back',
+  FRONT: 'front'
 }
 
 export default position

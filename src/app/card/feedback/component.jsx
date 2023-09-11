@@ -1,3 +1,4 @@
+import { position } from '@app/card/flip'
 import Button from '@elements/button'
 import h from '@standard/h'
 import hook from '@standard/hook'
@@ -7,7 +8,7 @@ import translate from './translate'
 
 function component () {
   return (
-    <stack.Div slot='back' column>
+    <stack.Div slot={position.BACK} column>
       <text.Span master dark highlight xs bold>{translate.title}</text.Span>
       <Button onClick={() => hook.easy()} complete wide>{translate.easy}</Button>
       <Button onClick={() => hook.good()} success wide>{translate.good}</Button>

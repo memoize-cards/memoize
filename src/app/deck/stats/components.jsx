@@ -7,7 +7,7 @@ import Total from './total'
 
 function component () {
   return (
-    <Stats>
+    <Stats key='stats'>
       <Total />
       <Review />
       <Relearn />

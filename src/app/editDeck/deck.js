@@ -1,41 +1,32 @@
 import * as filter from '@standard/filter'
-import { paint } from '@standard/h'
-import { urlFor } from '@standard/router'
+import { paint, repaint } from '@standard/h'
 import component from './component'
+import redirectTo from './redirectTo'
 import result from '@standard/result'
 import storage from './storage'
 
 @paint(component)
 @storage.pull
 class Deck {
-  #id
-  #description
-  #name
+  #data = {}
 
   get description () {
-    return (this.#description ??= '')
+    return (this.#data.description ??= '')
   }
 
   get id () {
-    return (this.#id ??= '')
+    return (this.#data.id ??= '')
   }
 
   get name () {
-    return (this.#name ??= '')
-  }
-
-  constructor (id, name, description) {
-    this.#description = description
-    this.#id = id
-    this.#name = name
+    return (this.#data.name ??= '')
   }
 
   @filter.prevent
   @filter.formData
   @storage.push
   save (data) {
-    this.#description = data.description
-    this.#name = data.name
+    Object.assign(this.#data, data)
     return this
   }
 
@@ -43,8 +34,10 @@ class Deck {
     return this
   }
 
-  [result.Ok] (_deck) {
-    location.assign(urlFor('deck', { id: this.id }))
+  @repaint
+  [result.Ok] (result) {
+    result.pull((data) => Object.assign(this.#data, data))
+    result.push(() => redirectTo.deck(this.id))
     return this
   }
 }
