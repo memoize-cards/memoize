@@ -98,7 +98,6 @@ class Fragment {
 
   static execute (attrs, children) {
     attrs = Object.entries(attrs)
-    children = children.flat(Infinity)
     return new Fragment(attrs, children)
   }
 }

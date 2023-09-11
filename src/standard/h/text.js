@@ -19,12 +19,12 @@ class Text {
 
   after (child) {
     child = child[render.flow]()
-    this.#node.after(child)
+    this.#node?.after(child)
     return this
   }
 
   remove () {
-    this.#node.remove()
+    this.#node?.remove()
     return this
   }
 

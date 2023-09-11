@@ -1,7 +1,7 @@
 import magic from '@standard/magic'
 
-async function render (node, element) {
-  node.append((await element)[render.flow]())
+function render (node, element) {
+  node.append(element[render.flow]())
 }
 
 Object.assign(render, {

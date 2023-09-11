@@ -81,21 +81,20 @@ class Element {
     return this
   }
 
-  async after (child) {
-    child = (await child)[render.flow]()
+  after (child) {
+    child = child[render.flow]()
     this.#node?.after(child)
     return this
   }
 
-  async append (children) {
-    children = await Promise.all(children)
+  append (children) {
     children = children.map((child) => child[render.flow]())
     this.#node.append(...children)
     return this
   }
 
-  async appendChild (child) {
-    child = (await child)[render.flow]()
+  appendChild (child) {
+    child = child[render.flow]()
     this.#node?.appendChild(child)
     return this
   }
@@ -117,8 +116,8 @@ class Element {
     return this
   }
 
-  async replace (child, nChild) {
-    await child.after(nChild)
+  replace (child, nChild) {
+    child.after(nChild)
     child.remove()
     return this
   }
@@ -165,7 +164,6 @@ class Element {
 
   static create (nodeName, attrs, children) {
     attrs = Object.entries(attrs)
-    children = children.flat(Infinity)
     return new Element(nodeName, attrs, children)
   }
 

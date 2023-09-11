@@ -5,18 +5,18 @@ import repaint from './repaint'
 function paint (component) {
   return (Klass) =>
     new Proxy(
-      async function (props, children) {
+      function (props, children) {
         const instance = (this instanceof Klass)
-          ? await new Klass(...arguments)
-          : await new Klass(props)
+          ? new Klass(...arguments)
+          : new Klass(props)
 
-        const rootAST = await component(instance, children)
+        const rootAST = component(instance, children)
 
         Object.assign(instance, {
           [paint.rootAST]: () => rootAST,
           [paint.rootElement]: () => rootAST.__node__,
           [render.flow]: () => rootAST[render.flow](),
-          [repaint.reflow]: async () => rootAST[repaint.reflow](await component(instance, children))
+          [repaint.reflow]: () => rootAST[repaint.reflow](component(instance, children))
         })
 
         Object.assign(rootAST, {
