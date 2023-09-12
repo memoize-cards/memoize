@@ -59,7 +59,7 @@ class Card {
   }
 
   [result.Error] (_error) {
-    redirectTo.back()
+    redirectTo.studyCompleted()
     return this
   }
 

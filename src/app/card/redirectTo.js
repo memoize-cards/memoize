@@ -10,6 +10,11 @@ const redirectTo = {
   edit (id) {
     location.assign(urlFor('editCard', { deck: Deck.id, id }))
     return this
+  },
+
+  studyCompleted () {
+    location.assign(urlFor('studyCompleted', { id: Deck.id }))
+    return this
   }
 }
 
