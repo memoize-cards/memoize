@@ -11,7 +11,7 @@ const lang = {
       cookie.lang ||
       args.lang ||
       navigator.language ||
-      lang.PT
+      lang.EN
     )
   },
 
