@@ -98,7 +98,7 @@ yarn start
 
 Aqui estão os detalhes dos lançamentos do Memoize, incluindo as principais mudanças e atualizações em cada versão.
 
-- [releases](https://www.notion.so/demgoncalves/releases-702fd38a5b044f77a10f92e9c7e77ae8?pvs=21)
+- [Releases](https://www.notion.so/demgoncalves/releases-702fd38a5b044f77a10f92e9c7e77ae8?pvs=21)
 
 ## Evolução do UX do Projeto
 
