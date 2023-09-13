@@ -6,7 +6,7 @@ import supabase from '@artifact/supabase'
 const request = async function (card) {
   const { id } = cookie
   const { back, deck, front, interval, type } = card
-  const { data, error } = await supabase.from('card').insert([{ back, deck, front, interval, type, user_id: id }]).select()
+  const { data, error } = await supabase.from('card').insert([{ back, deck, front, interval, type, user_id: id }]).select().single()
   error
     ? card[result.Error]?.(error)
     : card[result.Ok]?.(data)
