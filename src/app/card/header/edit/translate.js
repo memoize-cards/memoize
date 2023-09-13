@@ -6,11 +6,6 @@ const dictionary = {
     [lang.EN]: 'Edit',
     [lang.ES]: 'Edit',
     [lang.PT]: 'Edit'
-  },
-  reveal: {
-    [lang.EN]: 'Reveal',
-    [lang.ES]: 'Reveal',
-    [lang.PT]: 'Reveal'
   }
 }
 

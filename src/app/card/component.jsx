@@ -1,24 +1,18 @@
 import Back from './back'
-import Feedback from './feedback'
 import Flip from './flip'
-import Footer from './footer'
 import Front from './front'
-import h from '@standard/h'
-import Master from '@app/master'
-import redirectTo from './redirectTo'
-import Reveal from './reveal'
+import h, { Fragment } from '@standard/h'
+import Header from './header'
 
 function component () {
   return (
-    <Master onBack={() => redirectTo.back()}>
+    <>
+      <Header />
       <Flip>
         <Front />
         <Back />
-        <Reveal />
-        <Feedback />
       </Flip>
-      <Footer />
-    </Master>
+    </>
   )
 }
 

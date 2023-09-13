@@ -12,8 +12,8 @@ const tag = styled.span`
   cursor: pointer;
   display: flex;
   font-family: var(--font-family-base);
-  font-size: var(--font-size-xxs);
-  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-xxxs);
+  font-weight: var(--font-weight-regular);
   gap: var(--spacing_inset-nano);
   height: 22px;
   justify-content: center;
