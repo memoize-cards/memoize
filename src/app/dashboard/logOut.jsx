@@ -1,10 +1,11 @@
 import { urlFor } from '@standard/router'
 import h from '@standard/h'
 import text from '@elements/text'
+import translate from './translate'
 
 function component () {
   return (
-    <text.A href={urlFor('logOut')} primary xxs medium>Log Out</text.A>
+    <text.A href={urlFor('logOut')} primary xxs medium>{translate.logOut}</text.A>
   )
 }
 

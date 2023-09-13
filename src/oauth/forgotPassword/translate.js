@@ -4,28 +4,28 @@ import lang from '@standard/lang'
 const dictionary = {
   description: {
     [lang.EN]: "No worries, we'll send you reset instructions",
-    [lang.ES]: "No worries, we'll send you reset instructions",
-    [lang.PT]: "No worries, we'll send you reset instructions"
+    [lang.ES]: 'No te preocupes, te enviaremos instrucciones para restablecerla',
+    [lang.PT]: 'Não se preocupe, enviaremos instruções de redefinição para você'
   },
   footer: {
     [lang.EN]: 'Already have an account?',
-    [lang.ES]: 'Already have an account?',
-    [lang.PT]: 'Already have an account?'
+    [lang.ES]: '¿Ya tienes una cuenta?',
+    [lang.PT]: 'Já tem uma conta?'
   },
   logIn: {
     [lang.EN]: 'Back to log in',
-    [lang.ES]: 'Back to log in',
-    [lang.PT]: 'Back to log in'
+    [lang.ES]: 'Volver a iniciar sesión',
+    [lang.PT]: 'Voltar para fazer login'
   },
   resetPassword: {
     [lang.EN]: 'Reset password',
-    [lang.ES]: 'Reset password',
-    [lang.PT]: 'Reset password'
+    [lang.ES]: 'Restablecer contraseña',
+    [lang.PT]: 'Redefinir senha'
   },
   title: {
     [lang.EN]: 'Forgot Passsword?',
-    [lang.ES]: 'Forgot Passsword?',
-    [lang.PT]: 'Forgot Passsword?'
+    [lang.ES]: '¿Olvidaste la contraseña?',
+    [lang.PT]: 'Esqueceu a senha?'
   }
 }
 

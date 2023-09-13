@@ -4,8 +4,8 @@ import lang from '@standard/lang'
 const dictionary = {
   edit: {
     [lang.EN]: 'Edit',
-    [lang.ES]: 'Edit',
-    [lang.PT]: 'Edit'
+    [lang.ES]: 'Editar',
+    [lang.PT]: 'Editar'
   }
 }
 

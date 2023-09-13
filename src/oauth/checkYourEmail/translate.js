@@ -4,33 +4,33 @@ import lang from '@standard/lang'
 const dictionary = {
   clickToResend: {
     [lang.EN]: 'Click to resend',
-    [lang.ES]: 'Click to resend',
-    [lang.PT]: 'Click to resend'
+    [lang.ES]: 'Haga clic para reenviar',
+    [lang.PT]: 'Clique para reenviar'
   },
   description: {
     [lang.EN]: 'We sent a password reset link to',
-    [lang.ES]: 'We sent a password reset link to',
-    [lang.PT]: 'We sent a password reset link to'
+    [lang.ES]: 'Hemos enviado un enlace para restablecer la contraseña a',
+    [lang.PT]: 'Enviamos um link para redefinir a senha para'
   },
   footer: {
     [lang.EN]: "Didn't receive the email?",
-    [lang.ES]: "Didn't receive the email?",
-    [lang.PT]: "Didn't receive the email?"
+    [lang.ES]: '¿No recibió el correo electrónico?',
+    [lang.PT]: 'Não recebeu o email?'
   },
   logIn: {
     [lang.EN]: 'Back to log in',
-    [lang.ES]: 'Back to log in',
-    [lang.PT]: 'Back to log in'
+    [lang.ES]: 'Volver a iniciar sesión',
+    [lang.PT]: 'Voltar para fazer login'
   },
   openEmailApp: {
     [lang.EN]: 'Open email app',
-    [lang.ES]: 'Open email app',
-    [lang.PT]: 'Open email app'
+    [lang.ES]: 'Abrir la aplicación de correo electrónico',
+    [lang.PT]: 'Abrir o aplicativo de e-mail'
   },
   title: {
     [lang.EN]: 'Check your email?',
-    [lang.ES]: 'Check your email?',
-    [lang.PT]: 'Check your email?'
+    [lang.ES]: '¿Verificar su correo electrónico?',
+    [lang.PT]: 'Verifique seu e-mail?'
   }
 }
 

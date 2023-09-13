@@ -4,23 +4,23 @@ import lang from '@standard/lang'
 const dictionary = {
   createCard: {
     [lang.EN]: 'Create card',
-    [lang.ES]: 'Create card',
-    [lang.PT]: 'Create card'
+    [lang.ES]: 'Crear tarjeta',
+    [lang.PT]: 'Criar cartão'
   },
   edit: {
     [lang.EN]: 'Edit',
-    [lang.ES]: 'Edit',
-    [lang.PT]: 'Edit'
+    [lang.ES]: 'Editar',
+    [lang.PT]: 'Editar'
   },
   footer: {
     [lang.EN]: 'Need to edit the deck,',
-    [lang.ES]: 'Need to edit the deck,',
-    [lang.PT]: 'Need to edit the deck,'
+    [lang.ES]: 'Necesita editar la baraja,',
+    [lang.PT]: 'Precisa editar o baralho,'
   },
   study: {
     [lang.EN]: 'Study',
-    [lang.ES]: 'Study',
-    [lang.PT]: 'Study'
+    [lang.ES]: 'Estudiar',
+    [lang.PT]: 'Estudar'
   }
 }
 

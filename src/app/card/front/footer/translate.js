@@ -4,8 +4,8 @@ import lang from '@standard/lang'
 const dictionary = {
   reveal: {
     [lang.EN]: 'Reveal',
-    [lang.ES]: 'Reveal',
-    [lang.PT]: 'Reveal'
+    [lang.ES]: 'Mostrar',
+    [lang.PT]: 'Revelar'
   }
 }
 

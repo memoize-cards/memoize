@@ -4,23 +4,23 @@ import lang from '@standard/lang'
 const dictionary = {
   delete: {
     [lang.EN]: 'Delete',
-    [lang.ES]: 'Delete',
-    [lang.PT]: 'Delete'
+    [lang.ES]: 'Eliminar',
+    [lang.PT]: 'Excluir'
   },
   description: {
     [lang.EN]: 'Edit card, go back to studying',
-    [lang.ES]: 'Edit card, go back to studying',
-    [lang.PT]: 'Edit card, go back to studying'
+    [lang.ES]: 'Editar tarjeta, volver al estudio',
+    [lang.PT]: 'Editar cartão, voltar a estudar'
   },
   save: {
     [lang.EN]: 'Save',
-    [lang.ES]: 'Save',
-    [lang.PT]: 'Save'
+    [lang.ES]: 'Guardar',
+    [lang.PT]: 'Salvar'
   },
   title: {
     [lang.EN]: 'Edit card',
-    [lang.ES]: 'Edit card',
-    [lang.PT]: 'Edit card'
+    [lang.ES]: 'Editar tarjeta',
+    [lang.PT]: 'Editar cartão'
   }
 }
 

@@ -3,24 +3,24 @@ import lang from '@standard/lang'
 
 const dictionary = {
   description: {
-    [lang.EN]: 'You new password must be different to previously used passwords',
-    [lang.ES]: 'You new password must be different to previously used passwords',
-    [lang.PT]: 'You new password must be different to previously used passwords'
+    [lang.EN]: 'Your new password must be different from previously used passwords',
+    [lang.ES]: 'Su nueva contraseña debe ser diferente de las contraseñas utilizadas anteriormente',
+    [lang.PT]: 'Sua nova senha deve ser diferente das senhas anteriormente utilizadas'
   },
   logIn: {
     [lang.EN]: 'Back to log in',
-    [lang.ES]: 'Back to log in',
-    [lang.PT]: 'Back to log in'
+    [lang.ES]: 'Volver a iniciar sesión',
+    [lang.PT]: 'Voltar para fazer login'
   },
   resetPassword: {
     [lang.EN]: 'Reset password',
-    [lang.ES]: 'Reset password',
-    [lang.PT]: 'Reset password'
+    [lang.ES]: 'Restablecer contraseña',
+    [lang.PT]: 'Redefinir senha'
   },
   title: {
     [lang.EN]: 'Set new password',
-    [lang.ES]: 'Set new password',
-    [lang.PT]: 'Set new password'
+    [lang.ES]: 'Establecer nueva contraseña',
+    [lang.PT]: 'Definir nova senha'
   }
 }
 
