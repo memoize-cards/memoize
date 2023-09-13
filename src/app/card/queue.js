@@ -12,14 +12,14 @@ async function request (card) {
     : card[result.Error]?.(error)
 }
 
-const queue = middleware(async function (card) {
+const queue = middleware(function (card) {
   setImmediate(() => request(card))
 })
 
 const next = interceptor(async function (args, next) {
-  const output = await next(...args)
+  await next(...args)
   await request(this)
-  return output
+  return this
 })
 
 Object.assign(queue, {
