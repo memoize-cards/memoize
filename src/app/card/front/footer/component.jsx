@@ -1,11 +1,13 @@
+import Button from '@elements/button'
 import h from '@standard/h'
-import Reveal from './reveal'
+import hook from '@standard/hook'
 import style from './style'
+import translate from './translate'
 
 function component () {
   return (
     <footer className={style.footer}>
-      <Reveal />
+      <Button onClick={() => hook.reveal()} wide>{translate.reveal}</Button>
     </footer>
   )
 }
