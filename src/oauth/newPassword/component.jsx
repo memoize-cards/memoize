@@ -1,11 +1,16 @@
 import h from '@standard/h'
 import Input, { Label, Supporting } from '@elements/input'
+import translate from './translate'
 
 function component () {
   return (
-    <Input type='password' id='newPassword' name='newPassword'>
-      <Label>New password</Label>
-      <Supporting>Your new password must be more than 8 characters</Supporting>
+    <Input
+      type='password'
+      id='newPassword'
+      name='newPassword'
+    >
+      <Label>{translate.label}</Label>
+      <Supporting>{translate.supporting}</Supporting>
     </Input>
   )
 }
