@@ -1,6 +1,7 @@
 import Choose from '@directive/choose'
 import h from '@standard/h'
 import Textarea, { Label, Supporting } from '@elements/textarea'
+import translate from './translate'
 
 function component (description) {
   return (
@@ -14,9 +15,9 @@ function component (description) {
       onInvalid={(e) => description.onChange(e)}
       value={description.value}
     >
-      <Label>Description</Label>
+      <Label>{translate.label}</Label>
       <Choose when={description.validity}>
-        <Supporting equal='required'>Description is required</Supporting>
+        <Supporting equal='required'>{translate.required}</Supporting>
       </Choose>
     </Textarea>
   )

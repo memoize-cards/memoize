@@ -1,6 +1,7 @@
 import Choose from '@directive/choose'
 import h from '@standard/h'
 import Input, { Label, Supporting } from '@elements/input'
+import translate from './translate'
 
 function component (name) {
   return (
@@ -14,9 +15,9 @@ function component (name) {
       onInvalid={(e) => name.onChange(e)}
       value={name.value}
     >
-      <Label>Name</Label>
+      <Label>{translate.label}</Label>
       <Choose when={name.validity}>
-        <Supporting equal='required'>Name is required</Supporting>
+        <Supporting equal='required'>{translate.required}</Supporting>
       </Choose>
     </Input>
   )

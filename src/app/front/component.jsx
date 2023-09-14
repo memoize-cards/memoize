@@ -1,6 +1,7 @@
 import Choose from '@directive/choose'
 import h from '@standard/h'
 import Input, { Label, Supporting } from '@elements/input'
+import translate from './translate'
 
 function component (front) {
   return (
@@ -14,9 +15,9 @@ function component (front) {
       onInvalid={(e) => front.onChange(e)}
       value={front.value}
     >
-      <Label>Front</Label>
+      <Label>{translate.label}</Label>
       <Choose when={front.validity}>
-        <Supporting equal='required'>Front is required</Supporting>
+        <Supporting equal='required'>{translate.required}</Supporting>
       </Choose>
     </Input>
   )
