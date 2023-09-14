@@ -3,12 +3,16 @@
 exports[`@elements/tag Deve ciar uma tag da cor correspondente quando indicado como propriedade 1`] = `
 <span
   primary="true"
-  style="align-items: center; background-color: var(--color-primary); border: var(--border-width-hairline) solid var(--color-primary); border-radius: var(--border-radius-pill); color: var(--color-pure-white); cursor: pointer; display: flex; font-family: var(--font-family-base); font-size: var(--font-size-xxs); font-weight: var(--font-weight-medium); gap: var(--spacing_inset-nano); height: 22px; justify-content: center; line-height: var(--line-height-default); padding: var(--spacing_inset-quarck) var(--spacing_inset-xs); width: auto;"
-/>
+  style="align-items: center; background-color: var(--color-primary); border: var(--border-width-hairline) solid var(--color-primary); border-radius: var(--border-radius-pill); color: var(--color-pure-white); cursor: pointer; display: flex; font-family: var(--font-family-base); font-size: var(--font-size-xxxs); font-weight: var(--font-weight-regular); gap: var(--spacing_inset-nano); height: 22px; justify-content: center; line-height: var(--line-height-default); padding: var(--spacing_inset-quarck) var(--spacing_inset-xs); width: auto;"
+>
+  Click Me
+</span>
 `;
 
 exports[`@elements/tag Deve criar uma tag de cor padrao quando nenhuma cor for indicada 1`] = `
 <span
-  style="align-items: center; background-color: transparent; border: var(--border-width-hairline) solid var(--color-master-dark); border-radius: var(--border-radius-pill); color: var(--color-master-dark); cursor: pointer; display: flex; font-family: var(--font-family-base); font-size: var(--font-size-xxs); font-weight: var(--font-weight-medium); gap: var(--spacing_inset-nano); height: 22px; justify-content: center; line-height: var(--line-height-default); padding: var(--spacing_inset-quarck) var(--spacing_inset-xs); width: auto;"
-/>
+  style="align-items: center; background-color: transparent; border: var(--border-width-hairline) solid var(--color-master-dark); border-radius: var(--border-radius-pill); color: var(--color-master-dark); cursor: pointer; display: flex; font-family: var(--font-family-base); font-size: var(--font-size-xxxs); font-weight: var(--font-weight-regular); gap: var(--spacing_inset-nano); height: 22px; justify-content: center; line-height: var(--line-height-default); padding: var(--spacing_inset-quarck) var(--spacing_inset-xs); width: auto;"
+>
+  Click Me
+</span>
 `;

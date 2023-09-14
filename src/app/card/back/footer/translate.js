@@ -1,32 +1,32 @@
 import i18n from '@standard/i18n'
 import lang from '@standard/lang'
 
-const dictionary = {
+const dicionario = {
   again: {
     [lang.EN]: 'No',
     [lang.ES]: 'No',
-    [lang.PT]: 'No'
+    [lang.PT]: 'Não'
   },
   easy: {
     [lang.EN]: 'Yes',
-    [lang.ES]: 'Yes',
-    [lang.PT]: 'Yes'
+    [lang.ES]: 'Sí',
+    [lang.PT]: 'Sim'
   },
   good: {
     [lang.EN]: 'With Effort',
-    [lang.ES]: 'With Effort',
-    [lang.PT]: 'With Effort'
+    [lang.ES]: 'Con Esfuerzo',
+    [lang.PT]: 'Com Esforço'
   },
   hard: {
     [lang.EN]: 'Partially',
-    [lang.ES]: 'Partially',
-    [lang.PT]: 'Partially'
+    [lang.ES]: 'Parcialmente',
+    [lang.PT]: 'Parcialmente'
   },
   title: {
     [lang.EN]: 'Did you remember?',
-    [lang.ES]: 'Did you remember?',
-    [lang.PT]: 'Did you remember?'
+    [lang.ES]: '¿Recuerdas?',
+    [lang.PT]: 'Você lembrou?'
   }
 }
 
-export default i18n(dictionary)
+export default i18n(dicionario)
