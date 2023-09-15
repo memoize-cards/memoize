@@ -1,9 +1,10 @@
+import fallback from './fallback.svg'
 import h from '@standard/h'
 import style from './style'
 
 function component (props) {
   return (
-    <div {...props} className={style.avatar} />
+    <img {...props} className={style.avatar} onError={(e) => e.target.src = fallback} />
   )
 }
 
