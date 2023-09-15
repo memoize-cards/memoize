@@ -15,7 +15,7 @@ const style = css`
     display: flex;
     flex-direction: column;
     gap: var(--spacing_inset-xs);
-    min-height: calc(100vh - 180px);
+    min-height: calc(100vh - 148px);
     padding: var(--spacing_inset-xs);
     width: 100%;
   }
