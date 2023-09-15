@@ -11,7 +11,7 @@ function component () {
       <Avatar large />
       <stack.Div column>
         <text.Span master xxxs>{translate.hello}</text.Span>
-        <text.Span master dark xs highlight bold>{cookie.name}</text.Span>
+        <text.Span master dark sm highlight bold>{cookie.name}</text.Span>
       </stack.Div>
     </stack.Div>
   )
