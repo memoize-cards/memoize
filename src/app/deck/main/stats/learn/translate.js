@@ -4,8 +4,8 @@ import lang from '@standard/lang'
 const dictionary = {
   label: {
     [lang.EN]: 'Learn',
-    [lang.ES]: 'Learn',
-    [lang.PT]: 'Learn'
+    [lang.ES]: 'Aprender',
+    [lang.PT]: 'Aprender'
   }
 }
 
