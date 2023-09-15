@@ -1,11 +1,11 @@
-import { params, urlFor } from '@standard/router'
 import Button from '@elements/button'
 import h from '@standard/h'
+import redirectTo from './redirectTo'
 import translate from './translate'
 
 function component () {
   return (
-    <Button onClick={() => location.assign(urlFor('createCard', { id: params.id }))} wide>{translate.createCard}</Button>
+    <Button onClick={() => redirectTo.createCard()} wide>{translate.createCard}</Button>
   )
 }
 
