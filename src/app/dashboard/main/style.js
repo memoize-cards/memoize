@@ -2,7 +2,6 @@ import css from '@standard/css'
 
 const style = css`
   .main {
-    align-items: start;
     display: flex;
     flex-direction: column;
     gap: var(--spacing_inset-lg);
