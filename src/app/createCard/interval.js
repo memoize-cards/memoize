@@ -1,8 +1,9 @@
-import * as f from '@standard/f'
-
 class Interval {
   static get oneMinute () {
-    return f.add(new Date().getTime(), (1 * 60 * 1000))
+    // TODO: Como acabei de criar o cartao, acredito que seja valido
+    // o cartao ficar disponivel para acesso imediato
+    // return f.add(new Date().getTime(), (1 * 60 * 1000))
+    return new Date().getTime()
   }
 }
 
