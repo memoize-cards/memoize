@@ -12,7 +12,7 @@ const text = new Proxy({}, {
       font-family: ${family};
       font-size: ${size};
       font-weight: ${weight};
-      line-height: var(--line-height-sm);
+      line-height: var(--line-height-lg);
       text-align: ${align};
       white-space: pre-wrap;
     `
