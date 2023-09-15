@@ -18,7 +18,7 @@ const dictionary = {
     [lang.PT]: 'Política de privacidade'
   },
   termsOfUse: {
-    [lang.EN]: 'terms of use',
+    [lang.EN]: 'Terms of use',
     [lang.ES]: 'Términos de uso',
     [lang.PT]: 'Termos de uso'
   },
