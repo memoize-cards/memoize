@@ -7,6 +7,7 @@ import Header from './header'
 import Master from '@oauth/master'
 import Password from '@oauth/password'
 import SignIn from './signIn'
+import SignInWithGoogle from './signInWithGoogle'
 
 function component (auth) {
   return (
@@ -18,6 +19,7 @@ function component (auth) {
         <ForgotPassword />
         <SignIn />
       </Form>
+      <SignInWithGoogle />
       <Footer />
     </Master>
   )
