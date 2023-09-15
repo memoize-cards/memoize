@@ -10,6 +10,7 @@ import storage from './storage'
 class Home {
   @cookie.setUser
   [result.Ok] (_user) {
+    console.log(_user)
     location.assign(urlFor('dashboard'))
     return this
   }

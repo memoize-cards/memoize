@@ -4,7 +4,7 @@ describe('@elements/stack/gap', () => {
   test('It should return the variable of size xs when the size is not defined', () => {
     const props = {}
     const value = gap(props)
-    expect(value).toBe('var(--spacing_inset-xs)')
+    expect(value).toBe('0')
   })
 
   test('It should return the variable of size quarck when the size is defined', () => {

@@ -3,7 +3,7 @@ import stack from '@elements/stack'
 
 function component (decks) {
   return (
-    <stack.Div column>
+    <stack.Div column xs>
       {decks.collection}
     </stack.Div>
   )
