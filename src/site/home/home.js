@@ -10,7 +10,6 @@ import storage from './storage'
 class Home {
   @cookie.setUser
   [result.Ok] (_user) {
-    localStorage.setItem('user', JSON.parse(_user))
     location.assign(urlFor('dashboard'))
     return this
   }
