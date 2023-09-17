@@ -2,6 +2,7 @@ import css from '@standard/css'
 
 const style = css`
   .icon {
+    color: var(--color-primary);
     font-size: 24px;
   }
 
