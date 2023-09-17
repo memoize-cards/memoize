@@ -5,7 +5,7 @@ import translate from './translate'
 
 function component () {
   return (
-    <text.A onClick={() => redirectTo.edit()} href='#' master xxs>{translate.edit}</text.A>
+    <text.A onClick={() => redirectTo.edit()} href='#' primary xxs>{translate.edit}</text.A>
   )
 }
 
