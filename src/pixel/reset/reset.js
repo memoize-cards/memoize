@@ -9,6 +9,10 @@ const style = css`
     padding: 0;
   }
 
+  a {
+    text-decoration: none;
+  }
+
   body {
     background-color: var(--color-master-lightest);
   }
