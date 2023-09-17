@@ -5,12 +5,12 @@ import translate from './translate'
 
 function component () {
   return (
-    <stack.Header column center giant>
-      <stack.HGroup column center quarck>
+    <header>
+      <stack.HGroup column nano>
         <text.H1 master dark highlight md bold>{translate.title}</text.H1>
         <text.H2 master dark xxs>{translate.description}</text.H2>
       </stack.HGroup>
-    </stack.Header>
+    </header>
   )
 }
 
