@@ -11,11 +11,11 @@ function component (study) {
   return (
     <>
       <Show when={study.count}>
-        <Button onClick={() => redirectTo.card()} primary wide>{translate.study}</Button>
+        <Button onClick={() => redirectTo.card()} primary wide>{translate.study} ( {study.count} )</Button>
       </Show>
       <Hide when={study.count}>
         <stack.Div middle center>
-          <text.Span master xxs medium>{translate.wait}</text.Span>
+          <text.Span master xxxs>{translate.wait}</text.Span>
         </stack.Div>
       </Hide>
     </>
