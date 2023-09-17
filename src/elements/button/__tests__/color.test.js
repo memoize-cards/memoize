@@ -10,6 +10,6 @@ describe('@elements/button/color', () => {
   test('Deve criar uma variavel de cor master quando nenhuma cor for indicada', () => {
     const props = {}
     const cssVariable = color(props)
-    expect(cssVariable).toBe('var(--color-master-dark)')
+    expect(cssVariable).toBe('var(--color-primary)')
   })
 })

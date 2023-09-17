@@ -13,7 +13,7 @@ function border (props) {
   const color = colors.some((key) => props[key])
   return color
     ? 'var(--color-pure-white)'
-    : 'var(--color-master-dark)'
+    : 'var(--color-primary)'
 }
 
 export default border
