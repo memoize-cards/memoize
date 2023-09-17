@@ -1,12 +1,25 @@
 import Button from '@elements/button'
 import h, { Fragment } from '@standard/h'
+import icon from '@elements/icon'
+import Hide from '@directive/hide'
 import redirectTo from './redirectTo'
+import Show from '@directive/show'
+import stack from '@elements/stack'
+import text from '@elements/text'
 import translate from './translate'
 
 function component (study) {
   return (
     <>
-      <Button onClick={() => redirectTo.card()} primary wide>{translate.study} ( {study.count} )</Button>
+      <Show when={study.count}>
+        <Button onClick={() => redirectTo.card()} primary wide>{translate.study}</Button>
+      </Show>
+      <Hide when={study.count}>
+        <stack.Div middle center nano>
+          <icon.Warning />
+          <text.Span master xxs medium>{translate.wait}</text.Span>
+        </stack.Div>
+      </Hide>
     </>
   )
 }

@@ -9,12 +9,11 @@ class Study {
   #count
 
   get count () {
-    return (this.#count ??= '0')
+    return (this.#count ??= 0)
   }
 
   @repaint
   [result.Ok] (count) {
-    console.log(count)
     this.#count = count
   }
 }
