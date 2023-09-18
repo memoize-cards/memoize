@@ -1,6 +1,7 @@
 import Deck from './deck'
 import Interval from './interval'
 import middleware from '@standard/middleware'
+import Reload from './reload'
 import result from '@standard/result'
 import supabase from '@artifact/supabase'
 
@@ -13,7 +14,7 @@ async function request (study) {
 
 const pull = middleware(function (study) {
   request(study)
-  setInterval(() => request(study), 1000 * 60)
+  setInterval(() => request(study), Reload.interval)
 })
 
 export default {

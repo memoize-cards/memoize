@@ -28,7 +28,8 @@ self.addEventListener('fetch', (event) => {
     event.respondWith(
       (async () => {
         const cache = await caches.open(CACHE)
-        return await cache.match(event.request) || fetch(event.request)
+        const cachedResponse = await cache.match(event.request)
+        return cachedResponse || fetch(event.request)
       })()
     )
   }
