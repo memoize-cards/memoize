@@ -4,8 +4,7 @@
 [![Test Coverage](https://api.codeclimate.com/v1/badges/a70488e2fdca047de298/test_coverage)](https://codeclimate.com/github/memoize-cards/memoize/test_coverage)<br />
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/f2d4e015f8984454a45ae9b0b68a1e1d)](https://app.codacy.com/gh/memoize-cards/memoize/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)<br />
 [![Codacy Badge](https://app.codacy.com/project/badge/Coverage/f2d4e015f8984454a45ae9b0b68a1e1d)](https://app.codacy.com/gh/memoize-cards/memoize/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_coverage)<br />
-[![JS Standard Style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com)<br />
-[![CC BY-NC 4.0](https://i.creativecommons.org/l/by-nc/4.0/80x15.png)](http://creativecommons.org/licenses/by-nc/4.0)
+[![JS Standard Style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com)
 
 # Memoize
 
@@ -105,11 +104,14 @@ Aqui estão os detalhes dos lançamentos do Memoize, incluindo as principais mud
 
 Visite nossa página de Evolução do UX para obter mais detalhes sobre como o Memoize evoluiu ao longo do tempo. Explore capturas de tela, relatórios de pesquisa e testes de usabilidade que destacam nosso compromisso com aprimorar a experiência do usuário.
 
+
 - [UX Timeline](https://www.notion.so/demgoncalves/UX-Timeline-c1d250cc91ef437d91adb362f0831452?pvs=21)
 
 ## Licença
 
-O Memoize é um projeto de código aberto licenciado sob a licença CC BY-NC 4.0. Isso significa que você **pode utilizá-lo livremente em seus projetos pessoais ou comerciais**, desde que mantenha a atribuição do autor original.
+O Memoize é um projeto de código aberto licenciado sob a Licença CC BY-NC 4.0. **Isso significa que você pode utilizá-lo livremente em seus projetos pessoais, desde que não busque lucro com o uso e mantenha a atribuição ao autor original**. O uso em projetos comerciais não é permitido sob esta licença.
+
+[![CC BY-NC 4.0](https://i.creativecommons.org/l/by-nc/4.0/80x15.png)](http://creativecommons.org/licenses/by-nc/4.0)
 
 ## Contato
 
