@@ -1,14 +1,12 @@
 import styled from '@standard/styled'
 
-const footer = styled.footer`
-  align-items: center;
+const container = styled.footer`
   display: flex;
+  flex-direction: column;
   gap: var(--spacing_inset-xs);
-  height: 74px;
-  justify-content: center;
   margin: 0 auto;
   max-width: 425px;
   padding: var(--spacing_inset-xs);
 `
 
-export default footer
+export default container

@@ -17,6 +17,10 @@ const style = css`
     background-color: var(--color-master-lightest);
   }
 
+  ul {
+    list-style: none;
+  }
+
   m-markdown {
     overflow-x: hidden;
     width: 100%;

@@ -5,7 +5,7 @@ import translate from './translate'
 
 function component () {
   return (
-    <text.A href={urlFor('termsOfUse')} primary xxs medium>{translate.termsOfUse}</text.A>
+    <text.A href={urlFor('privacyPolicy')} primary xxxs>{translate.privacyPolicy}</text.A>
   )
 }
 
