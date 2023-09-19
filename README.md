@@ -4,7 +4,7 @@
 [![Test Coverage](https://api.codeclimate.com/v1/badges/a70488e2fdca047de298/test_coverage)](https://codeclimate.com/github/memoize-cards/memoize/test_coverage)<br />
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/f2d4e015f8984454a45ae9b0b68a1e1d)](https://app.codacy.com/gh/memoize-cards/memoize/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)<br />
 [![Codacy Badge](https://app.codacy.com/project/badge/Coverage/f2d4e015f8984454a45ae9b0b68a1e1d)](https://app.codacy.com/gh/memoize-cards/memoize/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_coverage)<br />
-[![JS Standard Style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com)
+[![JS Standard Style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com)<br />
 [![CC BY-NC 4.0](https://i.creativecommons.org/l/by-nc/4.0/80x15.png)](http://creativecommons.org/licenses/by-nc/4.0)
 
 # Memoize
