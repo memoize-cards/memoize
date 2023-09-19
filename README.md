@@ -108,7 +108,7 @@ Visite nossa página de Evolução do UX para obter mais detalhes sobre como o M
 
 ## Licença
 
-O Memoize é um projeto de código aberto licenciado sob a licença MIT. Isso significa que você **pode utilizá-lo livremente em seus projetos pessoais ou comerciais**, desde que mantenha a atribuição do autor original.
+O Memoize é um projeto de código aberto licenciado sob a licença CC BY-NC 4.0. Isso significa que você **pode utilizá-lo livremente em seus projetos pessoais ou comerciais**, desde que mantenha a atribuição do autor original.
 
 ## Contato
 
