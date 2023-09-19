@@ -6,7 +6,7 @@ import style from './style'
 function component () {
   return (
     <button className={style.master__backToHome} onClick={() => location.assign(urlFor('home'))}>
-      <icon.Keyboard_backspace large />
+      <icon.Chevron_left large />
     </button>
   )
 }

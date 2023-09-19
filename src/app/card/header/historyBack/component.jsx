@@ -6,7 +6,7 @@ import style from './style'
 function component () {
   return (
     <button className={style.historyBack} onClick={() => redirectTo.back()}>
-      <icon.Keyboard_backspace large />
+      <icon.Chevron_left large />
     </button>
   )
 }
