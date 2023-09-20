@@ -14,20 +14,19 @@ import result from '@standard/result'
 @queue
 @hook
 class Card {
-  #back
-  #front
+  #data = {}
   #target
 
   get back () {
-    return (this.#back ??= '')
+    return (this.#data.back ??= '')
   }
 
   get front () {
-    return (this.#front ??= '')
+    return (this.#data.front ??= '')
   }
 
   get id () {
-    return this.#target.id
+    return this.#target?.id
   }
 
   get type () {
@@ -36,25 +35,25 @@ class Card {
 
   @queue.next
   async again () {
-    await this.#target.again()
+    await this.#target?.again()
     return this
   }
 
   @queue.next
   async easy () {
-    await this.#target.easy()
+    await this.#target?.easy()
     return this
   }
 
   @queue.next
   async good () {
-    await this.#target.good()
+    await this.#target?.good()
     return this
   }
 
   @queue.next
   async hard () {
-    await this.#target.hard()
+    await this.#target?.hard()
     return this
   }
 
@@ -66,8 +65,8 @@ class Card {
   @repaint
   @global
   [result.Ok] (data) {
-    this.#back = data.back
-    this.#front = data.front
+    this.#data.back = data.back
+    this.#data.front = data.front
     this.#target = f.cond(
       [Review.is, Review.create],
       [Learn.is, Learn.create],

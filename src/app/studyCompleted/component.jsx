@@ -1,17 +1,13 @@
-import Continue from './continue'
-import Form from '@elements/form'
-import h from '@standard/h'
-import Header from './header'
-import Master from './master'
+import Footer from './footer'
+import h, { Fragment } from '@standard/h'
+import Main from './main'
 
-function component (card) {
+function component () {
   return (
-    <Master>
-      <Header />
-      <Form onSubmit={(e) => card.continue(e)}>
-        <Continue />
-      </Form>
-    </Master>
+    <>
+      <Main />
+      <Footer />
+    </>
   )
 }
 
