@@ -6,31 +6,30 @@ import result from '@standard/result'
 
 @paint(component)
 class Front {
-  #validity
-  #value
+  #data = {}
 
   get validity () {
-    return (this.#validity ??= '')
+    return (this.#data.validity ??= '')
   }
 
   get value () {
-    return (this.#value ??= '')
+    return (this.#data.value ??= '')
   }
 
   constructor (props) {
-    this.#value = props.value
+    Object.assign(this.#data, { ...props })
   }
 
   @filter.value
   @validator.required
   onChange (value) {
-    this.#value = value
+    Object.assign(this.#data, { value })
     return this
   }
 
   @repaint
-  [result.Ok] (state) {
-    this.#validity = state
+  [result.Ok] (validity) {
+    Object.assign(this.#data, { validity })
     return this
   }
 }
