@@ -1,15 +1,14 @@
-import global from '@standard/global'
+import Front from './front'
 import h from '@standard/h'
 import style from './style'
-import Tag from '@elements/tag'
-import text from '@elements/text'
+import Type from './type'
 
 function component () {
   return (
     <main className={style.main}>
       <div className={style.main__content}>
-        <Tag info>{global.type}</Tag>
-        <text.Pre master dark md medium>{global.front}</text.Pre>
+        <Type />
+        <Front />
       </div>
     </main>
   )
