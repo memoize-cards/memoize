@@ -1,24 +1,24 @@
-import Deck from './deck'
 import interceptor from '@standard/interceptor'
-import Interval from './interval'
 import middleware from '@standard/middleware'
+import request from '@standard/request'
 import result from '@standard/result'
 import supabase from '@artifact/supabase'
 
-async function request (card) {
-  const { data, error } = await supabase.from('card').select('*').eq('deck', Deck.id).lte('interval', Interval.expired).limit(1).single()
+async function select (card) {
+  const { deck, interval } = card[request.Get]?.()
+  const { data, error } = await supabase.from('card').select('*').eq('deck', deck).lte('interval', interval).limit(1).single()
   data
     ? card[result.Ok]?.(data)
     : card[result.Error]?.(error)
 }
 
 const queue = middleware(function (card) {
-  setImmediate(() => request(card))
+  setImmediate(() => select(card))
 })
 
 const next = interceptor(async function (args, next) {
   await next(...args)
-  await request(this)
+  await select(this)
   return this
 })
 

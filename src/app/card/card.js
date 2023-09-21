@@ -4,9 +4,11 @@ import component from './component'
 import global from './global'
 import hook from '@standard/hook'
 import Learn from './learn'
+import payload from './payload'
 import queue from './queue'
 import redirectTo from './redirectTo'
 import Relearn from './relearn'
+import request from '@standard/request'
 import Review from './review'
 import result from '@standard/result'
 
@@ -57,6 +59,10 @@ class Card {
     return this
   }
 
+  [request.Get] () {
+    return payload.create()
+  }
+
   [result.Error] (_error) {
     redirectTo.studyCompleted()
     return this
@@ -65,8 +71,7 @@ class Card {
   @repaint
   @global
   [result.Ok] (data) {
-    this.#data.back = data.back
-    this.#data.front = data.front
+    Object.assign(this.#data, { ...data })
     this.#target = f.cond(
       [Review.is, Review.create],
       [Learn.is, Learn.create],
