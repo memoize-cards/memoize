@@ -1,6 +1,6 @@
-const Result = {
+const result = {
   Error: Symbol('Error'),
   Ok: Symbol('Ok')
 }
 
-export default Result
+export default result
