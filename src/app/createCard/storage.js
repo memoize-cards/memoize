@@ -1,19 +1,16 @@
-import cookie from '@standard/cookie'
 import interceptor from '@standard/interceptor'
+import request from '@standard/request'
 import result from '@standard/result'
 import supabase from '@artifact/supabase'
 
-const request = async function (card) {
-  const { id } = cookie
-  const { back, deck, front, interval, type } = card
-  const { data, error } = await supabase.from('card').insert([{ back, deck, front, interval, type, user_id: id }]).select().single()
-  error
-    ? card[result.Error]?.(error)
-    : card[result.Ok]?.(data)
-}
-
 const push = interceptor(function (args, next) {
-  setImmediate(() => request(this))
+  setImmediate(async () => {
+    const payload = this[request.Post]?.()
+    const { data, error } = await supabase.from('card').insert([payload]).select().single()
+    error
+      ? this[result.Error]?.(error)
+      : this[result.Ok]?.(data)
+  })
   return next(...args)
 })
 

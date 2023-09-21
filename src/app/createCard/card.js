@@ -1,53 +1,43 @@
 import * as filter from '@standard/filter'
 import { paint } from '@standard/h'
-import { urlFor } from '@standard/router'
 import component from './component'
-import Deck from './deck'
-import Interval from './interval'
+import payload from './payload'
+import redirectTo from './redirectTo'
+import request from '@standard/request'
 import result from '@standard/result'
 import storage from './storage'
-import type from './type'
 
 @paint(component)
 class Card {
-  #back
-  #front
+  #data = {}
 
   get back () {
-    return (this.#back ??= '')
-  }
-
-  get deck () {
-    return Deck.id
+    return (this.#data.back ??= '')
   }
 
   get front () {
-    return (this.#front ??= '')
-  }
-
-  get interval () {
-    return Interval.oneMinute
-  }
-
-  get type () {
-    return type.LEARN
+    return (this.#data.front ??= '')
   }
 
   @filter.prevent
   @filter.formData
   @storage.push
   create (data) {
-    this.#back = data.back
-    this.#front = data.front
+    Object.assign(this.#data, { ...data })
     return this
+  }
+
+  [request.Post] () {
+    return payload.create(this)
   }
 
   [result.Error] (_error) {
+    // TODO: usar o flash para disparar erros para o usuario
     return this
   }
 
-  [result.Ok] (_card) {
-    location.assign(urlFor('deck', { id: this.deck }))
+  [result.Ok] (_data) {
+    redirectTo.deck()
     return this
   }
 }
