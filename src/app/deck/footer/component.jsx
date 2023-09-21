@@ -4,7 +4,7 @@ import style from './style'
 
 function component () {
   return (
-    <footer className={style.footer}>
+    <footer key='footer' className={style.footer}>
       <Study />
     </footer>
   )
