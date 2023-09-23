@@ -12,18 +12,18 @@ async function select (card) {
     : card[result.Error]?.(error)
 }
 
-const queue = middleware(function (card) {
+const storage = middleware(function (card) {
   setImmediate(() => select(card))
 })
 
-const next = interceptor(async function (args, next) {
+const pull = interceptor(async function (args, next) {
   await next(...args)
   await select(this)
   return this
 })
 
-Object.assign(queue, {
-  next
+Object.assign(storage, {
+  pull
 })
 
-export default queue
+export default storage

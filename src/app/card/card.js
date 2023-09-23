@@ -5,7 +5,7 @@ import global from './global'
 import hook from '@standard/hook'
 import Learn from './learn'
 import payload from './payload'
-import queue from './queue'
+import storage from './storage'
 import redirectTo from './redirectTo'
 import Relearn from './relearn'
 import request from '@standard/request'
@@ -13,7 +13,7 @@ import Review from './review'
 import result from '@standard/result'
 
 @paint(component)
-@queue
+@storage
 @hook
 class Card {
   #data = {}
@@ -35,25 +35,25 @@ class Card {
     return this.#target?.type
   }
 
-  @queue.next
+  @storage.pull
   async again () {
     await this.#target?.again()
     return this
   }
 
-  @queue.next
+  @storage.pull
   async easy () {
     await this.#target?.easy()
     return this
   }
 
-  @queue.next
+  @storage.pull
   async good () {
     await this.#target?.good()
     return this
   }
 
-  @queue.next
+  @storage.pull
   async hard () {
     await this.#target?.hard()
     return this
