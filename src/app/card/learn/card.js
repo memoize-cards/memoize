@@ -1,6 +1,7 @@
 import * as f from '@standard/f'
 import EasyFactor from './easyFactor'
 import Interval from './interval'
+import payload from './payload'
 import request from '@standard/request'
 import storage from './storage'
 import type from './type'
@@ -57,11 +58,7 @@ class Card {
   }
 
   [request.Post] () {
-    return {
-      easyFactor: this.#data.easyFactor,
-      interval: this.#data.interval,
-      type: this.#data.type
-    }
+    return payload.create(this.#data)
   }
 
   static create (data) {

@@ -32,7 +32,6 @@ class Card {
   }
 
   [result.Error] (_error) {
-    // TODO: usar o flash para disparar erros para o usuario
     return this
   }
 
