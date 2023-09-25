@@ -2,24 +2,25 @@ import * as f from '@standard/f'
 import EasyFactor from './easyFactor'
 import Interval from './interval'
 import Lapse from './lapse'
+import request from '@standard/request'
 import storage from './storage'
 import type from './type'
 
 class Card {
-  #id
+  #data = {}
   #easyFactor
   #interval
 
   get id () {
-    return this.#id
+    return this.#data.id
   }
 
   get type () {
     return 'Review'
   }
 
-  constructor (id, easyFactor, interval) {
-    this.#id = id
+  constructor (data, easyFactor, interval) {
+    Object.assign(this.#data, { ...data })
     this.#easyFactor = easyFactor
     this.#interval = interval
   }
@@ -27,46 +28,59 @@ class Card {
   @storage.push
   again () {
     this.#easyFactor.dec20()
-    return {
+    Object.assign(this.#data, {
       easyFactor: this.#easyFactor.value,
       interval: Interval.oneDay,
       lapse: Lapse.one,
       type: type.RELEARN
-    }
+    })
+    return this
   }
 
   @storage.push
   easy () {
     this.#easyFactor.inc15()
     this.#interval.xEFxEB()
-    return {
+    Object.assign(this.#data, {
       easyFactor: this.#easyFactor.value,
       interval: this.#interval.value
-    }
+    })
+    return this
   }
 
   @storage.push
   good () {
     this.#interval.xEF()
-    return {
+    Object.assign(this.#data, {
       interval: this.#interval.value
-    }
+    })
+    return this
   }
 
   @storage.push
   hard () {
     this.#easyFactor.dec15()
     this.#interval.xHF()
-    return {
+    Object.assign(this.#data, {
       easyFactor: this.#easyFactor.value,
       interval: this.#interval.value
+    })
+    return this
+  }
+
+  [request.Post] () {
+    return {
+      easyFactor: this.#data.easyFactor,
+      interval: this.#data.interval,
+      lapse: this.#data.lapse,
+      type: this.#data.type
     }
   }
 
   static create (data) {
     const easyFactor = EasyFactor.create(data.easyFactor)
     const interval = Interval.create(data.interval, easyFactor)
-    return new Card(data.id, easyFactor, interval)
+    return new Card(data, easyFactor, interval)
   }
 
   static is (data) {
