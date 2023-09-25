@@ -1,6 +1,17 @@
 class EasyFactor {
-  static get value () {
-    return 2.5
+  #data
+
+  constructor (data) {
+    this.#data = data
+  }
+
+  init () {
+    this.#data.easyFactor = 2.5
+    return this
+  }
+
+  static create (data) {
+    return new EasyFactor(data)
   }
 }
 

@@ -4,10 +4,13 @@ import Interval from './interval'
 import payload from './payload'
 import request from '@standard/request'
 import storage from './storage'
-import type from './type'
+import Type from './type'
 
 class Card {
   #data = {}
+  #easyFactor
+  #interval
+  #type
 
   get id () {
     return this.#data.id
@@ -18,42 +21,37 @@ class Card {
   }
 
   constructor (data) {
-    Object.assign(this.#data, { ...data })
+    Object.assign(this.#data, data)
+    this.#easyFactor = EasyFactor.create(this.#data)
+    this.#interval = Interval.create(this.#data)
+    this.#type = Type.create(this.#data)
   }
 
   @storage.push
   again () {
-    Object.assign(this.#data, {
-      interval: Interval.temMinutes
-    })
+    this.#interval.temMinutes()
     return this
   }
 
   @storage.push
   easy () {
-    Object.assign(this.#data, {
-      easyFactor: EasyFactor.value,
-      interval: Interval.fourDays,
-      type: type.REVIEW
-    })
+    this.#easyFactor.init()
+    this.#interval.fourDays()
+    this.#type.review()
     return this
   }
 
   @storage.push
   good () {
-    Object.assign(this.#data, {
-      easyFactor: EasyFactor.value,
-      interval: Interval.oneDay,
-      type: type.REVIEW
-    })
+    this.#easyFactor.init()
+    this.#interval.oneDay()
+    this.#type.review()
     return this
   }
 
   @storage.push
   hard () {
-    Object.assign(this.#data, {
-      interval: Interval.twelveHours
-    })
+    this.#interval.twelveHours()
     return this
   }
 
@@ -66,7 +64,7 @@ class Card {
   }
 
   static is (data) {
-    return f.equals(data.type, type.LEARN)
+    return f.equals(data.type, Type.LEARN)
   }
 }
 
