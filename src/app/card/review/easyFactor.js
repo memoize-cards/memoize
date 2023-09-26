@@ -1,23 +1,19 @@
 import * as f from '@standard/f'
 
 class EasyFactor {
-  #value
-
-  get value () {
-    return (this.#value ?? 2.5)
-  }
+  #data
 
   static get #minValue () {
     return 1.3
   }
 
-  constructor (value) {
-    this.#value = value
+  constructor (data) {
+    this.#data = data
   }
 
   dec20 () {
-    this.#value = f
-      .from(this.value)
+    this.#data.easyFactor = f
+      .from(this.#data.easyFactor)
       .pipe(f.sub(0.20))
       .pipe(f.max(EasyFactor.#minValue))
       .done()
@@ -25,24 +21,24 @@ class EasyFactor {
   }
 
   inc15 () {
-    this.#value = f
-      .from(this.value)
+    this.#data.easyFactor = f
+      .from(this.#data.easyFactor)
       .pipe(f.add(0.15))
       .done()
     return this
   }
 
   dec15 () {
-    this.#value = f
-      .from(this.value)
+    this.#data.easyFactor = f
+      .from(this.#data.easyFactor)
       .pipe(f.sub(0.15))
       .pipe(f.max(EasyFactor.#minValue))
       .done()
     return this
   }
 
-  static create (value) {
-    return new EasyFactor(value)
+  static create (data) {
+    return new EasyFactor(data)
   }
 }
 

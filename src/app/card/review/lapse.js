@@ -1,6 +1,17 @@
 class Lapse {
-  static get one () {
-    return 1
+  #data
+
+  constructor (data) {
+    this.#data = data
+  }
+
+  one () {
+    this.#data.lapse = 1
+    return this
+  }
+
+  static create (data) {
+    return new Lapse(data)
   }
 }
 

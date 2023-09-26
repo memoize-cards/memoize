@@ -5,11 +5,14 @@ import Lapse from './lapse'
 import payload from './payload'
 import request from '@standard/request'
 import storage from './storage'
-import type from './type'
+import Type from './type'
 
 class Card {
   #data = {}
+  #easyFactor
+  #interval
   #lapse
+  #type
 
   get id () {
     return this.#data.id
@@ -19,48 +22,42 @@ class Card {
     return 'Relearn'
   }
 
-  constructor (data, lapse) {
-    Object.assign(this.#data, { ...data })
-    this.#lapse = lapse
+  constructor (data) {
+    Object.assign(this.#data, data)
+    this.#easyFactor = EasyFactor.create(this.#data)
+    this.#interval = Interval.create(this.#data)
+    this.#lapse = Lapse.create(this.#data)
+    this.#type = Type.create(this.#data)
   }
 
   @storage.push
   again () {
-    this.#lapse.inc1()
-    Object.assign(this.#data, {
-      interval: Interval.temMinutes,
-      lapse: this.#lapse.value
-    })
+    this.#lapse.incOne()
+    this.#interval.temMinutes()
     return this
   }
 
   @storage.push
   easy () {
-    Object.assign(this.#data, {
-      easyFactor: EasyFactor.value,
-      interval: Interval.fourDays,
-      lapse: Lapse.zero,
-      type: type.REVIEW
-    })
+    this.#easyFactor.init()
+    this.#interval.fourDays()
+    this.#lapse.zero()
+    this.#type.review()
     return this
   }
 
   @storage.push
   good () {
-    Object.assign(this.#data, {
-      easyFactor: EasyFactor.value,
-      interval: Interval.oneDay,
-      lapse: Lapse.zero,
-      type: type.REVIEW
-    })
+    this.#easyFactor.init()
+    this.#interval.oneDay()
+    this.#lapse.zero()
+    this.#type.review()
     return this
   }
 
   @storage.push
   hard () {
-    Object.assign(this.#data, {
-      interval: Interval.twelveHours
-    })
+    this.#interval.twelveHours()
     return this
   }
 
@@ -69,12 +66,11 @@ class Card {
   }
 
   static create (data) {
-    const lapse = Lapse.create(data.lapse)
-    return new Card(data, lapse)
+    return new Card(data)
   }
 
   static is (data) {
-    return f.equals(data.type, type.RELEARN)
+    return f.equals(data.type, Type.RELEARN)
   }
 }
 

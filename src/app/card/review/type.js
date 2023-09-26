@@ -1,6 +1,22 @@
-const type = {
-  RELEARN: 3,
-  REVIEW: 2
+class Type {
+  #data
+
+  static get REVIEW () {
+    return 2
+  }
+
+  constructor (data) {
+    this.#data = data
+  }
+
+  relearn () {
+    this.#data.type = 3
+    return this
+  }
+
+  static create (data) {
+    return new Type(data)
+  }
 }
 
-export default type
+export default Type

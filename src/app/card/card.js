@@ -17,7 +17,7 @@ import result from '@standard/result'
 @hook
 class Card {
   #data = {}
-  #target
+  #card
 
   get back () {
     return (this.#data.back ??= '')
@@ -28,34 +28,34 @@ class Card {
   }
 
   get id () {
-    return this.#target?.id
+    return this.#card?.id
   }
 
   get type () {
-    return this.#target?.type
+    return this.#card?.type
   }
 
   @storage.pull
   async again () {
-    await this.#target?.again()
+    await this.#card?.again()
     return this
   }
 
   @storage.pull
   async easy () {
-    await this.#target?.easy()
+    await this.#card?.easy()
     return this
   }
 
   @storage.pull
   async good () {
-    await this.#target?.good()
+    await this.#card?.good()
     return this
   }
 
   @storage.pull
   async hard () {
-    await this.#target?.hard()
+    await this.#card?.hard()
     return this
   }
 
@@ -71,8 +71,8 @@ class Card {
   @repaint
   @global
   [result.Ok] (data) {
-    Object.assign(this.#data, { ...data })
-    this.#target = f.cond(
+    Object.assign(this.#data, data)
+    this.#card = f.cond(
       [Review.is, Review.create],
       [Learn.is, Learn.create],
       [Relearn.is, Relearn.create]

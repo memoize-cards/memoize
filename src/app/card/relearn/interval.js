@@ -1,20 +1,38 @@
 import * as f from '@standard/f'
 
 class Interval {
-  static get fourDays () {
-    return f.add(new Date().getTime(), (4 * 24 * 60 * 60 * 1000))
+  #data
+
+  static get #time () {
+    return new Date().getTime()
   }
 
-  static get oneDay () {
-    return f.add(new Date().getTime(), (1 * 24 * 60 * 60 * 1000))
+  constructor (data) {
+    this.#data = data
   }
 
-  static get temMinutes () {
-    return f.add(new Date().getTime(), (10 * 60 * 1000))
+  fourDays () {
+    this.#data.interval = f.add(Interval.#time, (4 * 24 * 60 * 60 * 1000))
+    return this
   }
 
-  static get twelveHours () {
-    return f.add(new Date().getTime(), (12 * 60 * 60 * 1000))
+  oneDay () {
+    this.#data.interval = f.add(Interval.#time, (1 * 24 * 60 * 60 * 1000))
+    return this
+  }
+
+  temMinutes () {
+    this.#data.interval = f.add(Interval.#time, (10 * 60 * 1000))
+    return this
+  }
+
+  twelveHours () {
+    this.#data.interval = f.add(Interval.#time, (12 * 60 * 60 * 1000))
+    return this
+  }
+
+  static create (data) {
+    return new Interval(data)
   }
 }
 

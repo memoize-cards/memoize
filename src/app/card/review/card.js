@@ -5,12 +5,14 @@ import Lapse from './lapse'
 import payload from './payload'
 import request from '@standard/request'
 import storage from './storage'
-import type from './type'
+import Type from './type'
 
 class Card {
   #data = {}
   #easyFactor
   #interval
+  #lapse
+  #type
 
   get id () {
     return this.#data.id
@@ -20,21 +22,20 @@ class Card {
     return 'Review'
   }
 
-  constructor (data, easyFactor, interval) {
-    Object.assign(this.#data, { ...data })
-    this.#easyFactor = easyFactor
-    this.#interval = interval
+  constructor (data) {
+    Object.assign(this.#data, data)
+    this.#easyFactor = EasyFactor.create(this.#data)
+    this.#interval = Interval.create(this.#data)
+    this.#lapse = Lapse.create(this.#data)
+    this.#type = Type.create(this.#data)
   }
 
   @storage.push
   again () {
     this.#easyFactor.dec20()
-    Object.assign(this.#data, {
-      easyFactor: this.#easyFactor.value,
-      interval: Interval.oneDay,
-      lapse: Lapse.one,
-      type: type.RELEARN
-    })
+    this.#interval.oneDay()
+    this.#lapse.one()
+    this.#type.relearn()
     return this
   }
 
@@ -42,19 +43,12 @@ class Card {
   easy () {
     this.#easyFactor.inc15()
     this.#interval.xEFxEB()
-    Object.assign(this.#data, {
-      easyFactor: this.#easyFactor.value,
-      interval: this.#interval.value
-    })
     return this
   }
 
   @storage.push
   good () {
     this.#interval.xEF()
-    Object.assign(this.#data, {
-      interval: this.#interval.value
-    })
     return this
   }
 
@@ -62,10 +56,6 @@ class Card {
   hard () {
     this.#easyFactor.dec15()
     this.#interval.xHF()
-    Object.assign(this.#data, {
-      easyFactor: this.#easyFactor.value,
-      interval: this.#interval.value
-    })
     return this
   }
 
@@ -74,13 +64,11 @@ class Card {
   }
 
   static create (data) {
-    const easyFactor = EasyFactor.create(data.easyFactor)
-    const interval = Interval.create(data.interval, easyFactor)
-    return new Card(data, easyFactor, interval)
+    return new Card(data)
   }
 
   static is (data) {
-    return f.equals(data.type, type.REVIEW)
+    return f.equals(data.type, Type.REVIEW)
   }
 }
 

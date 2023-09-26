@@ -3,30 +3,29 @@ import EasyBonus from './easyBonus'
 import HardFactor from './hardFactor'
 
 class Interval {
-  #easyFactor
-  #value
-
-  get value () {
-    return this.#value
-  }
-
-  static get oneDay () {
-    return f.add(new Date().getTime(), (1 * 24 * 60 * 60 * 1000))
-  }
+  #data = {}
 
   static get #oneYear () {
-    return f.add(new Date().getTime(), (365 * 24 * 60 * 60 * 1000))
+    return f.add(Interval.#time, (365 * 24 * 60 * 60 * 1000))
   }
 
-  constructor (value, easyFactor) {
-    this.#easyFactor = easyFactor
-    this.#value = value
+  static get #time () {
+    return new Date().getTime()
+  }
+
+  constructor (data) {
+    this.#data = data
+  }
+
+  oneDay () {
+    this.#data.interval = f.add(Interval.#time, (1 * 24 * 60 * 60 * 1000))
+    return this
   }
 
   xEFxEB () {
-    this.#value = f
-      .from(this.value)
-      .pipe(f.multiply(this.#easyFactor.value))
+    this.#data.interval = f
+      .from(this.#data.interval)
+      .pipe(f.multiply(this.#data.easyFactor))
       .pipe(f.multiply(EasyBonus.value))
       .pipe(f.min(Interval.#oneYear))
       .done()
@@ -34,25 +33,25 @@ class Interval {
   }
 
   xEF () {
-    this.#value = f
-      .from(this.value)
-      .pipe(f.multiply(this.#easyFactor.value))
+    this.#data.interval = f
+      .from(this.#data.interval)
+      .pipe(f.multiply(this.#data.easyFactor))
       .pipe(f.min(Interval.#oneYear))
       .done()
     return this
   }
 
   xHF () {
-    this.#value = f
-      .from(this.value)
+    this.#data.interval = f
+      .from(this.#data.interval)
       .pipe(f.multiply(HardFactor.value))
       .pipe(f.min(Interval.#oneYear))
       .done()
     return this
   }
 
-  static create (value, easyFactor) {
-    return new Interval(value, easyFactor)
+  static create (data) {
+    return new Interval(data)
   }
 }
 

@@ -1,27 +1,24 @@
 import * as f from '@standard/f'
 
 class Lapse {
-  #value
+  #data
 
-  get value () {
-    return (this.#value ??= 1)
+  constructor (data) {
+    this.#data = data
   }
 
-  static get zero () {
-    return 0
-  }
-
-  constructor (value) {
-    return this.#value = value
-  }
-
-  inc1 () {
-    this.#value = f.inc(this.value)
+  incOne () {
+    this.#data.lapse = f.inc(this.#data.lapse)
     return this
   }
 
-  static create (value) {
-    return new Lapse(value)
+  zero () {
+    this.#data.lapse = 0
+    return this
+  }
+
+  static create (data) {
+    return new Lapse(data)
   }
 }
 
