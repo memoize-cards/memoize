@@ -4,10 +4,10 @@ import type from './type'
 import User from './user'
 
 const payload = {
-  create (card) {
+  create (data) {
     return {
-      front: card.front,
-      back: card.back,
+      front: data.front,
+      back: data.back,
       deck: Deck.id,
       interval: Interval.oneMinute,
       type: type.LEARN,

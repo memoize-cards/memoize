@@ -1,8 +1,9 @@
 import * as filter from '@standard/filter'
 import { paint } from '@standard/h'
-import { urlFor } from '@standard/router'
 import component from './component'
+import payload from './payload'
 import redirectTo from './redirectTo'
+import request from '@standard/request'
 import result from '@standard/result'
 import storage from './storage'
 
@@ -24,6 +25,10 @@ class Deck {
   create (data) {
     Object.assign(this.#data, data)
     return this
+  }
+
+  [request.Post] () {
+    return payload.create(this.#data)
   }
 
   [result.Error] (_error) {

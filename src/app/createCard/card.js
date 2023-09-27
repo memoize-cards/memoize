@@ -28,7 +28,7 @@ class Card {
   }
 
   [request.Post] () {
-    return payload.create(this)
+    return payload.create(this.#data)
   }
 
   [result.Error] (_error) {
