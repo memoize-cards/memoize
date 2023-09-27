@@ -110,15 +110,14 @@ module.exports = {
   resolve: {
     alias: {
       '@app': path.resolve(__dirname, 'src/app/'),
-      '@artifact': path.resolve(__dirname, 'src/artifact/'),
-      '@components': path.resolve(__dirname, 'src/components/'),
-      '@directive': path.resolve(__dirname, 'src/directive/'),
-      '@elements': path.resolve(__dirname, 'src/elements/'),
+      '@artifact': path.resolve(__dirname, 'src/.prelude/artifact/'),
+      '@directive': path.resolve(__dirname, 'src/.prelude/directive/'),
+      '@elements': path.resolve(__dirname, 'src/.prelude/elements/'),
       '@oauth': path.resolve(__dirname, 'src/oauth/'),
-      '@pixel': path.resolve(__dirname, 'src/pixel/'),
-      '@polyfill': path.resolve(__dirname, 'src/polyfill/'),
+      '@pixel': path.resolve(__dirname, 'src/.prelude/pixel/'),
+      '@polyfill': path.resolve(__dirname, 'src/.prelude/polyfill/'),
       '@site': path.resolve(__dirname, 'src/site/'),
-      '@standard': path.resolve(__dirname, 'src/standard/')
+      '@standard': path.resolve(__dirname, 'src/.prelude/standard/')
     },
     extensions: ['.js', '.jsx']
   }

@@ -100,15 +100,14 @@ module.exports = {
   // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
   moduleNameMapper: {
     '^@app/(.*)$': '<rootDir>/app/$1',
-    '^@artifact/(.*)$': '<rootDir>/artifact/$1',
-    '^@components/(.*)$': '<rootDir>/components/$1',
-    '^@directive/(.*)$': '<rootDir>/directive/$1',
-    '^@elements/(.*)$': '<rootDir>/elements/$1',
+    '^@artifact/(.*)$': '<rootDir>/.prelude/artifact/$1',
+    '^@directive/(.*)$': '<rootDir>/.prelude/directive/$1',
+    '^@elements/(.*)$': '<rootDir>/.prelude/elements/$1',
     '^@oauth/(.*)$': '<rootDir>/oauth/$1',
-    '^@pixel/(.*)$': '<rootDir>/pixel/$1',
-    '^@polyfill/(.*)$': '<rootDir>/polyfill/$1',
+    '^@pixel/(.*)$': '<rootDir>/.prelude/pixel/$1',
+    '^@polyfill/(.*)$': '<rootDir>/.prelude/polyfill/$1',
     '^@site/(.*)$': '<rootDir>/site/$1',
-    '^@standard/(.*)$': '<rootDir>/standard/$1'
+    '^@standard/(.*)$': '<rootDir>/.prelude/standard/$1'
   },
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
@@ -154,9 +153,9 @@ module.exports = {
 
   // The paths to modules that run some code to configure or set up the testing environment before each test
   setupFiles: [
-    '<rootDir>/polyfill/group',
-    '<rootDir>/polyfill/requestAnimationFrame',
-    '<rootDir>/polyfill/setImmediate'
+    '<rootDir>/.prelude/polyfill/group',
+    '<rootDir>/.prelude/polyfill/requestAnimationFrame',
+    '<rootDir>/.prelude/polyfill/setImmediate'
   ],
 
   // A list of paths to modules that run some code to configure or set up the testing framework before each test
