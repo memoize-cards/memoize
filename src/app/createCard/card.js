@@ -23,7 +23,7 @@ class Card {
   @filter.formData
   @storage.push
   create (data) {
-    Object.assign(this.#data, { ...data })
+    Object.assign(this.#data, data)
     return this
   }
 

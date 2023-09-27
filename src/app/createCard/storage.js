@@ -3,14 +3,16 @@ import request from '@standard/request'
 import result from '@standard/result'
 import supabase from '@artifact/supabase'
 
+async function insert (card) {
+  const payload = card[request.Post]?.()
+  const { data, error } = await supabase.from('card').insert([payload]).select().single()
+  error
+    ? card[result.Error]?.(error)
+    : card[result.Ok]?.(data)
+}
+
 const push = interceptor(function (args, next) {
-  setImmediate(async () => {
-    const payload = this[request.Post]?.()
-    const { data, error } = await supabase.from('card').insert([payload]).select().single()
-    error
-      ? this[result.Error]?.(error)
-      : this[result.Ok]?.(data)
-  })
+  setImmediate(() => insert(this))
   return next(...args)
 })
 
