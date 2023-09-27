@@ -17,7 +17,7 @@ class Back {
   }
 
   constructor (props) {
-    Object.assign(this.#data, { ...props })
+    Object.assign(this.#data, props)
   }
 
   @filter.value
