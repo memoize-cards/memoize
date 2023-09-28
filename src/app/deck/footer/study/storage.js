@@ -1,20 +1,20 @@
-import Deck from './deck'
-import Interval from './interval'
 import middleware from '@standard/middleware'
 import Reload from './reload'
+import request from '@standard/request'
 import result from '@standard/result'
 import supabase from '@artifact/supabase'
 
-async function request (study) {
-  const { count, error } = await supabase.from('card').select('*', { count: 'exact', head: true }).eq('deck', Deck.id).lte('interval', Interval.expired)
+async function select (study) {
+  const payload = study[request.Get]?.()
+  const { count, error } = await supabase.from('card').select('*', { count: 'exact', head: true }).eq('deck', payload.deck).lte('interval', payload.interval)
   error
     ? study[result.Error]?.(error)
     : study[result.Ok]?.(count)
 }
 
 const pull = middleware(function (study) {
-  request(study)
-  setInterval(() => request(study), Reload.interval)
+  select(study)
+  setInterval(() => select(study), Reload.interval)
 })
 
 export default {
