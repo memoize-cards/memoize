@@ -1,34 +1,36 @@
 import { paint, repaint } from '@standard/h'
 import component from './component'
 import global from './global'
+import payload from './payload'
+import request from '@standard/request'
 import result from '@standard/result'
 import storage from './storage'
 
 @paint(component)
 @storage.pull
 class Deck {
-  #description
-  #id
-  #name
+  #data = {}
 
   get description () {
-    return (this.#description ??= '')
+    return (this.#data.description ??= '')
   }
 
   get id () {
-    return (this.#id ??= '')
+    return (this.#data.id ??= '')
   }
 
   get name () {
-    return (this.#name ??= '')
+    return (this.#data.name ??= '')
+  }
+
+  [request.Get] () {
+    return payload.create()
   }
 
   @repaint
   @global
   [result.Ok] (data) {
-    this.#description = data.description
-    this.#id = data.id
-    this.#name = data.name
+    Object.assign(this.#data, data)
     return this
   }
 }
