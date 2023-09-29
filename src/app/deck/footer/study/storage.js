@@ -1,7 +1,7 @@
 import middleware from '@standard/middleware'
-import Reload from './reload'
 import request from '@standard/request'
 import result from '@standard/result'
+import schedule from './schedule'
 import supabase from '@artifact/supabase'
 
 async function select (study) {
@@ -14,7 +14,7 @@ async function select (study) {
 
 const pull = middleware(function (study) {
   select(study)
-  setInterval(() => select(study), Reload.interval)
+  schedule(() => select(study))
 })
 
 export default {
