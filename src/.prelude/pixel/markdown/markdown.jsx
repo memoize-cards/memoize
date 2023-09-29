@@ -6,6 +6,7 @@ import showdown from '@artifact/showdown'
 class Markdown extends HTMLElement {
   connectedCallback () {
     this.innerHTML = showdown.makeHtml(this.querySelector('template').textContent)
+    hljs.highlightAll()
     return this
   }
 }
