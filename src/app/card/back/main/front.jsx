@@ -4,7 +4,7 @@ import text from '@elements/text'
 
 function component () {
   return (
-    <text.Pre master dark md medium>{global.front}</text.Pre>
+    <text.Pre master dark lg highlight bold>{global.front}</text.Pre>
   )
 }
 

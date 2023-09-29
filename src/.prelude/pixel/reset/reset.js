@@ -16,15 +16,6 @@ const style = css`
   body {
     background-color: var(--color-master-lightest);
   }
-
-  ul {
-    list-style: none;
-  }
-
-  m-markdown {
-    overflow-x: hidden;
-    width: 100%;
-  }
 `
 
 export default style
