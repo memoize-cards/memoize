@@ -3,7 +3,9 @@ import h from '@standard/h'
 
 function component () {
   return (
-    <m-markdown>{global.back}</m-markdown>
+    <m-markdown>
+      <template>{global.back}</template>
+    </m-markdown>
   )
 }
 
