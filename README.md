@@ -14,15 +14,12 @@
 
 Bem-vindo ao Memoize, um aplicativo avançado de flashcards projetado para otimizar o processo de aprendizado e memorização. Nossa plataforma oferece aos estudantes, profissionais em constante aprendizado e educadores uma abordagem inovadora e personalizada para aprimorar suas habilidades de estudo e retenção de informações essenciais.
 
-- [app](https://www.notion.so/app-8a4c96af66fc407da065cd75f338f92b?pvs=21)
-- [artifact](https://www.notion.so/artifact-9987a261e1c240a1b5b181a8414636e6?pvs=21)
-- [directive](https://www.notion.so/directive-9b509e7bea7943c1bdb0a30f011cfbd9?pvs=21)
-- [elements](https://www.notion.so/elements-3ff5e4c1a6c6418f9c862674c98afc1a?pvs=21)
-- [oauth](https://www.notion.so/oauth-5f60f938e6044f4faa00a7e796eb5e6f?pvs=21)
-- [pixel](https://www.notion.so/pixel-2775a55095c548d1901440b342dbbc84?pvs=21)
-- [polyfill](https://www.notion.so/polyfill-1e28c3f5681e43ab96869dc592a1eca2?pvs=21)
-- [site](https://www.notion.so/site-e1ad4d41dda048af8cfd30baee0c0af9?pvs=21)
-- [standard](https://www.notion.so/standard-6dac1889956f4fc3b280f43dae2e94ac?pvs=21)
+- [Análise de Contexto](https://www.notion.so/An-lise-de-Contexto-da6b4e1aa0eb4ad9bc7ea5170b59f859?pvs=21)
+- [Personas](https://www.notion.so/Personas-3106d35206ab4e718d6bba6151047fc8?pvs=21)
+- [Benefícios e Justificativas](https://www.notion.so/Benef-cios-e-Justificativas-ee1c7ef669ac40c59ffce5682b8a7353?pvs=21)
+- [Hipóteses](https://www.notion.so/Hip-teses-e826e9bcbfda41c9b10755c32a190656?pvs=21)
+- [Premissas e Restrições](https://www.notion.so/Premissas-e-Restri-es-256375cd2b8a4802897134d31f043478?pvs=21)
+- [Objetivos S.M.A.R.T](https://www.notion.so/Objetivos-S-M-A-R-T-d2c5fb52ec6e4840b81218ff1b3dbab2?pvs=21)
 
 ## Pré-requisitos
 
