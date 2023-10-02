@@ -3,9 +3,9 @@ import lang from '@standard/lang'
 
 const dictionary = {
   description: {
-    [lang.EN]: 'Simplicity, focus on the essential, and learning anywhere.',
-    [lang.ES]: 'Simplicidad, enfoque en lo esencial y aprendizaje en cualquier lugar.',
-    [lang.PT]: 'Simplicidade, foco no essencial e aprendizado em qualquer lugar.'
+    [lang.EN]: 'Simplicity, focus on the essentials, and learning from anywhere',
+    [lang.ES]: 'Simplicidad, enfoque en lo esencial y aprendizaje desde cualquier lugar',
+    [lang.PT]: 'Simplicidade, foco no essencial e aprendizado em qualquer lugar'
   },
   label: {
     [lang.EN]: 'Try it Out',

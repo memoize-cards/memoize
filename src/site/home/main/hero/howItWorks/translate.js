@@ -3,9 +3,9 @@ import lang from '@standard/lang'
 
 const dictionary = {
   description: {
-    [lang.EN]: 'Easily organize information using study cards.',
-    [lang.ES]: 'Organiza información fácilmente usando tarjetas de estudio.',
-    [lang.PT]: 'Organize informações com facilidade usando cartões de estudo.'
+    [lang.EN]: 'Organize information easily using study cards',
+    [lang.ES]: 'Organiza información fácilmente utilizando tarjetas de estudio',
+    [lang.PT]: 'Organize informações facilmente usando cartões de estudo'
   },
   label: {
     [lang.EN]: 'How it works',
