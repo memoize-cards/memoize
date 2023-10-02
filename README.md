@@ -10,6 +10,8 @@
 
 [https://memoize.cards](https://memoize.cards)
 
+[![](https://markdown-videos-api.jorgenkh.no/youtube/SgztGwymZ6o)](https://youtu.be/SgztGwymZ6o)
+
 Bem-vindo ao Memoize, um aplicativo avançado de flashcards projetado para otimizar o processo de aprendizado e memorização. Nossa plataforma oferece aos estudantes, profissionais em constante aprendizado e educadores uma abordagem inovadora e personalizada para aprimorar suas habilidades de estudo e retenção de informações essenciais.
 
 - [app](https://www.notion.so/app-8a4c96af66fc407da065cd75f338f92b?pvs=21)
