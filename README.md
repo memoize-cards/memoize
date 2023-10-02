@@ -10,6 +10,8 @@
 
 [https://memoize.cards](https://memoize.cards)
 
+[![Pitch - Memoize](https://github.com/memoize-cards/memoize/assets/35740192/a7a90948-d276-47b4-be5b-1625a149148f)](https://youtu.be/SgztGwymZ6o)
+
 Bem-vindo ao Memoize, um aplicativo avançado de flashcards projetado para otimizar o processo de aprendizado e memorização. Nossa plataforma oferece aos estudantes, profissionais em constante aprendizado e educadores uma abordagem inovadora e personalizada para aprimorar suas habilidades de estudo e retenção de informações essenciais.
 
 - [Análise de Contexto](https://www.notion.so/An-lise-de-Contexto-da6b4e1aa0eb4ad9bc7ea5170b59f859?pvs=21)
