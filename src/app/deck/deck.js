@@ -1,12 +1,14 @@
 import { paint, repaint } from '@standard/h'
 import component from './component'
 import global from './global'
+import oauth from '@app/oauth'
 import payload from './payload'
 import request from '@standard/request'
 import result from '@standard/result'
 import storage from './storage'
 
 @paint(component)
+@oauth.required
 @storage.pull
 class Deck {
   #data = {}
