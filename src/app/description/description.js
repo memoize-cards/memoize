@@ -17,7 +17,7 @@ class Description {
   }
 
   constructor (props) {
-    Object.assign(this.#data, { ...props })
+    Object.assign(this.#data, props)
   }
 
   @filter.value
