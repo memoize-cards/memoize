@@ -1,7 +1,9 @@
 import { paint } from '@standard/h'
-import { urlFor } from '@standard/router'
 import component from './component'
 import oauth from '@app/oauth'
+import payload from './payload'
+import redirectTo from './redirectTo'
+import request from '@standard/request'
 import result from '@standard/result'
 import storage from './storage'
 
@@ -9,8 +11,12 @@ import storage from './storage'
 @oauth.required
 @storage.push
 class Deck {
+  [request.Delete] () {
+    return payload.create()
+  }
+
   [result.Ok] () {
-    location.assign(urlFor('dashboard'))
+    redirectTo.dashboard()
     return this
   }
 }
