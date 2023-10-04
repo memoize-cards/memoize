@@ -1,8 +1,9 @@
 import { paint } from '@standard/h'
-import { urlFor } from '@standard/router'
 import component from './component'
-import Deck from './deck'
 import oauth from '@app/oauth'
+import payload from './payload'
+import redirectTo from './redirectTo'
+import request from '@standard/request'
 import result from '@standard/result'
 import storage from './storage'
 
@@ -10,8 +11,12 @@ import storage from './storage'
 @oauth.required
 @storage.push
 class Card {
+  [request.Delete] () {
+    return payload.create()
+  }
+
   [result.Ok] () {
-    location.assign(urlFor('deck', { id: Deck.id }))
+    redirectTo.deck()
     return this
   }
 }

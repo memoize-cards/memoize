@@ -1,16 +1,9 @@
-import { paint } from '@standard/h'
-import { urlFor } from '@standard/router'
-import component from './component'
-import result from '@standard/result'
-import storage from './storage'
+import { params } from '@standard/router'
 
-@paint(component)
-@storage.push
-class Auth {
-  [result.Ok] () {
-    location.assign(urlFor('deck'))
-    return this
+class Deck {
+  static get id () {
+    return params.deck
   }
 }
 
-export default Auth
+export default Deck
