@@ -11,6 +11,7 @@ const style = css`
   .footer__container {
     align-items: center;
     display: flex;
+    gap: var(--spacing_inset-xs);
     height: inherit;
     justify-content: space-between;
     margin: 0 auto;
