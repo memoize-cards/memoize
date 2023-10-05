@@ -19,7 +19,7 @@ const button = styled.button`
   height: 42px;
   justify-content: center;
   line-height: var(--line-height-default);
-  padding: var(--spacing_inset-nano) var(--spacing_inset-xs);
+  padding: var(--spacing_inset-nano) var(--spacing_inset-sm);
   width: ${wide};
 `
 

@@ -1,19 +1,17 @@
-import BackToHome from './backToHome'
-import container from '@elements/container'
-import h from '@standard/h'
+import Footer from './footer'
+import h, { Fragment } from '@standard/h'
 import Header from './header'
 import Main from './main'
 
 function component (_props, children) {
   return (
-    <container.Div>
-      <Header>
-        <BackToHome />
-      </Header>
+    <>
+      <Header />
       <Main>
         {children}
       </Main>
-    </container.Div>
+      <Footer />
+    </>
   )
 }
 

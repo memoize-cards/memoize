@@ -5,7 +5,7 @@ const style = css`
     aspect-ratio: 1 / 1;
     cursor: pointer;
     object-fit: cover;
-    width: 80px;
+    width: 40px;
   }
 `
 

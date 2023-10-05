@@ -1,19 +1,20 @@
-import Container from './container'
-import GetStarted from './getStarted'
+import Copywriter from './copywriter'
+import Github from './github'
 import h from '@standard/h'
+import Linkedin from './linkedin'
 import PrivacyPolicy from './privacyPolicy'
-import stack from '@elements/stack'
+import style from './style'
 import TermsOfUse from './termsOfUse'
 
 function component () {
   return (
-    <Container>
-      <GetStarted />
-      <stack.Div center xs>
-        <PrivacyPolicy />
-        <TermsOfUse />
-      </stack.Div>
-    </Container>
+    <div className={style.footer}>
+      <PrivacyPolicy />
+      <TermsOfUse />
+      <Copywriter />
+      <Github />
+      <Linkedin />
+    </div>
   )
 }
 
