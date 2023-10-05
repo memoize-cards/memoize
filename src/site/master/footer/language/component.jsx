@@ -7,7 +7,8 @@ function component () {
   return (
     <button className={style.language}>
       <icon.Language />
-      <select className={style.language__select} onChange={(e) => (lang.value = e.target.value)}>
+      <select className={style.language__select} onChange={(e) => location.reload(lang.value = e.target.value)}>
+        <option style='display: none' value={lang.EN} />
         <option className={style.language__option} value={lang.EN}>EN</option>
         <option className={style.language__option} value={lang.ES}>ES</option>
         <option className={style.language__option} value={lang.PT}>PT</option>
