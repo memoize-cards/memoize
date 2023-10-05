@@ -1,4 +1,4 @@
-import Copywriter from './copywriter'
+import Copywriter from './copyWriter'
 import Github from './github'
 import h from '@standard/h'
 import Linkedin from './linkedin'
