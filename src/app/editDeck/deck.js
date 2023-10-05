@@ -32,10 +32,6 @@ class Deck {
     return this
   }
 
-  [result.Error] (_deck) {
-    return this
-  }
-
   @repaint
   [result.Ok] (result) {
     result.pull((data) => Object.assign(this.#data, data))
