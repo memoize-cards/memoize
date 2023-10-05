@@ -8,8 +8,18 @@ const style = css`
     gap: var(--spacing_inset-md);
     height: calc(100svh - 180px);
     justify-content: end;
-    max-width: 369px;
     width: calc(100% - 42px);
+  }
+
+  .hero__illustration {
+    aspect-ratio: 1 / 1;
+    margin: 0 auto;
+    max-height: 550px;
+    width: 100%;
+  }
+
+  .hero__hgroup {
+    max-width: 327px;
   }
 `
 
