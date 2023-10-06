@@ -1,10 +1,9 @@
 import Avatar from '@elements/avatar'
-import cookie from '@standard/cookie'
 import h from '@standard/h'
 
-function component () {
+function component (avatar) {
   return (
-    <Avatar src={cookie.avatar} large />
+    <Avatar src={avatar.url} large />
   )
 }
 
