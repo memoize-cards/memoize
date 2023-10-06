@@ -13,9 +13,9 @@ const dicionario = {
     [lang.PT]: 'Sim'
   },
   good: {
-    [lang.EN]: 'With Effort',
-    [lang.ES]: 'Con Esfuerzo',
-    [lang.PT]: 'Com Esforço'
+    [lang.EN]: 'With effort',
+    [lang.ES]: 'Con esfuerzo',
+    [lang.PT]: 'Com esforço'
   },
   hard: {
     [lang.EN]: 'Partially',
