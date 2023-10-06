@@ -2,7 +2,7 @@
   "name": "Memoize",
 	"short_name" : "Memoize",
   "description": "An advanced flashcard application designed to optimize the learning and memorization process",
-	"display" : "fullscreen",
+	"display" : "standalone",
   "orientation" : "portrait",
 	"url" : "https://memoize.cards",
 	"scope" : "/",
