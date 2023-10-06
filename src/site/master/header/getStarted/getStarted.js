@@ -1,6 +1,5 @@
 import { paint, repaint } from '@standard/h'
 import component from './component'
-import cookie from './cookie'
 import response from '@standard/response'
 import status from './status'
 import storage from './storage'
@@ -21,7 +20,6 @@ class GetStarted {
   }
 
   @repaint
-  @cookie.push
   [response.Ok] (_user) {
     this.#user = status.logged
     return this
