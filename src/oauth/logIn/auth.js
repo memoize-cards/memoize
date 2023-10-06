@@ -1,7 +1,6 @@
 import * as filter from '@standard/filter'
 import { paint, repaint } from '@standard/h'
 import { urlFor } from '@standard/router'
-import cookie from './cookie'
 import component from './component'
 import result from '@standard/result'
 import storage from './storage'
@@ -34,8 +33,7 @@ class Auth {
     return this
   }
 
-  @cookie.setUser
-  [result.Ok] (_storage) {
+  [result.Ok] (_data) {
     location.assign(urlFor('dashboard'))
     return this
   }
