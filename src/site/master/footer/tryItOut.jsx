@@ -5,7 +5,7 @@ import translate from './translate'
 
 function component () {
   return (
-    <text.Span className={style.footer__benefit} master xxxs>{translate.howItWorks}</text.Span>
+    <text.Span className={style.footer__benefit} master xxxs>{translate.tryItOut}</text.Span>
   )
 }
 

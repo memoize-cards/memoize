@@ -9,6 +9,7 @@ const style = css`
     display: flex;
     height: 42px;
     justify-content: center;
+    min-width: 42px;
     position: relative;
     width: 42px;
   }
