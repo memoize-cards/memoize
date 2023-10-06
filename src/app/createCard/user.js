@@ -1,8 +1,11 @@
-import cookie from '@standard/cookie'
+import supabase from '@artifact/supabase'
 
 class User {
   static get id () {
-    return cookie.id
+    return (async () => {
+      const { data } = await supabase.auth.getUser()
+      return data.user.id
+    })()
   }
 }
 

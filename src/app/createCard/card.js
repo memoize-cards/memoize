@@ -29,8 +29,8 @@ class Card {
     return this
   }
 
-  [request.Post] () {
-    return payload.create(this.#data)
+  async [request.Post] () {
+    return await payload.create(this.#data)
   }
 
   [result.Error] (_error) {

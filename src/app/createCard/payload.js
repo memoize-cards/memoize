@@ -4,14 +4,14 @@ import type from './type'
 import User from './user'
 
 const payload = {
-  create (data) {
+  async create (data) {
     return {
       front: data.front,
       back: data.back,
       deck: Deck.id,
       interval: Interval.oneMinute,
       type: type.LEARN,
-      user_id: User.id
+      user_id: await User.id
     }
   }
 }

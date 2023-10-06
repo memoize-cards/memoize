@@ -4,7 +4,7 @@ import result from '@standard/result'
 import supabase from '@artifact/supabase'
 
 const insert = async function (deck) {
-  const payload = deck[request.Post]?.()
+  const payload = await deck[request.Post]?.()
   const { data, error } = await supabase.from('deck').insert([payload]).select().single()
   error
     ? deck[result.Error]?.(error)
