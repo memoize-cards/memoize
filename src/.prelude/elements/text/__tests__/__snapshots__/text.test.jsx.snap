@@ -2,7 +2,7 @@
 
 exports[`@elements/text Should create an stack based on the tag name 1`] = `
 <span
-  style="color: var(--color-master); font-family: var(--font-family-base); font-size: var(--font-size-xs); font-weight: var(--font-weight-regular); line-height: var(--line-height-lg); text-align: inherit; white-space: pre-wrap;"
+  style="color: var(--color-master); font-family: var(--font-family-base); font-size: var(--font-size-xs); font-weight: var(--font-weight-regular); line-height: var(--line-height-lg); text-align: inherit;"
 >
   QCX
 </span>
