@@ -1,4 +1,4 @@
-import { paint, repaint } from '@standard/h'
+import { paint } from '@standard/h'
 import component from './component'
 import global from './global'
 import oauth from '@app/oauth'
@@ -29,7 +29,6 @@ class Deck {
     return payload.create()
   }
 
-  @repaint
   @global
   [result.Ok] (data) {
     Object.assign(this.#data, data)
