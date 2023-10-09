@@ -77,7 +77,8 @@ class Element {
   }
 
   addEventListener (event) {
-    Reflect.set(this.#node, ...event)
+    const [key, value] = event
+    this.#node?.[key] = value
     return this
   }
 
@@ -112,7 +113,7 @@ class Element {
   }
 
   removeEventListener (event) {
-    delete this.#node[event.name]
+    delete this.#node?.[event.name]
     return this
   }
 

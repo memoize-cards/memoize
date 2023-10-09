@@ -5,7 +5,7 @@ import User from './user'
 
 function component () {
   return (
-    <header className={style.header}>
+    <header key='header' className={style.header}>
       <Logo />
       <User />
     </header>
