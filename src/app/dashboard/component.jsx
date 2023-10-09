@@ -1,13 +1,17 @@
+import CreateDeck from './createDeck'
+import Decks from './decks'
 import h, { Fragment } from '@standard/h'
-import Header from './header'
 import Main from './main'
+import Master from '@app/master'
 
 function component () {
   return (
-    <>
-      <Header />
-      <Main />
-    </>
+    <Master>
+      <Main>
+        <CreateDeck />
+        <Decks />
+      </Main>
+    </Master>
   )
 }
 
