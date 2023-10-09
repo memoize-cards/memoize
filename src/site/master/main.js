@@ -1,6 +1,9 @@
 import styled from '@standard/styled'
 
 const main = styled.main`
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing_inset-lg);
   margin: 0 auto;
   max-width: 1440px;
   min-height: calc(100svh - 148px);
