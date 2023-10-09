@@ -2,6 +2,7 @@ import Deck from './deck'
 import Interval from './interval'
 import type from './type'
 import User from './user'
+import Validity from './validity'
 
 const payload = {
   async create (data) {
@@ -11,6 +12,7 @@ const payload = {
       deck: Deck.id,
       interval: Interval.oneMinute,
       type: type.LEARN,
+      validity: Validity.now,
       user_id: await User.id
     }
   }
