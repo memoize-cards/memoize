@@ -1,4 +1,4 @@
-import BackToDashboard from './backToDashboard'
+import BackToDashboard from '@app/backToDashboard'
 import Create from './create'
 import Description from '@app/description'
 import Form from '@elements/form'
