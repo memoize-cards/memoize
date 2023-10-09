@@ -6,11 +6,7 @@ class Interval {
   #data = {}
 
   static get #oneYear () {
-    return f.add(Interval.#time, (365 * 24 * 60 * 60 * 1000))
-  }
-
-  static get #time () {
-    return new Date().getTime()
+    return (365 * 24 * 60 * 60 * 1000)
   }
 
   constructor (data) {
@@ -18,7 +14,7 @@ class Interval {
   }
 
   oneDay () {
-    this.#data.interval = f.add(Interval.#time, (1 * 24 * 60 * 60 * 1000))
+    this.#data.interval = (1 * 24 * 60 * 60 * 1000)
     return this
   }
 

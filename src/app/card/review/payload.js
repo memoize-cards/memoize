@@ -4,7 +4,8 @@ const payload = {
       easyFactor: data.easyFactor,
       interval: data.interval,
       lapse: data.lapse,
-      type: data.type
+      type: data.type,
+      validity: data.validity
     }
   }
 }

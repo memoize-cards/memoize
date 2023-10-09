@@ -1,7 +1,7 @@
-class Interval {
+class Validity {
   static get expired () {
     return new Date().getTime()
   }
 }
 
-export default Interval
+export default Validity

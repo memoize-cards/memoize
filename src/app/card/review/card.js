@@ -6,6 +6,7 @@ import payload from './payload'
 import request from '@standard/request'
 import storage from './storage'
 import Type from './type'
+import Validity from './validity'
 
 class Card {
   #data = {}
@@ -13,6 +14,7 @@ class Card {
   #interval
   #lapse
   #type
+  #validity
 
   get id () {
     return this.#data.id
@@ -28,6 +30,7 @@ class Card {
     this.#interval = Interval.create(this.#data)
     this.#lapse = Lapse.create(this.#data)
     this.#type = Type.create(this.#data)
+    this.#validity = Validity.create(this.#data)
   }
 
   @storage.push
@@ -36,6 +39,7 @@ class Card {
     this.#interval.oneDay()
     this.#lapse.one()
     this.#type.relearn()
+    this.#validity.reschedule()
     return this
   }
 
@@ -43,12 +47,14 @@ class Card {
   easy () {
     this.#easyFactor.inc15()
     this.#interval.xEFxEB()
+    this.#validity.reschedule()
     return this
   }
 
   @storage.push
   good () {
     this.#interval.xEF()
+    this.#validity.reschedule()
     return this
   }
 
@@ -56,6 +62,7 @@ class Card {
   hard () {
     this.#easyFactor.dec15()
     this.#interval.xHF()
+    this.#validity.reschedule()
     return this
   }
 

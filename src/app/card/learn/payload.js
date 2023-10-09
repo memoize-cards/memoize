@@ -3,7 +3,8 @@ const payload = {
     return {
       easyFactor: data.easyFactor,
       interval: data.interval,
-      type: data.type
+      type: data.type,
+      validity: data.validity
     }
   }
 }

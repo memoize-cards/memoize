@@ -5,12 +5,14 @@ import payload from './payload'
 import request from '@standard/request'
 import storage from './storage'
 import Type from './type'
+import Validity from './validity'
 
 class Card {
   #data = {}
   #easyFactor
   #interval
   #type
+  #validity
 
   get id () {
     return this.#data.id
@@ -25,11 +27,13 @@ class Card {
     this.#easyFactor = EasyFactor.create(this.#data)
     this.#interval = Interval.create(this.#data)
     this.#type = Type.create(this.#data)
+    this.#validity = Validity.create(this.#data)
   }
 
   @storage.push
   again () {
     this.#interval.temMinutes()
+    this.#validity.reschedule()
     return this
   }
 
@@ -38,6 +42,7 @@ class Card {
     this.#easyFactor.init()
     this.#interval.fourDays()
     this.#type.review()
+    this.#validity.reschedule()
     return this
   }
 
@@ -46,12 +51,14 @@ class Card {
     this.#easyFactor.init()
     this.#interval.oneDay()
     this.#type.review()
+    this.#validity.reschedule()
     return this
   }
 
   @storage.push
   hard () {
     this.#interval.twelveHours()
+    this.#validity.reschedule()
     return this
   }
 

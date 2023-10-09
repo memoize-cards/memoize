@@ -1,11 +1,11 @@
 import Deck from './deck'
-import Interval from './interval'
+import Validity from './validity'
 
 const payload = {
   create () {
     return {
       deck: Deck.id,
-      interval: Interval.expired
+      validity: Validity.expired
     }
   }
 }
