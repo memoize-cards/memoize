@@ -5,10 +5,10 @@ const style = css`
     aspect-ratio: 1 / 1;
     background-color: var(--color-pure-white);
     border-radius: var(--border-radius-circular);
-    height: 40px;
-    min-height: 40px;
-    min-width: 40px;
-    width: 40px;
+    height: 42px;
+    min-height: 42px;
+    min-width: 42px;
+    width: 42px;
   }
 
   .avatar[small] {
