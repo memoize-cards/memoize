@@ -10,7 +10,7 @@ function component () {
   return (
     <div className={style.createDeck}>
       <stack.Div column>
-        <text.Span master darker xs bold>{translate.title}</text.Span>
+        <text.Span master darker xxs bold>{translate.title}</text.Span>
         <text.Span master xxxs>{translate.description}</text.Span>
       </stack.Div>
       <Button onClick={() => redirectTo.createDeck()} wide>{translate.createDeck}</Button>
