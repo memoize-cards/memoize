@@ -6,12 +6,10 @@ import stack from '@elements/stack'
 
 function component () {
   return (
-    <stack.Header>
-      <stack.HGroup column nano>
-        <Name />
-        <Description />
-        <Edit />
-      </stack.HGroup>
+    <stack.Header column nano>
+      <Name />
+      <Description />
+      <Edit />
     </stack.Header>
   )
 }

@@ -4,7 +4,7 @@ import text from '@elements/text'
 
 function component () {
   return (
-    <text.H2 master dark xxs>{global.description}</text.H2>
+    <text.Span master xxxs>{global.description}</text.Span>
   )
 }
 

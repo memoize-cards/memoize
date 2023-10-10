@@ -4,7 +4,7 @@ import text from '@elements/text'
 
 function component () {
   return (
-    <text.H1 master dark highlight md bold>{global.name}</text.H1>
+    <text.H1 master dark highlight sm bold>{global.name}</text.H1>
   )
 }
 
