@@ -6,11 +6,11 @@ import Type from './type'
 
 function component () {
   return (
-    <stack.Main column>
+    <stack.Header column>
       <Type />
       <Front />
       <Edit />
-    </stack.Main>
+    </stack.Header>
   )
 }
 

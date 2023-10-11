@@ -1,14 +1,14 @@
 import Button from '@elements/button'
+import Container from './container'
 import h from '@standard/h'
 import hook from '@standard/hook'
-import style from './style'
 import translate from './translate'
 
 function component () {
   return (
-    <footer className={style.footer}>
+    <Container>
       <Button onClick={() => hook.reveal()} wide>{translate.reveal}</Button>
-    </footer>
+    </Container>
   )
 }
 

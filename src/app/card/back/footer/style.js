@@ -6,8 +6,6 @@ const style = css`
     flex-direction: column;
     gap: var(--spacing_inset-xs);
     margin: 0 auto;
-    max-width: 425px;
-    padding: var(--spacing_inset-xs);
     width: 100%;
   }
 
@@ -15,6 +13,20 @@ const style = css`
     display: grid;
     gap: var(--spacing_inset-nano);
     grid-template-columns: 1fr 1fr;
+  }
+
+  @media (width >= 769px) {
+    .footer__feedback {
+      display: flex;
+    }
+
+    .footer__feedback button:nth-of-type(2) {
+      order: 1;
+    }
+
+    .footer__feedback button:nth-of-type(4) {
+      order: 2;
+    }
   }
 `
 

@@ -1,9 +1,10 @@
 import { urlFor } from '@standard/router'
 import Deck from './deck'
+import global from '@standard/global'
 
 const redirectTo = {
-  back () {
-    location.assign(urlFor('deck', { id: Deck.id }))
+  edit () {
+    location.assign(urlFor('editCard', { deck: Deck.id, id: global.id }))
     return this
   }
 }
