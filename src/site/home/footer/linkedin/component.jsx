@@ -4,7 +4,7 @@ import style from './style'
 
 function component () {
   return (
-    <button className={style.linkedin} onClick={() => redirectTo.linkedin()} />
+    <button className={style.linkedin} onClick={() => redirectTo.linkedin()}>linkedIn</button>
   )
 }
 

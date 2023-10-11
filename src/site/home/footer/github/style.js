@@ -13,6 +13,8 @@ const style = css`
     display: flex;
     height: 42px;
     justify-content: center;
+    overflow: hidden;
+    text-indent: -9999px;
     width: 42px;
   }
 `
