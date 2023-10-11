@@ -5,7 +5,7 @@ import translate from './translate'
 
 function component () {
   return (
-    <text.A href={urlFor('forgotPassword')} primary xxs medium>{translate.clickToResend}</text.A>
+    <text.A href={urlFor('forgotPassword')} primary xxxs medium>{translate.clickToResend}</text.A>
   )
 }
 

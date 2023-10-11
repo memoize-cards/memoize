@@ -9,7 +9,7 @@ function component () {
   return (
     <stack.Footer column>
       <stack.Div center nano>
-        <text.Span master xxs>{translate.footer}</text.Span>
+        <text.Span master xxxs>{translate.footer}</text.Span>
         <ClickToResend />
       </stack.Div>
       <stack.Div center>

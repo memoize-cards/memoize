@@ -4,7 +4,7 @@ import text from '@elements/text'
 
 function component () {
   return (
-    <text.Strong master dark xxs medium>{args.email}</text.Strong>
+    <text.Strong master dark xxxs medium>{args.email}</text.Strong>
   )
 }
 

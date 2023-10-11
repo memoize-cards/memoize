@@ -8,10 +8,10 @@ import translate from './translate'
 function component () {
   return (
     <stack.Header column center giant>
-      <Logo />
+      <Logo large />
       <stack.HGroup column center quarck>
-        <text.H1 master dark highlight md bold>{translate.title}</text.H1>
-        <text.H2 master dark xxs center>
+        <text.H1 master dark highlight sm bold>{translate.title}</text.H1>
+        <text.H2 master xxxs center>
           {translate.description}<br />
           <Email />
         </text.H2>
