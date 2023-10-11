@@ -4,7 +4,7 @@ import style from './style'
 
 function component () {
   return (
-    <button className={style.github} onClick={() => redirectTo.github()}>Github</button>
+    <button className={style.github} onClick={() => redirectTo.github()} title='Github'>Github</button>
   )
 }
 
