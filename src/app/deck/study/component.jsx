@@ -1,4 +1,5 @@
 import Button from '@elements/button'
+import Container from './container'
 import h, { Fragment } from '@standard/h'
 import Hide from '@directive/hide'
 import redirectTo from './redirectTo'
@@ -9,7 +10,7 @@ import translate from './translate'
 
 function component (study) {
   return (
-    <>
+    <Container>
       <Show when={study.count}>
         <Button onClick={() => redirectTo.card()} primary wide>{translate.study} ( {study.count} )</Button>
       </Show>
@@ -18,7 +19,7 @@ function component (study) {
           <text.Span master xxxs>{translate.wait}</text.Span>
         </stack.Div>
       </Hide>
-    </>
+    </Container>
   )
 }
 
