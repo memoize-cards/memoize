@@ -6,7 +6,7 @@ import translate from './translate'
 
 function component () {
   return (
-    <text.A className={style.login__forgotPassword} href={urlFor('forgotPassword')} primary xxs medium>{translate.forgotPassword}</text.A>
+    <text.A className={style.login__forgotPassword} href={urlFor('forgotPassword')} primary xxxs medium>{translate.forgotPassword}</text.A>
   )
 }
 
