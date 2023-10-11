@@ -1,3 +1,4 @@
+import agent from '@standard/agent'
 import middleware from '@standard/middleware'
 import response from '@standard/response'
 import supabase from '@artifact/supabase'
@@ -10,7 +11,7 @@ async function getUser (getStarted) {
 }
 
 const pull = middleware(function (getStarted) {
-  getUser(getStarted)
+  agent.user && getUser(getStarted)
 })
 
 export default {
