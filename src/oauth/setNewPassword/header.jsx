@@ -7,10 +7,10 @@ import translate from './translate'
 function component () {
   return (
     <stack.Header column center giant>
-      <Logo />
+      <Logo large />
       <stack.HGroup column center quarck>
-        <text.H1 master dark highlight md bold>{translate.title}</text.H1>
-        <text.H2 master dark xxs center>{translate.description}</text.H2>
+        <text.H1 master dark highlight sm bold>{translate.title}</text.H1>
+        <text.H2 master xxxs center>{translate.description}</text.H2>
       </stack.HGroup>
     </stack.Header>
   )
