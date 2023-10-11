@@ -7,7 +7,7 @@ import translate from './translate'
 function component () {
   return (
     <stack.Footer center nano>
-      <text.Span master xxs>{translate.footer}</text.Span>
+      <text.Span master xxxs>{translate.footer}</text.Span>
       <LogIn />
     </stack.Footer>
   )
