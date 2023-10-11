@@ -9,7 +9,7 @@ import Title from './title'
 function component () {
   return (
     <div className={style.hero}>
-      <img className={style.hero__illustration} src={media} />
+      <img className={style.hero__illustration} src={media} alt='Memoize' loading='eager' />
       <stack.HGroup className={style.hero__hgroup} column nano>
         <Title />
         <Description />
