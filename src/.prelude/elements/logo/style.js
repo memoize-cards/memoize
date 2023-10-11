@@ -5,7 +5,11 @@ const style = css`
     aspect-ratio: 1 / 1;
     cursor: pointer;
     object-fit: cover;
-    width: 40px;
+    width: 42px;
+  }
+
+  .logo[large] {
+    width: 64px;
   }
 `
 
