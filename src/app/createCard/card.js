@@ -5,7 +5,7 @@ import oauth from '@app/oauth'
 import payload from './payload'
 import redirectTo from './redirectTo'
 import request from '@standard/request'
-import result from '@standard/result'
+import response from '@standard/response'
 import storage from './storage'
 
 @paint(component)
@@ -33,11 +33,11 @@ class Card {
     return await payload.create(this.#data)
   }
 
-  [result.Error] (_error) {
+  [response.Error] (_error) {
     return this
   }
 
-  [result.Ok] (_data) {
+  [response.Ok] (_data) {
     redirectTo.deck()
     return this
   }
