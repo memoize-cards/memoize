@@ -2,7 +2,7 @@ import Edit from '@app/card/edit'
 import Front from './front'
 import h from '@standard/h'
 import stack from '@elements/stack'
-import Type from './type'
+import Type from '@app/card/type'
 
 function component () {
   return (
