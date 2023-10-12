@@ -1,4 +1,4 @@
-import Edit from './edit'
+import Edit from '@app/card/edit'
 import Front from './front'
 import h from '@standard/h'
 import stack from '@elements/stack'
