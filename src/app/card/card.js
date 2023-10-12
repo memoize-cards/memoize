@@ -9,8 +9,8 @@ import storage from './storage'
 import redirectTo from './redirectTo'
 import Relearn from './relearn'
 import request from '@standard/request'
+import response from '@standard/response'
 import Review from './review'
-import result from '@standard/result'
 
 @paint(component)
 @storage
@@ -63,14 +63,14 @@ class Card {
     return payload.create()
   }
 
-  [result.Error] (_error) {
+  [response.Error] (_error) {
     redirectTo.studyCompleted()
     return this
   }
 
   @repaint
   @global
-  [result.Ok] (data) {
+  [response.Ok] (data) {
     Object.assign(this.#data, data)
     this.#card = f.cond(
       [Review.is, Review.create],

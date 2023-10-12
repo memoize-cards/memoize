@@ -1,15 +1,15 @@
 import interceptor from '@standard/interceptor'
 import middleware from '@standard/middleware'
 import request from '@standard/request'
-import result from '@standard/result'
+import response from '@standard/response'
 import supabase from '@artifact/supabase'
 
 async function select (card) {
   const { deck, validity } = card[request.Get]?.() ?? {}
   const { data, error } = await supabase.from('card').select('*').eq('deck', deck).lte('validity', validity).limit(1).single()
   data
-    ? card[result.Ok]?.(data)
-    : card[result.Error]?.(error)
+    ? card[response.Ok]?.(data)
+    : card[response.Error]?.(error)
 }
 
 const storage = middleware(function (card) {
