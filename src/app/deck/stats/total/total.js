@@ -1,6 +1,6 @@
 import { paint, repaint } from '@standard/h'
 import component from './component'
-import result from '@standard/result'
+import response from '@standard/response'
 import storage from './storage'
 
 @paint(component)
@@ -13,7 +13,7 @@ class Total {
   }
 
   @repaint
-  [result.Ok] (count) {
+  [response.Ok] (count) {
     this.#value = count
     return this
   }

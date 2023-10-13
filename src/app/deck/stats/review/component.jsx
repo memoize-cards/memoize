@@ -1,13 +1,14 @@
-import Box from './box'
+import Box from '@app/deck/stats/box'
 import h from '@standard/h'
-import text from '@elements/text'
+import Label from '@app/deck/stats/label'
 import translate from './translate'
+import Value from '@app/deck/stats/value'
 
-function component (total) {
+function component (review) {
   return (
     <Box>
-      <text.Span master dark highlight sm bold>{total.value}</text.Span>
-      <text.Span master xxxs>{translate.label}</text.Span>
+      <Value>{review.value}</Value>
+      <Label>{translate.label}</Label>
     </Box>
   )
 }

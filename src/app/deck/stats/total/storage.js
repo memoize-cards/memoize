@@ -1,13 +1,13 @@
-import { params } from '@standard/router'
+import Deck from '@app/deck/stats/deck'
 import middleware from '@standard/middleware'
-import result from '@standard/result'
+import response from '@standard/response'
 import supabase from '@artifact/supabase'
 
 const pull = middleware(async function (total) {
-  const { count, error } = await supabase.from('card').select('*', { count: 'exact', head: true }).eq('deck', params.id)
+  const { count, error } = await supabase.from('card').select('*', { count: 'exact', head: true }).eq('deck', Deck.id)
   error
-    ? total[result.Error]?.(error)
-    : total[result.Ok]?.(count)
+    ? total[response.Error]?.(error)
+    : total[response.Ok]?.(count)
 })
 
 export default {

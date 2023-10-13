@@ -1,7 +1,9 @@
 import { paint, repaint } from '@standard/h'
 import component from './component'
-import result from '@standard/result'
-import storage from './storage'
+import payload from './payload'
+import request from '@standard/request'
+import response from '@standard/response'
+import storage from '@app/deck/stats/storage'
 
 @paint(component)
 @storage.pull
@@ -12,8 +14,12 @@ class Relearn {
     return String(this.#value ??= 0)
   }
 
+  [request.Get] () {
+    return payload.create()
+  }
+
   @repaint
-  [result.Ok] (count) {
+  [response.Ok] (count) {
     this.#value = count
     return this
   }
