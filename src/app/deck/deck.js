@@ -4,7 +4,7 @@ import global from './global'
 import oauth from '@app/oauth'
 import payload from './payload'
 import request from '@standard/request'
-import result from '@standard/result'
+import response from '@standard/response'
 import storage from './storage'
 
 @paint(component)
@@ -30,7 +30,7 @@ class Deck {
   }
 
   @global
-  [result.Ok] (data) {
+  [response.Ok] (data) {
     Object.assign(this.#data, data)
     return this
   }
