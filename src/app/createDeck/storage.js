@@ -1,14 +1,14 @@
 import interceptor from '@standard/interceptor'
 import request from '@standard/request'
-import result from '@standard/result'
+import response from '@standard/response'
 import supabase from '@artifact/supabase'
 
 const insert = async function (deck) {
   const payload = await deck[request.Post]?.()
   const { data, error } = await supabase.from('deck').insert([payload]).select().single()
   error
-    ? deck[result.Error]?.(error)
-    : deck[result.Ok]?.(data)
+    ? deck[response.Error]?.(error)
+    : deck[response.Ok]?.(data)
 }
 
 const push = interceptor(function (args, next) {
