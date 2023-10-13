@@ -7,8 +7,14 @@ const style = css`
     justify-content: center;
     margin: 0 auto;
     max-width: 425px;
-    min-height: calc(100svh - 74px);
     padding: var(--spacing_inset-xs);
+    width: 100%;
+  }
+
+  .main__illustration {
+    aspect-ratio: 1 / 1;
+    margin: 0 auto;
+    max-height: 550px;
     width: 100%;
   }
 `
