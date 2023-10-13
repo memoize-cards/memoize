@@ -1,4 +1,4 @@
-import User from './user'
+import User from '@app/user'
 
 const payload = {
   async create (data) {

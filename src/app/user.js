@@ -1,8 +1,6 @@
 import supabase from '@artifact/supabase'
 
-class User {
-
-}
+class User { }
 
 Reflect.defineProperty(User, 'id', {
   get: async function () {

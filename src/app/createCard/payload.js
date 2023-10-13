@@ -1,7 +1,7 @@
 import Deck from './deck'
 import Interval from './interval'
 import type from './type'
-import User from './user'
+import User from '@app/user'
 import Validity from './validity'
 
 const payload = {
