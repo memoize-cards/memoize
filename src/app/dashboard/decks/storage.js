@@ -1,15 +1,15 @@
 import middleware from '@standard/middleware'
 import supabase from '@artifact/supabase'
-import result from '@standard/result'
+import response from '@standard/response'
 
 async function select (decks) {
   const { data, error } = await supabase.from('deck').select('id, name, description')
   error
-    ? decks[result.Error]?.(error)
-    : decks[result.Ok]?.(data)
+    ? decks[response.Error]?.(error)
+    : decks[response.Ok]?.(data)
 }
 
-const pull = middleware(async function (decks) {
+const pull = middleware(function (decks) {
   select(decks)
 })
 

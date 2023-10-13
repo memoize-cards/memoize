@@ -1,7 +1,7 @@
 import { paint, repaint } from '@standard/h'
 import Deck from './deck'
 import component from './component'
-import result from '@standard/result'
+import response from '@standard/response'
 import storage from './storage'
 
 @paint(component)
@@ -14,7 +14,7 @@ class Decks {
   }
 
   @repaint
-  [result.Ok] (data) {
+  [response.Ok] (data) {
     this.#collection = data.map(Deck.create)
     return this
   }
