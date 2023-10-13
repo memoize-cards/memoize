@@ -8,9 +8,9 @@ const dictionary = {
     [lang.PT]: 'Você terminou de estudar este baralho, volte mais tarde.'
   },
   title: {
-    [lang.EN]: 'Study Completed',
+    [lang.EN]: 'Study completed',
     [lang.ES]: 'Estudio completado',
-    [lang.PT]: 'Estudo Concluído'
+    [lang.PT]: 'Estudo concluído'
   }
 }
 
