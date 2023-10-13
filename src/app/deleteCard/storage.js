@@ -1,17 +1,17 @@
 import middleware from '@standard/middleware'
 import request from '@standard/request'
-import result from '@standard/result'
+import response from '@standard/response'
 import supabase from '@artifact/supabase'
 
 async function del (card) {
   const payload = card[request.Delete]?.()
   const { error } = await supabase.from('card').delete().eq('id', payload.id)
   error
-    ? card[result.Error]?.(error)
-    : card[result.Ok]?.()
+    ? card[response.Error]?.(error)
+    : card[response.Ok]?.()
 }
 
-const push = middleware(async function (card) {
+const push = middleware(function (card) {
   del(card)
 })
 
