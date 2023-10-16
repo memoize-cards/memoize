@@ -50,7 +50,7 @@ css`
     font-family: var(--font-family-base);
     font-size: var(--font-size-xxxs);
     font-weight: var(--font-weight-regular);
-    line-height: var(--line-height-lg);
+    line-height: var(--line-height-xl);
   }
 
   m-markdown ul {
@@ -59,7 +59,13 @@ css`
 
   m-markdown p code {
     background-color: var(--color-master-light);
-    border-radius: 4px;
-    padding: 1px 2px;
+    border-radius: 3px;
+    padding: 1.5px 3px;
+  }
+
+  m-markdown blockquote {
+    background-color: var(--color-master-lighter);
+    border-left: var(--border-width-thick) solid var(--color-master-light);
+    padding: var(--spacing_inset-xs);
   }
 `
