@@ -13,30 +13,29 @@ css`
     color: var(--color-master-dark);
     font-family: var(--font-family-highlight);
     font-weight: var(--font-weight-bold);
-    line-height: var(--line-height-sm);
   }
 
-  h1 {
+  m-markdown h1 {
     font-size: var(--font-size-lg);
   }
 
-  h2 {
+  m-markdown h2 {
     font-size: var(--font-size-md);
   }
 
-  h3 {
+  m-markdown h3 {
     font-size: var(--font-size-sm);
   }
 
-  h4 {
+  m-markdown h4 {
     font-size: var(--font-size-xs);
   }
 
-  h5 {
+  m-markdown h5 {
     font-size: var(--font-size-xxs);
   }
 
-  h6 {
+  m-markdown h6 {
     font-size: var(--font-size-xxxs);
   }
 
@@ -56,5 +55,11 @@ css`
 
   m-markdown ul {
     padding-left: var(--spacing-xxs);
+  }
+
+  m-markdown p code {
+    background-color: var(--color-master-light);
+    border-radius: 4px;
+    padding: 1px 2px;
   }
 `
