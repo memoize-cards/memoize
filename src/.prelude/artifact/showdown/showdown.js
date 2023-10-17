@@ -1,5 +1,3 @@
-import showdown from 'showdown'
-
-const converter = new showdown.Converter()
+const converter = new window.showdown.Converter()
 
 export default converter
