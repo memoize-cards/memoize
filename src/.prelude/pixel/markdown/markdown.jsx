@@ -1,13 +1,12 @@
 import './style'
 import define from '@standard/define'
-import highlight from '@artifact/highlight'
-import showdown from '@artifact/showdown'
 
 @define('m-markdown')
 class Markdown extends HTMLElement {
   connectedCallback () {
-    this.innerHTML = showdown.makeHtml(this.querySelector('template').textContent)
-    highlight.highlightAll()
+    const converter = new window.showdown.Converter()
+    this.innerHTML = converter.makeHtml(this.querySelector('template').textContent)
+    window.hljs.highlightAll()
     return this
   }
 }
