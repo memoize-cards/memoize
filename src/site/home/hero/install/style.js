@@ -6,6 +6,7 @@ const style = css`
     background-color: transparent;
     border: var(--border-width-hairline) solid var(--color-primary);
     border-radius: var(--border-radius-sm);
+    cursor: pointer;
     display: flex;
     gap: var(--spacing_inset-nano);
     padding: var(--spacing_inset-nano);
