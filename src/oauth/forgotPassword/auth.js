@@ -1,34 +1,34 @@
 import * as filter from '@standard/filter'
 import { paint, repaint } from '@standard/h'
-import { urlFor } from '@standard/router'
 import component from './component'
-import result from '@standard/result'
+import redirectTo from './redirectTo'
+import response from '@standard/response'
 import storage from './storage'
 
 @paint(component)
 class Auth {
-  #email
+  #data = {}
 
   get email () {
-    return (this.#email ??= '')
+    return (this.#data.email ??= '')
   }
 
   @filter.prevent
   @filter.formData
   @storage.push
   forgotPassword (data) {
-    this.#email = data.email
+    Object.assign(this.#data, data)
     return this
   }
 
   @repaint
-  [result.Error] (_error) {
-    this.#email = ''
+  [response.Error] (_error) {
+    this.#data.email = ''
     return this
   }
 
-  [result.Ok] (_data) {
-    location.assign(`${urlFor('checkYourEmail')}?email=${this.email}`)
+  [response.Ok] (_data) {
+    redirectTo.checkYourEmail(this.email)
     return this
   }
 }
