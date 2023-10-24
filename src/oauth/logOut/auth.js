@@ -1,16 +1,14 @@
-import { willMount, paint } from '@standard/h'
-import { urlFor } from '@standard/router'
+import { paint } from '@standard/h'
 import component from './component'
-import cookie from './cookie'
+import redirectTo from './redirectTo'
+import response from '@standard/response'
 import storage from './storage'
 
 @paint(component)
+@storage.push
 class Auth {
-  @willMount
-  @storage.push
-  @cookie.removeUser
-  logOut () {
-    location.assign(urlFor('logIn'))
+  [response.Ok] () {
+    redirectTo.logIn()
     return this
   }
 }

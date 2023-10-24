@@ -1,9 +1,10 @@
-import interceptor from '@standard/interceptor'
+import middleware from '@standard/middleware'
+import response from '@standard/response'
 import supabase from '@artifact/supabase'
 
-const push = interceptor(async function (args, next) {
+const push = middleware(function (auth) {
   await supabase.auth.signOut()
-  return next(...args)
+  auth[response.Ok]?.()
 })
 
 export default {
