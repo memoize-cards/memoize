@@ -1,32 +1,28 @@
 import * as filter from '@standard/filter'
 import { paint } from '@standard/h'
-import { urlFor } from '@standard/router'
 import component from './component'
-import result from '@standard/result'
+import redirectTo from './redirectTo'
+import response from '@standard/response'
 import storage from './storage'
 
 @paint(component)
 class Auth {
-  #password
+  #data = {}
 
   get password () {
-    return (this.#password ??= '')
+    return (this.#data.password ??= '')
   }
 
   @filter.prevent
   @filter.formData
   @storage.push
   setNewPassword (data) {
-    this.#password = data.password
+    Object.assign(this.#data, data)
     return this
   }
 
-  [result.Error] (_error) {
-    return this
-  }
-
-  [result.Ok] (_data) {
-    location.assign(urlFor('passwordReset'))
+  [response.Ok] (_data) {
+    redirectTo.passwordReset()
     return this
   }
 }
