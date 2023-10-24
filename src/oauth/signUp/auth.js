@@ -1,48 +1,42 @@
 import * as filter from '@standard/filter'
 import { paint, repaint } from '@standard/h'
-import { urlFor } from '@standard/router'
 import component from './component'
-import cookie from './cookie'
-import result from '@standard/result'
+import redirectTo from './redirectTo'
+import response from '@standard/response'
 import storage from './storage'
 
 @paint(component)
 class Auth {
-  #email
-  #name
-  #password
+  #data = {}
 
   get email () {
-    return (this.#email ??= '')
+    return (this.#data.email ??= '')
   }
 
   get name () {
-    return (this.#name ??= '')
+    return (this.#data.name ??= '')
   }
 
   get password () {
-    return (this.#password ??= '')
+    return (this.#data.password ??= '')
   }
 
   @filter.prevent
   @filter.formData
   @storage.push
   signUp (data) {
-    this.#email = data.email
-    this.#name = data.name
-    this.#password = data.password
+    Object.assign(this.#data, data)
     return this
   }
 
   @repaint
-  [result.Error] (_error) {
-    this.#password = ''
+  [response.Error] (_error) {
+    this.#data.password = ''
     return this
   }
 
-  @cookie.setUser
-  [result.Ok] (_storage) {
-    location.assign(urlFor('dashboard'))
+  [response.Ok] (_data) {
+    redirectTo.dashboard()
     return this
   }
 }
