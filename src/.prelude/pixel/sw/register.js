@@ -1,6 +1,6 @@
 import env from '@standard/env'
 
-window.addEventListener('load', function () {
+window.addEventListener('load', () => {
   env.production && (
     navigator
       .serviceWorker
