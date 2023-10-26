@@ -1,7 +1,7 @@
 function middleware (functionRef) {
   return function (ClassRef) {
     return new Proxy(
-      function (...args) {
+      (...args) => {
         const instance = new ClassRef(...args)
         setImmediate(() => functionRef(instance))
         return instance
