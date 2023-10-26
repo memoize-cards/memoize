@@ -2,7 +2,7 @@ import echo from '@standard/echo'
 import middleware from '@standard/middleware'
 
 const hook = new Proxy(
-  middleware(function (target) {
+  middleware((target) => {
     echo.on('$hook', ({ method, args }) => target[method]?.(...args))
   }),
   {
