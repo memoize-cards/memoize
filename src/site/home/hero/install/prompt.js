@@ -1,8 +1,8 @@
 import middleware from '@standard/middleware'
 import result from '@standard/result'
 
-const prompt = middleware(function (install) {
-  window.addEventListener('beforeinstallprompt', function (e) {
+const prompt = middleware((install) => {
+  window.addEventListener('beforeinstallprompt', (e) => {
     e.preventDefault()
     install[result.Ok]?.(e)
   })
