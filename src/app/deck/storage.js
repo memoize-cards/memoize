@@ -11,7 +11,7 @@ async function select (deck) {
     : deck[response.Ok]?.(data)
 }
 
-const pull = middleware(function (deck) {
+const pull = middleware((deck) => {
   select(deck)
 })
 

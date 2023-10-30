@@ -12,7 +12,7 @@ async function select (study) {
     : study[response.Ok]?.(count)
 }
 
-const pull = middleware(function (study) {
+const pull = middleware((study) => {
   select(study)
   schedule(() => select(study))
 })

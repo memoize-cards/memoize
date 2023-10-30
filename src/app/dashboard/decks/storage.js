@@ -9,7 +9,7 @@ async function select (decks) {
     : decks[response.Ok]?.(data)
 }
 
-const pull = middleware(function (decks) {
+const pull = middleware((decks) => {
   select(decks)
 })
 

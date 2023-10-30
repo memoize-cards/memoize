@@ -5,7 +5,7 @@ import option from '@standard/option'
 import response from '@standard/response'
 import supabase from '@artifact/supabase'
 
-const pull = middleware(async function (card) {
+const pull = middleware(async (card) => {
   const { data, error } = await supabase.from('card').select('id, back, front').eq('id', params.id).single()
   error
     ? card[response.Error]?.(error)

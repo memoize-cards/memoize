@@ -9,7 +9,7 @@ async function getUser (getStarted) {
     : getStarted[response.Error]?.()
 }
 
-const pull = middleware(function (getStarted) {
+const pull = middleware((getStarted) => {
   getUser(getStarted)
 })
 

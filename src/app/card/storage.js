@@ -12,7 +12,7 @@ async function select (card) {
     : card[response.Error]?.(error)
 }
 
-const storage = middleware(function (card) {
+const storage = middleware((card) => {
   setImmediate(() => select(card))
 })
 

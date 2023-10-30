@@ -5,7 +5,7 @@ import option from '@standard/option'
 import response from '@standard/response'
 import supabase from '@artifact/supabase'
 
-const pull = middleware(async function (deck) {
+const pull = middleware(async (deck) => {
   const { data, error } = await supabase.from('deck').select('id, name, description').eq('id', params.id).single()
   error
     ? deck[response.Error]?.(error)

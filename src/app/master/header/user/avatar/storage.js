@@ -9,7 +9,7 @@ async function getUser (avatar) {
     : avatar[response.Error]?.()
 }
 
-const pull = middleware(function (avatar) {
+const pull = middleware((avatar) => {
   getUser(avatar)
 })
 

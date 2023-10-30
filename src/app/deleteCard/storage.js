@@ -11,7 +11,7 @@ async function del (card) {
     : card[response.Ok]?.()
 }
 
-const push = middleware(function (card) {
+const push = middleware((card) => {
   del(card)
 })
 
