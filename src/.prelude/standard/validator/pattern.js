@@ -8,7 +8,7 @@ function pattern (patternText) {
         return (new RegExp(patternText, 'i').test(value))
           ? (
               this[result.Ok]?.(),
-              Reflect.apply(next, this, arguments)
+              next.call(this, value)
             )
           : this[result.Ok]?.('pattern')
       }

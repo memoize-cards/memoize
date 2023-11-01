@@ -7,7 +7,7 @@ function required (_target, _prop, descriptor) {
       return value
         ? (
             this[result.Ok]?.(),
-            Reflect.apply(next, this, arguments)
+            next.call(this, value)
           )
         : this[result.Ok]?.('required')
     }

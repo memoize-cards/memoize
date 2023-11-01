@@ -8,7 +8,7 @@ function didMount (_target, _prop, descriptor) {
   Object.assign(descriptor, {
     value () {
       setImmediate(() => this[paint.instance]?.()?.[event]?.())
-      return Reflect.apply(next, this, arguments)
+      return next.apply(this, arguments)
     },
     writable: true
   })

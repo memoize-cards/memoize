@@ -6,7 +6,7 @@ const dispatch = new Proxy({}, {
       const method = descriptor.value
       Object.assign(descriptor, {
         value () {
-          const output = Reflect.apply(method, this, arguments)
+          const output = method.apply(this, arguments)
           setImmediate(() => this[magic[event]]?.(output))
           return output
         }

@@ -3,7 +3,7 @@ function prevent (_target, _prop, descriptor) {
   Object.assign(descriptor, {
     value (e) {
       e instanceof Event && e.preventDefault()
-      return Reflect.apply(next, this, arguments)
+      return next.apply(this, arguments)
     }
   })
 }
