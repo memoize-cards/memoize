@@ -3,7 +3,7 @@ import middleware from '@standard/middleware'
 import response from '@standard/response'
 import supabase from '@artifact/supabase'
 
-const pull = middleware(async function (total) {
+const pull = middleware(async (total) => {
   const { count, error } = await supabase.from('card').select('*', { count: 'exact', head: true }).eq('deck', Deck.id)
   error
     ? total[response.Error]?.(error)
