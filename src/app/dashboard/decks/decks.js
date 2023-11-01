@@ -1,6 +1,7 @@
 import { paint, repaint } from '@standard/h'
 import Deck from './deck'
 import component from './component'
+import redirectTo from './redirectTo'
 import response from '@standard/response'
 import storage from './storage'
 
@@ -11,6 +12,11 @@ class Decks {
 
   get collection () {
     return (this.#collection ??= [])
+  }
+
+  [response.Error] (_error) {
+    redirectTo.withoutDeck()
+    return this
   }
 
   @repaint
