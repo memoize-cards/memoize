@@ -1,10 +1,19 @@
 import global from '@standard/global'
 import h from '@standard/h'
-import text from '@elements/text'
 
 function component () {
+  /**
+   * TODO: Depois que padronizar a contrucao do front, variavel
+   * heading sera removido
+   */
+  const content = global.front?.includes('#')
+    ? global.front
+    : `#${global.front}`
+
   return (
-    <text.H1 master dark lg highlight bold>{global.front}</text.H1>
+    <m-markdown>
+      <template>{content}</template>
+    </m-markdown>
   )
 }
 

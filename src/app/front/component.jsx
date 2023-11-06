@@ -1,11 +1,11 @@
 import Choose from '@directive/choose'
 import h from '@standard/h'
-import Input, { Label, Supporting } from '@elements/input'
+import Textarea, { Label, Supporting } from '@elements/textarea'
 import translate from './translate'
 
 function component (front) {
   return (
-    <Input
+    <Textarea
       type='text'
       id='front'
       name='front'
@@ -19,7 +19,7 @@ function component (front) {
       <Choose when={front.validity}>
         <Supporting equal='required'>{translate.required}</Supporting>
       </Choose>
-    </Input>
+    </Textarea>
   )
 }
 
