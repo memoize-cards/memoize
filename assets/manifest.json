@@ -1,16 +1,16 @@
 {
   "name": "Memoize",
-	"short_name" : "Memoize",
-  "description": "An advanced flashcard application designed to optimize the learning and memorization process",
-	"display" : "standalone",
-  "orientation" : "portrait",
-	"url" : "https://memoize.cards",
-	"scope" : "/",
+  "short_name": "Memoize",
+  "description": "Um aplicativo avançado de flashcard projetado para otimizar o processo de aprendizado e memorização",
+  "display": "standalone",
+  "orientation": "portrait",
+  "url": "https://memoize.cards",
+  "scope": "/",
   "id": "/?source=pwa",
-	"start_url" : "/?utm_source=pwa",
-	"theme_color" : "#fafafa",
-	"background_color" : "#fafafa",
-	"icons" : [
+  "start_url": "/?utm_source=pwa",
+  "theme_color": "#fafafa",
+  "background_color": "#fafafa",
+  "icons": [
     {
       "src": "memoize_512w.png",
       "type": "image/png",
@@ -33,5 +33,26 @@
       "type": "image/png",
       "sizes": "64x64"
     }
+  ],
+  "dir": "ltr",
+  "lang": "pt",
+  "display_override": [
+    "standalone",
+    "window-controls-overlay"
+  ],
+  "shortcuts": [
+    {
+      "name": "Login",
+      "url": "/login",
+      "description": ""
+    },
+    {
+      "name": "Dashboard",
+      "url": "/dashboard",
+      "description": ""
+    }
+  ],
+  "categories": [
+    "education"
   ]
 }
