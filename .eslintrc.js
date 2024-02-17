@@ -29,6 +29,7 @@ module.exports = {
     ],
     '@typescript-eslint/no-var-requires': 'off',
     'no-async-promise-executor': 'off',
+    'no-console': 'error',
     'no-return-assign': 'off',
     'no-sequences': 'off',
     'no-unused-expressions': 'off'
