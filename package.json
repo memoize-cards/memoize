@@ -22,7 +22,7 @@
     "html-webpack-plugin": "^5.5.3",
     "husky": "^8.0.0",
     "inline-chunk-html-plugin": "^1.1.1",
-    "jest": "^29.6.2",
+    "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.6.2",
     "lint-staged": "^13.2.3",
     "postcss": "^8.4.24",
@@ -42,13 +42,13 @@
     "webpack-dev-server": "^4.15.1"
   },
   "name": "memoize",
-  "packageManager": "yarn@3.6.0",
+  "packageManager": "yarn@4.1.0",
   "private": true,
   "scripts": {
     "build": "webpack --mode production",
     "codacy": "bash codacy",
+    "dev": "webpack server --mode development --open",
     "postinstall": "husky install",
-    "start": "webpack server --mode development --open",
     "test": "jest --passWithNoTests"
   },
   "version": "1.0.0"
