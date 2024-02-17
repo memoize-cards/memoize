@@ -13,6 +13,7 @@ module.exports = {
     'stylelint-order'
   ],
   rules: {
+    'color-function-notation': null,
     'custom-property-pattern': /[\w-_]+/,
     'no-empty-source': null,
     'no-invalid-position-at-import-rule': null,
