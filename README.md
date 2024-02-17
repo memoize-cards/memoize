@@ -39,13 +39,13 @@ Aqui estão as variáveis de ambiente utilizadas pelo Memoize:
 | Key | Description | Value |
 | --- | --- | --- |
 | ANALYZER_MODE | Define o modo de análise para o webpack-bundle-analyzer. |  |
+| BUNDLE_STATS_BASELINE | Define se o baseline das estatísticas do pacote será usado. | true |
 | COOKIE_DOMAIN | Define o domínio no qual os valores do cookie são acessíveis. | localhost |
 | HINTS | Define o nível de detalhe dos avisos na compilação. | warning |
 | MAX_ASSET_SIZE | Define o tamanho máximo (em bytes) para um arquivo estático. | 2000000 |
 | MAX_ENTRYPOINT_SIZE | Define o tamanho máximo (em bytes) para um ponto de entrada. | 2000000 |
 | PORT | Define a porta na qual o servidor da aplicação será executado. | 6001 |
 | PUBLIC_PATH | Define o caminho público para os arquivos da aplicação. | / |
-| BUNDLE_STATS_BASELINE | Define se o baseline das estatísticas do pacote será usado. | true |
 | SUPABASE_KEY | Chave de autenticação para o Supabase. |  |
 | SUPABASE_URL | URL do servidor do Supabase. |  |
 
