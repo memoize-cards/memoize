@@ -2,8 +2,7 @@ import * as filter from '@standard/filter'
 import { paint, repaint } from '@standard/h'
 import component from './component'
 import redirectTo from './redirectTo'
-import response from '@standard/response'
-import storage from './storage'
+import user from './user'
 
 @paint(component)
 class Auth {
@@ -19,20 +18,20 @@ class Auth {
 
   @filter.prevent
   @filter.formData
-  @storage.push
+  @user.authenticate
   logIn (data) {
     Object.assign(this.#data, data)
     return this
   }
 
-  @repaint
-  [response.Error] (_error) {
-    this.#data.password = ''
+  [user.authenticated] (_data) {
+    redirectTo.dashboard()
     return this
   }
 
-  [response.Ok] (_data) {
-    redirectTo.dashboard()
+  @repaint
+  [user.invalid] (_error) {
+    this.#data.password = ''
     return this
   }
 }
