@@ -8,6 +8,17 @@
     "jsxFragmentFactory": "Fragment",
     "moduleResolution": "node",
     "module": "esnext",
+    "paths": {
+      "@app/*": ["./src/app/*"],
+      "@artifact/*": ["./prelude/artifact/*"],
+      "@directive/*": ["./prelude/directive/*"],
+      "@elements/*": ["./prelude/elements/*"],
+      "@oauth/*": ["./src/oauth/*"],
+      "@pixel/*": ["./prelude/pixel/*"],
+      "@polyfill/*": ["./prelude/polyfill/*"],
+      "@site/*": ["./src/site/*"],
+      "@standard/*": ["./prelude/standard/*"]
+    },
     "resolveJsonModule": true,
     "sourceMap": false,
     "strict": true,

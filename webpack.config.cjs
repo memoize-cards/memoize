@@ -11,6 +11,7 @@ const TerserJSPlugin = require('terser-webpack-plugin')
 const webpack = require('webpack')
 
 module.exports = {
+  context: path.resolve(__dirname),
   devServer: {
     static: {
       directory: path.join(__dirname, 'public'),
@@ -110,14 +111,14 @@ module.exports = {
   resolve: {
     alias: {
       '@app': path.resolve(__dirname, 'src/app/'),
-      '@artifact': path.resolve(__dirname, 'src/.prelude/artifact/'),
-      '@directive': path.resolve(__dirname, 'src/.prelude/directive/'),
-      '@elements': path.resolve(__dirname, 'src/.prelude/elements/'),
+      '@artifact': path.resolve(__dirname, 'prelude/artifact/'),
+      '@directive': path.resolve(__dirname, 'prelude/directive/'),
+      '@elements': path.resolve(__dirname, 'prelude/elements/'),
       '@oauth': path.resolve(__dirname, 'src/oauth/'),
-      '@pixel': path.resolve(__dirname, 'src/.prelude/pixel/'),
-      '@polyfill': path.resolve(__dirname, 'src/.prelude/polyfill/'),
+      '@pixel': path.resolve(__dirname, 'prelude/pixel/'),
+      '@polyfill': path.resolve(__dirname, 'prelude/polyfill/'),
       '@site': path.resolve(__dirname, 'src/site/'),
-      '@standard': path.resolve(__dirname, 'src/.prelude/standard/')
+      '@standard': path.resolve(__dirname, 'prelude/standard/')
     },
     extensions: ['.js', '.jsx']
   }

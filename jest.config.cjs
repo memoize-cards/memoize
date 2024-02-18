@@ -21,7 +21,8 @@ module.exports = {
 
   // An array of glob patterns indicating a set of files for which coverage information should be collected
   collectCoverageFrom: [
-    '<rootDir>/**/*.{js,jsx}'
+    '<rootDir>/prelude/**/*.{js,jsx}',
+    '<rootDir>/src/**/*.{js,jsx}'
   ],
 
   // The directory where Jest should output its coverage files
@@ -99,15 +100,15 @@ module.exports = {
 
   // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
   moduleNameMapper: {
-    '^@app/(.*)$': '<rootDir>/app/$1',
-    '^@artifact/(.*)$': '<rootDir>/.prelude/artifact/$1',
-    '^@directive/(.*)$': '<rootDir>/.prelude/directive/$1',
-    '^@elements/(.*)$': '<rootDir>/.prelude/elements/$1',
-    '^@oauth/(.*)$': '<rootDir>/oauth/$1',
-    '^@pixel/(.*)$': '<rootDir>/.prelude/pixel/$1',
-    '^@polyfill/(.*)$': '<rootDir>/.prelude/polyfill/$1',
-    '^@site/(.*)$': '<rootDir>/site/$1',
-    '^@standard/(.*)$': '<rootDir>/.prelude/standard/$1'
+    '^@app/(.*)$': '<rootDir>/src/app/$1',
+    '^@artifact/(.*)$': '<rootDir>/prelude/artifact/$1',
+    '^@directive/(.*)$': '<rootDir>/prelude/directive/$1',
+    '^@elements/(.*)$': '<rootDir>/prelude/elements/$1',
+    '^@oauth/(.*)$': '<rootDir>/src/oauth/$1',
+    '^@pixel/(.*)$': '<rootDir>/prelude/pixel/$1',
+    '^@polyfill/(.*)$': '<rootDir>/prelude/polyfill/$1',
+    '^@site/(.*)$': '<rootDir>/src/site/$1',
+    '^@standard/(.*)$': '<rootDir>/prelude/standard/$1'
   },
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
@@ -141,7 +142,7 @@ module.exports = {
   // restoreMocks: false,
 
   // The root directory that Jest should scan for tests and modules within
-  rootDir: 'src/',
+  rootDir: './',
 
   // A list of paths to directories that Jest should use to search for files in
   // roots: [
@@ -153,9 +154,9 @@ module.exports = {
 
   // The paths to modules that run some code to configure or set up the testing environment before each test
   setupFiles: [
-    '<rootDir>/.prelude/polyfill/group',
-    '<rootDir>/.prelude/polyfill/requestAnimationFrame',
-    '<rootDir>/.prelude/polyfill/setImmediate'
+    '<rootDir>/prelude/polyfill/group',
+    '<rootDir>/prelude/polyfill/requestAnimationFrame',
+    '<rootDir>/prelude/polyfill/setImmediate'
   ],
 
   // A list of paths to modules that run some code to configure or set up the testing framework before each test
