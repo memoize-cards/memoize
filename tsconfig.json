@@ -1,27 +1,7 @@
 {
   "compilerOptions": {
     "allowJs": true,
-    "esModuleInterop": true,
-    "experimentalDecorators": true,
-    "jsx": "react",
-    "jsxFactory": "h",
-    "jsxFragmentFactory": "Fragment",
-    "moduleResolution": "node",
-    "module": "esnext",
-    "paths": {
-      "@app/*": ["./src/app/*"],
-      "@artifact/*": ["./prelude/artifact/*"],
-      "@directive/*": ["./prelude/directive/*"],
-      "@elements/*": ["./prelude/elements/*"],
-      "@oauth/*": ["./src/oauth/*"],
-      "@pixel/*": ["./prelude/pixel/*"],
-      "@polyfill/*": ["./prelude/polyfill/*"],
-      "@site/*": ["./src/site/*"],
-      "@standard/*": ["./prelude/standard/*"]
-    },
-    "resolveJsonModule": true,
-    "sourceMap": false,
-    "strict": true,
-    "target": "es2015"
+    "checkJS": true,
+    "experimentalDecorators": true
   }
 }

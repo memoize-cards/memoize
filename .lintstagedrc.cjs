@@ -1,6 +1,3 @@
 module.exports = {
-  '*.{js,jsx}': [
-    'yarn eslint',
-    'yarn stylelint'
-  ]
-}
+  "*": ["biome check --write --no-errors-on-unmatched"],
+};

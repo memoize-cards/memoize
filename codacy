@@ -1,7 +1,0 @@
-#!/bin/bash
-
-export CODACY_API_TOKEN=78gGHyKk5KO0Y6OsF6YA
-export CODACY_ORGANIZATION_PROVIDER=gh
-export CODACY_USERNAME=memoize-cards
-export CODACY_PROJECT_NAME=memoize
-bash <(curl -Ls https://coverage.codacy.com/get.sh) report -r ./coverage/lcov.info
