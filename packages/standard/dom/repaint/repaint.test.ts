@@ -185,7 +185,6 @@ describe("repaint", () => {
         "willPaintCallback",
         "style",
         "component",
-        "didPaintCallback",
       ]);
 
       expect(element.innerHTML).toBe("<button>Increment 1</button>");
