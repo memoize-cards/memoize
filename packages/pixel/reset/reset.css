@@ -1,0 +1,6 @@
+body {
+  color-scheme: light dark;
+  background-color: var(--bg-primary);
+  margin: 0;
+  transition: all 0.2s ease-out;
+}
