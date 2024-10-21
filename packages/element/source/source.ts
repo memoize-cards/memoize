@@ -1,9 +1,9 @@
-import { attributeChanged, define } from "standard";
+import { attributeChanged, define } from "directive";
+import { on } from "standard/echo/interfaces";
 import {
   echoConnectedCallback,
   echoDisconnectedCallback,
-  on,
-} from "standard/echo/interfaces";
+} from "standard/echo/lifeCycle";
 import { setOn } from "./interfaces";
 
 /**
