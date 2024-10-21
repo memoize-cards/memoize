@@ -1,0 +1,22 @@
+:root {
+  --border-primary: light-dark(var(--color-gray-300), var(--color-gray-700));
+
+  --border-secondary: light-dark(var(--color-gray-200), var(--color-gray-800));
+
+  --border-tertiary: light-dark(var(--color-gray-100), var(--color-gray-800));
+
+  --border-disabled: light-dark(var(--color-gray-300), var(--color-gray-700));
+  --border-disabled-subtle: light-dark(
+    var(--color-gray-200),
+    var(--color-gray-800)
+  );
+
+  --border-brand: light-dark(var(--color-brand-500), var(--color-brand-400));
+  --border-brand_alt: light-dark(var(--color-brand-600), var(--color-brand-700));
+
+  --border-error: light-dark(var(--color-error-500), var(--color-error-400));
+  --border-error_subtle: light-dark(
+    var(--color-error-300),
+    var(--color-error-400)
+  );
+}

@@ -1,0 +1,13 @@
+:root {
+  --line-height-display-2xl: 90px;
+  --line-height-display-xl: 72px;
+  --line-height-display-lg: 60px;
+  --line-height-display-md: 44px;
+  --line-height-display-sm: 38px;
+  --line-height-display-xs: 32px;
+  --line-height-xl: 30px;
+  --line-height-lg: 28px;
+  --line-height-md: 24px;
+  --line-height-sm: 20px;
+  --line-height-xs: 18px;
+}
