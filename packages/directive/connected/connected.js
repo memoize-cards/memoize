@@ -1,5 +1,5 @@
-import intercept, { exec } from "../intercept";
-import { connectedCallback } from "../interfaces";
+import intercept, { exec } from "standard/intercept";
+import { connectedCallback } from "standard/lifeCycle";
 
 /**
  * Decorator que adiciona lógica ao método `connectedCallback` de um Custom Element.
@@ -14,7 +14,7 @@ import { connectedCallback } from "../interfaces";
  * para que o método decorado seja executado quando o `connectedCallback` do Custom Element é invocado.
  *
  * @example
- * import { connected } from 'standard';
+ * import { connected } from 'directive';
  *
  * class MyElement extends HTMLElement {
  *   @connected

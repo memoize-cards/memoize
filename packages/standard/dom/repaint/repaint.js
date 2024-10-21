@@ -1,4 +1,4 @@
-import { paintCallback } from "../interfaces";
+import { paintCallback } from "standard/dom/lifeCycle";
 
 /**
  * Decorator para chamar o callback de pintura após a execução do método ou atualização de propriedade original.

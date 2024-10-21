@@ -1,10 +1,10 @@
-import intercept, { exec } from "../../intercept";
 import {
-  connectedCallback,
   didPaintCallback,
   paintCallback,
   willPaintCallback,
-} from "../interfaces";
+} from "standard/dom/lifeCycle";
+import intercept, { exec } from "standard/intercept";
+import { connectedCallback } from "standard/lifeCycle";
 
 /**
  * Decorator que adiciona suporte para renderização e estilização de um componente.

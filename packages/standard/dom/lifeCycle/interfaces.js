@@ -1,13 +1,4 @@
 /**
- * Nomes dos callbacks para o ciclo de vida dos Custom Elements.
- *
- * Esses são os nomes padrão utilizados para os callbacks do ciclo de vida dos Custom Elements.
- *
- * @constant {string} connectedCallback - Nome do callback chamado quando um Custom Element é inserido no DOM.
- */
-export const connectedCallback = "connectedCallback";
-
-/**
  * Símbolos utilizados como callbacks para o ciclo de vida dos Custom Elements.
  *
  * Estes símbolos são usados para definir e identificar callbacks específicos relacionados ao

@@ -7,4 +7,3 @@ export { default as formAssociated } from "./formAssociated";
 export { default as formDisabled } from "./formDisabled";
 export { default as formReset } from "./formReset";
 export { default as formStateRestore } from "./formStateRestore";
-export { default as relay } from "./relay";

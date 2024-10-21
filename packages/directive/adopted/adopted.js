@@ -1,5 +1,5 @@
-import intercept, { exec } from "../intercept";
-import { adoptedCallback } from "../interfaces";
+import intercept, { exec } from "standard/intercept";
+import { adoptedCallback } from "standard/lifeCycle";
 
 /**
  * Decorator que adiciona lógica ao método `adoptedCallback` de um Custom Element.
@@ -15,7 +15,7 @@ import { adoptedCallback } from "../interfaces";
  * de forma adequada, centralizando a lógica e mantendo a integridade dos métodos de callback.
  *
  * @example
- * import { adopted } from 'standard';
+ * import { adopted } from 'directive';
  *
  * class MyElement extends HTMLElement {
  *   @adopted

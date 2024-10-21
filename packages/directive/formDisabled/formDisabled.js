@@ -1,12 +1,12 @@
-import intercept, { exec } from "../intercept";
-import { formDisabledCallback } from "../interfaces";
+import intercept, { exec } from "standard/intercept";
+import { formDisabledCallback } from "standard/lifeCycle";
 
 /**
  * Cria um decorator para adicionar lógica ao método `formDisabledCallback` de um Custom Element.
  *
  * @param {Object} target - O alvo do decorator, geralmente a classe do Custom Element.
- * @param {string} propertyKey - O nome do método decorado.
- * @returns {Function} Um decorator que intercepta a chamada do `formDisabledCallback`.
+ * @param {string|Symbol} propertyKey - O nome do método decorado.
+ * @returns {void}
  *
  * @description
  * O decorator `formDisabled` permite adicionar lógica personalizada ao método `formDisabledCallback` de um
@@ -14,7 +14,7 @@ import { formDisabledCallback } from "../interfaces";
  * O decorator permite que você execute uma função personalizada durante esse processo.
  *
  * @example
- * import { formDisabled } from 'standard';
+ * import { formDisabled } from 'directive';
  *
  * class MyElement extends HTMLElement {
  *   constructor() {

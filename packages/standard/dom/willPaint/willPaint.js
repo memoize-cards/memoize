@@ -1,5 +1,5 @@
-import intercept, { exec } from "../../intercept";
-import { willPaintCallback } from "../interfaces";
+import { willPaintCallback } from "standard/dom/lifeCycle";
+import intercept, { exec } from "standard/intercept";
 
 /**
  * Cria um decorator para adicionar lógica ao método `willPaintCallback` de um Custom Element.

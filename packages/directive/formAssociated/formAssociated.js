@@ -1,11 +1,11 @@
-import intercept, { exec } from "../intercept";
-import { formAssociatedCallback } from "../interfaces";
+import intercept, { exec } from "standard/intercept";
+import { formAssociatedCallback } from "standard/lifeCycle";
 
 /**
  * Cria um decorator para adicionar lógica ao método `formAssociatedCallback` de um Custom Element.
  *
  * @param {Object} target - O alvo do decorator, geralmente a classe do Custom Element.
- * @param {string} propertyKey - O nome do método decorado.
+ * @param {string|Symbol} propertyKey - O nome do método decorado.
  * @returns {void}
  *
  * @description
@@ -14,7 +14,7 @@ import { formAssociatedCallback } from "../interfaces";
  * com o formulário. O decorator permite que você execute uma função personalizada durante esse processo.
  *
  * @example
- * import { formAssociated } from 'standard';
+ * import { formAssociated } from 'directive';
  *
  * class MyElement extends HTMLElement {
  *   constructor() {

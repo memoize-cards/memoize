@@ -1,9 +1,6 @@
-import intercept from "../../intercept";
-import {
-  abortController,
-  connectedCallback,
-  disconnectedCallback,
-} from "../interfaces";
+import { abortController } from "standard/event/interfaces";
+import intercept from "standard/intercept";
+import { connectedCallback, disconnectedCallback } from "standard/lifeCycle";
 
 /**
  * Configura um event listener e o aplica como um decorator ao método alvo.

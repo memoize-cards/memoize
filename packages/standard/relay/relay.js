@@ -1,9 +1,6 @@
-import {
-  abortController,
-  connectedCallback,
-  disconnectedCallback,
-} from "../event/interfaces";
-import intercept from "../intercept";
+import { abortController } from "standard/event/interfaces";
+import intercept from "standard/intercept";
+import { connectedCallback, disconnectedCallback } from "standard/lifeCycle";
 
 /**
  * Configura um event listener no `parentElement` e o aplica como um decorator ao método alvo.
@@ -19,7 +16,7 @@ import intercept from "../intercept";
  * permitindo que o componente escute eventos do elemento pai.
  *
  * @example
- * import relay from 'standard';
+ * import relay from 'standard/relay';
  *
  * class ChildComponent extends HTMLElement {
  *   @relay.changed(prevent, stop)

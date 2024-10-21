@@ -1,12 +1,12 @@
-import intercept, { exec } from "../../intercept";
-import { didPaintCallback } from "../interfaces";
+import { didPaintCallback } from "standard/dom/lifeCycle";
+import intercept, { exec } from "standard/intercept";
 
 /**
  * Cria um decorator que intercepta e adiciona lógica ao método `didPaintCallback` de um Custom Element.
  *
  * @param {Object} target - O alvo do decorator, geralmente a classe do Custom Element.
  * @param {string} propertyKey - O nome do método decorado.
- * @returns {void} Um decorator que intercepta a chamada do `didPaintCallback`.
+ * @returns {void}
  *
  * @description
  * O decorator `didPaint` permite que desenvolvedores de Custom Elements adicionem

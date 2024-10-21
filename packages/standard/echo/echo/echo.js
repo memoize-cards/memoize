@@ -1,15 +1,15 @@
-import filters from "../filters";
+import filters from "standard/echo/filters";
+import { dispatchEvent, id, on } from "standard/echo/interfaces";
+import {
+  echoConnectedCallback,
+  echoDisconnectedCallback,
+} from "standard/echo/lifeCycle";
+import { target } from "standard/echo/target";
 import {
   attributeChangedCallback,
   disconnectedCallback,
-  dispatchEvent,
-  echoConnectedCallback,
-  echoDisconnectedCallback,
-  id,
   observedAttributes,
-  on,
-} from "../interfaces";
-import { target } from "../target";
+} from "standard/lifeCycle";
 
 /**
  * Mixin Echo para adicionar suporte a um Event Bus em um Custom Element.

@@ -7,6 +7,27 @@
 </head>
 
 <body>
+  <mc-form>
+    <template>
+      <mc-text-field name="email" label="Email">
+        <mc-required-validator messagem="Email eh obrigatorio"></mc-required-validator> 
+        <mc-type-validator value="email" messagem="Email nao eh valido"></mc-type-validator> 
+      </mc-text-field>
+
+      <mc-text-field name="password" label="Senha" type="password">
+        <mc-required-validator messagem="Senha eh obrigatorio"></mc-required-validator> 
+      </mc-text-field>
+
+      <mc-text-field name="confirm-password" label="Senha" type="password">
+        <mc-required-validator messagem="Senha eh obrigatorio"></mc-required-validator> 
+        <mc-custom-validator messagem="Senha eh obrigatorio"></mc-required-validator> 
+      </mc-text-field>
+
+      <mc-button disabled:when="email|empty OR password|len|lte=6">
+        Log in
+      </mc-button>
+    </template>
+  </mc-form>
   <script src="./src/index.js" type="module"></script>
 </body>
 

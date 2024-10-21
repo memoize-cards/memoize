@@ -14,7 +14,7 @@ import { disconnectedCallback } from "../interfaces";
  * automaticamente quando o `disconnectedCallback` for invocado.
  *
  * @example
- * import { disconnected } from 'standard';
+ * import { disconnected } from 'directive';
  *
  * class MyElement extends HTMLElement {
  *   constructor() {

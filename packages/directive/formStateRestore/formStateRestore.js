@@ -1,12 +1,12 @@
-import intercept, { exec } from "../intercept";
-import { formStateRestoreCallback } from "../interfaces";
+import intercept, { exec } from "standard/intercept";
+import { formStateRestoreCallback } from "standard/lifeCycle";
 
 /**
  * Cria um decorator para adicionar lógica ao método `formStateRestoreCallback` de um Custom Element.
  *
  * @param {Object} target - O alvo do decorator, geralmente a classe do Custom Element.
- * @param {string} propertyKey - O nome do método decorado.
- * @returns {Function} Um decorator que intercepta a chamada do `formStateRestoreCallback`.
+ * @param {string|Symbol} propertyKey - O nome do método decorado.
+ * @returns {void}
  *
  * @description
  * O decorator `formStateRestore` permite que um método seja executado quando o estado do formulário
@@ -14,7 +14,7 @@ import { formStateRestoreCallback } from "../interfaces";
  * do formulário é restaurado, permitindo a execução de lógica personalizada durante esse processo.
  *
  * @example
- * import { formStateRestore } from 'standard';
+ * import { formStateRestore } from 'directive';
  *
  * class MyElement extends HTMLElement {
  *   constructor() {

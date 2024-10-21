@@ -1,5 +1,8 @@
-import intercept from "../intercept";
-import { attributeChangedCallback, observedAttributes } from "../interfaces";
+import intercept from "standard/intercept";
+import {
+  attributeChangedCallback,
+  observedAttributes,
+} from "standard/lifeCycle";
 
 /**
  * Decorator que adiciona lógica ao método `attributeChangedCallback` de um Custom Element.
@@ -15,7 +18,7 @@ import { attributeChangedCallback, observedAttributes } from "../interfaces";
  * seja adicionado à lista de atributos observados do Custom Element.
  *
  * @example
- * import { attributeChanged } from 'standard';
+ * import { attributeChanged } from 'directive';
  *
  * class MyElement extends HTMLElement {
  *   @attributeChanged('my-attribute')

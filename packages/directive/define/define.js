@@ -12,7 +12,7 @@
  * do Custom Element.
  *
  * @example
- * import { define } from 'standard';
+ * import { define } from 'directive';
  *
  * @define('my-element', { extends: 'div' })
  * class MyElement extends HTMLDivElement {
