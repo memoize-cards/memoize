@@ -1,5 +1,5 @@
-import intercept, { exec } from "../intercept";
-import { disconnectedCallback } from "../interfaces";
+import intercept, { exec } from "standard/intercept";
+import { disconnectedCallback } from "standard/lifeCycle";
 
 /**
  * Decorator que adiciona lógica ao método `disconnectedCallback` de um Custom Element.
