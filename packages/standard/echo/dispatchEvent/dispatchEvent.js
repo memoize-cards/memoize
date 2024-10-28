@@ -1,8 +1,7 @@
 const dispatchEvent = (eventName) => (_target, _propertyKeyKey, descriptor) => {
-  const originalSet = descriptor.set ?? (() => undefined);
-  const originalValue = descriptor.value ?? (() => undefined);
-
   if (descriptor.set) {
+    const originalSet = descriptor.set ?? (() => undefined);
+
     Object.assign(descriptor, {
       async set(value) {
         await Reflect.apply(originalSet, this, [value]);
@@ -21,6 +20,8 @@ const dispatchEvent = (eventName) => (_target, _propertyKeyKey, descriptor) => {
   }
 
   if (descriptor.value) {
+    const originalValue = descriptor.value ?? (() => undefined);
+
     Object.assign(descriptor, {
       async value(...args) {
         const output = await Reflect.apply(originalValue, this, args);
@@ -33,7 +34,7 @@ const dispatchEvent = (eventName) => (_target, _propertyKeyKey, descriptor) => {
           }),
         );
 
-        return this;
+        return output;
       },
     });
   }

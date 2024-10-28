@@ -1,6 +1,5 @@
 import { attributeChanged, define } from "directive";
 import { booleanAttribute } from "directive/attributeChanged";
-import dispatchEvent from "standard/dispatchEvent";
 import { paint, repaint } from "standard/dom";
 import Echo from "standard/echo";
 import on from "standard/event";
@@ -9,7 +8,7 @@ import component from "./component";
 import { dispatchFormAction, setDisplay, setState } from "./interfaces";
 import style from "./style";
 
-@define("mc-button")
+@define("memo-button")
 @paint(component, style)
 class Button extends Echo(HTMLElement) {
   #content;
@@ -26,7 +25,6 @@ class Button extends Echo(HTMLElement) {
   }
 
   @attributeChanged("disabled", booleanAttribute)
-  @dispatchEvent("disabledChanged")
   @joinCut(setState)
   set readonly(value) {
     this.#disabled = value;
@@ -37,7 +35,6 @@ class Button extends Echo(HTMLElement) {
   }
 
   @attributeChanged("hidden", booleanAttribute)
-  @dispatchEvent("hiddenChanged")
   @joinCut(setDisplay)
   set hidden(value) {
     this.#hidden = value;
@@ -48,7 +45,6 @@ class Button extends Echo(HTMLElement) {
   }
 
   @attributeChanged("size")
-  @dispatchEvent("sizeChanged")
   @repaint
   set size(value) {
     this.#size = value;
@@ -59,7 +55,6 @@ class Button extends Echo(HTMLElement) {
   }
 
   @attributeChanged("type")
-  @dispatchEvent("typeChanged")
   set type(value) {
     this.#type = value;
   }
@@ -69,7 +64,6 @@ class Button extends Echo(HTMLElement) {
   }
 
   @attributeChanged("value")
-  @dispatchEvent("valueChanged")
   set value(value) {
     this.#value = value;
   }
@@ -79,7 +73,6 @@ class Button extends Echo(HTMLElement) {
   }
 
   @attributeChanged("variant")
-  @dispatchEvent("variantChanged")
   set variant(value) {
     this.#variant = value;
   }

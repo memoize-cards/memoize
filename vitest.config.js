@@ -13,13 +13,16 @@ export default defineConfig({
     },
   },
   test: {
+    browser: {
+      enable: true,
+      headless: true,
+      name: "chrome",
+      provider: "webdriverio",
+    },
     coverage: {
-      include: ["{packages,src}/**/*.{js,ts}"],
-      exclude: [
-        "{src,packages}/**/*.test.{js,ts}",
-        "{src,packages}/**/index.{js,ts}",
-        "{src,packages}/**/types.d.ts",
-      ],
+      include: ["**/*.{js,ts}"],
+      exclude: ["**/*.test.{js,ts}", "**/index.{js,ts}"],
+      provider: "istanbul",
       reporter: ["lcov", "html"],
       thresholds: {
         statements: 0,
@@ -28,10 +31,5 @@ export default defineConfig({
         lines: 0,
       },
     },
-    environment: "jsdom",
-    setupFiles: [
-      resolve(__dirname, "packages/polyfill/index.js"),
-      resolve(__dirname, "happydom.js"),
-    ],
   },
 });

@@ -5,7 +5,7 @@ import component from "./component";
 import memoize from "./memoize.svg";
 import style from "./style";
 
-@define("mc-logo")
+@define("memo-logo")
 @paint(component, style)
 class Logo extends Echo(HTMLElement) {
   get alt() {

@@ -3,10 +3,11 @@ import { html } from "standard/dom";
 function component(self) {
   return html`
     <header>
-      <mc-logo></mc-logo>
+      <leading>
+        <memo-logo></memo-logo>
+      </leading>
       <trailing>
-        <mc-button variant="secondary">Sign in</mc-button>
-        <mc-button>Sign up</mc-button>
+        <memo-button variant="primary">Get Started</memo-button>
       </trailing>
     </header>
   `;

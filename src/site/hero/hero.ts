@@ -4,9 +4,9 @@ import Echo from "standard/echo";
 import component from "./component";
 import style from "./style";
 
-@define("memo-header")
+@define("memo-hero")
 @paint(component, style)
-class Header extends Echo(HTMLElement) {
+class Hero extends Echo(HTMLElement) {
   constructor() {
     super();
     this.attachShadow({ mode: "open" });

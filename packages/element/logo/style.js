@@ -2,16 +2,11 @@ import { css } from "standard/dom";
 
 function style(self) {
   return css`
-    :host {
+    img {
       aspect-ratio: 1 / 1;
       display: flex;
-      height: 32px;
-      width: 32px;
-    }
-
-    img {
-      height: 100%;
-      width: 100%;
+      height: 44px;
+      width: 44px;
     }
   `;
 }
