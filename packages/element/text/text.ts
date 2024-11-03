@@ -1,48 +1,58 @@
 import { define } from "directive";
 import attributeChanged, { booleanAttribute } from "directive/attributeChanged";
 import { paint, repaint } from "standard/dom";
-import Echo from "standard/echo";
-import on from "standard/event";
-import joinCut from "standard/joinCut";
+import Echo, { dispatchEvent } from "standard/echo";
 import component from "./component";
-import { setDisplay } from "./interfaces";
 import style from "./style";
 
 @define("memo-text")
 @paint(component, style)
 class Text extends Echo(HTMLElement) {
-  #display;
-  #hidden;
+  #color;
+  #family;
+  #lineHeight;
   #size;
   #weight;
 
-  get display() {
-    return (this.#display ??= false);
+  get color() {
+    return (this.#color ??= "master");
   }
 
-  @attributeChanged("display", booleanAttribute)
+  @attributeChanged("color")
+  @dispatchEvent("color")
   @repaint
-  set display(value) {
-    this.#display = value;
+  set color(value) {
+    this.#color = value;
   }
 
-  get hidden() {
-    return (this.#hidden ??= false);
+  get family() {
+    return (this.#family ??= "base");
   }
 
-  @attributeChanged("hidden", booleanAttribute)
-  @joinCut(setDisplay)
-  set hidden(value) {
-    this.#hidden = value;
+  @attributeChanged("family")
+  @dispatchEvent("family")
+  @repaint
+  set family(value) {
+    this.#family = value;
+  }
+
+  get lineHeight() {
+    return (this.#lineHeight ??= "lg");
+  }
+
+  @attributeChanged("line-height")
+  @dispatchEvent("line-height")
+  @repaint
+  set lineHeight(value) {
+    this.#lineHeight = value;
   }
 
   get size() {
-    return this.display
-      ? `display-${(this.#size ??= "sm")}`
-      : (this.#size ??= "sm");
+    return (this.#size ??= "xxs");
   }
 
   @attributeChanged("size")
+  @dispatchEvent("size")
   @repaint
   set size(value) {
     this.#size = value;
@@ -53,25 +63,15 @@ class Text extends Echo(HTMLElement) {
   }
 
   @attributeChanged("weight")
+  @dispatchEvent("weight")
   @repaint
   set weight(value) {
     this.#weight = value;
   }
 
-  static get formAssociated() {
-    return true;
-  }
-
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
-  }
-
-  [setDisplay]() {
-    this.hidden
-      ? this.style.setProperty("display", "none")
-      : this.style.removeProperty("display");
-    return this;
   }
 }
 

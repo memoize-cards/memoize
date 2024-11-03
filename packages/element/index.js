@@ -1,4 +1,10 @@
 import "./button";
+import "./footer";
+import "./hGroup";
+import "./header";
+import "./icon";
 import "./logo";
+import "./main";
 import "./source";
+import "./stack";
 import "./text";

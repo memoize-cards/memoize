@@ -1,53 +1,32 @@
 import { attributeChanged, define } from "directive";
 import { booleanAttribute } from "directive/attributeChanged";
 import { paint, repaint } from "standard/dom";
-import Echo from "standard/echo";
+import Echo, { dispatchEvent } from "standard/echo";
 import on from "standard/event";
 import joinCut from "standard/joinCut";
 import component from "./component";
-import { dispatchFormAction, setDisplay, setState } from "./interfaces";
+import { dispatchFormAction, setState } from "./interfaces";
 import style from "./style";
 
 @define("memo-button")
 @paint(component, style)
 class Button extends Echo(HTMLElement) {
-  #content;
-  #disabled;
-  #hidden;
+  #color;
   #internals;
-  #size;
   #type;
   #value;
   #variant;
+  #width;
 
-  get disabled() {
-    return this.#disabled;
+  get color() {
+    return (this.#color ??= "primary");
   }
 
-  @attributeChanged("disabled", booleanAttribute)
-  @joinCut(setState)
-  set readonly(value) {
-    this.#disabled = value;
-  }
-
-  get hidden() {
-    return (this.#hidden ??= false);
-  }
-
-  @attributeChanged("hidden", booleanAttribute)
-  @joinCut(setDisplay)
-  set hidden(value) {
-    this.#hidden = value;
-  }
-
-  get size() {
-    return (this.#size ??= "lg");
-  }
-
-  @attributeChanged("size")
+  @attributeChanged("color")
+  @dispatchEvent("color")
   @repaint
-  set size(value) {
-    this.#size = value;
+  set color(value) {
+    this.#color = value;
   }
 
   get type() {
@@ -55,6 +34,8 @@ class Button extends Echo(HTMLElement) {
   }
 
   @attributeChanged("type")
+  @dispatchEvent("type")
+  @repaint
   set type(value) {
     this.#type = value;
   }
@@ -64,17 +45,32 @@ class Button extends Echo(HTMLElement) {
   }
 
   @attributeChanged("value")
+  @dispatchEvent("value")
+  @repaint
   set value(value) {
     this.#value = value;
   }
 
   get variant() {
-    return (this.#variant ??= "primary");
+    return (this.#variant ??= "solid");
   }
 
   @attributeChanged("variant")
+  @dispatchEvent("variant")
+  @joinCut(setState)
   set variant(value) {
     this.#variant = value;
+  }
+
+  get width() {
+    return (this.#width ??= "auto");
+  }
+
+  @attributeChanged("width")
+  @dispatchEvent("width")
+  @repaint
+  set width(value) {
+    this.#width = value;
   }
 
   static get formAssociated() {
@@ -91,7 +87,7 @@ class Button extends Echo(HTMLElement) {
   @joinCut(dispatchFormAction)
   click() {
     const init = { bubbles: true, cancelable: true, detail: this.value };
-    const event = new CustomEvent("clicked", init);
+    const event = new CustomEvent("click", init);
     this.dispatchEvent(event);
     return this;
   }
@@ -108,17 +104,10 @@ class Button extends Echo(HTMLElement) {
     return this;
   }
 
-  [setDisplay]() {
-    this.hidden
-      ? this.style.setProperty("display", "none")
-      : this.style.removeProperty("display");
+  [setState](variant) {
+    this.#internals.states.delete(variant);
+    this.#internals.states.add(variant);
     return this;
-  }
-
-  [setState]() {
-    this.disabled
-      ? this.#internals.states.add("disabled")
-      : this.#internals.states.delete("disabled");
   }
 }
 

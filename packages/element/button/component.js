@@ -1,6 +1,6 @@
 import { html } from "standard/dom";
 
-function component(self) {
+function component() {
   return html`
     <button>
       <slot></slot>

@@ -13,9 +13,10 @@ const paint =
       .in(target.prototype)
       .then(async function () {
         const render = (resolve) => {
-          requestAnimationFrame(() => {
-            (this.shadowRoot ?? document).adoptedStyleSheets = style(this);
-            (this.shadowRoot ?? this).innerHTML = component(this);
+          requestAnimationFrame(async () => {
+            (this.shadowRoot ?? document).adoptedStyleSheets =
+              await style(this);
+            (this.shadowRoot ?? this).innerHTML = await component(this);
             this.isPainted = true;
             resolve();
           });

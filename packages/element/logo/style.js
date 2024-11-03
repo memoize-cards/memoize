@@ -1,12 +1,18 @@
 import { css } from "standard/dom";
 
-function style(self) {
+function style() {
   return css`
-    img {
+    svg {
       aspect-ratio: 1 / 1;
-      display: flex;
-      height: 44px;
-      width: 44px;
+      color: var(--color-primary);
+      height: 56px;
+      width: 56px;
+    }
+
+    :host(:state(oncolor)) {
+      svg {
+        color: var(--color-master-lightest);
+      }
     }
   `;
 }

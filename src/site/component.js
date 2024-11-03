@@ -1,0 +1,30 @@
+import { html } from "standard/dom";
+import image from "./image.svg";
+
+function component() {
+  return html`
+    <memo-header></memo-header>
+    <memo-main>
+      <site>
+        <memo-logo></memo-logo>
+        <memo-hgroup align="center">
+          <memo-text color="master-darker" family="highlight" size="lg" weight="bold">Aprenda, Memorize & Domine!</memo-text>
+          <memo-text>Um aplicativo avançado de flashcard projetado para otimizar o processo de aprendizado e memorização.</memo-text>
+        </memo-hgroup>
+        <img alt="Memoize" src="${image}" loading="lazy" />
+        <memo-stack direction="column">
+          <memo-button width="100%">Entrar</memo-button>
+          <memo-button variant="naked" width="100%">Instalar aplicativo</memo-button>
+        </memo-stack>
+      </site>
+    </memo-main>
+    <memo-footer>
+      <memo-text slot="leading">© 2024 Memoize. Todos os direitos reservados.</memo-text>
+      <memo-button slot="trailing" variant="link">
+        <memo-icon></memo-icon>
+      </memo-button>
+    </memo-footer>
+  `;
+}
+
+export default component;
