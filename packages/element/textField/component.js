@@ -8,6 +8,7 @@ function component(self) {
     <input
       id="${self.name}"
       inputmode="${self.inputMode}"
+      placeholder="${self.placeholder}"
       name="${self.name}"
       type="${self.type}"
       value="${self.value}"

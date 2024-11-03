@@ -30,7 +30,7 @@ class Button extends Echo(HTMLElement) {
   }
 
   get type() {
-    return (this.#type ??= "");
+    return (this.#type ??= "submit");
   }
 
   @attributeChanged("type")
@@ -83,10 +83,15 @@ class Button extends Echo(HTMLElement) {
     this.#internals = this.attachInternals();
   }
 
-  @on.click(":host :not(:disabled) *")
+  @on.click(":host button")
   @joinCut(dispatchFormAction)
   click() {
-    const init = { bubbles: true, cancelable: true, detail: this.value };
+    const init = {
+      bubbles: true,
+      composed: true,
+      cancelable: true,
+      detail: this.value,
+    };
     const event = new CustomEvent("click", init);
     this.dispatchEvent(event);
     return this;

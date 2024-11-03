@@ -11,6 +11,7 @@ function style() {
       justify-content: center;
       margin: 0 auto;
       max-width: 426px;
+      width: 100%;
     }
   `;
 }

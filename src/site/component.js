@@ -1,4 +1,5 @@
 import { html } from "standard/dom";
+import { urlFor } from "standard/router";
 import image from "./image.svg";
 
 function component() {
@@ -13,7 +14,10 @@ function component() {
         </memo-hgroup>
         <img alt="Memoize" src="${image}" loading="lazy" />
         <memo-stack direction="column">
-          <memo-button width="100%">Entrar</memo-button>
+          <memo-button id="signIn" width="100%">
+            Entrar
+            <memo-redirect href="${urlFor("signIn")}" on="signIn/click:method/go"></memo-redirect>
+          </memo-button>
           <memo-button variant="naked" width="100%">Instalar aplicativo</memo-button>
         </memo-stack>
       </site>
@@ -21,7 +25,7 @@ function component() {
     <memo-footer>
       <memo-text slot="leading">© 2024 Memoize. Todos os direitos reservados.</memo-text>
       <memo-button slot="trailing" variant="link">
-        <memo-icon></memo-icon>
+        <memo-icon use="language"></memo-icon>
       </memo-button>
     </memo-footer>
   `;

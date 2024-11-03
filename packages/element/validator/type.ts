@@ -1,13 +1,14 @@
-import { connected, define, disconnected } from "@bake-js/-o-id";
-import { paint } from "@bake-js/-o-id/dom";
-import Echo from "@bake-js/-o-id/echo";
-import relay from "@bake-js/-o-id/relay";
+import { connected, define, disconnected } from "directive";
+import { paint } from "standard/dom";
+import Echo from "standard/echo";
+import { prevent } from "standard/event";
+import relay from "standard/relay";
 import component from "./component";
 import { removed, resetState, setState, syncAttribute } from "./interfaces";
 import style from "./style";
 import Validator from "./validator";
 
-@define("ego-type-validator")
+@define("memo-type-validator")
 @paint(component, style)
 class Type extends Echo(Validator) {
   #internals;
@@ -23,7 +24,7 @@ class Type extends Echo(Validator) {
     return this;
   }
 
-  @relay.reseted()
+  @relay.reset()
   [resetState]() {
     this.#internals.states.delete("invalid");
     return this;
@@ -39,11 +40,11 @@ class Type extends Echo(Validator) {
     return this;
   }
 
-  @relay.changed()
-  @relay.invalidated()
-  @relay.retarget()
+  @relay.change()
+  @relay.invalid(prevent)
+  @relay.type()
   [setState]() {
-    this.parentElement.validity.rangeOverflow
+    this.parentElement.validity.typeMismatch
       ? this.#internals.states.add("invalid")
       : this.#internals.states.delete("invalid");
     return this;

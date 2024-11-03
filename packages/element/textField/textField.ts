@@ -1,10 +1,4 @@
-import {
-  connected,
-  define,
-  disconnected,
-  formAssociated,
-  formReset,
-} from "directive";
+import { define, disconnected, formAssociated, formReset } from "directive";
 import attributeChanged, { booleanAttribute } from "directive/attributeChanged";
 import { didPaint, paint } from "standard/dom";
 import Echo, { dispatchEvent } from "standard/echo";
@@ -12,15 +6,7 @@ import on, { prevent, value } from "standard/event";
 import joinCut from "standard/joinCut";
 import component from "./component";
 import Input from "./input";
-import {
-  changed,
-  invalidated,
-  removed,
-  setDisplay,
-  setFormValue,
-  setState,
-  setValidity,
-} from "./interfaces";
+import { change, remove, setFormValue, setValidity } from "./interfaces";
 import Label from "./label";
 import style from "./style";
 
@@ -28,45 +14,12 @@ import style from "./style";
 @paint(component, style)
 class TextField extends Echo(HTMLElement) {
   #controller;
-  #hidden;
   #input;
   #internals;
   #label;
 
-  get disabled() {
-    return this.#input.disabled;
-  }
-
-  @attributeChanged("disabled", booleanAttribute)
-  @dispatchEvent("disabledChanged")
-  set disabled(value) {
-    this.#input.disabled = value;
-  }
-
   get form() {
     return this.#internals.form;
-  }
-
-  get hidden() {
-    return (this.#hidden ??= false);
-  }
-
-  @attributeChanged("hidden", booleanAttribute)
-  @dispatchEvent("hiddenChanged")
-  @joinCut(setDisplay)
-  set hidden(value) {
-    this.#hidden = value;
-  }
-
-  get id() {
-    return this.#input.id;
-  }
-
-  @attributeChanged("id")
-  @dispatchEvent("idChanged")
-  set id(value) {
-    this.#label.for = value;
-    this.#input.id = value;
   }
 
   get inputMode() {
@@ -74,7 +27,7 @@ class TextField extends Echo(HTMLElement) {
   }
 
   @attributeChanged("inputmode")
-  @dispatchEvent("inputModeChanged")
+  @dispatchEvent("inputMode")
   set inputMode(value) {
     this.#input.inputMode = value;
   }
@@ -84,57 +37,9 @@ class TextField extends Echo(HTMLElement) {
   }
 
   @attributeChanged("label")
-  @dispatchEvent("labelChanged")
+  @dispatchEvent("label")
   set label(value) {
     this.#label.innerText = value;
-  }
-
-  get max() {
-    return (this.#input.max ??= "");
-  }
-
-  @attributeChanged("max")
-  @dispatchEvent("maxChanged")
-  @joinCut(setState)
-  @joinCut(setValidity)
-  set max(value) {
-    this.#input.max = value;
-  }
-
-  get maxLength() {
-    return (this.#input.maxlength ??= "");
-  }
-
-  @attributeChanged("maxlength")
-  @dispatchEvent("maxLengthChanged")
-  @joinCut(setState)
-  @joinCut(setValidity)
-  set maxLength(value) {
-    this.#input.maxlength = value;
-  }
-
-  get min() {
-    return (this.#input.min ??= "");
-  }
-
-  @attributeChanged("min")
-  @dispatchEvent("minChanged")
-  @joinCut(setState)
-  @joinCut(setValidity)
-  set min(value) {
-    this.#input.min = value;
-  }
-
-  get minLength() {
-    return (this.#input.minlength ??= "");
-  }
-
-  @attributeChanged("minlength")
-  @dispatchEvent("minLengthChanged")
-  @joinCut(setState)
-  @joinCut(setValidity)
-  set minLength(value) {
-    this.#input.minlength = value;
   }
 
   get name() {
@@ -142,21 +47,9 @@ class TextField extends Echo(HTMLElement) {
   }
 
   @attributeChanged("name")
-  @dispatchEvent("nameChanged")
+  @dispatchEvent("name")
   set name(value) {
     this.#input.name = value;
-  }
-
-  get pattern() {
-    return this.#input.pattern;
-  }
-
-  @attributeChanged("pattern", booleanAttribute)
-  @dispatchEvent("patternChanged")
-  @joinCut(setState)
-  @joinCut(setValidity)
-  set pattern(value) {
-    this.#input.pattern = value;
   }
 
   get placeholder() {
@@ -164,19 +57,9 @@ class TextField extends Echo(HTMLElement) {
   }
 
   @attributeChanged("placeholder")
-  @dispatchEvent("placeholderChanged")
+  @dispatchEvent("placeholder")
   set placeholder(value) {
     this.#input.placeholder = value;
-  }
-
-  get readonly() {
-    return this.#input.readonly;
-  }
-
-  @attributeChanged("readonly", booleanAttribute)
-  @dispatchEvent("readonlyChanged")
-  set readonly(value) {
-    this.#input.readonly = value;
   }
 
   get required() {
@@ -184,23 +67,10 @@ class TextField extends Echo(HTMLElement) {
   }
 
   @attributeChanged("required", booleanAttribute)
-  @dispatchEvent("requiredChanged")
-  @joinCut(setState)
+  @dispatchEvent("required")
   @joinCut(setValidity)
   set required(value) {
     this.#input.required = value;
-  }
-
-  get step() {
-    return this.#input.step;
-  }
-
-  @attributeChanged("step")
-  @dispatchEvent("stepChanged")
-  @joinCut(setState)
-  @joinCut(setValidity)
-  set step(value) {
-    this.#input.step = value;
   }
 
   get type() {
@@ -208,8 +78,7 @@ class TextField extends Echo(HTMLElement) {
   }
 
   @attributeChanged("type")
-  @dispatchEvent("typeChanged")
-  @joinCut(setState)
+  @dispatchEvent("type")
   @joinCut(setValidity)
   set type(value) {
     this.#input.type = value;
@@ -228,8 +97,7 @@ class TextField extends Echo(HTMLElement) {
   }
 
   @attributeChanged("value")
-  @dispatchEvent("valueChanged")
-  @joinCut(setState)
+  @dispatchEvent("value")
   @joinCut(setValidity)
   set value(value) {
     this.#input.value = value;
@@ -253,10 +121,9 @@ class TextField extends Echo(HTMLElement) {
   }
 
   @on.input("input", value)
-  @dispatchEvent("changed")
-  @joinCut(setState)
+  @dispatchEvent("change")
   @joinCut(setValidity)
-  [changed](val) {
+  [change](val) {
     this.#input.value = val;
     return this.value;
   }
@@ -265,14 +132,8 @@ class TextField extends Echo(HTMLElement) {
     return this.#internals.checkValidity();
   }
 
-  @on.invalid("*", prevent)
-  [invalidated]() {
-    this.dispatchEvent(new CustomEvent("invalidated"));
-    return this;
-  }
-
   @disconnected
-  [removed]() {
+  [remove]() {
     this.#controller.abort();
     return this;
   }
@@ -282,19 +143,12 @@ class TextField extends Echo(HTMLElement) {
   }
 
   @formReset
-  @dispatchEvent("reseted")
+  @dispatchEvent("reset")
   @joinCut(setValidity)
   reset() {
     this.#input.value = "";
     this.#internals.states.delete("invalid");
     return this.value;
-  }
-
-  [setDisplay]() {
-    this.hidden
-      ? this.style.setProperty("display", "none")
-      : this.style.removeProperty("display");
-    return this;
   }
 
   @formAssociated
@@ -304,14 +158,6 @@ class TextField extends Echo(HTMLElement) {
       this.disabled || event.formData.set(this.name, this.value);
     const options = { signal: this.#controller.signal };
     form.addEventListener(event, listener, options);
-    return this;
-  }
-
-  @on.invalid("*", prevent)
-  [setState]() {
-    this.validity.valid
-      ? this.#internals.states.delete("invalid")
-      : this.#internals.states.add("invalid");
     return this;
   }
 

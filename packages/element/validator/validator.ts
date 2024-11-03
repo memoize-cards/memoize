@@ -1,7 +1,7 @@
-import { attributeChanged, connected } from "@bake-js/-o-id";
-import booleanAttribute from "../booleanAttribute";
-import dispatchEvent from "../dispatchEvent";
-import joinCut from "../joinCut";
+import { connected } from "directive";
+import attributeChanged, { booleanAttribute } from "directive/attributeChanged";
+import { dispatchEvent } from "standard/echo";
+import joinCut from "standard/joinCut";
 import { removed, resetState, setState, syncAttribute } from "./interfaces";
 
 class Validator extends HTMLElement {
@@ -9,23 +9,12 @@ class Validator extends HTMLElement {
   #message;
   #value;
 
-  get disabled() {
-    return (this.#disabled ??= false);
-  }
-
-  @attributeChanged("disabled", booleanAttribute)
-  @dispatchEvent("redisabed")
-  @joinCut(syncAttribute)
-  set disabled(value) {
-    this.#disabled = value;
-  }
-
   get message() {
     return (this.#message ??= "");
   }
 
   @attributeChanged("message")
-  @dispatchEvent("messaged")
+  @dispatchEvent("message")
   set message(value) {
     this.#message = value;
 
@@ -39,7 +28,7 @@ class Validator extends HTMLElement {
   }
 
   @attributeChanged("value")
-  @dispatchEvent("changed")
+  @dispatchEvent("value")
   @joinCut(syncAttribute)
   set value(value) {
     this.#value = value;

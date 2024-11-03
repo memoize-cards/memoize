@@ -1,10 +1,8 @@
-import { html } from "@bake-js/-o-id/dom";
+import { html } from "standard/dom";
 
 function component(self) {
   return html`
-    <span class="required">
-      ${self.message}
-    </span>
+    ${self.message}
   `;
 }
 

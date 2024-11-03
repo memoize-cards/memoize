@@ -10,6 +10,7 @@ const dispatchEvent = (eventName) => (_target, _propertyKeyKey, descriptor) => {
           this.dispatchEvent(
             new CustomEvent(eventName, {
               bubbles: true,
+              composed: true,
               cancelable: true,
               detail: value,
             }),
@@ -29,6 +30,7 @@ const dispatchEvent = (eventName) => (_target, _propertyKeyKey, descriptor) => {
         this.dispatchEvent(
           new CustomEvent(eventName, {
             bubbles: true,
+            composed: true,
             cancelable: true,
             detail: output,
           }),

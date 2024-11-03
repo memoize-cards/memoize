@@ -1,20 +1,19 @@
-import { css } from "@bake-js/-o-id/dom";
+import { css } from "standard/dom";
 
 function style() {
   return css`
-    .required {
-      color: var(--text-error-primary);
+    :host {
+      color: var(--color-danger);
       display: none;
-      font-family: var(--font-family);
-      font-size: var(--font-size-sm);
+      font-family: var(--font-family-base);
+      font-size: var(--font-size-xxs);
       font-weight: var(--font-weight-regular);
-      line-height: var(--line-height-sm);
+      line-height: var(--line-height-lg);
+      transition: all 0.2s ease-out;
     }
 
     :host(:state(invalid)) {
-      .required {
-        display: inline;
-      }
+      display: inline;
     }
   `;
 }

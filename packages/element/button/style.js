@@ -23,7 +23,19 @@ function style(self) {
         line-height: var(--line-height-default);
         min-width: 42px;
         padding: 0 var(--spacing_inset-xs);
+        position: relative;
+        transition: all 0.2s ease-out;
         width: 100%;
+
+        &:after {
+          content: "";
+          display: block;
+          height: 100%;
+          left: 0;
+          position: absolute;
+          top: 0;
+          width: 100%;
+        }
       }
     }
 
