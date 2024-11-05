@@ -1,87 +1,99 @@
 import { define, disconnected, formAssociated, formReset } from "directive";
 import attributeChanged, { booleanAttribute } from "directive/attributeChanged";
-import { didPaint, paint } from "standard/dom";
+import { didPaint, paint, repaint } from "standard/dom";
 import Echo, { dispatchEvent } from "standard/echo";
 import on, { prevent, value } from "standard/event";
 import joinCut from "standard/joinCut";
 import component from "./component";
-import Input from "./input";
 import { change, remove, setFormValue, setValidity } from "./interfaces";
-import Label from "./label";
 import style from "./style";
 
-@define("memo-text-field")
+@define("memo-input")
 @paint(component, style)
-class TextField extends Echo(HTMLElement) {
+class Input extends Echo(HTMLElement) {
+  #autocomplete;
   #controller;
-  #input;
+  #inputMode;
   #internals;
   #label;
+  #name;
+  #placeholder;
+  #required;
+  #type;
+  #value;
+
+  get autocomplete() {
+    return (this.#autocomplete ??= "");
+  }
+
+  @attributeChanged("autocomplete")
+  @repaint
+  set autocomplete(value) {
+    this.#autocomplete = value;
+  }
 
   get form() {
     return this.#internals.form;
   }
 
   get inputMode() {
-    return this.#input.inputMode;
+    return this.#inputMode ?? this.type;
   }
 
   @attributeChanged("inputmode")
-  @dispatchEvent("inputMode")
+  @repaint
   set inputMode(value) {
-    this.#input.inputMode = value;
+    this.#inputMode = value;
   }
 
   get label() {
-    return this.#label.innerText;
+    return (this.#label ??= "");
   }
 
   @attributeChanged("label")
-  @dispatchEvent("label")
+  @repaint
   set label(value) {
-    this.#label.innerText = value;
+    this.#label = value;
   }
 
   get name() {
-    return (this.#input.name ??= "");
+    return (this.#name ??= "");
   }
 
   @attributeChanged("name")
-  @dispatchEvent("name")
+  @repaint
   set name(value) {
-    this.#input.name = value;
+    this.#name = value;
   }
 
   get placeholder() {
-    return this.#input.placeholder;
+    return this.#placeholder;
   }
 
   @attributeChanged("placeholder")
-  @dispatchEvent("placeholder")
+  @repaint
   set placeholder(value) {
-    this.#input.placeholder = value;
+    this.#placeholder = value;
   }
 
   get required() {
-    return this.#input.required;
+    return (this.#required ??= false);
   }
 
   @attributeChanged("required", booleanAttribute)
-  @dispatchEvent("required")
-  @joinCut(setValidity)
+  @repaint
   set required(value) {
-    this.#input.required = value;
+    this.#required = value;
   }
 
   get type() {
-    return this.#input.type;
+    return (this.#type ??= "text");
   }
 
   @attributeChanged("type")
-  @dispatchEvent("type")
-  @joinCut(setValidity)
+  @repaint
   set type(value) {
-    this.#input.type = value;
+    this.#type = value;
   }
 
   get validationMessage() {
@@ -93,14 +105,13 @@ class TextField extends Echo(HTMLElement) {
   }
 
   get value() {
-    return this.#input.value;
+    return (this.#value ??= "");
   }
 
   @attributeChanged("value")
-  @dispatchEvent("value")
-  @joinCut(setValidity)
+  @repaint
   set value(value) {
-    this.#input.value = value;
+    this.#value = value;
   }
 
   get willValidate() {
@@ -116,16 +127,13 @@ class TextField extends Echo(HTMLElement) {
     this.attachShadow({ mode: "open", delegatesFocus: true });
     this.#controller = new AbortController();
     this.#internals = this.attachInternals();
-    this.#input = Input.from(this);
-    this.#label = Label.from(this);
   }
 
-  @on.input("input", value)
+  @on.input(":host input", value)
   @dispatchEvent("change")
   @joinCut(setValidity)
   [change](val) {
-    this.#input.value = val;
-    return this.value;
+    return (this.#value = val), val;
   }
 
   checkValidity() {
@@ -144,9 +152,9 @@ class TextField extends Echo(HTMLElement) {
 
   @formReset
   @dispatchEvent("reset")
-  @joinCut(setValidity)
+  @repaint
   reset() {
-    this.#input.value = "";
+    this.#value = "";
     this.#internals.states.delete("invalid");
     return this.value;
   }
@@ -166,8 +174,8 @@ class TextField extends Echo(HTMLElement) {
     const { validationMessage, validity } =
       this.shadowRoot.querySelector("input") ?? {};
     this.#internals.setValidity(validity, validationMessage);
-    return this;
+    return validity;
   }
 }
 
-export default TextField;
+export default Input;

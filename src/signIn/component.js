@@ -18,13 +18,13 @@ function component() {
         </memo-hgroup>
         <memo-form>
           <template>
-            <memo-text-field label="Email" name="email">
-              <memo-type-validator value="email" message="Email nao eh valido"></memo-type-validator>
-              <memo-required-validator message="Email eh obrigatorio"></memo-required-validator>
-            </memo-text-field>
-            <memo-text-field label="Senha" name="password" type="password">
-              <memo-required-validator message="Senha eh obrigatorio"></memo-required-validator>
-            </memo-text-field>
+            <memo-input label="Email" name="email" type="email" required>
+              <memo-validity state="typeMismatch">Email invalido</memo-validity>
+              <memo-validity state="valueMissing">Email eh obrigatorio</memo-validity>
+            </memo-input>
+            <memo-input label="Senha" name="password" type="password" autocomplete="off" required>
+              <memo-validity state="valueMissing">Email eh obrigatorio</memo-validity>
+            </memo-input>
             <memo-button width="100%">Entrar</memo-button>
           </template>
         </memo-form>

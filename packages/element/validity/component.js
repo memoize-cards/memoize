@@ -1,8 +1,8 @@
 import { html } from "standard/dom";
 
-function component(self) {
+function component() {
   return html`
-    ${self.message}
+    <slot></slot>
   `;
 }
 

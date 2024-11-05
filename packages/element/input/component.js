@@ -6,6 +6,7 @@ function component(self) {
       ${self.label}
     </label>
     <input
+      autocomplete="${self.autocomplete}"
       id="${self.name}"
       inputmode="${self.inputMode}"
       placeholder="${self.placeholder}"
