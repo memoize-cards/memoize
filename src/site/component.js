@@ -8,10 +8,10 @@ function component() {
     <memo-main>
       <site>
         <memo-logo></memo-logo>
-        <memo-hgroup align="center">
-          <memo-text color="master-darker" family="highlight" size="lg" weight="bold">Aprenda, Memorize & Domine!</memo-text>
-          <memo-text>Um aplicativo avançado de flashcard projetado para otimizar o processo de aprendizado e memorização.</memo-text>
-        </memo-hgroup>
+        <memo-stack direction="column" spacing="nano">
+          <memo-text color="master-darker" family="highlight" size="lg" weight="bold" align="center">Aprenda, Memorize & Domine!</memo-text>
+          <memo-text align="center">Um aplicativo avançado de flashcard projetado para otimizar o processo de aprendizado e memorização.</memo-text>
+        </memo-stack>
         <img alt="Memoize" src="${image}" loading="lazy" />
         <memo-stack direction="column">
           <memo-button id="signIn" width="100%">

@@ -5,28 +5,26 @@ import { urlFor } from "standard/router";
 import component from "./component";
 import style from "./style";
 
-@define("memo-sign-in")
+@define("memo-sign-up")
 @paint(component, style)
-class SignIn extends HTMLElement {
+class SignUp extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
   }
 
   @on.submit(":host memo-form", stop, detail)
-  async logIn(data) {
+  async create(data) {
+    const { email, password, name } = data;
     const { default: supabase } = await import("artifact/supabase");
-    const { data: user } = await supabase.auth.signInWithPassword(data);
+    const { data: user } = await supabase.auth.signUp({
+      email,
+      password,
+      options: { data: { name } },
+    });
     user && history.pushState({}, "", urlFor("dashboard"));
-    return this;
-  }
-
-  @on.click(":host #logInWithGoogle", stop)
-  async logInWithGoogle() {
-    const { default: supabase } = await import("artifact/supabase");
-    supabase.auth.signInWithOAuth({ provider: "google" });
     return this;
   }
 }
 
-export default SignIn;
+export default SignUp;

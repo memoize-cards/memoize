@@ -1,10 +1,10 @@
 import "./button";
 import "./footer";
 import "./form";
-import "./hGroup";
 import "./header";
 import "./icon";
 import "./input";
+import "./link";
 import "./logo";
 import "./main";
 import "./redirect";

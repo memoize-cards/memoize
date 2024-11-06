@@ -4,6 +4,7 @@ function style(self) {
   return css`
     :host {
       color: var(--color-${self.color});
+      cursor: pointer;
       font-family: var(--font-family-${self.family});
       font-size: var(--font-size-${self.size});
       font-weight: var(--font-weight-${self.weight});

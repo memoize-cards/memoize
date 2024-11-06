@@ -2,17 +2,19 @@ import { css } from "standard/dom";
 
 function style() {
   return css`
-    svg {
-      aspect-ratio: 1 / 1;
+    :host {
       color: var(--color-primary);
       height: 56px;
       width: 56px;
+
+      svg {
+        height: inherit;
+        width: inherit;
+      }
     }
 
     :host(:state(oncolor)) {
-      svg {
-        color: var(--color-master-lightest);
-      }
+      color: var(--color-master-lightest);
     }
   `;
 }

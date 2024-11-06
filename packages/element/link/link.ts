@@ -1,31 +1,24 @@
 import { define } from "directive";
 import attributeChanged, { booleanAttribute } from "directive/attributeChanged";
 import { paint, repaint } from "standard/dom";
+import Echo, { dispatchEvent } from "standard/echo";
+import on, { stop } from "standard/event";
 import component from "./component";
 import style from "./style";
 
-@define("memo-text")
+@define("memo-link")
 @paint(component, style)
-class Text extends HTMLElement {
-  #align;
+class Text extends Echo(HTMLElement) {
   #color;
   #family;
+  #href;
   #lineHeight;
   #size;
+  #value;
   #weight;
 
-  get align() {
-    return (this.#align ??= "left");
-  }
-
-  @attributeChanged("align")
-  @repaint
-  set align(value) {
-    this.#align = value;
-  }
-
   get color() {
-    return (this.#color ??= "master");
+    return (this.#color ??= "primary");
   }
 
   @attributeChanged("color")
@@ -42,6 +35,15 @@ class Text extends HTMLElement {
   @repaint
   set family(value) {
     this.#family = value;
+  }
+
+  get href() {
+    return this.#href;
+  }
+
+  @attributeChanged("href")
+  set href(value) {
+    this.#href = value;
   }
 
   get lineHeight() {
@@ -64,8 +66,17 @@ class Text extends HTMLElement {
     this.#size = value;
   }
 
+  get value() {
+    return this.#value;
+  }
+
+  @attributeChanged("value")
+  set value(value) {
+    this.#value = value;
+  }
+
   get weight() {
-    return (this.#weight ??= "regular");
+    return (this.#weight ??= "medium");
   }
 
   @attributeChanged("weight")
@@ -77,6 +88,13 @@ class Text extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
+  }
+
+  @on.click(":host *", stop)
+  @dispatchEvent("click")
+  click() {
+    this.href && history.pushState({}, "", this.href);
+    return this.value;
   }
 }
 

@@ -2,7 +2,7 @@ import { attributeChanged, define } from "directive";
 import { booleanAttribute } from "directive/attributeChanged";
 import { paint, repaint } from "standard/dom";
 import Echo, { dispatchEvent } from "standard/echo";
-import on from "standard/event";
+import on, { stop } from "standard/event";
 import joinCut from "standard/joinCut";
 import component from "./component";
 import { dispatchFormAction, setState } from "./interfaces";
@@ -23,7 +23,6 @@ class Button extends Echo(HTMLElement) {
   }
 
   @attributeChanged("color")
-  @dispatchEvent("color")
   @repaint
   set color(value) {
     this.#color = value;
@@ -34,7 +33,6 @@ class Button extends Echo(HTMLElement) {
   }
 
   @attributeChanged("type")
-  @dispatchEvent("type")
   @repaint
   set type(value) {
     this.#type = value;
@@ -45,7 +43,6 @@ class Button extends Echo(HTMLElement) {
   }
 
   @attributeChanged("value")
-  @dispatchEvent("value")
   @repaint
   set value(value) {
     this.#value = value;
@@ -56,7 +53,6 @@ class Button extends Echo(HTMLElement) {
   }
 
   @attributeChanged("variant")
-  @dispatchEvent("variant")
   @joinCut(setState)
   set variant(value) {
     this.#variant = value;
@@ -67,7 +63,6 @@ class Button extends Echo(HTMLElement) {
   }
 
   @attributeChanged("width")
-  @dispatchEvent("width")
   @repaint
   set width(value) {
     this.#width = value;
@@ -83,21 +78,9 @@ class Button extends Echo(HTMLElement) {
     this.#internals = this.attachInternals();
   }
 
-  @on.click(":host button")
-  @joinCut(dispatchFormAction)
+  @on.click(":host button", stop)
+  @dispatchEvent("click")
   click() {
-    const init = {
-      bubbles: true,
-      composed: true,
-      cancelable: true,
-      detail: this.value,
-    };
-    const event = new CustomEvent("click", init);
-    this.dispatchEvent(event);
-    return this;
-  }
-
-  [dispatchFormAction]() {
     switch (this.type) {
       case "submit":
         this.#internals.form?.requestSubmit();
@@ -106,7 +89,7 @@ class Button extends Echo(HTMLElement) {
         this.#internals.form?.reset();
         break;
     }
-    return this;
+    return this.value;
   }
 
   [setState](variant) {

@@ -3,6 +3,7 @@ import "pixel";
 import "element";
 
 import "./signIn";
+import "./signUp";
 import "./site";
 
 import router from "standard/router";
