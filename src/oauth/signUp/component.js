@@ -10,7 +10,7 @@ function component() {
       </memo-button>
     </memo-header>
     <memo-main>
-      <signup>
+      <oauth>
         <memo-logo></memo-logo>
         <memo-stack direction="column" spacing="nano">
           <memo-text color="master-darker" family="highlight" size="lg" weight="bold" align="center">Criar um conta</memo-text>
@@ -34,7 +34,7 @@ function component() {
         <memo-stack direction="column" align="center">
           <memo-text align="center">Ja tem uma conta? <memo-link href="${urlFor("signIn")}">Entrar</memo-link></memo-text>
         </memo-stack>
-      </signup>
+      </oauth>
     </memo-main>
     <memo-footer>
       <memo-text slot="leading">© 2024 Memoize. Todos os direitos reservados.</memo-text>

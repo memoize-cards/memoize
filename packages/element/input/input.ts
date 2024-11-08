@@ -129,7 +129,7 @@ class Input extends Echo(HTMLElement) {
     this.#internals = this.attachInternals();
   }
 
-  @on.input(":host input", value)
+  @on.input("*", value)
   @dispatchEvent("change")
   @joinCut(setValidity)
   [change](val) {

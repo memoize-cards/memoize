@@ -10,7 +10,7 @@ function component() {
       </memo-button>
     </memo-header>
     <memo-main>
-      <signin>
+      <oauth>
         <memo-logo></memo-logo>
         <memo-stack direction="column" spacing="nano">
           <memo-text color="master-darker" family="highlight" size="lg" weight="bold" align="center">Faça login na sua conta</memo-text>
@@ -30,10 +30,10 @@ function component() {
         </memo-form>
         <memo-button id="logInWithGoogle" variant="naked" width="100%">Entrar com Google</memo-button>
         <memo-stack direction="column" align="center">
-          <memo-link href="${urlFor("site")}">Esqueceu a senha?</memo-link>
+          <memo-link href="${urlFor("forgotPassword")}">Esqueceu a senha?</memo-link>
           <memo-text align="center">Não tem uma conta? <memo-link href="${urlFor("signUp")}">Criar conta</memo-link></memo-text>
         </memo-stack>
-      </signin>
+      </oauth>
     </memo-main>
     <memo-footer>
       <memo-text slot="leading">© 2024 Memoize. Todos os direitos reservados.</memo-text>

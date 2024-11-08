@@ -2,7 +2,7 @@ import { css } from "standard/dom";
 
 function style() {
   return css`
-    signup {
+    oauth {
       align-items: center;
       display: flex;
       flex-direction: column;

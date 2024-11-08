@@ -90,7 +90,7 @@ class Text extends Echo(HTMLElement) {
     this.attachShadow({ mode: "open" });
   }
 
-  @on.click(":host *", stop)
+  @on.click("*", stop)
   @dispatchEvent("click")
   click() {
     this.href && history.pushState({}, "", this.href);

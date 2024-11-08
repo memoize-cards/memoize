@@ -1,30 +1,25 @@
 import { define } from "directive";
+import style from "oauth/signIn/style";
 import { paint } from "standard/dom";
 import on, { detail, stop } from "standard/event";
 import { urlFor } from "standard/router";
 import component from "./component";
-import style from "./style";
 
-@define("memo-sign-up")
+@define("memo-set-new-password")
 @paint(component, style)
-class SignUp extends HTMLElement {
+class OAuth extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
   }
 
   @on.submit(":host memo-form", stop, detail)
-  async create(data) {
-    const { email, password, name } = data;
+  async reset(data) {
     const { default: supabase } = await import("artifact/supabase");
-    const { data: user } = await supabase.auth.signUp({
-      email,
-      password,
-      options: { data: { name } },
-    });
-    user && history.pushState({}, "", urlFor("dashboard"));
+    const { data: user } = await supabase.auth.updateUser(data);
+    user && history.pushState({}, "", urlFor("passwordReseted"));
     return this;
   }
 }
 
-export default SignUp;
+export default OAuth;

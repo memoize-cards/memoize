@@ -78,7 +78,7 @@ class Button extends Echo(HTMLElement) {
     this.#internals = this.attachInternals();
   }
 
-  @on.click(":host button", stop)
+  @on.click("*", stop)
   @dispatchEvent("click")
   click() {
     switch (this.type) {

@@ -19,7 +19,6 @@ const attachEventListener =
           }
         };
 
-        this.addEventListener(type, listener, options);
         this.shadowRoot?.addEventListener(type, listener, options);
       });
 

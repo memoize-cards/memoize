@@ -7,13 +7,13 @@ import style from "./style";
 
 @define("memo-sign-in")
 @paint(component, style)
-class SignIn extends HTMLElement {
+class OAuth extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
   }
 
-  @on.submit(":host memo-form", stop, detail)
+  @on.submit("memo-form", stop, detail)
   async logIn(data) {
     const { default: supabase } = await import("artifact/supabase");
     const { data: user } = await supabase.auth.signInWithPassword(data);
@@ -21,7 +21,7 @@ class SignIn extends HTMLElement {
     return this;
   }
 
-  @on.click(":host #logInWithGoogle", stop)
+  @on.click("#logInWithGoogle", stop)
   async logInWithGoogle() {
     const { default: supabase } = await import("artifact/supabase");
     supabase.auth.signInWithOAuth({ provider: "google" });
@@ -29,4 +29,4 @@ class SignIn extends HTMLElement {
   }
 }
 
-export default SignIn;
+export default OAuth;

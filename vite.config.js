@@ -10,6 +10,7 @@ export default defineConfig({
       pixel: resolve(__dirname, "packages/pixel"),
       polyfill: resolve(__dirname, "packages/polyfill"),
       standard: resolve(__dirname, "packages/standard"),
+      oauth: resolve(__dirname, "src/oauth"),
     },
   },
 });

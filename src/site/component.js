@@ -18,7 +18,7 @@ function component() {
             Entrar
             <memo-redirect href="${urlFor("signIn")}" on="signIn/click:method/go"></memo-redirect>
           </memo-button>
-          <memo-button variant="naked" width="100%">Instalar aplicativo</memo-button>
+          <memo-install></memo-install>
         </memo-stack>
       </site>
     </memo-main>

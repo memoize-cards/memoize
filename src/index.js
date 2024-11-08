@@ -2,8 +2,7 @@ import "polyfill";
 import "pixel";
 import "element";
 
-import "./signIn";
-import "./signUp";
+import "./oauth";
 import "./site";
 
 import router from "standard/router";

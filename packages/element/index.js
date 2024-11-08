@@ -4,6 +4,7 @@ import "./form";
 import "./header";
 import "./icon";
 import "./input";
+import "./install";
 import "./link";
 import "./logo";
 import "./main";

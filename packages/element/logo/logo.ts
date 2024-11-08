@@ -1,7 +1,6 @@
 import { define } from "directive";
 import attributeChanged, { booleanAttribute } from "directive/attributeChanged";
 import { paint } from "standard/dom";
-import Echo, { dispatchEvent } from "standard/echo";
 import joinCut from "standard/joinCut";
 import component from "./component";
 import { setState } from "./interfaces";
@@ -9,7 +8,7 @@ import style from "./style";
 
 @define("memo-logo")
 @paint(component, style)
-class Logo extends Echo(HTMLElement) {
+class Logo extends HTMLElement {
   #internals;
   #onColor;
 
@@ -18,7 +17,6 @@ class Logo extends Echo(HTMLElement) {
   }
 
   @attributeChanged("on-color", booleanAttribute)
-  @dispatchEvent("onColor")
   @joinCut(setState)
   set onColor(value) {
     this.#onColor = value;
