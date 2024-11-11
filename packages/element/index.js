@@ -1,3 +1,4 @@
+import "./avatar";
 import "./button";
 import "./footer";
 import "./form";

@@ -1,5 +1,6 @@
 import { html } from "standard/dom";
 import { urlFor } from "standard/router";
+import logo from "./googe.svg";
 
 function component() {
   return html`
@@ -28,7 +29,10 @@ function component() {
             <memo-button width="100%">Entrar</memo-button>
           </template>
         </memo-form>
-        <memo-button id="logInWithGoogle" variant="naked" width="100%">Entrar com Google</memo-button>
+        <memo-button id="logInWithGoogle" variant="naked" width="100%">
+          <img src="${logo}" alt="Google" loading="lazy" />
+          Entrar com Google
+        </memo-button>
         <memo-stack direction="column" align="center">
           <memo-link href="${urlFor("forgotPassword")}">Esqueceu a senha?</memo-link>
           <memo-text align="center">Não tem uma conta? <memo-link href="${urlFor("signUp")}">Criar conta</memo-link></memo-text>

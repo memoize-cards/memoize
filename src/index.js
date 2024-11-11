@@ -2,6 +2,7 @@ import "polyfill";
 import "pixel";
 import "element";
 
+import "./app";
 import "./oauth";
 import "./site";
 

@@ -20,6 +20,20 @@ function style(self) {
           margin: 0 auto;
           max-width: 1024px;
           padding: var(--spacing_inset-xs);
+
+          leading {
+            align-items: center;
+            display: flex;
+            gap: var(--spacing_inset-xs);
+            justify-content: start;
+          }
+
+          trailing {
+            align-items: center;
+            display: flex;
+            gap: var(--spacing_inset-xs);
+            justify-content: end;
+          }
         }
       }
     }

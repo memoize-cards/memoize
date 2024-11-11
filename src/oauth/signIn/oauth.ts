@@ -23,8 +23,12 @@ class OAuth extends HTMLElement {
 
   @on.click("#logInWithGoogle", stop)
   async logInWithGoogle() {
+    const redirectTo = location.origin + urlFor("dashboard");
     const { default: supabase } = await import("artifact/supabase");
-    supabase.auth.signInWithOAuth({ provider: "google" });
+    supabase.auth.signInWithOAuth({
+      provider: "google",
+      options: { redirectTo },
+    });
     return this;
   }
 }
