@@ -26,7 +26,7 @@ function component(self) {
         <memo-stack direction="column" align="center">
           <memo-button id="createFirstDeck" width="100%">
             Criar coleção
-            <memo-redirect href="${urlFor("createFirstDeck")}" on="createFirstDeck/click:method/go"></memo-redirect>
+            <memo-redirect href="${urlFor("createDeck")}" on="createFirstDeck/click:method/go"></memo-redirect>
           </memo-button>
           <memo-link href="${urlFor("howWorks")}">Como funciona o Memoize</memo-link>
         </memo-stack>

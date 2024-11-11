@@ -1,6 +1,6 @@
 import { define } from "directive";
 import { paint } from "standard/dom";
-import on, { detail, stop } from "standard/event";
+import on, { detail, prevent, stop } from "standard/event";
 import { urlFor } from "standard/router";
 import component from "./component";
 import style from "./style";
@@ -13,7 +13,7 @@ class OAuth extends HTMLElement {
     this.attachShadow({ mode: "open" });
   }
 
-  @on.submit("memo-form", stop, detail)
+  @on.submit("memo-form", prevent, detail)
   async logIn(data) {
     const { default: supabase } = await import("artifact/supabase");
     const { data: user } = await supabase.auth.signInWithPassword(data);

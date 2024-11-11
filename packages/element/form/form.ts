@@ -1,7 +1,7 @@
 import { define } from "directive";
 import { paint } from "standard/dom";
 import Echo, { dispatchEvent } from "standard/echo";
-import on, { formData, prevent } from "standard/event";
+import on, { formData, prevent, stop } from "standard/event";
 import component from "./component";
 import { reset, submit } from "./interfaces";
 import style from "./style";
@@ -28,7 +28,7 @@ class Form extends Echo(HTMLElement) {
     return this;
   }
 
-  @on.reset(":host form")
+  @on.reset("form", stop)
   @dispatchEvent("reset")
   [reset]() {
     return {};
@@ -41,7 +41,7 @@ class Form extends Echo(HTMLElement) {
     return this;
   }
 
-  @on.submit(":host form", prevent, formData)
+  @on.submit("form", prevent, stop, formData)
   @dispatchEvent("submit")
   [submit](data) {
     return data;
