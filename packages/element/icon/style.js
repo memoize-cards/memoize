@@ -1,9 +1,9 @@
 import { css } from "standard/dom";
 
-function style() {
+function style(self) {
   return css`
-    :host,
-    img {
+    :host {
+      color: var(--color-${self.color});
       height: 24px;
       width: 24px;
     }

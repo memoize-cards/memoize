@@ -1,6 +1,7 @@
 const medias = {
-  arrowBack: () => import("./arrowBack.svg"),
-  language: () => import("./language.svg"),
+  add: () => import("./add"),
+  arrowBack: () => import("./arrowBack"),
+  language: () => import("./language"),
 };
 
 export default medias;
