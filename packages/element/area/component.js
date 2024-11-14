@@ -5,16 +5,13 @@ function component(self) {
     <label for="${self.name}">
       ${self.label}
     </label>
-    <input
+    <textarea
       autocomplete="${self.autocomplete}"
       id="${self.name}"
-      inputmode="${self.inputMode}"
       name="${self.name}"
       placeholder="${self.placeholder}"
-      type="${self.type}"
-      value="${self.value}"
       ${self.required ? "required" : ""}
-    />
+    >${self.value}</textarea>
     <slot></slot>
   `;
 }

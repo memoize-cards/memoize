@@ -19,7 +19,7 @@ function component(self) {
             <memo-input label="Nome" name="name" required>
               <memo-validity state="valueMissing">Nome eh obrigatorio</memo-validity>
             </memo-input>
-            <memo-input label="Descricao" name="description"></memo-input>
+            <memo-area label="Descricao" name="description"></memo-area>
             <memo-button width="100%">
               Criar coleção
             </memo-button>

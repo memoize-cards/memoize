@@ -1,16 +1,8 @@
 class User {
   #data;
 
-  get avatar() {
-    return this.#data?.user_metadata?.avatar_url;
-  }
-
   get id() {
     return this.#data.id;
-  }
-
-  get name() {
-    return this.#data?.user_metadata?.full_name;
   }
 
   constructor(data) {

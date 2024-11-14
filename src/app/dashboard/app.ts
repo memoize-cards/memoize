@@ -1,7 +1,7 @@
 import { define } from "directive";
 import { paint, willPaint } from "standard/dom";
 import component from "./component";
-import Decks from "./decks";
+import Deck from "./deck";
 import { hydrate } from "./interfaces";
 import style from "./style";
 import User from "./user";
@@ -16,7 +16,7 @@ class App extends HTMLElement {
     return this.#user.avatar;
   }
 
-  get deck() {
+  get decks() {
     return (this.#decks ??= []);
   }
 
@@ -32,7 +32,7 @@ class App extends HTMLElement {
   @willPaint
   async [hydrate]() {
     this.#user = await User.logged();
-    this.#decks = await Decks.from(this.#user);
+    this.#decks = await Deck.from(this.#user);
     return this;
   }
 }

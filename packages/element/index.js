@@ -1,3 +1,4 @@
+import "./area";
 import "./avatar";
 import "./button";
 import "./footer";

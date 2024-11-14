@@ -5,21 +5,25 @@ import Echo, { dispatchEvent } from "standard/echo";
 import on, { prevent, value } from "standard/event";
 import joinCut from "standard/joinCut";
 import component from "./component";
-import { change, remove, setFormValue, setValidity } from "./interfaces";
+import {
+  change,
+  remove,
+  resize,
+  setFormValue,
+  setValidity,
+} from "./interfaces";
 import style from "./style";
 
-@define("memo-input")
+@define("memo-area")
 @paint(component, style)
-class Input extends Echo(HTMLElement) {
+class Area extends Echo(HTMLElement) {
   #autocomplete;
   #controller;
-  #inputMode;
   #internals;
   #label;
   #name;
   #placeholder;
   #required;
-  #type;
   #value;
 
   get autocomplete() {
@@ -34,16 +38,6 @@ class Input extends Echo(HTMLElement) {
 
   get form() {
     return this.#internals.form;
-  }
-
-  get inputMode() {
-    return this.#inputMode ?? this.type;
-  }
-
-  @attributeChanged("inputmode")
-  @repaint
-  set inputMode(value) {
-    this.#inputMode = value;
   }
 
   get label() {
@@ -86,16 +80,6 @@ class Input extends Echo(HTMLElement) {
     this.#required = value;
   }
 
-  get type() {
-    return (this.#type ??= "text");
-  }
-
-  @attributeChanged("type")
-  @repaint
-  set type(value) {
-    this.#type = value;
-  }
-
   get validationMessage() {
     return this.#internals.validationMessage;
   }
@@ -136,6 +120,13 @@ class Input extends Echo(HTMLElement) {
     return (this.#value = val), val;
   }
 
+  @on.input("*")
+  [resize](event) {
+    event.target.style.setProperty("height", "auto");
+    event.target.style.setProperty("height", `${event.target.scrollHeight}px`);
+    return this;
+  }
+
   checkValidity() {
     return this.#internals.checkValidity();
   }
@@ -171,10 +162,10 @@ class Input extends Echo(HTMLElement) {
   @didPaint
   [setValidity]() {
     const { validationMessage, validity } =
-      this.shadowRoot.querySelector("input") ?? {};
+      this.shadowRoot.querySelector("textarea") ?? {};
     this.#internals.setValidity(validity, validationMessage);
     return validity;
   }
 }
 
-export default Input;
+export default Area;

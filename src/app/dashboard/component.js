@@ -18,6 +18,20 @@ function component(self) {
     </memo-header>
     <memo-main>
       <app>
+        <ul>
+          ${self.decks.map(
+            (deck) => html`
+              <li>
+                <memo-stack direction="column" spacing="quarck">
+                  <memo-text size="xxxs">${deck.cards.total} Revisoes</memo-text>
+                  <memo-text color="master-darker" size="xs" weight="bold">${deck.name}</memo-text>
+                </memo-stack>
+              </li>
+            `,
+          )}
+        </ul>
+      </app>
+      <app>
         <memo-stack direction="column" spacing="nano">
           <memo-text color="master-darker" family="highlight" size="lg" weight="bold" align="center">Pronto para começar?</memo-text>
           <memo-text align="center">Para começar a estudar, vamos criar sua primeira coleção de estudo</memo-text>
@@ -42,3 +56,9 @@ function component(self) {
 }
 
 export default component;
+
+//
+// controladoria
+// roadmap
+// demo
+// qual o meu plano

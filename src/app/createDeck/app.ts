@@ -1,7 +1,10 @@
 import { define } from "directive";
 import { paint } from "standard/dom";
-import on, { detail, prevent } from "standard/event";
+import on, { detail, stop } from "standard/event";
+import { urlFor } from "standard/router";
 import component from "./component";
+import Deck from "./deck";
+import Navigate from "./navigate";
 import style from "./style";
 
 @define("memo-create-deck")
@@ -12,9 +15,11 @@ class App extends HTMLElement {
     this.attachShadow({ mode: "open" });
   }
 
-  @on.submit("memo-form", prevent, detail)
-  create(data) {
-    console.log(data);
+  @on.submit("memo-form", stop, detail)
+  async create(data) {
+    const deck = Deck.from(data);
+    await deck.create();
+    Navigate.go(deck);
     return this;
   }
 }
