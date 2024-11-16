@@ -18,20 +18,28 @@ function component(self) {
     </memo-header>
     <memo-main>
       <app>
-        <ul>
+        <memo-stack direction="column">
           ${self.decks.map(
             (deck) => html`
-              <li>
-                <memo-stack direction="column" spacing="quarck">
-                  <memo-text size="xxxs">${deck.cards.total} Revisoes</memo-text>
-                  <memo-text color="master-darker" size="xs" weight="bold">${deck.name}</memo-text>
+              <memo-stack>
+                <memo-cover></memo-cover>
+                <memo-stack direction="column" spacing="nano">
+                  <memo-stack direction="column" spacing="none">
+                    <memo-text size="xxxs">${deck.cards.total} Revisoes</memo-text>
+                    <memo-text color="master-darker" size="xs" weight="bold">${deck.name}</memo-text>
+                  </memo-stack>
+                  <memo-chart learn="${deck.cards.learn}" relearn="${deck.cards.relearn}" review="${deck.cards.review}"></memo-chart>
+                  <memo-stack>
+                    <memo-button width="120px">Estudar</memo-button>
+                    <memo-button variant="link">Ver mais</memo-button>
+                  </memo-stack>
                 </memo-stack>
-              </li>
+              </memo-stack>
             `,
           )}
-        </ul>
+        </memo-stack>
       </app>
-      <app>
+      <empty>
         <memo-stack direction="column" spacing="nano">
           <memo-text color="master-darker" family="highlight" size="lg" weight="bold" align="center">Pronto para começar?</memo-text>
           <memo-text align="center">Para começar a estudar, vamos criar sua primeira coleção de estudo</memo-text>
@@ -44,7 +52,7 @@ function component(self) {
           </memo-button>
           <memo-link href="${urlFor("howWorks")}">Como funciona o Memoize</memo-link>
         </memo-stack>
-      </app>
+      </empty>
     </memo-main>
     <memo-footer>
       <memo-text slot="leading">© 2024 Memoize. Todos os direitos reservados.</memo-text>

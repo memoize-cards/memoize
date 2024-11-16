@@ -1,6 +1,8 @@
 import "./area";
 import "./avatar";
 import "./button";
+import "./chart";
+import "./cover";
 import "./footer";
 import "./form";
 import "./header";
