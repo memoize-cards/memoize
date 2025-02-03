@@ -6,7 +6,7 @@ function style(self) {
       --aspect-ratio-square: 1/1;
       --aspect-ratio-wide: 16/9;
       --width-square: 160px;
-      --width-wide: 100;;
+      --width-wide: 100%;
 
       display: block;
       width: var(--width-${self.aspect});

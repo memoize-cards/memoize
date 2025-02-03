@@ -1,13 +1,14 @@
 import { html } from "standard/dom";
 import { urlFor } from "standard/router";
+import logo from "./image.svg";
 import image from "./image.svg";
 
 function component() {
   return html`
     <memo-header>
-      <memo-button id="backToDashboard" variant="link" slot="leading">
+      <memo-button id="backToSite" variant="link" slot="leading">
         <memo-icon use="arrowBack"></memo-icon>
-        <memo-redirect href="${urlFor("dashboard")}" on="backToDashboard/click:method/go"></memo-redirect>
+        <memo-redirect href="${urlFor("site")}" on="backToSite/click:method/go"></memo-redirect>
       </memo-button>
     </memo-header>
     <memo-main>
@@ -24,12 +25,7 @@ function component() {
         </memo-stack>
       </oauth>
     </memo-main>
-    <memo-footer>
-      <memo-text slot="leading">© 2024 Memoize. Todos os direitos reservados.</memo-text>
-      <memo-button slot="trailing" variant="link">
-        <memo-icon use="language"></memo-icon>
-      </memo-button>
-    </memo-footer>
+    <memo-footer></memo-footer>
   `;
 }
 

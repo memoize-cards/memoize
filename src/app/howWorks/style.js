@@ -30,9 +30,9 @@ function style() {
 
       span {
         align-items: center;
-        border: var(--border-width-thin) solid var(--color-master-lightest);
+        border: var(--border-width-thin) solid var(--color-master-darker);
         border-radius: var(--border-radius-circular);
-        color: var(--color-master-lightest);
+        color: var(--color-master-darker);
         display: flex;
         font-family: var(--font-family-base);
         font-size: var(--font-size-md);

@@ -9,8 +9,8 @@ function component() {
       <site>
         <memo-logo></memo-logo>
         <memo-stack direction="column" spacing="nano">
-          <memo-text color="master-darker" family="highlight" size="lg" weight="bold" align="center">Aprenda, Memorize & Domine!</memo-text>
-          <memo-text align="center">Um aplicativo avançado de flashcard projetado para otimizar o processo de aprendizado e memorização.</memo-text>
+          <memo-text color="master-darker" family="highlight" size="lg" weight="bold" align="center">Aprenda, Memorize e Domine!</memo-text>
+          <memo-text align="center">Um aplicativo de flashcards avançado projetado para otimizar seu aprendizado e memorização.</memo-text>
         </memo-stack>
         <img alt="Memoize" src="${image}" loading="lazy" />
         <memo-stack direction="column">
@@ -22,12 +22,7 @@ function component() {
         </memo-stack>
       </site>
     </memo-main>
-    <memo-footer>
-      <memo-text slot="leading">© 2024 Memoize. Todos os direitos reservados.</memo-text>
-      <memo-button slot="trailing" variant="link">
-        <memo-icon use="language"></memo-icon>
-      </memo-button>
-    </memo-footer>
+    <memo-footer></memo-footer>
   `;
 }
 

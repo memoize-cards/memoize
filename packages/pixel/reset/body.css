@@ -1,3 +1,4 @@
 body {
+  color-scheme: light dark;
   background-color: var(--color-master-lightest);
 }

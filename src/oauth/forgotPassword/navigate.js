@@ -1,8 +1,8 @@
 import { urlFor } from "standard/router";
 
 const Navigate = {
-  goToDeck(deck) {
-    history.pushState({}, "", urlFor("deck", deck));
+  goToEmailVerification(email) {
+    history.pushState({}, "", `${urlFor("emailVerification")}?email=${email}`);
     return this;
   },
 };

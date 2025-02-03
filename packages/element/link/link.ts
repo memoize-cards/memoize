@@ -18,7 +18,7 @@ class Text extends Echo(HTMLElement) {
   #weight;
 
   get color() {
-    return (this.#color ??= "primary");
+    return (this.#color ??= "primary-dark");
   }
 
   @attributeChanged("color")

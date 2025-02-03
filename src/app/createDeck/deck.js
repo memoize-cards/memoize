@@ -24,7 +24,7 @@ class Deck {
     return this;
   }
 
-  static async from(data) {
+  static from(data) {
     return new Deck(data);
   }
 }

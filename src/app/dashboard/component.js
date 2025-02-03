@@ -11,7 +11,7 @@ function component(self) {
         <memo-link size="xxxs" href="${urlFor("signOut")}">Sign out</memo-link>
       </memo-stack>
       <memo-button slot="trailing" id="createDeck" variant="ghost" width="100%">
-        <memo-icon use="add"></memo-icon>
+        <memo-icon color="currentColor" use="add"></memo-icon>
         Criar coleção
         <memo-redirect href="${urlFor("createDeck")}" on="createDeck/click:method/go"></memo-redirect>
       </memo-button>
@@ -25,13 +25,18 @@ function component(self) {
                 <memo-cover></memo-cover>
                 <memo-stack direction="column" spacing="nano">
                   <memo-stack direction="column" spacing="none">
-                    <memo-text size="xxxs">${deck.cards.total} Revisoes</memo-text>
+                    <memo-text size="xxxs">${deck.cards.total} Revisões</memo-text>
                     <memo-text color="master-darker" size="xs" weight="bold">${deck.name}</memo-text>
                   </memo-stack>
                   <memo-chart learn="${deck.cards.learn}" relearn="${deck.cards.relearn}" review="${deck.cards.review}"></memo-chart>
                   <memo-stack>
-                    <memo-button width="120px">Estudar</memo-button>
-                    <memo-button variant="link">Ver mais</memo-button>
+                    <memo-button width="120px">
+                      Estudar
+                    </memo-button>
+                    <memo-button id="goToDeck" variant="link">
+                      Ver mais
+                      <memo-redirect href="${urlFor("deck", { deck: deck.id })}" on="goToDeck/click:method/go"></memo-redirect>
+                    </memo-button>
                   </memo-stack>
                 </memo-stack>
               </memo-stack>
@@ -54,19 +59,8 @@ function component(self) {
         </memo-stack>
       </empty>
     </memo-main>
-    <memo-footer>
-      <memo-text slot="leading">© 2024 Memoize. Todos os direitos reservados.</memo-text>
-      <memo-button slot="trailing" variant="link">
-        <memo-icon use="language"></memo-icon>
-      </memo-button>
-    </memo-footer>
+    <memo-footer></memo-footer>
   `;
 }
 
 export default component;
-
-//
-// controladoria
-// roadmap
-// demo
-// qual o meu plano

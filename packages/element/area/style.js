@@ -12,7 +12,7 @@ function style() {
     }
 
     label {
-      color: var(--color-master);
+      color: var(--color-master-dark);
       font-family: var(--font-family-base);
       font-size: var(--font-size-xxs);
       font-weight: var(--font-weight-medium);
@@ -22,7 +22,7 @@ function style() {
     textarea {
       appearance: none;
       background-color: transparent;
-      border: var(--border-width-hairline) solid var(--color-master);
+      border: var(--border-width-hairline) solid var(--color-master-light);
       border-radius: var(--border-radius-sm);
       box-sizing: border-box;
       color: var(--color-master-dark);

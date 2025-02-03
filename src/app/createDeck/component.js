@@ -16,10 +16,11 @@ function component(self) {
         </memo-text>
         <memo-form>
           <template>
+            <memo-cover aspect="wide"></memo-cover>
             <memo-input label="Nome" name="name" required>
-              <memo-validity state="valueMissing">Nome eh obrigatorio</memo-validity>
+              <memo-validity state="valueMissing">Nome é obrigatório</memo-validity>
             </memo-input>
-            <memo-area label="Descricao" name="description"></memo-area>
+            <memo-area label="Descrição" name="description"></memo-area>
             <memo-button width="100%">
               Criar coleção
             </memo-button>
@@ -27,12 +28,7 @@ function component(self) {
         </memo-form>
       </app>
     </memo-main>
-    <memo-footer>
-      <memo-text slot="leading">© 2024 Memoize. Todos os direitos reservados.</memo-text>
-      <memo-button slot="trailing" variant="link">
-        <memo-icon use="language"></memo-icon>
-      </memo-button>
-    </memo-footer>
+    <memo-footer></memo-footer>
   `;
 }
 

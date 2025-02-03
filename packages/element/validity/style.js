@@ -3,7 +3,7 @@ import { css } from "standard/dom";
 function style() {
   return css`
     :host {
-      color: var(--color-danger);
+      color: var(--color-danger-dark);
       display: none;
       font-family: var(--font-family-base);
       font-size: var(--font-size-xxs);

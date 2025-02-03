@@ -25,7 +25,7 @@ class Text extends HTMLElement {
   }
 
   get color() {
-    return (this.#color ??= "master");
+    return (this.#color ??= "master-dark");
   }
 
   @attributeChanged("color")

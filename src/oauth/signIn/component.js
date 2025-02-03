@@ -1,6 +1,6 @@
 import { html } from "standard/dom";
 import { urlFor } from "standard/router";
-import logo from "./googe.svg";
+import logo from "./google.svg";
 
 function component() {
   return html`
@@ -19,12 +19,12 @@ function component() {
         </memo-stack>
         <memo-form>
           <template>
-            <memo-input label="Email" name="email" type="email" required>
-              <memo-validity state="typeMismatch">Email invalido</memo-validity>
-              <memo-validity state="valueMissing">Email eh obrigatorio</memo-validity>
+            <memo-input label="E-mail" name="email" type="email" required>
+              <memo-validity state="typeMismatch">E-mail inválido</memo-validity>
+              <memo-validity state="valueMissing">E-mail é obrigatório</memo-validity>
             </memo-input>
             <memo-input label="Senha" name="password" type="password" autocomplete="off" required>
-              <memo-validity state="valueMissing">Email eh obrigatorio</memo-validity>
+              <memo-validity state="valueMissing">Senha é obrigatória</memo-validity>
             </memo-input>
             <memo-button width="100%">Entrar</memo-button>
           </template>

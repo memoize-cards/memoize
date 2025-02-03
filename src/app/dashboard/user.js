@@ -1,12 +1,12 @@
 class User {
-  #data;
+  #data = {};
 
   get avatar() {
     return this.#data?.user_metadata?.avatar_url;
   }
 
   get id() {
-    return this.#data.id;
+    return this.#data?.id;
   }
 
   get name() {

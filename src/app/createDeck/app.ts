@@ -19,7 +19,7 @@ class App extends HTMLElement {
   async create(data) {
     const deck = Deck.from(data);
     await deck.create();
-    Navigate.go(deck);
+    Navigate.goToDeck(deck);
     return this;
   }
 }

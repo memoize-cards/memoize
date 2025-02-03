@@ -8,10 +8,10 @@ function style(self) {
       button {
         align-items: center;
         background-color: var(--color-${self.color});
-        border: var(--border-width-hairline) solid var(--color-${self.color});
+        border: var(--border-width-hairline) solid transparent;
         border-radius: var(--border-radius-sm);
         box-sizing: border-box;
-        color: var(--color-master-lightest);
+        color: var(--color-pure-white);
         cursor: pointer;
         display: flex;
         font-family: var(--font-family-base);
@@ -49,7 +49,7 @@ function style(self) {
 
     :host(:state(ghost)) {
       button {
-        background-color: var(--color-pure-white);
+        background-color: var(--color-master-lighter);
         border: var(--border-width-hairline) solid transparent;
         color: var(--color-${self.color});
       }

@@ -1,9 +1,10 @@
 import { define } from "directive";
+import Navigate from "oauth/signIn/navigate";
 import style from "oauth/signIn/style";
 import { paint } from "standard/dom";
 import on, { detail, stop } from "standard/event";
-import { urlFor } from "standard/router";
 import component from "./component";
+import User from "./user";
 
 @define("memo-sign-up")
 @paint(component, style)
@@ -15,14 +16,8 @@ class OAuth extends HTMLElement {
 
   @on.submit(":host memo-form", stop, detail)
   async create(data) {
-    const { email, password, name } = data;
-    const { default: supabase } = await import("artifact/supabase");
-    const { data: user } = await supabase.auth.signUp({
-      email,
-      password,
-      options: { data: { name } },
-    });
-    user && history.pushState({}, "", urlFor("dashboard"));
+    const user = await User.signUp(data);
+    user && Navigate.goToDashboard();
     return this;
   }
 }

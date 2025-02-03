@@ -3,7 +3,7 @@ import { css } from "standard/dom";
 function style(self) {
   return css`
     :host {
-      background-color: var(--color-master-light);
+      background-color: var(--color-master-lighter);
       border-radius: var(--border-radius-pill);
       display: flex;
       overflow: hidden;

@@ -1,9 +1,11 @@
 import { define } from "directive";
+import User from "oauth/forgotPassword";
 import style from "oauth/signIn/style";
 import { paint } from "standard/dom";
 import on, { stop } from "standard/event";
-import { args, urlFor } from "standard/router";
+import { args } from "standard/router";
 import component from "./component";
+import Navigate from "./navigate";
 
 @define("memo-email-verification")
 @paint(component, style)
@@ -16,14 +18,13 @@ class OAuth extends HTMLElement {
   @on.click(":host #openEmailApp", stop)
   openEmailApp() {
     const [, url] = args.email.split("@");
-    window.open(`https://${url}`, "_blank");
+    Navigate.goToEmailProvider(url);
     return this;
   }
 
   @on.click(":host #resend", stop)
-  resend() {
-    const redirectTo = `https://memoize.cards${urlFor("setNewPassword")}`;
-    supabase.auth.resetPasswordForEmail(args.email, { redirectTo });
+  async resend() {
+    await User.resetPasswordForEmail(args.email);
     return this;
   }
 }

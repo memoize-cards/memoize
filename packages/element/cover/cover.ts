@@ -25,7 +25,7 @@ class Cover extends HTMLElement {
 
   @attributeChanged("aspect")
   set aspect(value) {
-    this.aspect = value;
+    this.#aspect = value;
   }
 
   get src() {

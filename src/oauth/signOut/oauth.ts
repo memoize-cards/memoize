@@ -2,8 +2,9 @@ import { define } from "directive";
 import style from "oauth/signIn/style";
 import { paint } from "standard/dom";
 import on, { stop } from "standard/event";
-import { urlFor } from "standard/router";
 import component from "./component";
+import Navigate from "./navigate";
+import User from "./user";
 
 @define("memo-sign-out")
 @paint(component, style)
@@ -15,9 +16,8 @@ class OAuth extends HTMLElement {
 
   @on.click("#logOut", stop)
   async logOut(data) {
-    const { default: supabase } = await import("artifact/supabase");
-    await supabase.auth.signOut();
-    history.pushState({}, "", urlFor("site"));
+    await User.signOut();
+    Navigate.goToSite();
     return this;
   }
 }

@@ -30,7 +30,7 @@ class Deck {
       .from("deck")
       .select("id, name, cards:card(type)")
       .eq("user_id", user.id);
-    return decks.map((deck) => new Deck(deck));
+    return decks?.map((deck) => new Deck(deck));
   }
 }
 
