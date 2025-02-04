@@ -1,5 +1,3 @@
-import User from "./user";
-
 class Deck {
   #data;
 
@@ -12,20 +10,21 @@ class Deck {
   }
 
   async create() {
-    const user = await User.logged();
-    const payload = { ...this.#data, user_id: user.id };
     const { default: supabase } = await import("artifact/supabase");
     const { data: deck } = await supabase
       .from("deck")
-      .insert([payload])
+      .insert([this.#data])
       .select()
       .single();
     this.#data = deck;
     return this;
   }
 
-  static from(data) {
-    return new Deck(data);
+  static from(data, userId) {
+    return new Deck({
+      ...data,
+      user_id: userId,
+    });
   }
 }
 

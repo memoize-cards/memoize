@@ -35,7 +35,7 @@ class Stack extends HTMLElement {
 
   @attributeChanged("justify")
   set justify(value) {
-    this.justify = value;
+    this.#justify = value;
   }
 
   get spacing() {

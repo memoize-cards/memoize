@@ -13,6 +13,7 @@ function style(self) {
 
       img {
         aspect-ratio: var(--aspect-ratio-${self.aspect});
+        background-color: var(--color-master-lighter);
         border-radius: var(--border-radius-sm);
         width: 100%;
       }

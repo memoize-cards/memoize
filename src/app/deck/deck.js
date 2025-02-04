@@ -8,6 +8,10 @@ class Deck {
     return (this.#cards ??= Card.from(this.#data.cards));
   }
 
+  get description() {
+    return this.#data.description;
+  }
+
   get id() {
     return this.#data.id;
   }
@@ -20,13 +24,15 @@ class Deck {
     this.#data = data;
   }
 
-  static async from(userId) {
+  static async from(deckId, userId) {
     const { default: supabase } = await import("artifact/supabase");
-    const { data: decks } = await supabase
+    const { data: deck } = await supabase
       .from("deck")
-      .select("id, name, cards:card(type)")
-      .eq("user_id", userId);
-    return decks?.map((deck) => new Deck(deck));
+      .select("id, description, name, cards:card(type)")
+      .eq("id", deckId)
+      .eq("user_id", userId)
+      .single();
+    return new Deck(deck);
   }
 }
 

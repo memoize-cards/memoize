@@ -1,20 +1,20 @@
-class Cards {
+class Card {
   #learn;
   #relearn;
   #review;
   #total;
 
-  @Cards.asPercentageOfTotal
+  @Card.asPercentageOfTotal
   get learn() {
     return (this.#learn ??= 0);
   }
 
-  @Cards.asPercentageOfTotal
+  @Card.asPercentageOfTotal
   get relearn() {
     return (this.#relearn ??= 0);
   }
 
-  @Cards.asPercentageOfTotal
+  @Card.asPercentageOfTotal
   get review() {
     return (this.#review ??= 0);
   }
@@ -36,7 +36,7 @@ class Cards {
       2: review = [],
       3: relearn = [],
     } = data.group((card) => card.type);
-    return new Cards(learn.length, review.length, relearn.length, data.length);
+    return new Card(learn.length, review.length, relearn.length, data.length);
   }
 
   static asPercentageOfTotal(_target, _key, descriptor) {
@@ -54,4 +54,4 @@ class Cards {
   }
 }
 
-export default Cards;
+export default Card;

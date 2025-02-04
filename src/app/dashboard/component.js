@@ -26,16 +26,16 @@ function component(self) {
                 <memo-stack direction="column" spacing="nano">
                   <memo-stack direction="column" spacing="none">
                     <memo-text size="xxxs">${deck.cards.total} Revisões</memo-text>
-                    <memo-text color="master-darker" size="xs" weight="bold">${deck.name}</memo-text>
+                    <memo-text size="xs" family="highlight" weight="bold" color="master-darker">${deck.name}</memo-text>
                   </memo-stack>
                   <memo-chart learn="${deck.cards.learn}" relearn="${deck.cards.relearn}" review="${deck.cards.review}"></memo-chart>
                   <memo-stack>
                     <memo-button width="120px">
                       Estudar
                     </memo-button>
-                    <memo-button id="goToDeck" variant="link">
+                    <memo-button id="goToDeck_${deck.id}" variant="link">
                       Ver mais
-                      <memo-redirect href="${urlFor("deck", { deck: deck.id })}" on="goToDeck/click:method/go"></memo-redirect>
+                      <memo-redirect href="${urlFor("deck", { deck: deck.id })}" on="goToDeck_${deck.id}/click:method/go"></memo-redirect>
                     </memo-button>
                   </memo-stack>
                 </memo-stack>

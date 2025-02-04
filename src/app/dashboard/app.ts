@@ -32,7 +32,7 @@ class App extends HTMLElement {
   @willPaint
   async [hydrate]() {
     this.#user = await User.logged();
-    this.#decks = await Deck.from(this.#user);
+    this.#decks = await Deck.from(this.#user.id);
     return this;
   }
 }
