@@ -23,7 +23,7 @@ class Card {
   static from(data, deckId, userId) {
     return new Card({
       ...data,
-      deck_id: deckId,
+      deck: deckId,
       user_id: userId,
     });
   }
