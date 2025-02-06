@@ -1,3 +1,7 @@
+import Interval from "./interval";
+import Type from "./type";
+import Validity from "./validity";
+
 class Card {
   #data;
 
@@ -24,7 +28,10 @@ class Card {
     return new Card({
       ...data,
       deck: deckId,
+      interval: Interval.oneMinute,
+      type: Type.LEARN,
       user_id: userId,
+      validity: Validity.now,
     });
   }
 }
