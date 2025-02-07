@@ -7,6 +7,7 @@ import "./footer";
 import "./form";
 import "./header";
 import "./icon";
+import "./info";
 import "./input";
 import "./install";
 import "./link";

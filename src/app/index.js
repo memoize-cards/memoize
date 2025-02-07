@@ -1,3 +1,4 @@
+import "./card";
 import "./createCard";
 import "./createDeck";
 import "./dashboard";

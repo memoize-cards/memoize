@@ -24,8 +24,9 @@ function component(self) {
         </memo-stack>
         <memo-chart learn="${self.deck.cards.learn}" relearn="${self.deck.cards.relearn}" review="${self.deck.cards.review}"></memo-chart>
         <memo-stack>
-          <memo-button width="120px">
+          <memo-button id="goToCard" width="120px">
             Estudar
+            <memo-redirect href="${urlFor("card", { deck: self.deck.id })}" on="goToCard/click:method/go"></memo-redirect>
           </memo-button>
           <memo-button id="goToCreateCard" variant="ghost">
             <memo-icon color="currentColor" use="add"></memo-icon>
@@ -44,7 +45,7 @@ function component(self) {
             <memo-redirect href="${urlFor("createCard", { deck: self.deck.id })}" on="createFirstDeck/click:method/go"></memo-redirect>
           </memo-button>
         </empty>
-        </app>
+      </app>
     </memo-main>
     <memo-footer></memo-footer>
   `;
