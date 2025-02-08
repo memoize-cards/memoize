@@ -41,7 +41,7 @@
     {
       "name": "Dashboard",
       "url": "/app/dashboard",
-      "description": ""
+      "description": "Um aplicativo avançado de flashcard projetado para otimizar o processo de aprendizado e memorização"
     }
   ],
   "categories": ["education"]
