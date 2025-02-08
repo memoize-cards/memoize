@@ -1,19 +1,19 @@
 const filters = {
-  equals: (target, value) => target == value,
+  equals: (x, y) => x == y,
 
-  different: (target, value) => target != value,
+  different: (x, y) => x != y,
 
-  gt: (target, value) => target > value,
+  gt: (x, y) => x > y,
 
-  gte: (target, value) => target >= value,
+  gte: (x, y) => x >= y,
 
-  len: (target) => Object.keys(target)?.length,
+  len: (x) => Object.keys(x)?.length,
 
-  lt: (target, value) => target < value,
+  lt: (x, y) => x < y,
 
-  lte: (target, value) => target <= value,
+  lte: (x, y) => x <= y,
 
-  not: (target) => !target,
+  not: (x) => !x,
 
   prop: (target, path) => {
     try {

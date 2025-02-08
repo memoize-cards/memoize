@@ -2,7 +2,8 @@ import { html } from "standard/dom";
 import { urlFor } from "standard/router";
 import image from "./image.svg";
 
-function component(self) {
+async function component(self) {
+  import("artifact/highlight");
   return html`
     <memo-header>
       <memo-button id="backToDeck" variant="link" slot="leading">
@@ -18,12 +19,26 @@ function component(self) {
       <app>
         <memo-stack direction="column" spacing="quarck">
           <memo-text size="xxxs">${self.card.deck.name} (${self.card.type})</memo-text>
-          <memo-text size="sm" family="highlight" color="master-darker">${self.card.front}</memo-text>
+          <memo-text size="sm" family="highlight" color="master-darker">${await self.card.front}</memo-text>
         </memo-stack>
-        <memo-stack id="splash" direction="column">
+        <memo-stack id="splash" direction="column" on="reveal/click:attribute/hidden">
           <img alt="Memoize" src="${image}" loading="lazy" />
-          <memo-button>Mostrar resposta</memo-button>
+          <memo-button id="reveal" value="true">Mostrar resposta</memo-button>
           <memo-info>Use este momento para testar seu conhecimento antes de revelar a resposta</memo-info>
+        </memo-stack>
+        <memo-stack direction="column" hidden on="reveal/click:attribute/hidden|not">
+          <memo-markdown>
+            <template>
+              ${await self.card.back}
+            </template>
+          </memo-markdown>
+          <memo-text size="xs" family="highlight" color="master-darker">Você conseguiu se lembrar?</memo-text>
+          <memo-stack>
+            <memo-button id="easy" color="complete" width="25%">Sim</memo-button>
+            <memo-button id="good" color="success" width="25%">Com esforço</memo-button>
+            <memo-button id="hard" color="warning" width="25%">Parcialmente</memo-button>
+            <memo-button id="again" color="danger" width="25%">Não</memo-button>
+          </memo-stack>
         </memo-stack>
       </app>
     </memo-main>

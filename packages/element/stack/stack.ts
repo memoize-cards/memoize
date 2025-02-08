@@ -1,13 +1,17 @@
-import { attributeChanged, define } from "directive";
-import { paint, repaint } from "standard/dom";
+import { define } from "directive";
+import attributeChanged, { booleanAttribute } from "directive/attributeChanged";
+import { didPaint, paint, repaint } from "standard/dom";
+import Echo from "standard/echo";
 import component from "./component";
+import { setDisplay } from "./interfaces";
 import style from "./style";
 
 @define("memo-stack")
 @paint(component, style)
-class Stack extends HTMLElement {
+class Stack extends Echo(HTMLElement) {
   #align;
   #direction;
+  #hidden;
   #justify;
   #spacing;
 
@@ -16,6 +20,7 @@ class Stack extends HTMLElement {
   }
 
   @attributeChanged("align")
+  @repaint
   set align(value) {
     this.#align = value;
   }
@@ -25,8 +30,19 @@ class Stack extends HTMLElement {
   }
 
   @attributeChanged("direction")
+  @repaint
   set direction(value) {
     this.#direction = value;
+  }
+
+  get hidden() {
+    return (this.#hidden ??= false);
+  }
+
+  @attributeChanged("hidden", booleanAttribute)
+  @repaint
+  set hidden(value) {
+    this.#hidden = value;
   }
 
   get justify() {
@@ -34,6 +50,7 @@ class Stack extends HTMLElement {
   }
 
   @attributeChanged("justify")
+  @repaint
   set justify(value) {
     this.#justify = value;
   }
@@ -43,6 +60,7 @@ class Stack extends HTMLElement {
   }
 
   @attributeChanged("spacing")
+  @repaint
   set spacing(value) {
     this.#spacing = value;
   }
@@ -50,6 +68,14 @@ class Stack extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
+  }
+
+  @didPaint
+  [setDisplay]() {
+    this.hidden
+      ? this.style.setProperty("display", "none")
+      : this.style.removeProperty("display");
+    return this;
   }
 }
 

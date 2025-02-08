@@ -7,6 +7,13 @@ class Card {
   #data;
   #deck;
 
+  get back() {
+    return (async () => {
+      const { default: showdown } = await import("artifact/showdown");
+      return showdown.makeHtml(this.#data.back);
+    })();
+  }
+
   get deck() {
     return (this.#deck ??= Deck.from(this.#data.deck));
   }

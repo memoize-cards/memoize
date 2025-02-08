@@ -1,7 +1,9 @@
 {
   "author": "Cleber de M. Goncalves (deMGoncalves)",
   "dependencies": {
-    "@supabase/supabase-js": "^2.45.6"
+    "@supabase/supabase-js": "^2.45.6",
+    "highlight.js": "^11.11.1",
+    "showdown": "^2.1.0"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",

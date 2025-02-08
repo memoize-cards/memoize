@@ -13,6 +13,7 @@ import "./install";
 import "./link";
 import "./logo";
 import "./main";
+import "./markdown";
 import "./redirect";
 import "./source";
 import "./stack";
