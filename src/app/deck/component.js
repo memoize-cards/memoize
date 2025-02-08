@@ -24,7 +24,7 @@ function component(self) {
         </memo-stack>
         <memo-chart learn="${self.deck.cards.learn}" relearn="${self.deck.cards.relearn}" review="${self.deck.cards.review}"></memo-chart>
         <memo-stack>
-          <memo-button id="goToCard" width="120px">
+          <memo-button id="goToCard" width="120px" disabled>
             Estudar
             <memo-redirect href="${urlFor("card", { deck: self.deck.id })}" on="goToCard/click:method/go"></memo-redirect>
           </memo-button>

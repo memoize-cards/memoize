@@ -5,6 +5,7 @@ import { params } from "standard/router";
 import Card from "./card";
 import component from "./component";
 import { hydrate } from "./interfaces";
+import Navigate from "./navigate";
 import style from "./style";
 import User from "./user";
 
@@ -55,6 +56,11 @@ class App extends HTMLElement {
   async [hydrate]() {
     this.#user = await User.logged();
     this.#card = await Card.from(params.deck, this.#user.id);
+
+    if (!this.#card.id) {
+      Navigate.goToStudyCompleted(params.deck);
+    }
+
     return this;
   }
 }

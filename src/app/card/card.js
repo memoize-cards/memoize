@@ -61,7 +61,17 @@ class Card {
 
   async #update() {
     const { default: supabase } = await import("artifact/supabase");
-    await supabase.from("card").update(this.#data).eq("id", data.id);
+    await supabase
+      .from("card")
+      .update({
+        easyFactor: this.#data.easyFactor,
+        interval: this.#data.interval,
+        lapse: this.#data.lapse,
+        type: this.#data.type,
+        validity: this.#data.validity,
+      })
+      .eq("id", this.#data.id)
+      .eq("user_id", this.#data.user_id);
     return this;
   }
 
