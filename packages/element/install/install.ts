@@ -42,9 +42,9 @@ class Install extends HTMLElement {
 
   @didPaint
   [setDisplay]() {
-    this.hidden
-      ? this.style.setProperty("display", "none")
-      : this.style.removeProperty("display");
+    this.visible
+      ? this.style.removeProperty("display")
+      : this.style.setProperty("display", "none");
     return this;
   }
 }
