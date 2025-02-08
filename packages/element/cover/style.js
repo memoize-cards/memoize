@@ -15,6 +15,8 @@ function style(self) {
         aspect-ratio: var(--aspect-ratio-${self.aspect});
         background-color: var(--color-master-lighter);
         border-radius: var(--border-radius-sm);
+        color: transparent;
+        display: block;
         width: 100%;
       }
     }
