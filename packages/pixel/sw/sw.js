@@ -1,4 +1,4 @@
-const CACHE = process.env.SW_CACHE;
+const CACHE = "Memoize.v0";
 
 self.addEventListener("activate", (event) => {
   event.waitUntil(
