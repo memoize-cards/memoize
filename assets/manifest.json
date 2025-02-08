@@ -36,23 +36,13 @@
   ],
   "dir": "ltr",
   "lang": "pt",
-  "display_override": [
-    "standalone",
-    "window-controls-overlay"
-  ],
+  "display_override": ["standalone", "window-controls-overlay"],
   "shortcuts": [
     {
-      "name": "Login",
-      "url": "/login",
-      "description": ""
-    },
-    {
       "name": "Dashboard",
-      "url": "/dashboard",
+      "url": "/app/dashboard",
       "description": ""
     }
   ],
-  "categories": [
-    "education"
-  ]
+  "categories": ["education"]
 }

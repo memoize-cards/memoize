@@ -1,9 +1,10 @@
 import { define } from "directive";
-import { paint, repaint } from "standard/dom";
+import { didPaint, paint, repaint } from "standard/dom";
 import on from "standard/event";
 import appInstalled from "./appInstalled";
 import beforeInstallPrompt from "./beforeInstalledPrompt";
 import component from "./component";
+import { setDisplay } from "./interfaces";
 
 @define("memo-install")
 @paint(component)
@@ -36,6 +37,14 @@ class Install extends HTMLElement {
   @repaint
   show(event) {
     this.#event = event;
+    return this;
+  }
+
+  @didPaint
+  [setDisplay]() {
+    this.hidden
+      ? this.style.setProperty("display", "none")
+      : this.style.removeProperty("display");
     return this;
   }
 }
