@@ -1,7 +1,7 @@
 import { urlFor } from "standard/router";
 
 const Navigate = {
-  toGoDashboard() {
+  goToDashboard() {
     history.pushState({}, "", urlFor("dashboard"));
     return this;
   },
