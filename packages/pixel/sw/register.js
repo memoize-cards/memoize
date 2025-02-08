@@ -2,5 +2,5 @@ import env from "standard/env";
 
 window.addEventListener("load", () => {
   env.production &&
-    navigator.serviceWorker.register(new URL("./sw.js", location.origin));
+    navigator.serviceWorker.register(new URL("./sw.js", import.meta.url));
 });
