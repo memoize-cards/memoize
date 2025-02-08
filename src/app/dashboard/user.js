@@ -10,10 +10,12 @@ class User {
   }
 
   get name() {
-    return this.#data?.user_metadata?.full_name;
+    const { full_name, name } = this.#data?.user_metadata ?? {};
+    return full_name ?? name;
   }
 
   constructor(data) {
+    console.log(data);
     this.#data = data;
   }
 
