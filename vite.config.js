@@ -1,6 +1,7 @@
 import { resolve } from "path";
 import { terser } from "rollup-plugin-terser";
 import { defineConfig } from "vite";
+import { VitePWA } from "vite-plugin-pwa";
 
 export default defineConfig({
   build: {
@@ -9,6 +10,11 @@ export default defineConfig({
       keep_fnames: true,
     },
   },
+  plugins: [
+    VitePWA({
+      injectRegister: "auto",
+    }),
+  ],
   resolve: {
     alias: {
       artifact: resolve(__dirname, "packages/artifact"),
