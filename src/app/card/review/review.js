@@ -55,7 +55,7 @@ class Review {
   }
 
   static is(data) {
-    return data.type === Type.REVIEW;
+    return data?.type === Type.REVIEW;
   }
 }
 

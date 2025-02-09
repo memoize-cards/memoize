@@ -1,7 +1,7 @@
 import { urlFor } from "standard/router";
 
 const Navigate = {
-  toGoStudyCompleted(deckId) {
+  goToStudyCompleted(deckId) {
     history.pushState({}, "", urlFor("studyCompleted", { deck: deckId }));
     return this;
   },

@@ -51,7 +51,7 @@ class Learn {
   }
 
   static is(data) {
-    return data.type === Type.LEARN;
+    return data?.type === Type.LEARN;
   }
 }
 

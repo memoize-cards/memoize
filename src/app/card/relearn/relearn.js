@@ -57,7 +57,7 @@ class Relearn {
   }
 
   static is(data) {
-    return data.type === Type.RELEARN;
+    return data?.type === Type.RELEARN;
   }
 }
 

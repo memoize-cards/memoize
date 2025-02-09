@@ -10,24 +10,24 @@ class Card {
   get back() {
     return (async () => {
       const { default: showdown } = await import("artifact/showdown");
-      return showdown.makeHtml(this.#data.back);
+      return showdown.makeHtml(this.#data?.back);
     })();
   }
 
   get deck() {
-    return (this.#deck ??= Deck.from(this.#data.deck));
+    return (this.#deck ??= Deck.from(this.#data?.deck));
   }
 
   get front() {
-    return this.#data.front;
+    return this.#data?.front;
   }
 
   get id() {
-    return this.#data.id;
+    return this.#data?.id;
   }
 
   get type() {
-    return this.#data.type;
+    return this.#data?.type;
   }
 
   constructor(data) {

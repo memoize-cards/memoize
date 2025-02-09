@@ -15,7 +15,6 @@ class User {
   }
 
   constructor(data) {
-    console.log(data);
     this.#data = data;
   }
 
