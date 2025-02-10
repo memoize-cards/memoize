@@ -17,5 +17,6 @@ import "./markdown";
 import "./redirect";
 import "./source";
 import "./stack";
+import "./tag";
 import "./text";
 import "./validity";

@@ -17,7 +17,7 @@ function component(self) {
     <memo-main>
       <app>
         <memo-cover aspect="wide"></memo-cover>
-        <memo-stack direction="column" spacing="nano">
+        <memo-stack direction="column" spacing="quarck">
           <memo-text size="xxxs">${self.deck.cards.total} Revisões</memo-text>
           <memo-text size="sm" family="highlight" weight="bold" color="master-darker">${self.deck.name}</memo-text>
           <memo-text size="xxs">${self.deck.description}</memo-text>

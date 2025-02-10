@@ -16,7 +16,7 @@ class Stack extends Echo(HTMLElement) {
   #spacing;
 
   get align() {
-    return (this.#align ??= "stretch");
+    return (this.#align ??= "start");
   }
 
   @attributeChanged("align")
