@@ -12,16 +12,12 @@ class App extends HTMLElement {
   #decks;
   #user;
 
-  get avatar() {
-    return this.#user.avatar;
-  }
-
   get decks() {
     return (this.#decks ??= []);
   }
 
-  get name() {
-    return this.#user.name;
+  get user() {
+    return this.#user;
   }
 
   constructor() {

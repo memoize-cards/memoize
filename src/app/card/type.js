@@ -1,5 +1,5 @@
 const Type = {
-  from(value) {
+  from(value = 0) {
     return [
       { color: "master", value: "Novo" },
       { color: "warning", value: "Aprendendo" },

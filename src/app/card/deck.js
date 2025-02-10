@@ -2,11 +2,11 @@ class Deck {
   #data;
 
   get id() {
-    return this.#data.id;
+    return this.#data?.id;
   }
 
   get name() {
-    return this.#data.name;
+    return this.#data?.name;
   }
 
   constructor(data) {

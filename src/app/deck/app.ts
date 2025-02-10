@@ -17,6 +17,10 @@ class App extends HTMLElement {
     return (this.#deck ??= []);
   }
 
+  get user() {
+    return (this.#user ??= {});
+  }
+
   constructor() {
     super();
     this.attachShadow({ mode: "open" });

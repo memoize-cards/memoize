@@ -12,7 +12,7 @@ function component(self) {
     </memo-header>
     <memo-main>
       <app>
-        <memo-stack direction="column" spacing="nano">
+        <memo-stack direction="column" spacing="nano" align="center">
           <memo-text color="master-darker" family="highlight" size="lg" weight="bold" align="center">Estudo concluído</memo-text>
           <memo-text align="center">Você terminou de estudar este topico. Volte mais tarde para revisar novamente</memo-text>
         </memo-stack>

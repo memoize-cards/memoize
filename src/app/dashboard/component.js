@@ -5,9 +5,9 @@ import image from "./image.svg";
 function component(self) {
   return html`
     <memo-header>
-      <memo-avatar slot="leading" src="${self.avatar}" alt="${self.name}"></memo-avatar>
+      <memo-avatar slot="leading" src="${self.user.avatar}" alt="${self.user.name}"></memo-avatar>
       <memo-stack slot="leading" direction="column" spacing="quarck">
-        <memo-text color="master-darker" size="xs" weight="medium">${self.name}</memo-text>
+        <memo-text color="master-darker" size="xs" weight="medium">${self.user.name}</memo-text>
         <memo-link size="xxxs" href="${urlFor("signOut")}">Sign out</memo-link>
       </memo-stack>
       <memo-button slot="trailing" id="createDeck" variant="ghost" width="100%">
@@ -30,10 +30,7 @@ function component(self) {
                   </memo-stack>
                   <memo-chart learn="${deck.cards.learn}" relearn="${deck.cards.relearn}" review="${deck.cards.review}"></memo-chart>
                   <memo-stack>
-                    <memo-button id="goToCard" width="120px">
-                      Estudar
-                      <memo-redirect href="${urlFor("card", { deck: deck.id })}" on="goToCard/click:method/go"></memo-redirect>
-                    </memo-button>
+                    <memo-study deck-id="${deck.id}" user-id="${self.user.id}"></memo-study>
                     <memo-button id="goToDeck_${deck.id}" variant="link">
                       Ver mais
                       <memo-redirect href="${urlFor("deck", { deck: deck.id })}" on="goToDeck_${deck.id}/click:method/go"></memo-redirect>
