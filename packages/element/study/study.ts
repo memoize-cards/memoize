@@ -1,6 +1,7 @@
 import { attributeChanged, define } from "directive";
 import { paint, repaint, willPaint } from "standard/dom";
 import on, { stop } from "standard/event";
+import Card from "./card";
 import component from "./component";
 import { hydrate } from "./interfaces";
 import Navigate from "./navigate";
@@ -10,9 +11,9 @@ import timeUntilReview from "./timeUntilReview";
 @define("memo-study")
 @paint(component, style)
 class Study extends HTMLElement {
+  #card;
   #deckId;
   #userId;
-  #value;
 
   @attributeChanged("deck-id")
   @repaint
@@ -27,7 +28,7 @@ class Study extends HTMLElement {
   }
 
   get value() {
-    return (this.#value ??= "");
+    return timeUntilReview(this.#card?.validity);
   }
 
   constructor() {
@@ -43,16 +44,7 @@ class Study extends HTMLElement {
 
   @willPaint
   async [hydrate]() {
-    const { default: supabase } = await import("artifact/supabase");
-    const { data: card } = await supabase
-      .from("card")
-      .select("validity")
-      .eq("deck", this.#deckId)
-      .eq("user_id", this.#userId)
-      .order("validity", { ascending: true })
-      .limit(1)
-      .single();
-    this.#value = timeUntilReview(card?.validity);
+    this.#card = await Card.from(this.#deckId, this.#userId);
     return this;
   }
 }

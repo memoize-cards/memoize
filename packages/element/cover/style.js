@@ -8,13 +8,15 @@ function style(self) {
       --width-square: 160px;
       --width-wide: 100%;
 
+      aspect-ratio: var(--aspect-ratio-${self.aspect});
+      background-color: var(--color-master-lighter);
+      border-radius: var(--border-radius-sm);
       display: block;
       width: var(--width-${self.aspect});
 
       img {
-        aspect-ratio: var(--aspect-ratio-${self.aspect});
-        background-color: var(--color-master-lighter);
-        border-radius: var(--border-radius-sm);
+        aspect-ratio: inherit;
+        border-radius: inherit;
         color: transparent;
         display: block;
         width: 100%;
