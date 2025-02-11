@@ -4,7 +4,6 @@ import image from "./image.svg";
 
 function component() {
   return html`
-    <memo-header></memo-header>
     <memo-main>
       <site>
         <memo-logo></memo-logo>
