@@ -14,7 +14,7 @@ function component() {
     <memo-main>
       <oauth>
         <memo-logo></memo-logo>
-        <memo-stack direction="column" spacing="nano">
+        <memo-stack direction="column" spacing="nano" align="center">
           <memo-text color="master-darker" family="highlight" size="lg" weight="bold" align="center">Você terminou por hoje?</memo-text>
           <memo-text align="center">Você será desconectado do aplicativo. Sentiremos sua falta! Volte logo para continuar seus estudos</memo-text>
         </memo-stack>

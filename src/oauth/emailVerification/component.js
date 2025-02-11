@@ -12,7 +12,7 @@ function component() {
     <memo-main>
       <oauth>
         <memo-logo></memo-logo>
-        <memo-stack direction="column" spacing="nano">
+        <memo-stack direction="column" spacing="nano" align="center">
           <memo-text color="master-darker" family="highlight" size="lg" weight="bold" align="center">Verifique seu e-mail</memo-text>
           <memo-text align="center">Enviamos um link para redefinir sua senha para o endereço de e-mail abaixo:</memo-text>
           <memo-text weight="bold" align="center">${args.email}</memo-text>

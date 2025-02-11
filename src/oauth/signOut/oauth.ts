@@ -17,7 +17,7 @@ class OAuth extends HTMLElement {
   @on.click("#logOut", stop)
   async logOut(data) {
     await User.signOut();
-    Navigate.goToSite();
+    Navigate.goToSignIn();
     return this;
   }
 }

@@ -2,7 +2,11 @@ import { html } from "standard/dom";
 
 function component(self) {
   return html`
-    <img src="${self.src}" alt="${self.alt}" loading="${self.loading}" />
+    <img
+      alt="${self.alt}"
+      src="${self.src}"
+      onerror="this.remove()"
+      loading="${self.loading}" />
   `;
 }
 

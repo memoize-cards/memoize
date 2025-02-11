@@ -12,7 +12,7 @@ function component() {
     <memo-main>
       <oauth>
         <memo-logo></memo-logo>
-        <memo-stack direction="column" spacing="nano">
+        <memo-stack direction="column" spacing="nano" align="center">
           <memo-text color="master-darker" family="highlight" size="lg" weight="bold" align="center">Esqueceu a senha?</memo-text>
           <memo-text align="center">Não se preocupe! Enviaremos instruções de redefinição para o seu e-mail abaixo:</memo-text>
         </memo-stack>

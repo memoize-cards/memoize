@@ -12,7 +12,7 @@ function component() {
     <memo-main>
       <oauth>
         <memo-logo></memo-logo>
-        <memo-stack direction="column" spacing="nano">
+        <memo-stack direction="column" spacing="nano" align="center">
           <memo-text color="master-darker" family="highlight" size="lg" weight="bold" align="center">Redefinição de senha</memo-text>
           <memo-text align="center">Sua senha foi redefinida com sucesso. Clique abaixo para fazer login de forma rápida e segura.</memo-text>
         </memo-stack>

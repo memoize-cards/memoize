@@ -1,10 +1,24 @@
 import { define } from "directive";
-import { paint } from "standard/dom";
+import { paint, willPaint } from "standard/dom";
 import component from "./component";
+import { hydrate } from "./interfaces";
+import Navigate from "./navigate";
 import style from "./style";
+import User from "./user";
 
 @define("memo-site")
 @paint(component, style)
-class Site extends HTMLElement {}
+class Site extends HTMLElement {
+  constructor() {
+    super();
+    this.attachShadow({ mode: "open" });
+  }
 
+  @willPaint
+  async [hydrate]() {
+    if (await User.isItAuthenticated()) Navigate.goToDashboard();
+    return this;
+  }
+}
+o;
 export default Site;

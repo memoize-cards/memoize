@@ -13,7 +13,7 @@ function component() {
     <memo-main>
       <oauth>
         <memo-logo></memo-logo>
-        <memo-stack direction="column" spacing="nano">
+        <memo-stack direction="column" spacing="nano" align="center">
           <memo-text color="master-darker" family="highlight" size="lg" weight="bold" align="center">Faça login na sua conta</memo-text>
           <memo-text align="center">Bem-vindo de volta! Por favor, insira seus dados</memo-text>
         </memo-stack>
