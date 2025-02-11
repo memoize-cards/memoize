@@ -8,9 +8,9 @@ function component() {
     <memo-main>
       <site>
         <memo-logo></memo-logo>
-        <memo-stack direction="column" spacing="nano">
-          <memo-text color="master-darker" family="highlight" size="lg" weight="bold" align="center">Aprenda, Memorize e Domine!</memo-text>
-          <memo-text align="center">Um aplicativo de flashcards avançado projetado para otimizar seu aprendizado e memorização.</memo-text>
+        <memo-stack direction="column" spacing="nano" align="center">
+          <memo-text color="master-darker" family="highlight" size="lg" weight="bold">Aprenda <memo-text color="primary" family="highlight" size="lg" weight="bold">5x mais rápido!</memo-stack></memo-text>
+          <memo-text align="center">Com a ciência da repetição espaçada, você obtém uma retenção de conhecimento superior. Domine qualquer assunto <memo-text weight="bold">2 a 5 vezes mais rápido que os métodos tradicionais</memo-text></memo-text>
         </memo-stack>
         <img alt="Memoize" src="${image}" loading="lazy" />
         <memo-stack direction="column">

@@ -20,5 +20,5 @@ class Site extends HTMLElement {
     return this;
   }
 }
-o;
+
 export default Site;
