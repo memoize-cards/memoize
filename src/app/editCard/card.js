@@ -1,16 +1,16 @@
-class Deck {
+class Card {
   #data;
 
-  get description() {
-    return this.#data.description;
+  get back() {
+    return this.#data.back;
   }
 
   get id() {
     return this.#data.id;
   }
 
-  get name() {
-    return this.#data.name;
+  get front() {
+    return this.#data.front;
   }
 
   constructor(data) {
@@ -25,7 +25,7 @@ class Deck {
   async delete() {
     const { default: supabase } = await import("artifact/supabase");
     await supabase
-      .from("deck")
+      .from("card")
       .delete()
       .eq("id", this.#data.id)
       .eq("user_id", this.#data.user_id);
@@ -35,27 +35,27 @@ class Deck {
 
   async update() {
     const { default: supabase } = await import("artifact/supabase");
-    const { data: deck } = await supabase
-      .from("deck")
+    const { data: card } = await supabase
+      .from("card")
       .update(this.#data)
       .eq("id", this.#data.id)
       .eq("user_id", this.#data.user_id)
       .select()
       .single();
-    this.#data = deck;
+    this.#data = card;
     return this;
   }
 
-  static async from(deckId, userId) {
+  static async from(cardId, userId) {
     const { default: supabase } = await import("artifact/supabase");
-    const { data: deck } = await supabase
-      .from("deck")
-      .select("id, description, name, user_id")
-      .eq("id", deckId)
+    const { data: card } = await supabase
+      .from("card")
+      .select("id, back, front, user_id")
+      .eq("id", cardId)
       .eq("user_id", userId)
       .single();
-    return new Deck(deck);
+    return new Card(card);
   }
 }
 
-export default Deck;
+export default Card;
