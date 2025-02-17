@@ -8,6 +8,10 @@ class Deck {
     return (this.#cards ??= Card.from(this.#data.cards));
   }
 
+  get cover() {
+    return this.#data.cover;
+  }
+
   get id() {
     return this.#data.id;
   }
@@ -24,7 +28,7 @@ class Deck {
     const { default: supabase } = await import("artifact/supabase");
     const { data: decks } = await supabase
       .from("deck")
-      .select("id, name, cards:card(type)")
+      .select("id, cover, name, cards:card(type)")
       .eq("user_id", userId);
     return decks?.map((deck) => new Deck(deck));
   }

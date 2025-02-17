@@ -1,11 +1,12 @@
 import { attributeChanged, define } from "directive";
-import { paint } from "standard/dom";
+import { paint, repaint } from "standard/dom";
+import Echo from "standard/echo";
 import component from "./component";
 import style from "./style";
 
 @define("memo-cover")
 @paint(component, style)
-class Cover extends HTMLElement {
+class Cover extends Echo(HTMLElement) {
   #alt;
   #aspect;
   #src;
@@ -15,6 +16,7 @@ class Cover extends HTMLElement {
   }
 
   @attributeChanged("alt")
+  @repaint
   set alt(value) {
     this.#alt = value;
   }
@@ -24,6 +26,7 @@ class Cover extends HTMLElement {
   }
 
   @attributeChanged("aspect")
+  @repaint
   set aspect(value) {
     this.#aspect = value;
   }
@@ -33,6 +36,7 @@ class Cover extends HTMLElement {
   }
 
   @attributeChanged("src")
+  @repaint
   set src(value) {
     this.#src = value;
   }

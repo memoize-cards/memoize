@@ -22,7 +22,7 @@ function component(self) {
           ${self.decks.map(
             (deck) => html`
               <memo-stack>
-                <memo-cover></memo-cover>
+                <memo-cover src="${deck.cover}"></memo-cover>
                 <memo-stack direction="column" spacing="nano">
                   <memo-stack direction="column" spacing="none">
                     <memo-text size="xxxs">${deck.cards.total} Revisões</memo-text>

@@ -16,7 +16,8 @@ function component(self) {
         </memo-text>
         <memo-form>
           <template>
-            <memo-cover aspect="wide"></memo-cover>
+            <memo-input id="cover" label="Capa" name="cover" value="${self.deck.cover}"></memo-input>
+            <memo-cover aspect="wide" src="${self.deck.cover}" on="cover/change:attribute/src"></memo-cover>
             <memo-input label="Nome" name="name" value="${self.deck.name}" required>
               <memo-validity state="valueMissing">Nome é obrigatório</memo-validity>
             </memo-input>

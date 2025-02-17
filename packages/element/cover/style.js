@@ -19,6 +19,7 @@ function style(self) {
         border-radius: inherit;
         color: transparent;
         display: block;
+        object-fit: cover;
         width: 100%;
       }
     }

@@ -10,6 +10,10 @@ class Deck {
     return (this.#cards ??= Card.from(this.#data.cards));
   }
 
+  get cover() {
+    return this.#data.cover;
+  }
+
   get description() {
     return this.#data.description;
   }
@@ -34,7 +38,9 @@ class Deck {
     const { default: supabase } = await import("artifact/supabase");
     const { data: deck } = await supabase
       .from("deck")
-      .select("id, description, name, cards:card(id, front, type, validity)")
+      .select(
+        "id, cover, description, name, cards:card(id, front, type, validity)",
+      )
       .eq("id", deckId)
       .eq("user_id", userId)
       .single();
