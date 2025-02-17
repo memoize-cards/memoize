@@ -31,6 +31,7 @@ function style() {
       h6 { font-size: var(--font-size-xxxs); }
 
       img {
+        border-radius: var(--border-radius-sm);
         max-width: 100%;
         object-fit: contain;
       }
