@@ -39,10 +39,14 @@ function style() {
         padding-left: var(--spacing-xxs);
       }
 
-      code {
-        background-color: var(--color-master-lighter);
+      code:not(pre code) {
+        background-color: var(--color-master-light);
         border-radius: 3px;
         padding: 1.5px 3px;
+      }
+
+      code {
+        border-radius: var(--border-radius-sm);
       }
 
       blockquote {

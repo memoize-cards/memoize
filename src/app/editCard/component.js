@@ -19,7 +19,8 @@ function component(self) {
             <memo-input label="Pergunta" name="front" value="${self.card.front}" required>
               <memo-validity state="valueMissing">Pergunta é obrigatório</memo-validity>
             </memo-input>
-            <memo-area label="Reposta" name="back" value="${self.card.back}" required>
+            <memo-area label="Reposta" name="back" required>
+              <template>${self.card.back}</template>
               <memo-validity state="valueMissing">Resumo é obrigatório</memo-validity>
             </memo-area>
             <memo-button width="100%">

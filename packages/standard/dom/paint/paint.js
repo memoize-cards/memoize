@@ -7,15 +7,16 @@ import intercept, { exec } from "standard/intercept";
 import { connectedCallback } from "standard/lifeCycle";
 
 const paint =
-  (component, style = () => []) =>
+  (component, ...styles) =>
   (target) => {
     intercept(paintCallback)
       .in(target.prototype)
       .then(async function () {
         const render = (resolve) => {
           requestAnimationFrame(async () => {
+            const styleSheets = styles.map((style) => style(this));
             (this.shadowRoot ?? document).adoptedStyleSheets =
-              await style(this);
+              await Promise.all(styleSheets);
             (this.shadowRoot ?? this).innerHTML = await component(this);
             this.isPainted = true;
             resolve();

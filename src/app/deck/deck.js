@@ -34,7 +34,7 @@ class Deck {
     const { default: supabase } = await import("artifact/supabase");
     const { data: deck } = await supabase
       .from("deck")
-      .select("id, description, name, cards:card(id, front, type)")
+      .select("id, description, name, cards:card(id, front, type, validity)")
       .eq("id", deckId)
       .eq("user_id", userId)
       .single();

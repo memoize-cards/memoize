@@ -3,7 +3,6 @@ import { urlFor } from "standard/router";
 import image from "./image.svg";
 
 async function component(self) {
-  import("artifact/highlight");
   return html`
     <memo-header>
       <memo-button id="backToDeck" variant="link" slot="leading">
