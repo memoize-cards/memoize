@@ -1,8 +1,10 @@
 import Card from "./card";
+import Progress from "./progress";
 
 class Deck {
   #cards;
   #data;
+  #progress;
 
   get cards() {
     return (this.#cards ??= Card.from(this.#data.cards));
@@ -20,6 +22,10 @@ class Deck {
     return this.#data.name;
   }
 
+  get progress() {
+    return (this.#progress ??= Progress.from(this.#data.cards));
+  }
+
   constructor(data) {
     this.#data = data;
   }
@@ -28,7 +34,7 @@ class Deck {
     const { default: supabase } = await import("artifact/supabase");
     const { data: deck } = await supabase
       .from("deck")
-      .select("id, description, name, cards:card(type)")
+      .select("id, description, name, cards:card(id, front, type)")
       .eq("id", deckId)
       .eq("user_id", userId)
       .single();

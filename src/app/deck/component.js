@@ -18,11 +18,11 @@ function component(self) {
       <app>
         <memo-cover aspect="wide"></memo-cover>
         <memo-stack direction="column" spacing="quarck">
-          <memo-text size="xxxs">${self.deck.cards.total} Revisões</memo-text>
+          <memo-text size="xxxs">${self.deck.progress.total} Revisões</memo-text>
           <memo-text size="sm" family="highlight" weight="bold" color="master-darker">${self.deck.name}</memo-text>
           <memo-text size="xxs">${self.deck.description}</memo-text>
         </memo-stack>
-        <memo-chart learn="${self.deck.cards.learn}" relearn="${self.deck.cards.relearn}" review="${self.deck.cards.review}"></memo-chart>
+        <memo-chart learn="${self.deck.progress.learn}" relearn="${self.deck.progress.relearn}" review="${self.deck.progress.review}"></memo-chart>
         <memo-stack>
           <memo-study deck-id="${self.deck.id}" user-id="${self.user.id}"></memo-study>
           <memo-button id="goToCreateCard" variant="ghost">
@@ -31,6 +31,15 @@ function component(self) {
             <memo-redirect href="${urlFor("createCard", { deck: self.deck.id })}" on="goToCreateCard/click:method/go"></memo-redirect>
           </memo-button>
         </memo-stack>
+        <cards>
+          <memo-stack direction="column" spacing="nano">
+            ${self.deck.cards.map(
+              (card) => html`
+                <memo-link href="${urlFor("editCard", { deck: self.deck.id, card: card.id })}">${card.front}</memo-link>
+              `,
+            )}
+          </memo-stack>
+        </cards>
         <empty>
           <memo-stack direction="column" spacing="nano">
             <memo-text color="master-darker" family="highlight" size="lg" weight="bold" align="center">Crie sua primeira revisão</memo-text>

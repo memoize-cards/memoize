@@ -1,56 +1,20 @@
 class Card {
-  #learn;
-  #relearn;
-  #review;
-  #total;
+  #data;
 
-  @Card.asPercentageOfTotal
-  get learn() {
-    return (this.#learn ??= 0);
+  get front() {
+    return (this.#data.front ??= "");
   }
 
-  @Card.asPercentageOfTotal
-  get relearn() {
-    return (this.#relearn ??= 0);
+  get id() {
+    return this.#data.id;
   }
 
-  @Card.asPercentageOfTotal
-  get review() {
-    return (this.#review ??= 0);
-  }
-
-  get total() {
-    return (this.#total ??= 0);
-  }
-
-  constructor(learn, review, relearn, total) {
-    this.#learn = learn;
-    this.#review = review;
-    this.#relearn = relearn;
-    this.#total = total;
+  constructor(data) {
+    this.#data = data;
   }
 
   static from(data) {
-    const {
-      1: learn = [],
-      2: review = [],
-      3: relearn = [],
-    } = data.group((card) => card.type);
-    return new Card(learn.length, review.length, relearn.length, data.length);
-  }
-
-  static asPercentageOfTotal(_target, _key, descriptor) {
-    const count = descriptor.get;
-
-    Object.assign(descriptor, {
-      get() {
-        return this.total
-          ? Math.round((count.call(this) / this.total) * 100)
-          : 0;
-      },
-    });
-
-    return descriptor;
+    return data?.map((card) => new Card(card));
   }
 }
 

@@ -14,9 +14,17 @@ function style(self) {
       width: 100%;
     }
 
+    cards {
+      display: ${self.deck.progress.total ? "flex" : "none"};
+      flex-direction: column;
+      gap: var(--border-weight-hairline);
+      margin: 0 auto;
+      width: 100%;
+    }
+
     empty {
       align-items: center;
-      display: ${self.deck.cards.total ? "none" : "flex"};
+      display: ${self.deck.progress.total ? "none" : "flex"};
       flex-direction: column;
       gap: var(--spacing_inset-lg);
       justify-content: center;
