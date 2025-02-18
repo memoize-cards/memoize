@@ -89,7 +89,7 @@ class Area extends Echo(HTMLElement) {
   }
 
   get value() {
-    return (this.#value ??= this.querySelector("template").innerHTML);
+    return (this.#value ??= this.querySelector("template")?.innerHTML ?? "");
   }
 
   @attributeChanged("value")
