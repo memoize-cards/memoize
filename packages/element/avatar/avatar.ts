@@ -70,6 +70,10 @@ class Avatar extends HTMLElement {
     this.#review = value;
   }
 
+  get total() {
+    return this.learn + this.relearn + this.review;
+  }
+
   constructor() {
     super();
     this.attachShadow({ mode: "open" });

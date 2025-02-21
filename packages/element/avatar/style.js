@@ -9,11 +9,15 @@ function style(self) {
 
       align-items: center;
       aspect-ratio: 1 / 1;
-      background: conic-gradient(
-        var(--color-danger) 0% calc(var(--relearn) * 1%),
-        var(--color-warning) calc(var(--relearn) * 1%) calc((var(--relearn) + var(--learn)) * 1%),
-        var(--color-success) calc((var(--relearn) + var(--learn)) * 1%) 100%
-      );
+      background: ${
+        self.total
+          ? `conic-gradient(
+              var(--color-danger) 0% calc(var(--relearn) * 1%),
+              var(--color-warning) calc(var(--relearn) * 1%) calc((var(--relearn) + var(--learn)) * 1%),
+              var(--color-success) calc((var(--relearn) + var(--learn)) * 1%) 100%
+            )`
+          : "conic-gradient(var(--color-master-light) 0% 100%)"
+      };
       border-radius: var(--border-radius-circular);
       box-sizing: border-box;
       display: flex;
