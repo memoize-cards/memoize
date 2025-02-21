@@ -76,11 +76,12 @@ class Card {
     return this;
   }
 
-  static async from(userId) {
+  static async from(deckId, userId) {
     const { default: supabase } = await import("artifact/supabase");
     const { data: card } = await supabase
       .from("card")
       .select("*, deck(id, name)")
+      .eq("deck", deckId)
       .eq("user_id", userId)
       .lte("validity", Validity.expired)
       .limit(1)

@@ -9,7 +9,7 @@ import Navigate from "./navigate";
 import style from "./style";
 import User from "./user";
 
-@define("memo-card")
+@define("memo-card-by-deck")
 @paint(component, style)
 class App extends HTMLElement {
   #user;
@@ -55,10 +55,10 @@ class App extends HTMLElement {
   @willPaint
   async [hydrate]() {
     this.#user = await User.logged();
-    this.#card = await Card.from(this.#user.id);
+    this.#card = await Card.from(params.deck, this.#user.id);
 
     if (!this.#card.id) {
-      Navigate.goToStudyCompleted();
+      Navigate.goToStudyCompletedByDeck(params.deck);
     }
 
     return this;

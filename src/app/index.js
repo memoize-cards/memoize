@@ -1,4 +1,5 @@
 import "./card";
+import "./cardByDeck";
 import "./createCard";
 import "./createDeck";
 import "./dashboard";
@@ -7,3 +8,4 @@ import "./editCard";
 import "./editDeck";
 import "./howWorks";
 import "./studyCompleted";
+import "./studyCompletedByDeck";

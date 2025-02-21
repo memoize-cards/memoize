@@ -1,8 +1,8 @@
 import { urlFor } from "standard/router";
 
 const Navigate = {
-  goToCardByDeck(deckId) {
-    history.pushState({}, "", urlFor("cardByDeck", { deck: deckId }));
+  goToCard() {
+    history.pushState({}, "", urlFor("card"));
     return this;
   },
 };

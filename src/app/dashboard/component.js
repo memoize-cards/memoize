@@ -1,3 +1,5 @@
+import "./study";
+
 import { html } from "standard/dom";
 import { urlFor } from "standard/router";
 import image from "./image.svg";
@@ -21,6 +23,7 @@ function component(self) {
             <memo-text size="xxs"><memo-text size="xxs" weight="medium" color="success-dark">${self.progress.mastered}</memo-text> / ${self.progress.total}</memo-text>
           </memo-stack>
         </memo-stack>
+        <memo-dashboard-study></memo-dashboard-study>
         <decks>
           ${self.decks.map(
             (deck) => html`

@@ -5,9 +5,9 @@ import image from "./image.svg";
 async function component(self) {
   return html`
     <memo-header>
-      <memo-button id="backToDashboard" variant="link" slot="leading">
+      <memo-button id="backToDeck" variant="link" slot="leading">
         <memo-icon use="arrowBack"></memo-icon>
-        <memo-redirect href="${urlFor("dashboard")}" on="backToDashboard/click:method/go"></memo-redirect>
+        <memo-redirect href="${urlFor("deck", { deck: self.card.deck.id })}" on="backToDeck/click:method/go"></memo-redirect>
       </memo-button>
     </memo-header>
     <memo-main>
