@@ -21,28 +21,30 @@ function style(self) {
       border-radius: var(--border-radius-circular);
       box-sizing: border-box;
       display: flex;
-      height: 120px;
+      height: 138px;
       justify-content: center;
-      width: 120px;
+      width: 138px;
 
       &:before {
         content: "";
         background-color: var(--color-master-lighter);
-        border: var(--border-width-thick) solid var(--color-master-lightest);
+        border: var(--border-width-heavy) solid var(--color-master-lightest);
         border-radius: inherit;
+        box-sizing: border-box;
         display: block;
-        height: 98px;
-        width: 98px;
+        height: 128px;
+        width: 128px;
       }
 
       img {
         aspect-ratio: 1 / 1;
         background-color: transparent;
         border-radius: inherit;
+        box-sizing: border-box;
         color: transparent;
-        height: 98px;
+        height: 120px;
         position: absolute;
-        width: 98px;
+        width: 120px;
       }
     }
   `;
