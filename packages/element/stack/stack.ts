@@ -1,7 +1,8 @@
 import { define } from "directive";
 import attributeChanged, { booleanAttribute } from "directive/attributeChanged";
 import { didPaint, paint, repaint } from "standard/dom";
-import Echo from "standard/echo";
+import Echo, { dispatchEvent } from "standard/echo";
+import on, { stop } from "standard/event";
 import component from "./component";
 import { setDisplay } from "./interfaces";
 import style from "./style";
@@ -68,6 +69,12 @@ class Stack extends Echo(HTMLElement) {
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
+  }
+
+  @on.click("*", stop)
+  @dispatchEvent("click")
+  click() {
+    return this;
   }
 
   @didPaint

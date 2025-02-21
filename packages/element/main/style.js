@@ -2,17 +2,12 @@ import { css } from "standard/dom";
 
 function style(self) {
   return css`
-    * {
-      box-sizing: border-box;
-      padding: 0;
-      margin: 0;
-    }
-
     main {
       background-color: var(--color-${self.color});
 
       container {
         align-items: start;
+        box-sizing: border-box;
         display: flex;
         flex-direction: column;
         gap: var(--spacing_inset-md);

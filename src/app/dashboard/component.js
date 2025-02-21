@@ -21,29 +21,25 @@ function component(self) {
             <memo-text size="xxs"><memo-text size="xxs" weight="medium" color="success-dark">${self.progress.mastered}</memo-text> / ${self.progress.total}</memo-text>
           </memo-stack>
         </memo-stack>
-        <memo-stack direction="column">
-          ${self.decks.map(
-            (deck) => html`
-              <memo-stack>
-                <memo-cover src="${deck.cover}"></memo-cover>
-                <memo-stack direction="column" spacing="nano">
-                  <memo-stack direction="column" spacing="none">
-                    <memo-text size="xxxs">${deck.cards.total} Revisões</memo-text>
-                    <memo-text size="xs" family="highlight" weight="bold" color="master-darker">${deck.name}</memo-text>
+        <decks>
+          <memo-stack direction="column">
+            ${self.decks.map(
+              (deck) => html`
+                <memo-stack id="deck_${deck.id}" direction="column">
+                  <memo-cover src="${deck.cover}" aspect="portrait"></memo-cover>
+                  <memo-stack direction="column" spacing="nano">
+                    <memo-chart learn="${deck.cards.learn}" relearn="${deck.cards.relearn}" review="${deck.cards.review}"></memo-chart>
+                    <memo-stack direction="column" spacing="none">
+                      <memo-text size="xxxs">${deck.cards.total} Revisões</memo-text>
+                      <memo-text size="xs" family="highlight" weight="bold" color="master-darker">${deck.name}</memo-text>
+                    </memo-stack>
                   </memo-stack>
-                  <memo-chart learn="${deck.cards.learn}" relearn="${deck.cards.relearn}" review="${deck.cards.review}"></memo-chart>
-                  <memo-stack>
-                    <memo-study deck-id="${deck.id}" user-id="${self.user.id}"></memo-study>
-                    <memo-button id="goToDeck_${deck.id}" variant="link">
-                      Ver mais
-                      <memo-redirect href="${urlFor("deck", { deck: deck.id })}" on="goToDeck_${deck.id}/click:method/go"></memo-redirect>
-                    </memo-button>
-                  </memo-stack>
+                  <memo-redirect href="${urlFor("deck", { deck: deck.id })}" on="deck_${deck.id}/click:method/go"></memo-redirect>
                 </memo-stack>
-              </memo-stack>
-            `,
-          )}
-        </memo-stack>
+              `,
+            )}
+          </memo-stack>
+        </decks>
       </app>
       <empty>
         <memo-stack direction="column" spacing="nano">
