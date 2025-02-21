@@ -29,12 +29,12 @@ async function component(self) {
             </template>
           </memo-markdown>
           <memo-text size="xs" family="highlight" color="master-darker">Você conseguiu se lembrar?</memo-text>
-          <memo-stack>
+          <memo-answer>
             <memo-button id="easy" color="complete" width="25%">Sim</memo-button>
             <memo-button id="good" color="success" width="25%">Com esforço</memo-button>
             <memo-button id="hard" color="warning" width="25%">Parcialmente</memo-button>
             <memo-button id="again" color="danger" width="25%">Não</memo-button>
-          </memo-stack>
+          </memo-answer>
         </memo-stack>
       </app>
     </memo-main>

@@ -34,6 +34,7 @@ class App extends HTMLElement {
   @on.click("#easy", stop)
   @repaint
   async easy() {
+    console.log("asdf");
     await this.#card.easy();
     return this;
   }

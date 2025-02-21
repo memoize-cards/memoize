@@ -2,14 +2,13 @@ import { define } from "directive";
 import attributeChanged, { booleanAttribute } from "directive/attributeChanged";
 import { didPaint, paint, repaint } from "standard/dom";
 import Echo, { dispatchEvent } from "standard/echo";
-import on from "standard/event";
 import component from "./component";
 import { setDisplay } from "./interfaces";
 import style from "./style";
 
-@define("memo-stack")
+@define("memo-answer")
 @paint(component, style)
-class Stack extends Echo(HTMLElement) {
+class Answer extends Echo(HTMLElement) {
   #align;
   #direction;
   #hidden;
@@ -71,12 +70,6 @@ class Stack extends Echo(HTMLElement) {
     this.attachShadow({ mode: "open" });
   }
 
-  @on.click("*")
-  @dispatchEvent("click")
-  click() {
-    return this;
-  }
-
   @didPaint
   [setDisplay]() {
     this.hidden
@@ -86,4 +79,4 @@ class Stack extends Echo(HTMLElement) {
   }
 }
 
-export default Stack;
+export default Answer;
