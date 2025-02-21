@@ -3,6 +3,7 @@ import { paint, willPaint } from "standard/dom";
 import component from "./component";
 import Deck from "./deck";
 import { hydrate } from "./interfaces";
+import Progress from "./progress";
 import style from "./style";
 import User from "./user";
 
@@ -10,14 +11,19 @@ import User from "./user";
 @paint(component, style)
 class App extends HTMLElement {
   #decks;
+  #progress;
   #user;
 
   get decks() {
     return (this.#decks ??= []);
   }
 
+  get progress() {
+    return (this.#progress ??= {});
+  }
+
   get user() {
-    return this.#user;
+    return (this.#user ??= {});
   }
 
   constructor() {
@@ -28,7 +34,8 @@ class App extends HTMLElement {
   @willPaint
   async [hydrate]() {
     this.#user = await User.logged();
-    this.#decks = await Deck.from(this.#user.id);
+    this.#decks = await Deck.from(this.user.id);
+    this.#progress = await Progress.from(this.user.id);
     return this;
   }
 }
