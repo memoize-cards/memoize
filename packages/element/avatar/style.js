@@ -40,8 +40,9 @@ function style(self) {
         background-color: transparent;
         border-radius: inherit;
         color: transparent;
-        height: inherit;
-        max-width: inherit;
+        height: 98px;
+        position: absolute;
+        width: 98px;
       }
     }
   `;
