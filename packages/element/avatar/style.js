@@ -32,11 +32,12 @@ function style(self) {
       }
 
       img {
+        aspect-ratio: 1 / 1;
         background-color: transparent;
         border-radius: inherit;
         color: transparent;
         height: inherit;
-        width: inherit;
+        max-width: inherit;
       }
     }
   `;
