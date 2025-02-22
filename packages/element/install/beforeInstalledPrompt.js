@@ -3,6 +3,8 @@ function beforeInstallPrompt(target, propertyKey) {
   const disconnectedCallback = target.disconnectedCallback ?? (() => undefined);
   const controller = new AbortController();
 
+  console.log("beforeInstallPrompt", target, propertyKey);
+
   Reflect.defineProperty(target, "coonectedCallback", {
     value(...args) {
       console.log("coonectedCallback");
