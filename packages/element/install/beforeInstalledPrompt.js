@@ -5,6 +5,7 @@ function beforeInstallPrompt(target, propertyKey) {
 
   Reflect.defineProperty(target, "coonectedCallback", {
     value(...args) {
+      console.log("coonectedCallback");
       window.addEventListener(
         "beforeinstallprompt",
         (event) => {
