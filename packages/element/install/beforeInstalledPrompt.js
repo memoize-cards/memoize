@@ -1,17 +1,15 @@
+import { connectedCallback, disconnectedCallback } from "standard/lifeCycle";
+
 function beforeInstallPrompt(target, propertyKey) {
   const connectedCallback = target.connectedCallback ?? (() => undefined);
   const disconnectedCallback = target.disconnectedCallback ?? (() => undefined);
   const controller = new AbortController();
 
-  console.log("beforeInstallPrompt", target, propertyKey);
-
-  Reflect.defineProperty(target, "coonectedCallback", {
+  Reflect.defineProperty(target, connectedCallback, {
     value(...args) {
-      console.log("coonectedCallback");
       window.addEventListener(
         "beforeinstallprompt",
         (event) => {
-          console.log("beforeinstallprompt", event);
           event.preventDefault();
           this[propertyKey](event);
         },
@@ -23,7 +21,7 @@ function beforeInstallPrompt(target, propertyKey) {
     },
   });
 
-  Reflect.defineProperty(target, "disconnectedCallback", {
+  Reflect.defineProperty(target, disconnectedCallback, {
     value(...args) {
       controller.abort();
       return Reflect.apply(disconnectedCallback, this, args);

@@ -3,7 +3,6 @@ import { css } from "standard/dom";
 function style() {
   return css`
     :host {
-      display: flex;
       width: 100%;
     }
   `;
