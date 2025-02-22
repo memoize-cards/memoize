@@ -3,7 +3,7 @@ function appInstalled(target, propertyKey) {
   const disconnectedCallback = target.disconnectedCallback ?? (() => undefined);
   const controller = new AbortController();
 
-  Reflect.defineProperty(target, "coonectedCallback", {
+  Reflect.defineProperty(target, "connectedCallback", {
     value(...args) {
       window.addEventListener("appinstalled", () => this[propertyKey](), {
         signal: controller.signal,
