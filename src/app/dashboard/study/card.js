@@ -1,3 +1,5 @@
+import Validity from "./validity";
+
 class Card {
   #data;
 
@@ -19,6 +21,7 @@ class Card {
       .from("card")
       .select("validity")
       .eq("user_id", userId)
+      .lte("validity", Validity.expired)
       .order("validity", { ascending: true });
     return new Card(cards);
   }
