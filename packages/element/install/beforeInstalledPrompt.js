@@ -8,6 +8,7 @@ function beforeInstallPrompt(target, propertyKey) {
       window.addEventListener(
         "beforeinstallprompt",
         (event) => {
+          console.log("beforeinstallprompt", event);
           event.preventDefault();
           this[propertyKey](event);
         },

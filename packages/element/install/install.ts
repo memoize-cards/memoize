@@ -5,9 +5,10 @@ import appInstalled from "./appInstalled";
 import beforeInstallPrompt from "./beforeInstalledPrompt";
 import component from "./component";
 import { setDisplay } from "./interfaces";
+import style from "./style";
 
 @define("memo-install")
-@paint(component)
+@paint(component, style)
 class Install extends HTMLElement {
   #event;
 
