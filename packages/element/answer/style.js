@@ -1,14 +1,16 @@
 import { css } from "standard/dom";
 
-function style(self) {
+function style() {
   return css`
     :host {
-      align-items: ${self.align};
-      display: flex;
-      flex-direction: ${self.direction};
-      gap: var(--spacing_inset-${self.spacing});
-      justify-content: ${self.justify};
+      display: grid;
+      gap: var(--spacing_inset-xs);
+      grid-template-columns: repeat(2, 1fr);
       width: 100%;
+
+      @media (width > 768px) {
+        grid-template-columns: repeat(4, 1fr);
+      }
     }
   `;
 }

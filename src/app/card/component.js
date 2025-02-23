@@ -30,10 +30,10 @@ async function component(self) {
           </memo-markdown>
           <memo-text size="xs" family="highlight" color="master-darker">Você conseguiu se lembrar?</memo-text>
           <memo-answer>
-            <memo-button id="easy" color="complete" width="25%">Sim</memo-button>
-            <memo-button id="good" color="success" width="25%">Com esforço</memo-button>
-            <memo-button id="hard" color="warning" width="25%">Parcialmente</memo-button>
-            <memo-button id="again" color="danger" width="25%">Não</memo-button>
+            <memo-button id="easy" color="complete">Sim</memo-button>
+            <memo-button id="good" color="success">Com esforço</memo-button>
+            <memo-button id="hard" color="warning">Parcialmente</memo-button>
+            <memo-button id="again" color="danger">Não</memo-button>
           </memo-answer>
         </memo-stack>
       </app>
