@@ -16,12 +16,14 @@ function component(self) {
         </memo-text>
         <memo-form>
           <template>
-            <memo-input label="Pergunta" name="front" value="${self.card.front}" required>
+            <memo-input label="Pergunta" name="front" maxlength="128" value="${self.card.front}" required>
               <memo-validity state="valueMissing">Pergunta é obrigatório</memo-validity>
+              <memo-text size="xxxs" color="info">Digite a pergunta ou conceito a ser revisado.</memo-text>
             </memo-input>
-            <memo-area label="Reposta" name="back" required>
+            <memo-area label="Reposta" name="back" maxlength="1024" required>
               <template>${self.card.back}</template>
               <memo-validity state="valueMissing">Resumo é obrigatório</memo-validity>
+              <memo-text size="xxxs" color="info">Insira a resposta ou explicaçâo para esta pergunta.</memo-text>
             </memo-area>
             <memo-button width="100%">
               Atualizar revisão
