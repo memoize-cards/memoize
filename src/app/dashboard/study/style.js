@@ -7,7 +7,7 @@ function style(self) {
       background-color: var(--color-master-lighter);
       border-radius: var(--border-radius-sm);
       box-sizing: border-box;
-      display: flex;
+      display: ${self.hidden ? "none" : "flex"};
       flex-direction: column;
       gap: var(--spacing_inset-xs);
       justify-content: center;

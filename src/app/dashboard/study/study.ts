@@ -1,10 +1,8 @@
 import { define } from "directive";
 import { paint, willPaint } from "standard/dom";
-import on, { stop } from "standard/event";
 import Card from "./card";
 import component from "./component";
 import { hydrate } from "./interfaces";
-import Navigate from "./navigate";
 import style from "./style";
 import timeUntilReview from "./timeUntilReview";
 import User from "./user";
@@ -14,6 +12,10 @@ import User from "./user";
 class Study extends HTMLElement {
   #card;
   #user;
+
+  get hidden() {
+    return this.time === "" && this.total === 0;
+  }
 
   get time() {
     return timeUntilReview(this.#card?.validity);
@@ -26,12 +28,6 @@ class Study extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
-  }
-
-  @on.click(":host button", stop)
-  click() {
-    Navigate.goToCard();
-    return this;
   }
 
   @willPaint
