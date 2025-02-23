@@ -1,3 +1,4 @@
+import "./footer";
 import "./header";
 import "./profile";
 import "./study";
@@ -46,12 +47,7 @@ function component(self) {
         </memo-stack>
       </empty>
     </memo-main>
-    <memo-footer>
-      <memo-button id="goToSignOut" variant="link" slot="trailing">
-        Sair
-        <memo-redirect href="${urlFor("signOut")}" on="goToSignOut/click:method/go"></memo-redirect>
-      </memo-button>
-    </memo-footer>
+    <memo-dashboard-footer></memo-dashboard-footer>
   `;
 }
 
