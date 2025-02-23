@@ -16,12 +16,18 @@ function component(self) {
         </memo-text>
         <memo-form>
           <template>
-            <memo-input id="cover" label="Capa" name="cover" value="${self.deck.cover}"></memo-input>
-            <memo-cover aspect="wide" src="${self.deck.cover}" on="cover/change:attribute/src"></memo-cover>
-            <memo-input label="Nome" name="name" value="${self.deck.name}" required>
-              <memo-validity state="valueMissing">Nome é obrigatório</memo-validity>
+            <memo-input id="cover" label="Imagem de capa (URL)" name="cover" type="url" maxlength="256" value="${self.deck.cover}">
+              <memo-validity state="typeMismatch">URL inválida</memo-validity>
+              <memo-text size="xxxs" color="info">Insira o link de uma imagem para representar a coleção.</memo-text>
             </memo-input>
-            <memo-area label="Descrição" name="description" value="${self.deck.description}"></memo-area>
+            <memo-cover aspect="wide" src="${self.deck.cover}" on="cover/change:attribute/src"></memo-cover>
+            <memo-input label="Nome" name="name" maxlength="64" value="${self.deck.name}" required>
+              <memo-validity state="valueMissing">Nome é obrigatório</memo-validity>
+              <memo-text size="xxxs" color="info">Escolha um nome curto e descritivo para sua coleção.</memo-text>
+            </memo-input>
+            <memo-area label="Descrição" name="description" maxlength="256" value="${self.deck.description}">
+              <memo-text size="xxxs" color="info">Adicione uma breve descrição sobre o conteúdo desta coleção.</memo-text>
+            </memo-area>
             <memo-button width="100%">
               Atualizar coleção
             </memo-button>
