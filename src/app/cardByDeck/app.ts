@@ -56,7 +56,8 @@ class App extends HTMLElement {
   speech() {
     const text =
       this.shadowRoot.querySelector("memo-markdown").shadowRoot.textContent;
-    window.speechSynthesis.speak(new SpeechSynthesisUtterance(text));
+    const untterance = new SpeechSynthesisUtterance(text);
+    window.speechSynthesis.speak(untterance);
     return this;
   }
 
