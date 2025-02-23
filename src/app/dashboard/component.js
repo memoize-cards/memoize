@@ -1,3 +1,4 @@
+import "./header";
 import "./study";
 
 import { html } from "standard/dom";
@@ -6,14 +7,7 @@ import image from "./image.svg";
 
 function component(self) {
   return html`
-    <memo-header>
-      <memo-logo slot="leading"></memo-logo>
-      <memo-button slot="trailing" id="createDeck" variant="ghost" width="100%">
-        <memo-icon color="currentColor" use="add"></memo-icon>
-        Criar coleção
-        <memo-redirect href="${urlFor("createDeck")}" on="createDeck/click:method/go"></memo-redirect>
-      </memo-button>
-    </memo-header>
+    <memo-dashboard-header></memo-dashboard-header>
     <memo-main>
       <app>
         <memo-stack direction="column" align="center">
