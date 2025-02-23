@@ -58,7 +58,10 @@ function component(self) {
       </empty>
     </memo-main>
     <memo-footer>
-      <memo-link slot="trailing" size="xxxs" href="${urlFor("signOut")}">Sair</memo-link>
+      <memo-button id="goToSignOut" variant="link" slot="trailing">
+        Sair
+        <memo-redirect href="${urlFor("signOut")}" on="goToSignOut/click:method/go"></memo-redirect>
+      </memo-button>
     </memo-footer>
   `;
 }
