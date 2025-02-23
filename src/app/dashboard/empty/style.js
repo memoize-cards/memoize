@@ -2,16 +2,15 @@ import { css } from "standard/dom";
 
 function style(self) {
   return css`
-    app {
+    :host {
       align-items: center;
-      box-sizing: border-box;
-      display: flex;
+      display: ${self.decks.length ? "none" : "flex"};
       flex-direction: column;
       gap: var(--spacing_inset-lg);
-      justify-content: start;
+      justify-content: center;
       margin: 0 auto;
-      max-width: 1024;
-      padding: var(--spacing_inset-md) 0;
+      max-width: 426px;
+      min-height: calc(100svh - (144px + 32px));
       width: 100%;
     }
   `;
