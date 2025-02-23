@@ -16,6 +16,7 @@ class Input extends Echo(HTMLElement) {
   #inputMode;
   #internals;
   #label;
+  #maxlength;
   #name;
   #placeholder;
   #required;
@@ -54,6 +55,16 @@ class Input extends Echo(HTMLElement) {
   @repaint
   set label(value) {
     this.#label = value;
+  }
+
+  get maxlength() {
+    return this.#maxlength;
+  }
+
+  @attributeChanged("maxlength")
+  @repaint
+  set maxlength(value) {
+    this.#maxlength = value;
   }
 
   get name() {

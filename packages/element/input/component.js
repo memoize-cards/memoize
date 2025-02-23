@@ -13,6 +13,7 @@ function component(self) {
       placeholder="${self.placeholder}"
       type="${self.type}"
       value="${self.value}"
+      ${self.maxlength ? `maxlength="${self.maxlength}"` : ""}
       ${self.required ? "required" : ""}
     />
     <slot></slot>

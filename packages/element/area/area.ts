@@ -21,6 +21,7 @@ class Area extends Echo(HTMLElement) {
   #controller;
   #internals;
   #label;
+  #maxlength;
   #name;
   #placeholder;
   #required;
@@ -48,6 +49,16 @@ class Area extends Echo(HTMLElement) {
   @repaint
   set label(value) {
     this.#label = value;
+  }
+
+  get maxlength() {
+    return this.#maxlength;
+  }
+
+  @attributeChanged("maxlength")
+  @repaint
+  set maxlength(value) {
+    this.#maxlength = value;
   }
 
   get name() {

@@ -10,6 +10,7 @@ function component(self) {
       id="${self.name}"
       name="${self.name}"
       placeholder="${self.placeholder}"
+      ${self.maxlength ? `maxlength="${self.maxlength}"` : ""}
       ${self.required ? "required" : ""}
     >${self.value}</textarea>
     <slot></slot>
