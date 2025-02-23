@@ -9,7 +9,7 @@ function style() {
         align-items: start;
         display: flex;
         flex-direction: column;
-        gap: var(--spacing_inset-xs);
+        gap: var(--spacing_inset-md);
         width: 100%;
       }
     }
