@@ -8,15 +8,29 @@ function style(self) {
       border-radius: var(--border-radius-sm);
       box-sizing: border-box;
       display: flex;
+      flex-direction: column;
       gap: var(--spacing_inset-xs);
       justify-content: center;
       padding: var(--spacing_inset-xs);
       width: 100%;
+
+      @media (width > 595px) {
+        flex-direction: row;
+        padding-right: var(--spacing_inset-md);
+      }
       
       img {
         aspect-ratio: 1 / 1;
         height: 120px;
         width: 120px;
+      }
+
+      memo-button {
+        width: 100%;
+
+        @media (width > 595px) {
+          width: 200px;
+        }
       }
     }
   `;

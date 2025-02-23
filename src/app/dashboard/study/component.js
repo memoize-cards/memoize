@@ -6,27 +6,25 @@ import imageFull from "./image-full.svg";
 function component(self) {
   return self.total
     ? html`
-      <img src="${imageFull}" alt="Memoize" loading="auto" />
-      <memo-stack direction="column">
-        <memo-stack direction="column" spacing="">
+      <memo-stack align="center">
+        <img src="${imageFull}" alt="Memoize" loading="auto" />
+        <memo-stack direction="column" spacing="none">
           <memo-text family="highlight" size="sm" color="master-darker" weight="bold">Você tem revisões!</memo-text>
-          <memo-text>${self.total} revisões aguardando você</memo-text>
+          <memo-text>Há <strong>${self.total}</strong> revisões aguardando você.</memo-text>
         </memo-stack>
-        <memo-button id="goToDeck">
-          Revisar agora
-          <memo-redirect href="${urlFor("card")}" on="goToDeck/click:method/go"></memo-redirect>
-        </memo-button>
       </memo-stack>
+      <memo-button id="goToDeck">
+        Revisar agora
+        <memo-redirect href="${urlFor("card")}" on="goToDeck/click:method/go"></memo-redirect>
+      </memo-button>
     `
     : html`
       <img src="${imageEmpty}" alt="Memoize" loading="auto" />
-      <memo-stack direction="column">
-        <memo-stack direction="column" spacing="">
-          <memo-text family="highlight" size="sm" color="master-darker" weight="bold">Estudo concluído</memo-text>
-          <memo-text>Volte em ${self.time} para continuar seu aprendizado.</memo-text>
-        </memo-stack>
+      <memo-stack direction="column" spacing="none">
+        <memo-text family="highlight" size="sm" color="master-darker" weight="bold">Estudo concluído</memo-text>
+        <memo-text>Volte em <strong>${self.time}</strong> para continuar seu aprendizado.</memo-text>
       </memo-stack>
-    `;
+  `;
 }
 
 export default component;
