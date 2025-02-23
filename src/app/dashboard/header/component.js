@@ -11,7 +11,7 @@ function component() {
         <memo-redirect href="${urlFor("createDeck")}" on="createDeck/click:method/go"></memo-redirect>
       </memo-button>
     </memo-header>
-    `;
+  `;
 }
 
 export default component;
