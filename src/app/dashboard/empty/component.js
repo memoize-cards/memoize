@@ -4,7 +4,7 @@ import image from "./image.svg";
 
 function component() {
   return html`
-    <memo-stack direction="column" spacing="nano">
+    <memo-stack direction="column" spacing="nano" align="center">
       <memo-text color="master-darker" family="highlight" size="lg" weight="bold" align="center">Pronto para começar?</memo-text>
       <memo-text align="center">Para começar a estudar, vamos criar sua primeira coleção de estudo</memo-text>
     </memo-stack>

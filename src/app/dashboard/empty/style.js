@@ -10,7 +10,6 @@ function style(self) {
       justify-content: center;
       margin: 0 auto;
       max-width: 426px;
-      min-height: calc(100svh - (144px + 32px));
       width: 100%;
     }
   `;

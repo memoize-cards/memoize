@@ -18,7 +18,7 @@ class Study extends HTMLElement {
   }
 
   get time() {
-    return timeUntilReview(this.#card?.validity);
+    return timeUntilReview(this.#card.validity);
   }
 
   get total() {
