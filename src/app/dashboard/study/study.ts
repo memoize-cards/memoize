@@ -13,16 +13,16 @@ class Study extends HTMLElement {
   #card;
   #user;
 
-  get hidden() {
-    return this.time === "" && this.total === 0;
+  get shouldHide() {
+    return this.nextReviewIn === "" && this.pendingCards === 0;
   }
 
-  get time() {
-    return timeUntilReview(this.#card.validity);
+  get nextReviewIn() {
+    return timeUntilReview(this.#card.nextReviewDate);
   }
 
-  get total() {
-    return this.#card.total;
+  get pendingCards() {
+    return this.#card.totalReviewCards;
   }
 
   constructor() {

@@ -1,7 +1,6 @@
 import { css } from "standard/dom";
 
 function style(self) {
-  console.log(self.total);
   return css`
     :host {
       --relearn: ${self.relearn};

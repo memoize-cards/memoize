@@ -1,29 +1,40 @@
 import Validity from "./validity";
 
 class Card {
-  #data;
+  #nextReviewDate;
+  #totalReviewCards;
 
-  get validity() {
-    return this.#data[0]?.validity;
+  get nextReviewDate() {
+    return (this.#nextReviewDate ??= 0);
   }
 
-  get total() {
-    return this.#data.length;
+  get totalReviewCards() {
+    return (this.#totalReviewCards ??= 0);
   }
 
-  constructor(data) {
-    this.#data = data;
+  constructor(totalReviewCards, nextReviewDate) {
+    this.#totalReviewCards = totalReviewCards;
+    this.#nextReviewDate = nextReviewDate;
   }
 
   static async from(userId) {
     const { default: supabase } = await import("artifact/supabase");
-    const { data: cards } = await supabase
+
+    const { count: totalReviewCards } = await supabase
+      .from("card")
+      .select("id", { count: "exact", head: true })
+      .eq("user_id", userId)
+      .lte("validity", Validity.expired);
+
+    const { data: nextCard } = await supabase
       .from("card")
       .select("validity")
       .eq("user_id", userId)
-      .lte("validity", Validity.expired)
-      .order("validity", { ascending: true });
-    return new Card(cards);
+      .order("validity", { ascending: true })
+      .limit(1)
+      .single();
+
+    return new Card(totalReviewCards, nextCard?.validity);
   }
 }
 
