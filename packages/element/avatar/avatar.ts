@@ -71,7 +71,7 @@ class Avatar extends HTMLElement {
   }
 
   get total() {
-    return this.learn + this.relearn + this.review;
+    return Number(this.learn + this.relearn + this.review);
   }
 
   constructor() {
