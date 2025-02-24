@@ -34,8 +34,13 @@ class App extends HTMLElement {
   @on.click("#easy", stop)
   @repaint
   async easy() {
-    console.log("asdf");
     await this.#card.easy();
+    return this;
+  }
+
+  @on.click(":host #goBack")
+  goBack() {
+    params.deck ? Navigate.goToDeck(params.deck) : Navigate.goToDashboard();
     return this;
   }
 
@@ -65,10 +70,12 @@ class App extends HTMLElement {
   @willPaint
   async [hydrate]() {
     this.#user = await User.logged();
-    this.#card = await Card.from(this.#user.id);
+    this.#card = await Card.from(params.deck, this.#user.id);
 
     if (!this.#card.id) {
-      Navigate.goToStudyCompleted();
+      params.deck
+        ? Navigate.goToStudyCompletedOfDeck(params.deck)
+        : Navigate.goToStudyCompleted();
     }
 
     return this;

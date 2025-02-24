@@ -38,7 +38,7 @@ class Study extends HTMLElement {
 
   @on.click(":host button", stop)
   click() {
-    Navigate.goToCardByDeck(this.#deckId);
+    Navigate.goToCardOfDeck(this.#deckId);
     return this;
   }
 
