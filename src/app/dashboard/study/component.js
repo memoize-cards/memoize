@@ -20,12 +20,12 @@ function component(self) {
     `;
   }
 
-  if (self.time) {
+  if (self.validity) {
     return html`
       <img src="${imageEmpty}" alt="Memoize" loading="auto" />
       <memo-stack direction="column" spacing="none">
         <memo-text family="highlight" size="sm" color="master-darker" weight="bold">Estudo concluído</memo-text>
-        <memo-text>Volte em <strong>${self.time}</strong> para continuar seu aprendizado.</memo-text>
+        <memo-text>Volte em <strong>${self.validity}</strong> para continuar seu aprendizado.</memo-text>
       </memo-stack>
     `;
   }
