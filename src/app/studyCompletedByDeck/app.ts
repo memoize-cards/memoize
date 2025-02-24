@@ -4,7 +4,7 @@ import { params } from "standard/router";
 import component from "./component";
 import style from "./style";
 
-@define("memo-study-completed")
+@define("memo-study-completed-by-deck")
 @paint(component, style)
 class App extends HTMLElement {
   get deck() {

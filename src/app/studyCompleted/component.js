@@ -1,4 +1,5 @@
 import { html } from "standard/dom";
+import { urlFor } from "standard/router";
 import image from "./image.svg";
 
 function component(self) {

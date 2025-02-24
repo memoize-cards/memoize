@@ -41,7 +41,7 @@ function component(self) {
           </memo-stack>
         </cards>
         <empty>
-          <memo-stack direction="column" spacing="nano">
+          <memo-stack direction="column" spacing="nano" align="center">
             <memo-text color="master-darker" family="highlight" size="lg" weight="bold" align="center">Crie sua primeira revisão</memo-text>
             <memo-text align="center">Para começar a estudar, vamos criar sua primeira revisão</memo-text>
           </memo-stack>
