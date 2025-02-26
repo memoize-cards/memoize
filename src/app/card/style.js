@@ -18,6 +18,16 @@ function style(self) {
       margin: 0 auto;
       max-width: 426px;
     }
+
+    memo-box {
+      position: relative;
+
+      #speech {
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+    }
   `;
 }
 

@@ -22,14 +22,16 @@ async function component(self) {
           <memo-info>Use este momento para testar seu conhecimento antes de revelar a resposta</memo-info>
         </memo-stack>
         <memo-stack direction="column" hidden on="reveal/click:attribute/hidden|not">
-          <memo-markdown>
-            <template>
-              ${await self.card.back}
-            </template>
-          </memo-markdown>
-          <memo-stack justify="end">
-            <memo-button id="speech" variant="link">Ouvir</memo-button>
-          </memo-stack>
+          <memo-box>
+            <memo-markdown>
+              <template>
+                ${await self.card.back}
+              </template>
+            </memo-markdown>
+            <memo-button id="speech" variant="link">
+              <memo-icon use="textToSpeech"></memo-icon>
+            </memo-button>
+          </memo-box>
           <memo-text size="xs" family="highlight" color="master-darker">Você conseguiu se lembrar?</memo-text>
           <memo-answer>
             <memo-button id="easy" color="complete">Sim</memo-button>

@@ -3,6 +3,7 @@ const medias = {
   arrowBack: () => import("./arrowBack"),
   language: () => import("./language"),
   settings: () => import("./settings"),
+  textToSpeech: () => import("./textToSpeech"),
 };
 
 export default medias;

@@ -1,6 +1,7 @@
 import "./answer";
 import "./area";
 import "./avatar";
+import "./box";
 import "./button";
 import "./chart";
 import "./cover";
