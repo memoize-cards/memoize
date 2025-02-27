@@ -34,6 +34,7 @@ async function component(self) {
               <memo-button id="hard" color="warning">Parcialmente</memo-button>
               <memo-button id="again" color="danger">Não</memo-button>
             </memo-answer>
+            <memo-info>Isso ajuda a medir sua compreensão e memória do assunto.</memo-info>
           </memo-stack>
         </memo-stack>
       </app>
