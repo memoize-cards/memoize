@@ -10,11 +10,7 @@ function component() {
           </slot>
         </leading>
         <trailing>
-          <slot name="trailing">
-            <memo-button slot="trailing" variant="link">
-              <memo-icon use="language"></memo-icon>
-            </memo-button>
-          </slot>
+          <slot name="trailing"></slot>
         </trailing>
       </container>
     </footer>

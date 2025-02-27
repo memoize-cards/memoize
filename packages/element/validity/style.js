@@ -8,6 +8,7 @@ function style() {
       font-family: var(--font-family-base);
       font-size: var(--font-size-xxs);
       font-weight: var(--font-weight-regular);
+      letter-spacing: 0.5px;
       line-height: var(--line-height-lg);
       transition: all 0.2s ease-out;
     }

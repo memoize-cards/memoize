@@ -38,12 +38,6 @@ class App extends HTMLElement {
     return this;
   }
 
-  @on.click(":host #goBack")
-  goBack() {
-    params.deck ? Navigate.goToDeck(params.deck) : Navigate.goToDashboard();
-    return this;
-  }
-
   @on.click("#good", stop)
   @repaint
   async good() {

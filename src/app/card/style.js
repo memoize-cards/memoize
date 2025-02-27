@@ -14,11 +14,6 @@ function style(self) {
       width: 100%;
     }
 
-    #splash {
-      margin: 0 auto;
-      max-width: 426px;
-    }
-
     memo-box {
       position: relative;
 

@@ -7,10 +7,11 @@ function style() {
       color: var(--color-master-dark);
       display: flex;
       font-family: var(--font-family-base);
-      font-size: var(--font-size-xxxs);
+      font-size: var(--font-size-xxs);
       font-weight: var(--font-weight-regular);
       flex-direction: column;
       gap: var(--spacing_inset-xs);
+      letter-spacing: 0.5px;
       line-height: var(--line-height-xl);
       margin: 0;
       overflow-x: hidden;
