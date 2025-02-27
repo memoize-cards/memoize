@@ -3,7 +3,6 @@ import "./splash";
 
 import { html } from "standard/dom";
 import { urlFor } from "standard/router";
-import image from "./image.svg";
 
 async function component(self) {
   return html`
