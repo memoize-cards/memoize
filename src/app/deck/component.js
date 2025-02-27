@@ -46,9 +46,9 @@ function component(self) {
             <memo-text align="center">Para começar a estudar, vamos criar sua primeira revisão</memo-text>
           </memo-stack>
           <img alt="Memoize" src="${image}" loading="lazy" />
-          <memo-button id="createFirstDeck" width="100%">
+          <memo-button id="createFirstCard" width="100%">
             Criar revisão
-            <memo-redirect href="${urlFor("createCard", { deck: self.deck.id })}" on="createFirstDeck/click:method/go"></memo-redirect>
+            <memo-redirect href="${urlFor("createCard", { deck: self.deck.id })}" on="createFirstCard/click:method/go"></memo-redirect>
           </memo-button>
         </empty>
       </app>
