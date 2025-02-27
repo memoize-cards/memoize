@@ -11,7 +11,7 @@ function style() {
       font-weight: var(--font-weight-regular);
       flex-direction: column;
       gap: var(--spacing_inset-xs);
-      letter-spacing: 0.5px;
+      letter-spacing: 0.38px;
       line-height: var(--line-height-xl);
       margin: 0;
       overflow-x: hidden;

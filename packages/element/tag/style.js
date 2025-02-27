@@ -17,7 +17,7 @@ function style(self) {
         font-weight: var(--font-weight-medium);
         gap: var(--spacing_inset-nano);
         justify-content: center;
-        letter-spacing: 0.5px;
+        letter-spacing: 0.38px;
         line-height: var(--line-height-default);
         padding: var(--spacing_inset-quarck) var(--spacing_inset-nano);
         position: relative;

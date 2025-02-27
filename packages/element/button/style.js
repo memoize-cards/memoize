@@ -20,7 +20,7 @@ function style(self) {
         gap: var(--spacing_inset-nano);
         height: 42px;
         justify-content: center;
-        letter-spacing: 0.5px;
+        letter-spacing: 0.38px;
         line-height: var(--line-height-default);
         min-width: 42px;
         padding: 0 var(--spacing_inset-xs);

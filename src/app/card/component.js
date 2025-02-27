@@ -11,7 +11,7 @@ async function component(self) {
       <app>
         <memo-stack direction="column" spacing="quarck" align="start">
           <memo-text size="xxxs">${self.card.deck.name}</memo-text>
-          <memo-text size="md" family="highlight" color="master-darker">${await self.card.front}</memo-text>
+          <memo-text size="sm" family="highlight" color="master-darker">${await self.card.front}</memo-text>
           <memo-tag color="${self.card.type.color}">${self.card.type.value}</memo-tag>
         </memo-stack>
         <memo-card-splash></memo-card-splash>
