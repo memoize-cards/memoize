@@ -18,8 +18,7 @@ class App extends HTMLElement {
   @on.submit("m-form", stop, detail)
   async create(data) {
     const user = await User.logged();
-    const deck = Deck.from(data, user.id);
-    await deck.create();
+    const deck = await Deck.create(data, user.id);
     Navigate.goToDeck(deck.id);
     return this;
   }

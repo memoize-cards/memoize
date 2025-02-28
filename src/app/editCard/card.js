@@ -1,3 +1,5 @@
+import { params } from "standard/router";
+
 class Card {
   #data;
 
@@ -17,42 +19,24 @@ class Card {
     this.#data = data;
   }
 
-  merge(data) {
-    this.#data = { ...this.#data, ...data };
-    return this;
-  }
-
-  async delete() {
-    const { default: supabase } = await import("artifact/supabase");
-    await supabase
-      .from("card")
-      .delete()
-      .eq("id", this.#data.id)
-      .eq("user_id", this.#data.user_id);
-    this.#data = {};
-    return this;
-  }
-
-  async update() {
+  async update(data) {
     const { default: supabase } = await import("artifact/supabase");
     const { data: card } = await supabase
       .from("card")
-      .update(this.#data)
-      .eq("id", this.#data.id)
-      .eq("user_id", this.#data.user_id)
+      .update(data)
+      .eq("id", this.id)
       .select()
       .single();
     this.#data = card;
     return this;
   }
 
-  static async from(cardId, userId) {
+  static async current() {
     const { default: supabase } = await import("artifact/supabase");
     const { data: card } = await supabase
       .from("card")
       .select("id, back, front, user_id")
-      .eq("id", cardId)
-      .eq("user_id", userId)
+      .eq("id", params.card)
       .single();
     return new Card(card);
   }

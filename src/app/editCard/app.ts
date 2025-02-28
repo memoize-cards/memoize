@@ -1,26 +1,19 @@
 import { define } from "directive";
 import { paint, willPaint } from "standard/dom";
 import on, { detail, stop } from "standard/event";
-import { params } from "standard/router";
 import Card from "./card";
 import component from "./component";
 import { hydrate } from "./interfaces";
 import Navigate from "./navigate";
 import style from "./style";
-import User from "./user";
 
 @define("m-edit-card")
 @paint(component, style)
 class App extends HTMLElement {
   #card;
-  #user;
 
   get card() {
     return (this.#card ??= {});
-  }
-
-  get deck() {
-    return params.deck;
   }
 
   constructor() {
@@ -28,24 +21,16 @@ class App extends HTMLElement {
     this.attachShadow({ mode: "open" });
   }
 
-  @on.click("#deleteCard", stop)
-  async delete() {
-    await this.#card.delete();
-    Navigate.goToDeck(this.deck);
-    return this;
-  }
-
   @on.submit("m-form", stop, detail)
   async update(data) {
-    await this.#card.merge(data).update();
-    Navigate.goToDeck(this.deck);
+    await this.card.update(data);
+    Navigate.goToDeck();
     return this;
   }
 
   @willPaint
   async [hydrate]() {
-    this.#user = await User.logged();
-    this.#card = await Card.from(params.card, this.#user.id);
+    this.#card = await Card.current();
     return this;
   }
 }

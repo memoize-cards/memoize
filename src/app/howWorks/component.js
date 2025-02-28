@@ -1,14 +1,10 @@
+import "./header";
 import { html } from "standard/dom";
 import { urlFor } from "standard/router";
 
 function component(self) {
   return html`
-    <m-header>
-      <m-button id="backToDashboard" variant="link" slot="leading">
-        <m-icon use="arrowBack"></m-icon>
-        <m-redirect href="${urlFor("dashboard")}" on="backToDashboard/click:method/go"></m-redirect>
-      </m-button>
-    </m-header>
+    <m-how-works-header></m-how-works-header>
     <m-main>
       <app>
         <m-text color="master-darker" size="md" weight="bold" family="highlight" align="center">
@@ -50,12 +46,7 @@ function component(self) {
         </m-button>
       </app>
     </m-main>
-    <m-footer>
-      <m-text slot="leading" color="master-dark">© 2024 Memoize. Todos os direitos reservados.</m-text>
-      <m-button slot="trailing" variant="link">
-        <m-icon use="language"></m-icon>
-      </m-button>
-    </m-footer>
+    <m-footer></m-footer>
   `;
 }
 

@@ -64,6 +64,16 @@ function style(self) {
         color: var(--color-${self.color});
       }
     }
+
+    :host(:state(icon)) {
+      button {
+        background-color: transparent;
+        border: var(--border-width-hairline) solid transparent;
+        color: var(--color-${self.color});
+        padding: 0;
+        width: 42px;
+      }
+    }
   `;
 }
 

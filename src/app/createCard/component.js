@@ -1,14 +1,9 @@
+import "./header";
 import { html } from "standard/dom";
-import { urlFor } from "standard/router";
 
-function component(self) {
+function component() {
   return html`
-    <m-header>
-      <m-button id="backToDeck" variant="link" slot="leading">
-        <m-icon use="arrowBack"></m-icon>
-        <m-redirect href="${urlFor("deck", { deck: self.deck.id })}" on="backToDeck/click:method/go"></m-redirect>
-      </m-button>
-    </m-header>
+    <m-create-card-header></m-create-card-header>
     <m-main>
       <app>
         <m-text color="master-darker" size="md" weight="bold" family="highlight">

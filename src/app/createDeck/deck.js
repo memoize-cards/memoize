@@ -9,22 +9,18 @@ class Deck {
     this.#data = data;
   }
 
-  async create() {
+  static async create(data, userId) {
+    const payload = {
+      ...data,
+      user_id: userId,
+    };
     const { default: supabase } = await import("artifact/supabase");
     const { data: deck } = await supabase
       .from("deck")
-      .insert([this.#data])
+      .insert([payload])
       .select()
       .single();
-    this.#data = deck;
-    return this;
-  }
-
-  static from(data, userId) {
-    return new Deck({
-      ...data,
-      user_id: userId,
-    });
+    return new Deck(deck);
   }
 }
 

@@ -1,8 +1,6 @@
 import "./header";
 import "./splash";
-
 import { html } from "standard/dom";
-import { urlFor } from "standard/router";
 
 async function component(self) {
   return html`

@@ -1,39 +1,21 @@
+import { params } from "standard/router";
 import Interval from "./interval";
 import Type from "./type";
 import Validity from "./validity";
 
-class Card {
-  #data;
-
-  get id() {
-    return this.#data.id;
-  }
-
-  constructor(data) {
-    this.#data = data;
-  }
-
-  async create() {
-    const { default: supabase } = await import("artifact/supabase");
-    const { data: card } = await supabase
-      .from("card")
-      .insert([this.#data])
-      .select()
-      .single();
-    this.#data = card;
-    return this;
-  }
-
-  static from(data, deckId, userId) {
-    return new Card({
+const Card = {
+  async create(data, userId) {
+    const payload = {
       ...data,
-      deck: deckId,
+      deck: params.deck,
       interval: Interval.oneMinute,
       type: Type.LEARN,
       user_id: userId,
       validity: Validity.now,
-    });
-  }
-}
+    };
+    const { default: supabase } = await import("artifact/supabase");
+    return supabase.from("card").insert([payload]);
+  },
+};
 
 export default Card;

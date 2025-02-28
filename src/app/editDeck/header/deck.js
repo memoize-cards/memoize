@@ -17,7 +17,7 @@ class Deck {
 
   async delete() {
     const { default: supabase } = await import("artifact/supabase");
-    await supabase.from("deck").delete().eq("id", params.deck);
+    await supabase.from("deck").delete().eq("id", this.id);
     this.#data = {};
     return this;
   }

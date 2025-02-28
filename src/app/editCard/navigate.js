@@ -1,8 +1,8 @@
-import { urlFor } from "standard/router";
+import { params, urlFor } from "standard/router";
 
 const Navigate = {
-  goToDeck(deckId) {
-    history.pushState({}, "", urlFor("deck", { deck: deckId }));
+  goToDeck() {
+    history.pushState({}, "", urlFor("deck", params));
     return this;
   },
 };
