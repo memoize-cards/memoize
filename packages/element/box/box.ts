@@ -3,7 +3,7 @@ import { paint, repaint } from "standard/dom";
 import component from "./component";
 import style from "./style";
 
-@define("memo-box")
+@define("m-box")
 @paint(component, style)
 class Box extends HTMLElement {
   #background;

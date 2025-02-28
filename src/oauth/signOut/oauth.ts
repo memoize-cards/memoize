@@ -6,7 +6,7 @@ import component from "./component";
 import Navigate from "./navigate";
 import User from "./user";
 
-@define("memo-sign-out")
+@define("m-sign-out")
 @paint(component, style)
 class OAuth extends HTMLElement {
   constructor() {

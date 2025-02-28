@@ -6,7 +6,7 @@ import component from "./component";
 import { setState } from "./interfaces";
 import style from "./style";
 
-@define("memo-validity")
+@define("m-validity")
 @paint(component, style)
 class Validity extends HTMLElement {
   #internals;

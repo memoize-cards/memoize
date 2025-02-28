@@ -6,7 +6,7 @@ import Navigate from "./navigate";
 import style from "./style";
 import User from "./user";
 
-@define("memo-site")
+@define("m-site")
 @paint(component, style)
 class Site extends HTMLElement {
   constructor() {

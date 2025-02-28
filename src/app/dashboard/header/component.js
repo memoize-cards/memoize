@@ -3,14 +3,14 @@ import { urlFor } from "standard/router";
 
 function component() {
   return html`
-    <memo-header>
-      <memo-logo slot="leading"></memo-logo>
-      <memo-button slot="trailing" id="createDeck" variant="ghost" width="100%">
-        <memo-icon color="currentColor" use="add"></memo-icon>
+    <m-header>
+      <m-logo slot="leading"></m-logo>
+      <m-button slot="trailing" id="createDeck" variant="ghost" width="100%">
+        <m-icon color="currentColor" use="add"></m-icon>
         Criar coleção
-        <memo-redirect href="${urlFor("createDeck")}" on="createDeck/click:method/go"></memo-redirect>
-      </memo-button>
-    </memo-header>
+        <m-redirect href="${urlFor("createDeck")}" on="createDeck/click:method/go"></m-redirect>
+      </m-button>
+    </m-header>
   `;
 }
 

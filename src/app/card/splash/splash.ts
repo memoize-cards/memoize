@@ -6,7 +6,7 @@ import component from "./component";
 import { setDisplay } from "./interfaces";
 import style from "./style";
 
-@define("memo-card-splash")
+@define("m-card-splash")
 @paint(component, style)
 class Splash extends Echo(HTMLElement) {
   constructor() {
@@ -14,7 +14,7 @@ class Splash extends Echo(HTMLElement) {
     this.attachShadow({ mode: "open" });
   }
 
-  @on.click("memo-button", stop)
+  @on.click("m-button", stop)
   @dispatchEvent("hide")
   [setDisplay]() {
     this.style.setProperty("display", "none");

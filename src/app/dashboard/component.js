@@ -9,16 +9,16 @@ import { html } from "standard/dom";
 
 function component() {
   return html`
-    <memo-dashboard-header></memo-dashboard-header>
-    <memo-main>
+    <m-dashboard-header></m-dashboard-header>
+    <m-main>
       <app>
-        <memo-dashboard-profile></memo-dashboard-profile>
-        <memo-dashboard-study></memo-dashboard-study>
-        <memo-dashboard-shelf></memo-dashboard-shelf>
-        <memo-dashboard-empty></memo-dashboard-empty>
+        <m-dashboard-profile></m-dashboard-profile>
+        <m-dashboard-study></m-dashboard-study>
+        <m-dashboard-shelf></m-dashboard-shelf>
+        <m-dashboard-empty></m-dashboard-empty>
       </app>      
-    </memo-main>
-    <memo-dashboard-footer></memo-dashboard-footer>
+    </m-main>
+    <m-dashboard-footer></m-dashboard-footer>
   `;
 }
 

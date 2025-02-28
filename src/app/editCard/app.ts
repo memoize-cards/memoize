@@ -9,7 +9,7 @@ import Navigate from "./navigate";
 import style from "./style";
 import User from "./user";
 
-@define("memo-edit-card")
+@define("m-edit-card")
 @paint(component, style)
 class App extends HTMLElement {
   #card;
@@ -35,7 +35,7 @@ class App extends HTMLElement {
     return this;
   }
 
-  @on.submit("memo-form", stop, detail)
+  @on.submit("m-form", stop, detail)
   async update(data) {
     await this.#card.merge(data).update();
     Navigate.goToDeck(this.deck);

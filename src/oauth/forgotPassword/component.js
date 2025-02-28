@@ -3,34 +3,34 @@ import { args, urlFor } from "standard/router";
 
 function component() {
   return html`
-    <memo-header>
-      <memo-button id="backToForgotPassword" variant="link" slot="leading">
-        <memo-icon use="arrowBack"></memo-icon>
-        <memo-redirect href="${urlFor("signIn")}" on="backToForgotPassword/click:method/go"></memo-redirect>
-      </memo-button>
-    </memo-header>
-    <memo-main>
+    <m-header>
+      <m-button id="backToForgotPassword" variant="link" slot="leading">
+        <m-icon use="arrowBack"></m-icon>
+        <m-redirect href="${urlFor("signIn")}" on="backToForgotPassword/click:method/go"></m-redirect>
+      </m-button>
+    </m-header>
+    <m-main>
       <oauth>
-        <memo-logo></memo-logo>
-        <memo-stack direction="column" spacing="nano" align="center">
-          <memo-text color="master-darker" family="highlight" size="lg" weight="bold" align="center">Esqueceu a senha?</memo-text>
-          <memo-text align="center">Não se preocupe! Enviaremos instruções de redefinição para o seu e-mail abaixo:</memo-text>
-        </memo-stack>
-        <memo-form>
+        <m-logo></m-logo>
+        <m-stack direction="column" spacing="nano" align="center">
+          <m-text color="master-darker" family="highlight" size="lg" weight="bold" align="center">Esqueceu a senha?</m-text>
+          <m-text align="center">Não se preocupe! Enviaremos instruções de redefinição para o seu e-mail abaixo:</m-text>
+        </m-stack>
+        <m-form>
           <template>
-            <memo-input label="E-mail" name="email" type="email" required>
-              <memo-validity state="typeMismatch">E-mail inválido</memo-validity>
-              <memo-validity state="valueMissing">E-mail é obrigatório</memo-validity>
-            </memo-input>
-            <memo-button width="100%">Redefinir senha</memo-button>
+            <m-input label="E-mail" name="email" type="email" required>
+              <m-validity state="typeMismatch">E-mail inválido</m-validity>
+              <m-validity state="valueMissing">E-mail é obrigatório</m-validity>
+            </m-input>
+            <m-button width="100%">Redefinir senha</m-button>
           </template>
-        </memo-form>
-        <memo-stack direction="column" align="center">
-          <memo-link href="${urlFor("signIn")}">Voltar para a tela de login</memo-link>
-        </memo-stack>
+        </m-form>
+        <m-stack direction="column" align="center">
+          <m-link href="${urlFor("signIn")}">Voltar para a tela de login</m-link>
+        </m-stack>
       </oauth>
-    </memo-main>
-    <memo-footer></memo-footer>
+    </m-main>
+    <m-footer></m-footer>
   `;
 }
 

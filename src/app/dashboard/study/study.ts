@@ -7,7 +7,7 @@ import style from "./style";
 import timeUntilReview from "./timeUntilReview";
 import User from "./user";
 
-@define("memo-dashboard-study")
+@define("m-dashboard-study")
 @paint(component, style)
 class Study extends HTMLElement {
   #card;

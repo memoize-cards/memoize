@@ -4,47 +4,47 @@ import logo from "./google.svg";
 
 function component() {
   return html`
-    <memo-header>
-      <memo-button id="backToSite" variant="link" slot="leading">
-        <memo-icon use="arrowBack"></memo-icon>
-        <memo-redirect href="${urlFor("site")}" on="backToSite/click:method/go"></memo-redirect>
-      </memo-button>
-    </memo-header>
-    <memo-main>
+    <m-header>
+      <m-button id="backToSite" variant="link" slot="leading">
+        <m-icon use="arrowBack"></m-icon>
+        <m-redirect href="${urlFor("site")}" on="backToSite/click:method/go"></m-redirect>
+      </m-button>
+    </m-header>
+    <m-main>
       <oauth>
-        <memo-logo></memo-logo>
-        <memo-stack direction="column" spacing="nano" align="center">
-          <memo-text color="master-darker" family="highlight" size="lg" weight="bold" align="center">Faça login na sua conta</memo-text>
-          <memo-text align="center">Bem-vindo de volta! Por favor, insira seus dados</memo-text>
-        </memo-stack>
-        <memo-form>
+        <m-logo></m-logo>
+        <m-stack direction="column" spacing="nano" align="center">
+          <m-text color="master-darker" family="highlight" size="lg" weight="bold" align="center">Faça login na sua conta</m-text>
+          <m-text align="center">Bem-vindo de volta! Por favor, insira seus dados</m-text>
+        </m-stack>
+        <m-form>
           <template>
-            <memo-input label="E-mail" name="email" type="email" required>
-              <memo-validity state="typeMismatch">E-mail inválido</memo-validity>
-              <memo-validity state="valueMissing">E-mail é obrigatório</memo-validity>
-            </memo-input>
-            <memo-input label="Senha" name="password" type="password" autocomplete="off" required>
-              <memo-validity state="valueMissing">Senha é obrigatória</memo-validity>
-            </memo-input>
-            <memo-button width="100%">Entrar</memo-button>
+            <m-input label="E-mail" name="email" type="email" required>
+              <m-validity state="typeMismatch">E-mail inválido</m-validity>
+              <m-validity state="valueMissing">E-mail é obrigatório</m-validity>
+            </m-input>
+            <m-input label="Senha" name="password" type="password" autocomplete="off" required>
+              <m-validity state="valueMissing">Senha é obrigatória</m-validity>
+            </m-input>
+            <m-button width="100%">Entrar</m-button>
           </template>
-        </memo-form>
-        <memo-button id="logInWithGoogle" variant="naked" width="100%">
+        </m-form>
+        <m-button id="logInWithGoogle" variant="naked" width="100%">
           <img src="${logo}" alt="Google" loading="lazy" />
           Entrar com Google
-        </memo-button>
-        <memo-stack direction="column" align="center">
-          <memo-link href="${urlFor("forgotPassword")}">Esqueceu a senha?</memo-link>
-          <memo-text align="center">Não tem uma conta? <memo-link href="${urlFor("signUp")}">Criar conta</memo-link></memo-text>
-        </memo-stack>
+        </m-button>
+        <m-stack direction="column" align="center">
+          <m-link href="${urlFor("forgotPassword")}">Esqueceu a senha?</m-link>
+          <m-text align="center">Não tem uma conta? <m-link href="${urlFor("signUp")}">Criar conta</m-link></m-text>
+        </m-stack>
       </oauth>
-    </memo-main>
-    <memo-footer>
-      <memo-text slot="leading">© 2024 Memoize. Todos os direitos reservados.</memo-text>
-      <memo-button slot="trailing" variant="link">
-        <memo-icon use="language"></memo-icon>
-      </memo-button>
-    </memo-footer>
+    </m-main>
+    <m-footer>
+      <m-text slot="leading">© 2024 Memoize. Todos os direitos reservados.</m-text>
+      <m-button slot="trailing" variant="link">
+        <m-icon use="language"></m-icon>
+      </m-button>
+    </m-footer>
   `;
 }
 

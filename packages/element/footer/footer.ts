@@ -3,7 +3,7 @@ import { paint, repaint } from "standard/dom";
 import component from "./component";
 import style from "./style";
 
-@define("memo-footer")
+@define("m-footer")
 @paint(component, style)
 class Footer extends HTMLElement {
   #color;

@@ -3,40 +3,40 @@ import { urlFor } from "standard/router";
 
 function component() {
   return html`
-    <memo-header>
-      <memo-button id="backToSignIn" variant="link" slot="leading">
-        <memo-icon use="arrowBack"></memo-icon>
-        <memo-redirect href="${urlFor("signIn")}" on="backToSignIn/click:method/go"></memo-redirect>
-      </memo-button>
-    </memo-header>
-    <memo-main>
+    <m-header>
+      <m-button id="backToSignIn" variant="link" slot="leading">
+        <m-icon use="arrowBack"></m-icon>
+        <m-redirect href="${urlFor("signIn")}" on="backToSignIn/click:method/go"></m-redirect>
+      </m-button>
+    </m-header>
+    <m-main>
       <oauth>
-        <memo-logo></memo-logo>
-        <memo-stack direction="column" spacing="nano" align="center">
-          <memo-text color="master-darker" family="highlight" size="lg" weight="bold" align="center">Criar uma conta</memo-text>
-          <memo-text align="center">Inicie sua avaliação gratuita</memo-text>
-        </memo-stack>
-        <memo-form>
+        <m-logo></m-logo>
+        <m-stack direction="column" spacing="nano" align="center">
+          <m-text color="master-darker" family="highlight" size="lg" weight="bold" align="center">Criar uma conta</m-text>
+          <m-text align="center">Inicie sua avaliação gratuita</m-text>
+        </m-stack>
+        <m-form>
           <template>
-            <memo-input label="Nome" name="name" required>
-              <memo-validity state="valueMissing">Nome é obrigatório</memo-validity>
-            </memo-input>
-            <memo-input label="Email" name="email" type="email" required>
-              <memo-validity state="typeMismatch">Email inválido</memo-validity>
-              <memo-validity state="valueMissing">Email é obrigatório</memo-validity>
-            </memo-input>
-            <memo-input label="Senha" name="password" type="password" autocomplete="off" required>
-              <memo-validity state="valueMissing">Senha é obrigatória</memo-validity>
-            </memo-input>
-            <memo-button width="100%">Começar</memo-button>
+            <m-input label="Nome" name="name" required>
+              <m-validity state="valueMissing">Nome é obrigatório</m-validity>
+            </m-input>
+            <m-input label="Email" name="email" type="email" required>
+              <m-validity state="typeMismatch">Email inválido</m-validity>
+              <m-validity state="valueMissing">Email é obrigatório</m-validity>
+            </m-input>
+            <m-input label="Senha" name="password" type="password" autocomplete="off" required>
+              <m-validity state="valueMissing">Senha é obrigatória</m-validity>
+            </m-input>
+            <m-button width="100%">Começar</m-button>
           </template>
-        </memo-form>
-        <memo-stack direction="column" align="center">
-          <memo-text align="center">Já tem uma conta? <memo-link href="${urlFor("signIn")}">Entrar</memo-link></memo-text>
-        </memo-stack>
+        </m-form>
+        <m-stack direction="column" align="center">
+          <m-text align="center">Já tem uma conta? <m-link href="${urlFor("signIn")}">Entrar</m-link></m-text>
+        </m-stack>
       </oauth>
-    </memo-main>
-    <memo-footer></memo-footer>
+    </m-main>
+    <m-footer></m-footer>
   `;
 }
 

@@ -9,7 +9,7 @@ import Navigate from "./navigate";
 import style from "./style";
 import User from "./user";
 
-@define("memo-card")
+@define("m-card")
 @paint(component, style)
 class App extends HTMLElement {
   #user;
@@ -55,7 +55,7 @@ class App extends HTMLElement {
   @on.click("#speech", stop)
   speech() {
     const text =
-      this.shadowRoot.querySelector("memo-markdown").shadowRoot.textContent;
+      this.shadowRoot.querySelector("m-markdown").shadowRoot.textContent;
     const untterance = new SpeechSynthesisUtterance(text);
     window.speechSynthesis.speak(untterance);
     return this;

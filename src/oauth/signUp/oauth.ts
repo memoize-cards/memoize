@@ -6,7 +6,7 @@ import on, { detail, stop } from "standard/event";
 import component from "./component";
 import User from "./user";
 
-@define("memo-sign-up")
+@define("m-sign-up")
 @paint(component, style)
 class OAuth extends HTMLElement {
   constructor() {
@@ -14,7 +14,7 @@ class OAuth extends HTMLElement {
     this.attachShadow({ mode: "open" });
   }
 
-  @on.submit(":host memo-form", stop, detail)
+  @on.submit(":host m-form", stop, detail)
   async create(data) {
     const user = await User.signUp(data);
     user && Navigate.goToDashboard();

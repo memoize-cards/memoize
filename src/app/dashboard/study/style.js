@@ -25,7 +25,7 @@ function style(self) {
         width: 120px;
       }
 
-      memo-button {
+      m-button {
         width: 100%;
 
         @media (width > 595px) {

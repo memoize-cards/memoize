@@ -8,7 +8,7 @@ import Navigate from "./navigate";
 import style from "./style";
 import timeUntilReview from "./timeUntilReview";
 
-@define("memo-study")
+@define("m-study")
 @paint(component, style)
 class Study extends HTMLElement {
   #card;

@@ -6,27 +6,27 @@ import imageFull from "./image-full.svg";
 function component(self) {
   if (self.pendingCards) {
     return html`
-      <memo-stack align="center">
+      <m-stack align="center">
         <img src="${imageFull}" alt="Memoize" loading="auto" />
-        <memo-stack direction="column" spacing="none">
-          <memo-text family="highlight" size="sm" color="master-darker" weight="bold">Você tem revisões!</memo-text>
-          <memo-text>Há <strong>${self.pendingCards}</strong> revisões aguardando você.</memo-text>
-        </memo-stack>
-      </memo-stack>
-      <memo-button id="goToDeck">
+        <m-stack direction="column" spacing="none">
+          <m-text family="highlight" size="sm" color="master-darker" weight="bold">Você tem revisões!</m-text>
+          <m-text>Há <strong>${self.pendingCards}</strong> revisões aguardando você.</m-text>
+        </m-stack>
+      </m-stack>
+      <m-button id="goToDeck">
         Revisar agora
-        <memo-redirect href="${urlFor("card")}" on="goToDeck/click:method/go"></memo-redirect>
-      </memo-button>
+        <m-redirect href="${urlFor("card")}" on="goToDeck/click:method/go"></m-redirect>
+      </m-button>
     `;
   }
 
   if (self.nextReviewIn) {
     return html`
       <img src="${imageEmpty}" alt="Memoize" loading="auto" />
-      <memo-stack direction="column" spacing="none">
-        <memo-text family="highlight" size="sm" color="master-darker" weight="bold">Estudo concluído</memo-text>
-        <memo-text>Volte em <strong>${self.nextReviewIn}</strong> para continuar seu aprendizado.</memo-text>
-      </memo-stack>
+      <m-stack direction="column" spacing="none">
+        <m-text family="highlight" size="sm" color="master-darker" weight="bold">Estudo concluído</m-text>
+        <m-text>Volte em <strong>${self.nextReviewIn}</strong> para continuar seu aprendizado.</m-text>
+      </m-stack>
     `;
   }
 

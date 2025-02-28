@@ -6,7 +6,7 @@ import on, { stop } from "standard/event";
 import component from "./component";
 import style from "./style";
 
-@define("memo-link")
+@define("m-link")
 @paint(component, style)
 class Text extends Echo(HTMLElement) {
   #color;

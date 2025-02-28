@@ -3,5 +3,5 @@ import router from "standard/router";
 
 router("/app/deck/:deck/card/create", function createCard() {
   import("./app");
-  renderer("<memo-create-card></memo-create-card>");
+  renderer("<m-create-card></m-create-card>");
 });

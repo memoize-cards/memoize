@@ -4,56 +4,56 @@ import image from "./image.svg";
 
 function component(self) {
   return html`
-    <memo-header>
-      <memo-button id="backToDashboard" variant="link" slot="leading">
-        <memo-icon use="arrowBack"></memo-icon>
-        <memo-redirect href="${urlFor("dashboard")}" on="backToDashboard/click:method/go"></memo-redirect>
-      </memo-button>
-      <memo-button id="goToEditDeck" variant="link" slot="trailing">
-        <memo-icon use="settings"></memo-icon>
-        <memo-redirect href="${urlFor("editDeck", { deck: self.deck.id })}" on="goToEditDeck/click:method/go"></memo-redirect>
-      </memo-button>
-    </memo-header>
-    <memo-main>
+    <m-header>
+      <m-button id="backToDashboard" variant="link" slot="leading">
+        <m-icon use="arrowBack"></m-icon>
+        <m-redirect href="${urlFor("dashboard")}" on="backToDashboard/click:method/go"></m-redirect>
+      </m-button>
+      <m-button id="goToEditDeck" variant="link" slot="trailing">
+        <m-icon use="settings"></m-icon>
+        <m-redirect href="${urlFor("editDeck", { deck: self.deck.id })}" on="goToEditDeck/click:method/go"></m-redirect>
+      </m-button>
+    </m-header>
+    <m-main>
       <app>
-        <memo-cover aspect="wide" src="${self.deck.cover}"></memo-cover>
-        <memo-stack direction="column" spacing="quarck">
-          <memo-text size="xxxs">${self.deck.progress.total} Revisões</memo-text>
-          <memo-text size="sm" family="highlight" weight="bold" color="master-darker">${self.deck.name}</memo-text>
-          <memo-text size="xxs">${self.deck.description}</memo-text>
-        </memo-stack>
-        <memo-chart learn="${self.deck.progress.learn}" relearn="${self.deck.progress.relearn}" review="${self.deck.progress.review}"></memo-chart>
-        <memo-stack>
-          <memo-study deck-id="${self.deck.id}" user-id="${self.user.id}"></memo-study>
-          <memo-button id="goToCreateCard" variant="ghost">
-            <memo-icon color="currentColor" use="add"></memo-icon>
+        <m-cover aspect="wide" src="${self.deck.cover}"></m-cover>
+        <m-stack direction="column" spacing="quarck">
+          <m-text size="xxxs">${self.deck.progress.total} Revisões</m-text>
+          <m-text size="sm" family="highlight" weight="bold" color="master-darker">${self.deck.name}</m-text>
+          <m-text size="xxs">${self.deck.description}</m-text>
+        </m-stack>
+        <m-chart learn="${self.deck.progress.learn}" relearn="${self.deck.progress.relearn}" review="${self.deck.progress.review}"></m-chart>
+        <m-stack>
+          <m-study deck-id="${self.deck.id}" user-id="${self.user.id}"></m-study>
+          <m-button id="goToCreateCard" variant="ghost">
+            <m-icon color="currentColor" use="add"></m-icon>
             Criar revisão
-            <memo-redirect href="${urlFor("createCard", { deck: self.deck.id })}" on="goToCreateCard/click:method/go"></memo-redirect>
-          </memo-button>
-        </memo-stack>
+            <m-redirect href="${urlFor("createCard", { deck: self.deck.id })}" on="goToCreateCard/click:method/go"></m-redirect>
+          </m-button>
+        </m-stack>
         <cards>
-          <memo-stack direction="column" spacing="nano">
+          <m-stack direction="column" spacing="nano">
             ${self.deck.cards.map(
               (card) => html`
-                <memo-link href="${urlFor("editCard", { deck: self.deck.id, card: card.id })}">${card.front}</memo-link>
+                <m-link href="${urlFor("editCard", { deck: self.deck.id, card: card.id })}">${card.front}</m-link>
               `,
             )}
-          </memo-stack>
+          </m-stack>
         </cards>
         <empty>
-          <memo-stack direction="column" spacing="nano" align="center">
-            <memo-text color="master-darker" family="highlight" size="lg" weight="bold" align="center">Crie sua primeira revisão</memo-text>
-            <memo-text align="center">Para começar a estudar, vamos criar sua primeira revisão</memo-text>
-          </memo-stack>
+          <m-stack direction="column" spacing="nano" align="center">
+            <m-text color="master-darker" family="highlight" size="lg" weight="bold" align="center">Crie sua primeira revisão</m-text>
+            <m-text align="center">Para começar a estudar, vamos criar sua primeira revisão</m-text>
+          </m-stack>
           <img alt="Memoize" src="${image}" loading="lazy" />
-          <memo-button id="createFirstCard" width="100%">
+          <m-button id="createFirstCard" width="100%">
             Criar revisão
-            <memo-redirect href="${urlFor("createCard", { deck: self.deck.id })}" on="createFirstCard/click:method/go"></memo-redirect>
-          </memo-button>
+            <m-redirect href="${urlFor("createCard", { deck: self.deck.id })}" on="createFirstCard/click:method/go"></m-redirect>
+          </m-button>
         </empty>
       </app>
-    </memo-main>
-    <memo-footer></memo-footer>
+    </m-main>
+    <m-footer></m-footer>
   `;
 }
 

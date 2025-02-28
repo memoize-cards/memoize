@@ -3,5 +3,5 @@ import router from "standard/router";
 
 router("/oauth/email-verification", function emailVerification() {
   import("./oauth");
-  renderer("<memo-email-verification></memo-email-verification>");
+  renderer("<m-email-verification></m-email-verification>");
 });

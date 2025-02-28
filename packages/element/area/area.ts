@@ -14,7 +14,7 @@ import {
 } from "./interfaces";
 import style from "./style";
 
-@define("memo-area")
+@define("m-area")
 @paint(component, style)
 class Area extends Echo(HTMLElement) {
   #autocomplete;

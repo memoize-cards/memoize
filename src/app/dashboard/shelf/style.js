@@ -20,7 +20,7 @@ function style(self) {
         grid-template-columns: repeat(5, 1fr);
       }
 
-      memo-stack[id] {
+      m-stack[id] {
         cursor: pointer;
       }
     }

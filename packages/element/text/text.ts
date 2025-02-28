@@ -4,7 +4,7 @@ import { paint, repaint } from "standard/dom";
 import component from "./component";
 import style from "./style";
 
-@define("memo-text")
+@define("m-text")
 @paint(component, style)
 class Text extends HTMLElement {
   #align;

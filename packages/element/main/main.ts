@@ -3,7 +3,7 @@ import { paint, repaint } from "standard/dom";
 import component from "./component";
 import style from "./style";
 
-@define("memo-main")
+@define("m-main")
 @paint(component, style)
 class Main extends HTMLElement {
   #color;

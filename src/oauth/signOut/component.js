@@ -5,27 +5,27 @@ import image from "./image.svg";
 
 function component() {
   return html`
-    <memo-header>
-      <memo-button id="backToSite" variant="link" slot="leading">
-        <memo-icon use="arrowBack"></memo-icon>
-        <memo-redirect href="${urlFor("site")}" on="backToSite/click:method/go"></memo-redirect>
-      </memo-button>
-    </memo-header>
-    <memo-main>
+    <m-header>
+      <m-button id="backToSite" variant="link" slot="leading">
+        <m-icon use="arrowBack"></m-icon>
+        <m-redirect href="${urlFor("site")}" on="backToSite/click:method/go"></m-redirect>
+      </m-button>
+    </m-header>
+    <m-main>
       <oauth>
-        <memo-logo></memo-logo>
-        <memo-stack direction="column" spacing="nano" align="center">
-          <memo-text color="master-darker" family="highlight" size="lg" weight="bold" align="center">Você terminou por hoje?</memo-text>
-          <memo-text align="center">Você será desconectado do aplicativo. Sentiremos sua falta! Volte logo para continuar seus estudos</memo-text>
-        </memo-stack>
+        <m-logo></m-logo>
+        <m-stack direction="column" spacing="nano" align="center">
+          <m-text color="master-darker" family="highlight" size="lg" weight="bold" align="center">Você terminou por hoje?</m-text>
+          <m-text align="center">Você será desconectado do aplicativo. Sentiremos sua falta! Volte logo para continuar seus estudos</m-text>
+        </m-stack>
         <img alt="Memoize" src="${image}" loading="lazy" />
-        <memo-button id="logOut" width="100%">Sair</memo-button>
-        <memo-stack direction="column" align="center">
-          <memo-link href="${urlFor("dashboard")}">Voltar para o Dashboard</memo-link>
-        </memo-stack>
+        <m-button id="logOut" width="100%">Sair</m-button>
+        <m-stack direction="column" align="center">
+          <m-link href="${urlFor("dashboard")}">Voltar para o Dashboard</m-link>
+        </m-stack>
       </oauth>
-    </memo-main>
-    <memo-footer></memo-footer>
+    </m-main>
+    <m-footer></m-footer>
   `;
 }
 

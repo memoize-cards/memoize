@@ -14,7 +14,7 @@ function style(self) {
       width: 100%;
     }
 
-    memo-box {
+    m-box {
       position: relative;
 
       #speech {

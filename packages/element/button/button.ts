@@ -8,7 +8,7 @@ import component from "./component";
 import { dispatchFormAction, setState } from "./interfaces";
 import style from "./style";
 
-@define("memo-button")
+@define("m-button")
 @paint(component, style)
 class Button extends Echo(HTMLElement) {
   #color;

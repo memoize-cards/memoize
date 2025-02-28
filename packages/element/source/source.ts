@@ -6,7 +6,7 @@ import {
 } from "standard/echo/lifeCycle";
 import { setOn } from "./interfaces";
 
-@define("memo-echo-source")
+@define("m-echo-source")
 class EchoSource extends HTMLElement {
   @attributeChanged(on)
   async [setOn](newValue, oldValue) {

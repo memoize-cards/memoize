@@ -3,7 +3,7 @@ import { paint, repaint } from "standard/dom";
 import component from "./component";
 import style from "./style";
 
-@define("memo-chart")
+@define("m-chart")
 @paint(component, style)
 class Chart extends HTMLElement {
   #learn;

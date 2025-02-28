@@ -3,22 +3,22 @@ import image from "./image.svg";
 
 function component() {
   return html`
-    <memo-header>
-      <memo-button variant="link" slot="leading">
-        <memo-icon use="arrowBack"></memo-icon>
-      </memo-button>
-    </memo-header>
-    <memo-main>
+    <m-header>
+      <m-button variant="link" slot="leading">
+        <m-icon use="arrowBack"></m-icon>
+      </m-button>
+    </m-header>
+    <m-main>
       <app>
-        <memo-stack direction="column" spacing="nano" align="center">
-          <memo-text color="master-darker" family="highlight" size="lg" weight="bold" align="center">Estudo concluído</memo-text>
-          <memo-text align="center">Você terminou de estudar este topico. Volte mais tarde para revisar novamente</memo-text>
-        </memo-stack>
+        <m-stack direction="column" spacing="nano" align="center">
+          <m-text color="master-darker" family="highlight" size="lg" weight="bold" align="center">Estudo concluído</m-text>
+          <m-text align="center">Você terminou de estudar este topico. Volte mais tarde para revisar novamente</m-text>
+        </m-stack>
         <img alt="Memoize" src="${image}" loading="lazy" />
-        <memo-button width="100%">Continuar</memo-button>
+        <m-button width="100%">Continuar</m-button>
       </app>
-    </memo-main>
-    <memo-footer></memo-footer>
+    </m-main>
+    <m-footer></m-footer>
   `;
 }
 

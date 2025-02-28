@@ -7,7 +7,7 @@ import { hydrate } from "./interfaces";
 import style from "./style";
 import User from "./user";
 
-@define("memo-deck")
+@define("m-deck")
 @paint(component, style)
 class App extends HTMLElement {
   #deck;

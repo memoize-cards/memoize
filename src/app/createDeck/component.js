@@ -3,39 +3,39 @@ import { urlFor } from "standard/router";
 
 function component(self) {
   return html`
-    <memo-header>
-      <memo-button id="backToDashboard" variant="link" slot="leading">
-        <memo-icon use="arrowBack"></memo-icon>
-        <memo-redirect href="${urlFor("dashboard")}" on="backToDashboard/click:method/go"></memo-redirect>
-      </memo-button>
-    </memo-header>
-    <memo-main>
+    <m-header>
+      <m-button id="backToDashboard" variant="link" slot="leading">
+        <m-icon use="arrowBack"></m-icon>
+        <m-redirect href="${urlFor("dashboard")}" on="backToDashboard/click:method/go"></m-redirect>
+      </m-button>
+    </m-header>
+    <m-main>
       <app>
-        <memo-text color="master-darker" size="md" weight="bold" family="highlight">
+        <m-text color="master-darker" size="md" weight="bold" family="highlight">
           Nova coleção
-        </memo-text>
-        <memo-form>
+        </m-text>
+        <m-form>
           <template>
-            <memo-input id="cover" label="Imagem de capa (URL)" name="cover" type="url" maxlength="256">
-              <memo-validity state="typeMismatch">URL inválida</memo-validity>
-              <memo-text size="xxxs" color="info">Insira o link de uma imagem para representar a coleção.</memo-text>
-            </memo-input>
-            <memo-cover aspect="wide" on="cover/change:attribute/src"></memo-cover>
-            <memo-input label="Nome" name="name" maxlength="64" required>
-              <memo-validity state="valueMissing">Nome é obrigatório</memo-validity>
-              <memo-text size="xxxs" color="info">Escolha um nome curto e descritivo para sua coleção.</memo-text>
-            </memo-input>
-            <memo-area label="Descrição" name="description" maxlength="256">
-              <memo-text size="xxxs" color="info">Adicione uma breve descrição sobre o conteúdo desta coleção.</memo-text>
-            </memo-area>
-            <memo-button width="100%">
+            <m-input id="cover" label="Imagem de capa (URL)" name="cover" type="url" maxlength="256">
+              <m-validity state="typeMismatch">URL inválida</m-validity>
+              <m-text size="xxxs" color="info">Insira o link de uma imagem para representar a coleção.</m-text>
+            </m-input>
+            <m-cover aspect="wide" on="cover/change:attribute/src"></m-cover>
+            <m-input label="Nome" name="name" maxlength="64" required>
+              <m-validity state="valueMissing">Nome é obrigatório</m-validity>
+              <m-text size="xxxs" color="info">Escolha um nome curto e descritivo para sua coleção.</m-text>
+            </m-input>
+            <m-area label="Descrição" name="description" maxlength="256">
+              <m-text size="xxxs" color="info">Adicione uma breve descrição sobre o conteúdo desta coleção.</m-text>
+            </m-area>
+            <m-button width="100%">
               Criar coleção
-            </memo-button>
+            </m-button>
           </template>
-        </memo-form>
+        </m-form>
       </app>
-    </memo-main>
-    <memo-footer></memo-footer>
+    </m-main>
+    <m-footer></m-footer>
   `;
 }
 

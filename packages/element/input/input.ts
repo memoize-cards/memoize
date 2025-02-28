@@ -8,7 +8,7 @@ import component from "./component";
 import { change, remove, setFormValue, setValidity } from "./interfaces";
 import style from "./style";
 
-@define("memo-input")
+@define("m-input")
 @paint(component, style)
 class Input extends Echo(HTMLElement) {
   #autocomplete;

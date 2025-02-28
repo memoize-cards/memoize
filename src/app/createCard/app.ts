@@ -10,7 +10,7 @@ import Navigate from "./navigate";
 import style from "./style";
 import User from "./user";
 
-@define("memo-create-card")
+@define("m-create-card")
 @paint(component, style)
 class App extends HTMLElement {
   #deck;
@@ -25,7 +25,7 @@ class App extends HTMLElement {
     this.attachShadow({ mode: "open" });
   }
 
-  @on.submit("memo-form", stop, detail)
+  @on.submit("m-form", stop, detail)
   async create(data) {
     const { deck } = params;
     const user = await User.logged();

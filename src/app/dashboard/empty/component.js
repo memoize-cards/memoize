@@ -4,18 +4,18 @@ import image from "./image.svg";
 
 function component() {
   return html`
-    <memo-stack direction="column" spacing="nano" align="center">
-      <memo-text color="master-darker" family="highlight" size="lg" weight="bold" align="center">Pronto para começar?</memo-text>
-      <memo-text align="center">Para começar a estudar, vamos criar sua primeira coleção de estudo</memo-text>
-    </memo-stack>
+    <m-stack direction="column" spacing="nano" align="center">
+      <m-text color="master-darker" family="highlight" size="lg" weight="bold" align="center">Pronto para começar?</m-text>
+      <m-text align="center">Para começar a estudar, vamos criar sua primeira coleção de estudo</m-text>
+    </m-stack>
     <img alt="Memoize" src="${image}" loading="lazy" />
-    <memo-stack direction="column" align="center">
-      <memo-button id="createFirstDeck" width="100%">
+    <m-stack direction="column" align="center">
+      <m-button id="createFirstDeck" width="100%">
         Criar coleção
-        <memo-redirect href="${urlFor("createDeck")}" on="createFirstDeck/click:method/go"></memo-redirect>
-      </memo-button>
-      <memo-link href="${urlFor("howWorks")}">Como funciona o Memoize</memo-link>
-    </memo-stack>
+        <m-redirect href="${urlFor("createDeck")}" on="createFirstDeck/click:method/go"></m-redirect>
+      </m-button>
+      <m-link href="${urlFor("howWorks")}">Como funciona o Memoize</m-link>
+    </m-stack>
   `;
 }
 

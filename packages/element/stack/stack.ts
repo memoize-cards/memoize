@@ -7,7 +7,7 @@ import component from "./component";
 import { setDisplay } from "./interfaces";
 import style from "./style";
 
-@define("memo-stack")
+@define("m-stack")
 @paint(component, style)
 class Stack extends Echo(HTMLElement) {
   #align;

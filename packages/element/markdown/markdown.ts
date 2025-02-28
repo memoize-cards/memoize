@@ -4,7 +4,7 @@ import component from "./component";
 import highlight from "./highlight";
 import style from "./style";
 
-@define("memo-markdown")
+@define("m-markdown")
 @paint(component, style, highlight)
 class Markdown extends HTMLElement {
   constructor() {

@@ -6,7 +6,7 @@ import Navigate from "./navigate";
 import style from "./style";
 import User from "./user";
 
-@define("memo-sign-in")
+@define("m-sign-in")
 @paint(component, style)
 class OAuth extends HTMLElement {
   constructor() {
@@ -14,7 +14,7 @@ class OAuth extends HTMLElement {
     this.attachShadow({ mode: "open" });
   }
 
-  @on.submit("memo-form", prevent, detail)
+  @on.submit("m-form", prevent, detail)
   async logIn(data) {
     const user = await User.signInWithPassword(data);
     user && Navigate.goToDashboard();

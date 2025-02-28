@@ -4,7 +4,7 @@ import Echo from "standard/echo";
 import component from "./component";
 import style from "./style";
 
-@define("memo-cover")
+@define("m-cover")
 @paint(component, style)
 class Cover extends Echo(HTMLElement) {
   #alt;

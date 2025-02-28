@@ -1,7 +1,7 @@
 import { attributeChanged, define } from "directive";
 import Echo, { dispatchEvent } from "standard/echo";
 
-@define("memo-redirect")
+@define("m-redirect")
 class Redirect extends Echo(HTMLElement) {
   #href;
 

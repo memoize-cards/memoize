@@ -6,7 +6,7 @@ import component from "./component";
 import Navigate from "./navigate";
 import User from "./user";
 
-@define("memo-forgot-password")
+@define("m-forgot-password")
 @paint(component, style)
 class OAuth extends HTMLElement {
   constructor() {
@@ -14,7 +14,7 @@ class OAuth extends HTMLElement {
     this.attachShadow({ mode: "open" });
   }
 
-  @on.submit(":host memo-form", stop, detail)
+  @on.submit(":host m-form", stop, detail)
   async reset(data) {
     const { email } = data;
     const user = await User.resetPasswordForEmail(email);

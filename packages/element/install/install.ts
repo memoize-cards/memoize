@@ -7,7 +7,7 @@ import component from "./component";
 import { setDisplay } from "./interfaces";
 import style from "./style";
 
-@define("memo-install")
+@define("m-install")
 @paint(component, style)
 class Install extends HTMLElement {
   #event;
@@ -21,7 +21,7 @@ class Install extends HTMLElement {
     this.attachShadow({ mode: "open" });
   }
 
-  @on.click(":host memo-button")
+  @on.click(":host m-button")
   click() {
     this.#event?.prompt();
     return this;

@@ -4,7 +4,7 @@ import Echo, { dispatchEvent } from "standard/echo";
 import component from "./component";
 import style from "./style";
 
-@define("memo-header")
+@define("m-header")
 @paint(component, style)
 class Header extends HTMLElement {
   #color;

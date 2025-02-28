@@ -6,7 +6,7 @@ import { hydrate } from "./interfaces";
 import style from "./style";
 import User from "./user";
 
-@define("memo-dashboard-shelf")
+@define("m-dashboard-shelf")
 @paint(component, style)
 class Shelf extends HTMLElement {
   #decks;

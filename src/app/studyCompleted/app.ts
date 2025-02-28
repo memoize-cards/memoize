@@ -6,7 +6,7 @@ import component from "./component";
 import Navigate from "./navigate";
 import style from "./style";
 
-@define("memo-study-completed")
+@define("m-study-completed")
 @paint(component, style)
 class App extends HTMLElement {
   constructor() {
@@ -14,7 +14,7 @@ class App extends HTMLElement {
     this.attachShadow({ mode: "open" });
   }
 
-  @on.click(":host memo-button", stop)
+  @on.click(":host m-button", stop)
   click() {
     params.deck ? Navigate.goToDeck(params.deck) : Navigate.goToDashboard();
     return this;

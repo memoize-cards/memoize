@@ -6,7 +6,7 @@ import component from "./component";
 import { setState } from "./interfaces";
 import style from "./style";
 
-@define("memo-logo")
+@define("m-logo")
 @paint(component, style)
 class Logo extends HTMLElement {
   #internals;

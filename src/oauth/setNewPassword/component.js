@@ -3,33 +3,33 @@ import { args, urlFor } from "standard/router";
 
 function component() {
   return html`
-    <memo-header>
-      <memo-button id="backToSignIn" variant="link" slot="leading">
-        <memo-icon use="arrowBack"></memo-icon>
-        <memo-redirect href="${urlFor("signIn")}" on="backToSignIn/click:method/go"></memo-redirect>
-      </memo-button>
-    </memo-header>
-    <memo-main>
+    <m-header>
+      <m-button id="backToSignIn" variant="link" slot="leading">
+        <m-icon use="arrowBack"></m-icon>
+        <m-redirect href="${urlFor("signIn")}" on="backToSignIn/click:method/go"></m-redirect>
+      </m-button>
+    </m-header>
+    <m-main>
       <oauth>
-        <memo-logo></memo-logo>
-        <memo-stack direction="column" spacing="nano" align="center">
-          <memo-text color="master-darker" family="highlight" size="lg" weight="bold" align="center">Definir nova senha</memo-text>
-          <memo-text align="center">Sua nova senha deve ser diferente das senhas anteriormente utilizadas.</memo-text>
-        </memo-stack>
-        <memo-form>
+        <m-logo></m-logo>
+        <m-stack direction="column" spacing="nano" align="center">
+          <m-text color="master-darker" family="highlight" size="lg" weight="bold" align="center">Definir nova senha</m-text>
+          <m-text align="center">Sua nova senha deve ser diferente das senhas anteriormente utilizadas.</m-text>
+        </m-stack>
+        <m-form>
           <template>
-            <memo-input label="Senha" name="password" type="password" required>
-              <memo-validity state="valueMissing">Senha é obrigatória</memo-validity>
-            </memo-input>
-            <memo-button width="100%">Definir nova senha</memo-button>
+            <m-input label="Senha" name="password" type="password" required>
+              <m-validity state="valueMissing">Senha é obrigatória</m-validity>
+            </m-input>
+            <m-button width="100%">Definir nova senha</m-button>
           </template>
-        </memo-form>
-        <memo-stack direction="column" align="center">
-          <memo-link href="${urlFor("signIn")}">Voltar para a tela de login</memo-link>
-        </memo-stack>
+        </m-form>
+        <m-stack direction="column" align="center">
+          <m-link href="${urlFor("signIn")}">Voltar para a tela de login</m-link>
+        </m-stack>
       </oauth>
-    </memo-main>
-    <memo-footer></memo-footer>
+    </m-main>
+    <m-footer></m-footer>
   `;
 }
 

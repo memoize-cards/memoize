@@ -3,7 +3,7 @@ import { paint, repaint } from "standard/dom";
 import component from "./component";
 import style from "./style";
 
-@define("memo-avatar")
+@define("m-avatar")
 @paint(component, style)
 class Avatar extends HTMLElement {
   #alt;

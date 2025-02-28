@@ -3,5 +3,5 @@ import router from "standard/router";
 
 router("/app/deck/:deck/card/:card/edit", function editCard() {
   import("./app");
-  renderer("<memo-edit-card></memo-edit-card>");
+  renderer("<m-edit-card></m-edit-card>");
 });

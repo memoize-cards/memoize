@@ -5,7 +5,7 @@ import component from "./component";
 import Navigate from "./navigate";
 import User from "./user";
 
-@define("memo-card-header")
+@define("m-card-header")
 @paint(component)
 class Header extends HTMLElement {
   constructor() {

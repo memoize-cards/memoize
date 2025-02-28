@@ -3,35 +3,35 @@ import { urlFor } from "standard/router";
 
 function component(self) {
   return html`
-    <memo-header>
-      <memo-button id="backToDeck" variant="link" slot="leading">
-        <memo-icon use="arrowBack"></memo-icon>
-        <memo-redirect href="${urlFor("deck", { deck: self.deck.id })}" on="backToDeck/click:method/go"></memo-redirect>
-      </memo-button>
-    </memo-header>
-    <memo-main>
+    <m-header>
+      <m-button id="backToDeck" variant="link" slot="leading">
+        <m-icon use="arrowBack"></m-icon>
+        <m-redirect href="${urlFor("deck", { deck: self.deck.id })}" on="backToDeck/click:method/go"></m-redirect>
+      </m-button>
+    </m-header>
+    <m-main>
       <app>
-        <memo-text color="master-darker" size="md" weight="bold" family="highlight">
+        <m-text color="master-darker" size="md" weight="bold" family="highlight">
           Nova revisão
-        </memo-text>
-        <memo-form>
+        </m-text>
+        <m-form>
           <template>
-            <memo-input label="Pergunta" name="front" maxlength="128" required>
-              <memo-validity state="valueMissing">Pergunta é obrigatório</memo-validity>
-              <memo-text size="xxxs" color="info">Digite a pergunta ou conceito a ser revisado.</memo-text>
-            </memo-input>
-            <memo-area label="Reposta" name="back" maxlength="1024" required>
-              <memo-validity state="valueMissing">Resumo é obrigatório</memo-validity>
-              <memo-text size="xxxs" color="info">Insira a resposta ou explicaçâo para esta pergunta.</memo-text>
-            </memo-area>
-            <memo-button width="100%">
+            <m-input label="Pergunta" name="front" maxlength="128" required>
+              <m-validity state="valueMissing">Pergunta é obrigatório</m-validity>
+              <m-text size="xxxs" color="info">Digite a pergunta ou conceito a ser revisado.</m-text>
+            </m-input>
+            <m-area label="Reposta" name="back" maxlength="1024" required>
+              <m-validity state="valueMissing">Resumo é obrigatório</m-validity>
+              <m-text size="xxxs" color="info">Insira a resposta ou explicaçâo para esta pergunta.</m-text>
+            </m-area>
+            <m-button width="100%">
               Criar revisão
-            </memo-button>
+            </m-button>
           </template>
-        </memo-form>
+        </m-form>
       </app>
-    </memo-main>
-    <memo-footer></memo-footer>
+    </m-main>
+    <m-footer></m-footer>
   `;
 }
 

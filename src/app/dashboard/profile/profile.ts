@@ -5,7 +5,7 @@ import { hydrate } from "./interfaces";
 import Progress from "./progress";
 import User from "./user";
 
-@define("memo-dashboard-profile")
+@define("m-dashboard-profile")
 @paint(component)
 class Profile extends HTMLElement {
   #user;

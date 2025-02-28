@@ -3,5 +3,5 @@ import router from "standard/router";
 
 router("/app/deck/create", function createDeck() {
   import("./app");
-  renderer("<memo-create-deck></memo-create-deck>");
+  renderer("<m-create-deck></m-create-deck>");
 });

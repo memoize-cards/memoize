@@ -7,7 +7,7 @@ import { args } from "standard/router";
 import component from "./component";
 import Navigate from "./navigate";
 
-@define("memo-email-verification")
+@define("m-email-verification")
 @paint(component, style)
 class OAuth extends HTMLElement {
   constructor() {

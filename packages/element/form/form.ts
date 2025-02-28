@@ -7,7 +7,7 @@ import { reset, submit } from "./interfaces";
 import style from "./style";
 import Template from "./template";
 
-@define("memo-form")
+@define("m-form")
 @paint(component, style)
 class Form extends Echo(HTMLElement) {
   #template = Template.from(this);

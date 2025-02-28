@@ -3,12 +3,12 @@ import { urlFor } from "standard/router";
 
 function component() {
   return html`
-    <memo-footer>
-      <memo-button id="goToSignOut" variant="link" slot="trailing">
+    <m-footer>
+      <m-button id="goToSignOut" variant="link" slot="trailing">
         Sair
-        <memo-redirect href="${urlFor("signOut")}" on="goToSignOut/click:method/go"></memo-redirect>
-      </memo-button>
-    </memo-footer>
+        <m-redirect href="${urlFor("signOut")}" on="goToSignOut/click:method/go"></m-redirect>
+      </m-button>
+    </m-footer>
   `;
 }
 

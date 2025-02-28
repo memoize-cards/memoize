@@ -3,7 +3,7 @@ import { paint } from "standard/dom";
 import component from "./component";
 import style from "./style";
 
-@define("memo-answer")
+@define("m-answer")
 @paint(component, style)
 class Answer extends HTMLElement {
   constructor() {
