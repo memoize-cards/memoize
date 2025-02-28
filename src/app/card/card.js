@@ -91,8 +91,6 @@ class Card {
 
     const { data: card, error } = await query;
 
-    console.log(error);
-
     return new Card(card);
   }
 }

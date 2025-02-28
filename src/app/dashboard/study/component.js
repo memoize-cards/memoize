@@ -13,9 +13,9 @@ function component(self) {
           <m-text>Há <strong>${self.pendingCards}</strong> revisões aguardando você.</m-text>
         </m-stack>
       </m-stack>
-      <m-button id="goToDeck">
+      <m-button id="goToStudy">
         Revisar agora
-        <m-redirect href="${urlFor("card")}" on="goToDeck/click:method/go"></m-redirect>
+        <m-redirect href="${urlFor("card")}" on="goToStudy/click:method/go"></m-redirect>
       </m-button>
     `;
   }
