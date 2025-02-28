@@ -1,19 +1,12 @@
+import "./header";
+
 import { html } from "standard/dom";
 import { urlFor } from "standard/router";
 import image from "./image.svg";
 
 function component(self) {
   return html`
-    <m-header>
-      <m-button id="backToDashboard" variant="link" slot="leading">
-        <m-icon use="arrowBack"></m-icon>
-        <m-redirect href="${urlFor("dashboard")}" on="backToDashboard/click:method/go"></m-redirect>
-      </m-button>
-      <m-button id="goToEditDeck" variant="link" slot="trailing">
-        <m-icon use="settings"></m-icon>
-        <m-redirect href="${urlFor("editDeck", { deck: self.deck.id })}" on="goToEditDeck/click:method/go"></m-redirect>
-      </m-button>
-    </m-header>
+    <m-deck-header></m-deck-header>
     <m-main>
       <app>
         <m-cover aspect="wide" src="${self.deck.cover}"></m-cover>

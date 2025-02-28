@@ -80,15 +80,18 @@ class Card {
     const { default: supabase } = await import("artifact/supabase");
     const query = supabase
       .from("card")
-      .select("*, deck(id, name)")
+      .select("*, deck!inner(id, name, paused)")
       .eq("user_id", userId)
+      .filter("deck.paused", "eq", false)
       .lte("validity", Validity.expired)
       .limit(1)
       .single();
 
     if (deckId) query.eq("deck", deckId);
 
-    const { data: card } = await query;
+    const { data: card, error } = await query;
+
+    console.log(error);
 
     return new Card(card);
   }

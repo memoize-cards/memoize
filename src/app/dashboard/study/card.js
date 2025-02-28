@@ -22,14 +22,16 @@ class Card {
 
     const { count: totalReviewCards } = await supabase
       .from("card")
-      .select("id", { count: "exact", head: true })
+      .select("id, deck!inner(paused)", { count: "exact", head: true })
       .eq("user_id", userId)
+      .filter("deck.paused", "eq", false)
       .lte("validity", Validity.expired);
 
     const { data: nextCard } = await supabase
-      .from("card")
+      .from("card, deck!inner(paused)")
       .select("validity")
       .eq("user_id", userId)
+      .filter("deck.paused", "eq", false)
       .order("validity", { ascending: true })
       .limit(1)
       .single();

@@ -3,31 +3,42 @@ import { params } from "standard/router";
 class Deck {
   #data;
 
-  get cover() {
-    return this.#data.cover;
-  }
-
-  get description() {
-    return this.#data.description;
-  }
-
   get id() {
     return this.#data.id;
   }
 
-  get name() {
-    return this.#data.name;
+  get paused() {
+    return (this.#data.paused ??= false);
   }
 
   constructor(data) {
     this.#data = data;
   }
 
-  async update(data) {
+  async delete() {
+    const { default: supabase } = await import("artifact/supabase");
+    await supabase.from("deck").delete().eq("id", params.deck);
+    this.#data = {};
+    return this;
+  }
+
+  async pause() {
     const { default: supabase } = await import("artifact/supabase");
     const { data: deck } = await supabase
       .from("deck")
-      .update(data)
+      .update({ paused: true })
+      .eq("id", this.id)
+      .select()
+      .single();
+    this.#data = deck;
+    return this;
+  }
+
+  async play() {
+    const { default: supabase } = await import("artifact/supabase");
+    const { data: deck } = await supabase
+      .from("deck")
+      .update({ paused: false })
       .eq("id", this.id)
       .select()
       .single();
@@ -39,7 +50,7 @@ class Deck {
     const { default: supabase } = await import("artifact/supabase");
     const { data: deck } = await supabase
       .from("deck")
-      .select("id, cover, description, name, user_id")
+      .select("id, paused")
       .eq("id", params.deck)
       .single();
     return new Deck(deck);

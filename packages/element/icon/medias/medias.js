@@ -3,6 +3,8 @@ const medias = {
   arrowBack: () => import("./arrowBack"),
   delete: () => import("./delete"),
   language: () => import("./language"),
+  pause: () => import("./pause"),
+  play: () => import("./play"),
   settings: () => import("./settings"),
   textToSpeech: () => import("./textToSpeech"),
 };
