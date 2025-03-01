@@ -13,16 +13,6 @@ function style(self) {
       min-height: calc(100svh - (144px + 32px));
       width: 100%;
     }
-
-    m-box {
-      position: relative;
-
-      #speech {
-        position: absolute;
-        right: 0;
-        top: 0;
-      }
-    }
   `;
 }
 

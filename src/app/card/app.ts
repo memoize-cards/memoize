@@ -24,28 +24,28 @@ class App extends HTMLElement {
     this.attachShadow({ mode: "open" });
   }
 
-  @on.click("#again", stop)
+  @on.again("m-card-answer", stop)
   @repaint
   async again() {
     await this.#card.again();
     return this;
   }
 
-  @on.click("#easy", stop)
+  @on.easy("m-card-answer", stop)
   @repaint
   async easy() {
     await this.#card.easy();
     return this;
   }
 
-  @on.click("#good", stop)
+  @on.good("m-card-answer", stop)
   @repaint
   async good() {
     await this.#card.good();
     return this;
   }
 
-  @on.click("#hard", stop)
+  @on.hard("m-card-answer", stop)
   @repaint
   async hard() {
     await this.#card.hard();

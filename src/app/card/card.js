@@ -1,6 +1,5 @@
 import Calc from "./calc";
 import Deck from "./deck";
-import Type from "./type";
 import Validity from "./validity";
 
 class Card {
@@ -28,7 +27,7 @@ class Card {
   }
 
   get type() {
-    return Type.from(this.#data?.type);
+    return this.#data?.type;
   }
 
   constructor(data) {
