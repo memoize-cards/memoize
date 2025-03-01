@@ -28,8 +28,8 @@ class Card {
       .lte("validity", Validity.expired);
 
     const { data: nextCard } = await supabase
-      .from("card, deck!inner(paused)")
-      .select("validity")
+      .from("card")
+      .select("validity, deck!inner(paused)")
       .eq("user_id", userId)
       .filter("deck.paused", "eq", false)
       .order("validity", { ascending: true })
