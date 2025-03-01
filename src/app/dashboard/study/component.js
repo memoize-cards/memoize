@@ -22,10 +22,12 @@ function component(self) {
 
   if (self.nextReviewIn) {
     return html`
-      <img src="${imageEmpty}" alt="Memoize" loading="auto" />
-      <m-stack direction="column" spacing="none">
-        <m-text family="highlight" size="sm" color="master-darker" weight="bold">Estudo concluído</m-text>
-        <m-text>Volte em <strong>${self.nextReviewIn}</strong> para continuar seu aprendizado.</m-text>
+      <m-stack align="center">
+        <img src="${imageEmpty}" alt="Memoize" loading="auto" />
+        <m-stack direction="column" spacing="none">
+          <m-text family="highlight" size="sm" color="master-darker" weight="bold">Estudo concluído</m-text>
+          <m-text>Volte em <strong>${self.nextReviewIn}</strong> para continuar seu aprendizado.</m-text>
+        </m-stack>
       </m-stack>
     `;
   }
