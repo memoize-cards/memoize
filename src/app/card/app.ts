@@ -52,15 +52,6 @@ class App extends HTMLElement {
     return this;
   }
 
-  @on.click("#speech", stop)
-  speech() {
-    const text =
-      this.shadowRoot.querySelector("m-markdown").shadowRoot.textContent;
-    const untterance = new SpeechSynthesisUtterance(text);
-    window.speechSynthesis.speak(untterance);
-    return this;
-  }
-
   @willPaint
   async [hydrate]() {
     this.#user = await User.logged();

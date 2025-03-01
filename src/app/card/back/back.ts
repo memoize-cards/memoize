@@ -28,8 +28,7 @@ class Back extends Echo(HTMLElement) {
 
   @on.click("#speech", stop)
   speech() {
-    const text =
-      this.shadowRoot.querySelector("m-markdown").shadowRoot.textContent;
+    const text = this.querySelector("m-markdown").shadowRoot.textContent;
     const untterance = new SpeechSynthesisUtterance(text);
     window.speechSynthesis.speak(untterance);
     return this;
