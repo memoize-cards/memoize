@@ -3,36 +3,33 @@ import { css } from "standard/dom";
 function style(self) {
   return css`
     :host {
-      button {
-        align-items: center;
-        background-color: var(--color-primary);
-        border: var(--border-width-hairline) solid transparent;
-        border-radius: var(--border-radius-sm);
-        box-sizing: border-box;
-        color: var(--color-pure-white);
-        cursor: pointer;
-        display: flex;
-        font-family: var(--font-family-base);
-        font-size: var(--font-size-xxs);
-        font-weight: var(--font-weight-medium);
-        gap: var(--spacing_inset-nano);
-        height: 42px;
-        justify-content: center;
-        line-height: var(--line-height-default);
-        min-width: 42px;
-        padding: 0 var(--spacing_inset-xs);
-        position: relative;
-        transition: all 0.2s ease-out;
-        width: 120px;
+      align-items: center;
+      background-color: var(--color-master-lighter);
+      border-radius: var(--border-radius-sm);
+      box-sizing: border-box;
+      display: ${self.shouldHide ? "none" : "flex"};
+      flex-direction: column;
+      gap: var(--spacing_inset-xs);
+      justify-content: center;
+      padding: var(--spacing_inset-xs);
+      width: 100%;
 
-        &:after {
-          content: "";
-          display: block;
-          height: 100%;
-          left: 0;
-          position: absolute;
-          top: 0;
-          width: 100%;
+      @media (width > 595px) {
+        flex-direction: row;
+        padding-right: var(--spacing_inset-md);
+      }
+      
+      img {
+        aspect-ratio: 1 / 1;
+        height: 120px;
+        width: 120px;
+      }
+
+      m-button {
+        width: 100%;
+
+        @media (width > 595px) {
+          width: 200px;
         }
       }
     }

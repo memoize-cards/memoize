@@ -19,12 +19,7 @@ function component(self) {
         </m-stack>
         <m-chart learn="${self.deck.progress.learn}" relearn="${self.deck.progress.relearn}" review="${self.deck.progress.review}"></m-chart>
         <m-stack>
-          <m-study deck-id="${self.deck.id}"></m-study>
-          <m-button id="goToCreateCard" variant="ghost">
-            <m-icon color="currentColor" use="add"></m-icon>
-            Criar revisão
-            <m-redirect href="${urlFor("createCard", { deck: self.deck.id })}" on="goToCreateCard/click:method/go"></m-redirect>
-          </m-button>
+          <m-deck-study></m-deck-study>
         </m-stack>
         <m-deck-shelf></m-deck-shelf>
         <m-deck-empty></m-deck-empty>

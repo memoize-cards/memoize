@@ -1,24 +1,43 @@
+import { params } from "standard/router";
+import Validity from "./validity";
+
 class Card {
-  #data;
+  #nextReviewDate;
+  #totalReviewCards;
 
-  get validity() {
-    return this.#data?.validity;
+  get nextReviewDate() {
+    return (this.#nextReviewDate ??= 0);
   }
 
-  constructor(data) {
-    this.#data = data;
+  get totalReviewCards() {
+    return (this.#totalReviewCards ??= 0);
   }
 
-  static async from(deckId, userId) {
+  constructor(totalReviewCards, nextReviewDate) {
+    this.#totalReviewCards = totalReviewCards;
+    this.#nextReviewDate = nextReviewDate;
+  }
+
+  static async current() {
     const { default: supabase } = await import("artifact/supabase");
-    const { data: card } = await supabase
+
+    const { count: totalReviewCards } = await supabase
       .from("card")
-      .select("validity")
-      .eq("deck", deckId)
+      .select("id, deck!inner(paused)", { count: "exact", head: true })
+      .eq("deck", params.deck)
+      .filter("deck.paused", "eq", false)
+      .lte("validity", Validity.expired);
+
+    const { data: nextCard } = await supabase
+      .from("card")
+      .select("validity, deck!inner(paused)")
+      .eq("deck", params.deck)
+      .filter("deck.paused", "eq", false)
       .order("validity", { ascending: true })
       .limit(1)
       .single();
-    return new Card(card);
+
+    return new Card(totalReviewCards, nextCard?.validity);
   }
 }
 

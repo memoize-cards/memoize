@@ -17,20 +17,18 @@ class Card {
     this.#nextReviewDate = nextReviewDate;
   }
 
-  static async from(userId) {
+  static async current() {
     const { default: supabase } = await import("artifact/supabase");
 
     const { count: totalReviewCards } = await supabase
       .from("card")
       .select("id, deck!inner(paused)", { count: "exact", head: true })
-      .eq("user_id", userId)
       .filter("deck.paused", "eq", false)
       .lte("validity", Validity.expired);
 
     const { data: nextCard } = await supabase
       .from("card")
       .select("validity, deck!inner(paused)")
-      .eq("user_id", userId)
       .filter("deck.paused", "eq", false)
       .order("validity", { ascending: true })
       .limit(1)

@@ -11,7 +11,6 @@ import User from "./user";
 @paint(component, style)
 class Study extends HTMLElement {
   #card;
-  #user;
 
   get shouldHide() {
     return this.nextReviewIn === "" && this.pendingCards === 0;
@@ -32,8 +31,7 @@ class Study extends HTMLElement {
 
   @willPaint
   async [hydrate]() {
-    this.#user = await User.logged();
-    this.#card = await Card.from(this.#user.id);
+    this.#card = await Card.current();
     return this;
   }
 }

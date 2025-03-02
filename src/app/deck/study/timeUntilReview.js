@@ -2,7 +2,7 @@ function timeUntilReview(validity = 0) {
   const now = Date.now();
   const diff = validity - now;
 
-  if (diff <= 0) return "Estudar";
+  if (diff <= 0) return "";
 
   const seconds = Math.floor(diff / 1000);
   const minutes = Math.floor(seconds / 60);
@@ -19,7 +19,7 @@ function timeUntilReview(validity = 0) {
   if (hours > 0) return `${hours} hora${hours > 1 ? "s" : ""}`;
   if (minutes > 0) return `${minutes} minuto${minutes > 1 ? "s" : ""}`;
 
-  return "Estudar";
+  return "";
 }
 
 export default timeUntilReview;

@@ -1,34 +1,27 @@
-import { attributeChanged, define } from "directive";
-import { paint, repaint, willPaint } from "standard/dom";
-import on, { stop } from "standard/event";
+import { define } from "directive";
+import { paint, willPaint } from "standard/dom";
 import Card from "./card";
 import component from "./component";
 import { hydrate } from "./interfaces";
-import Navigate from "./navigate";
 import style from "./style";
 import timeUntilReview from "./timeUntilReview";
+import User from "./user";
 
-@define("m-study")
+@define("m-deck-study")
 @paint(component, style)
 class Study extends HTMLElement {
   #card;
-  #deckId;
-  #userId;
 
-  @attributeChanged("deck-id")
-  @repaint
-  set deck(value) {
-    this.#deckId = value;
+  get shouldHide() {
+    return this.nextReviewIn === "" && this.pendingCards === 0;
   }
 
-  @attributeChanged("user-id")
-  @repaint
-  set user(value) {
-    this.#userId = value;
+  get nextReviewIn() {
+    return timeUntilReview(this.#card.nextReviewDate);
   }
 
-  get value() {
-    return timeUntilReview(this.#card?.validity);
+  get pendingCards() {
+    return this.#card.totalReviewCards;
   }
 
   constructor() {
@@ -36,15 +29,9 @@ class Study extends HTMLElement {
     this.attachShadow({ mode: "open" });
   }
 
-  @on.click(":host button", stop)
-  click() {
-    Navigate.goToCardOfDeck(this.#deckId);
-    return this;
-  }
-
   @willPaint
   async [hydrate]() {
-    this.#card = await Card.from(this.#deckId, this.#userId);
+    this.#card = await Card.current();
     return this;
   }
 }
