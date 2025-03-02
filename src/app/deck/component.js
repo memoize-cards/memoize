@@ -1,9 +1,10 @@
 import "./empty";
 import "./header";
+import "./shelf";
+import "./study";
 
 import { html } from "standard/dom";
 import { urlFor } from "standard/router";
-import image from "./image.svg";
 
 function component(self) {
   return html`
@@ -18,22 +19,14 @@ function component(self) {
         </m-stack>
         <m-chart learn="${self.deck.progress.learn}" relearn="${self.deck.progress.relearn}" review="${self.deck.progress.review}"></m-chart>
         <m-stack>
-          <m-study deck-id="${self.deck.id}" user-id="${self.user.id}"></m-study>
+          <m-study deck-id="${self.deck.id}"></m-study>
           <m-button id="goToCreateCard" variant="ghost">
             <m-icon color="currentColor" use="add"></m-icon>
             Criar revisão
             <m-redirect href="${urlFor("createCard", { deck: self.deck.id })}" on="goToCreateCard/click:method/go"></m-redirect>
           </m-button>
         </m-stack>
-        <cards>
-          <m-stack direction="column" spacing="nano">
-            ${self.deck.cards.map(
-              (card) => html`
-                <m-link href="${urlFor("editCard", { deck: self.deck.id, card: card.id })}">${card.front}</m-link>
-              `,
-            )}
-          </m-stack>
-        </cards>
+        <m-deck-shelf></m-deck-shelf>
         <m-deck-empty></m-deck-empty>
       </app>
     </m-main>

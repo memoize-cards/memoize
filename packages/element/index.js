@@ -21,7 +21,6 @@ import "./redirect";
 import "./show";
 import "./source";
 import "./stack";
-import "./study";
 import "./tag";
 import "./text";
 import "./validity";

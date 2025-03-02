@@ -15,7 +15,6 @@ class Card {
       .from("card")
       .select("validity")
       .eq("deck", deckId)
-      .eq("user_id", userId)
       .order("validity", { ascending: true })
       .limit(1)
       .single();

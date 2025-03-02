@@ -1,18 +1,17 @@
 import { define } from "directive";
 import { paint, willPaint } from "standard/dom";
-import { params } from "standard/router";
+import Card from "./card";
 import component from "./component";
-import Deck from "./deck";
 import { hydrate } from "./interfaces";
 import style from "./style";
 
-@define("m-deck")
+@define("m-deck-shelf")
 @paint(component, style)
-class App extends HTMLElement {
-  #deck;
+class Shelf extends HTMLElement {
+  #cards;
 
-  get deck() {
-    return (this.#deck ??= []);
+  get cards() {
+    return (this.#cards ??= []);
   }
 
   constructor() {
@@ -22,9 +21,9 @@ class App extends HTMLElement {
 
   @willPaint
   async [hydrate]() {
-    this.#deck = await Deck.current();
+    this.#cards = await Card.current();
     return this;
   }
 }
 
-export default App;
+export default Shelf;

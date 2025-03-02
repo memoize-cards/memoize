@@ -1,14 +1,10 @@
-import Card from "./card";
+import { params } from "standard/router";
 import Progress from "./progress";
 
 class Deck {
   #cards;
   #data;
   #progress;
-
-  get cards() {
-    return (this.#cards ??= Card.from(this.#data.cards));
-  }
 
   get cover() {
     return this.#data.cover;
@@ -34,15 +30,12 @@ class Deck {
     this.#data = data;
   }
 
-  static async from(deckId, userId) {
+  static async current() {
     const { default: supabase } = await import("artifact/supabase");
     const { data: deck } = await supabase
       .from("deck")
-      .select(
-        "id, cover, description, name, cards:card(id, front, type, validity)",
-      )
-      .eq("id", deckId)
-      .eq("user_id", userId)
+      .select("id, cover, description, name, cards:card(type, validity)")
+      .eq("id", params.deck)
       .single();
     return new Deck(deck);
   }
