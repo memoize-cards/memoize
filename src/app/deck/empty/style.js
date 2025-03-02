@@ -1,13 +1,12 @@
 import { css } from "standard/dom";
 
-function style() {
+function style(self) {
   return css`
-    oauth {
+    :host {
       align-items: center;
-      display: flex;
+      display: ${self.cards.count ? "none" : "flex"};
       flex-direction: column;
       gap: var(--spacing_inset-lg);
-      height: calc(100svh - (144px + 32px));
       justify-content: center;
       margin: 0 auto;
       max-width: 425px;

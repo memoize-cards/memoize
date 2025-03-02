@@ -9,7 +9,7 @@ function style() {
       gap: calc(var(--spacing_inset-giant) * 1.62);
       justify-content: center;
       margin: 0 auto;
-      max-width: 426px;
+      max-width: 425px;
       min-height: calc(100svh - (144px + 32px));
       width: 100%;
 

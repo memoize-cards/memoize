@@ -9,7 +9,7 @@ function style(self) {
       gap: var(--spacing_inset-lg);
       justify-content: center;
       margin: 0 auto;
-      max-width: 426px;
+      max-width: 425px;
       width: 100%;
     }
   `;
