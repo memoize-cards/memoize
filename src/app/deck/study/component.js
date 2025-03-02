@@ -1,5 +1,5 @@
 import { html } from "standard/dom";
-import { urlFor } from "standard/router";
+import { params, urlFor } from "standard/router";
 import imageEmpty from "./image-empty.svg";
 import imageFull from "./image-full.svg";
 
@@ -15,7 +15,7 @@ function component(self) {
       </m-stack>
       <m-button id="goToStudy">
         Revisar agora
-        <m-redirect href="${urlFor("card")}" on="goToStudy/click:method/go"></m-redirect>
+        <m-redirect href="${urlFor("cardOfDeck", params)}" on="goToStudy/click:method/go"></m-redirect>
       </m-button>
     `;
   }
