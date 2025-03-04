@@ -13,10 +13,10 @@ function component(self) {
         <m-form>
           <template>
             <m-input id="cover" label="Imagem de capa (URL)" name="cover" type="url" maxlength="256" value="${self.deck.cover}">
+              <m-cover slot="preview" aspect="wide" src="${self.deck.cover}" on="cover/change:attribute/src"></m-cover>
               <m-validity state="typeMismatch">URL inválida</m-validity>
               <m-text size="xxxs" color="info">Insira o link de uma imagem para representar a coleção.</m-text>
             </m-input>
-            <m-cover aspect="wide" src="${self.deck.cover}" on="cover/change:attribute/src"></m-cover>
             <m-input label="Nome" name="name" maxlength="64" value="${self.deck.name}" required>
               <m-validity state="valueMissing">Nome é obrigatório</m-validity>
               <m-text size="xxxs" color="info">Escolha um nome curto e descritivo para sua coleção.</m-text>

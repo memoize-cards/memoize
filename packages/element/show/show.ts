@@ -1,11 +1,11 @@
 import { define } from "directive";
 import attributeChanged, { booleanAttribute } from "directive/attributeChanged";
-import { paint, repaint, willPaint } from "standard/dom";
+import { paint, repaint } from "standard/dom";
 import component from "./component";
-import { setDisplay } from "./interfaces";
+import style from "./style";
 
 @define("m-show")
-@paint(component)
+@paint(component, style)
 class Show extends HTMLElement {
   #when;
 
@@ -22,13 +22,5 @@ class Show extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
-  }
-
-  @willPaint
-  [setDisplay]() {
-    this.when
-      ? this.style.removeProperty("display")
-      : this.style.setProperty("display", "none");
-    return this;
   }
 }

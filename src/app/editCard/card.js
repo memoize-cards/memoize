@@ -7,12 +7,16 @@ class Card {
     return this.#data.back;
   }
 
-  get id() {
-    return this.#data.id;
+  get cover() {
+    return this.#data.cover;
   }
 
   get front() {
     return this.#data.front;
+  }
+
+  get id() {
+    return this.#data.id;
   }
 
   constructor(data) {
@@ -35,7 +39,7 @@ class Card {
     const { default: supabase } = await import("artifact/supabase");
     const { data: card } = await supabase
       .from("card")
-      .select("id, back, front, user_id")
+      .select("id, back, cover, front, user_id")
       .eq("id", params.card)
       .single();
     return new Card(card);

@@ -14,6 +14,10 @@ class Card {
     })();
   }
 
+  get cover() {
+    return this.#data?.cover;
+  }
+
   get deck() {
     return (this.#deck ??= Deck.from(this.#data?.deck));
   }

@@ -5,6 +5,7 @@ function component(self) {
     <label for="${self.name}">
       ${self.label}
     </label>
+    <slot name="preview"></slot>
     <input
       autocomplete="${self.autocomplete}"
       id="${self.name}"
@@ -16,6 +17,7 @@ function component(self) {
       ${self.maxlength ? `maxlength="${self.maxlength}"` : ""}
       ${self.required ? "required" : ""}
     />
+    <slot name="hint"></slot>
     <slot></slot>
   `;
 }

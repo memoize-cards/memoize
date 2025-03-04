@@ -1,10 +1,15 @@
 import { css } from "standard/dom";
 
-function style() {
+function style(self) {
   return css`
     :host {
+      display: block;
       margin: 0 auto;
       max-width: 425px;
+
+      img {
+        display: ${self.slim ? "none" : "block"}
+      }
     }
   `;
 }
