@@ -1,3 +1,4 @@
+import { params } from "standard/router";
 import Calc from "./calc";
 import Deck from "./deck";
 import Validity from "./validity";
@@ -79,18 +80,17 @@ class Card {
     return this;
   }
 
-  static async from(deckId, userId) {
+  static async current() {
     const { default: supabase } = await import("artifact/supabase");
     const query = supabase
       .from("card")
       .select("*, deck!inner(id, name, paused)")
-      .eq("user_id", userId)
       .filter("deck.paused", "eq", false)
       .lte("validity", Validity.expired)
       .limit(1)
       .single();
 
-    if (deckId) query.eq("deck", deckId);
+    if (params.deck) query.eq("deck", params.deck);
 
     const { data: card, error } = await query;
 

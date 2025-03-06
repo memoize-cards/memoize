@@ -28,6 +28,7 @@ class App extends HTMLElement {
   @repaint
   async again() {
     await this.#card.again();
+    await this.#user.endReview();
     return this;
   }
 
@@ -35,6 +36,7 @@ class App extends HTMLElement {
   @repaint
   async easy() {
     await this.#card.easy();
+    await this.#user.endReview();
     return this;
   }
 
@@ -42,6 +44,7 @@ class App extends HTMLElement {
   @repaint
   async good() {
     await this.#card.good();
+    await this.#user.endReview();
     return this;
   }
 
@@ -49,13 +52,16 @@ class App extends HTMLElement {
   @repaint
   async hard() {
     await this.#card.hard();
+    await this.#user.endReview();
     return this;
   }
 
   @willPaint
   async [hydrate]() {
     this.#user = await User.logged();
-    this.#card = await Card.from(params.deck, this.#user.id);
+    this.#user.beginReview();
+
+    this.#card = await Card.current();
 
     if (!this.#card.id) {
       params.deck

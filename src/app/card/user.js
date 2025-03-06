@@ -1,12 +1,36 @@
+import Timer from "./timer";
+
 class User {
   #data = {};
+  #timer;
 
   get id() {
     return this.#data?.id;
   }
 
+  get reviewTime() {
+    return (this.#data.user_metadata.reviewTime ||= 0);
+  }
+
+  set reviewTime(value) {
+    this.#data.user_metadata.reviewTime = this.reviewTime + value;
+  }
+
   constructor(data) {
     this.#data = data;
+  }
+
+  beginReview() {
+    this.#timer = Timer.now();
+    return this;
+  }
+
+  async endReview() {
+    this.#timer.stop();
+    this.reviewTime = this.#timer.elapsed;
+    const { default: supabase } = await import("artifact/supabase");
+    await supabase.auth.updateUser({ data: this.#data.user_metadata });
+    return this;
   }
 
   static async logged() {
