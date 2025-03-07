@@ -3,10 +3,11 @@ import { paint, willPaint } from "standard/dom";
 import component from "./component";
 import { hydrate } from "./interfaces";
 import Progress from "./progress";
+import style from "./style";
 import User from "./user";
 
 @define("m-dashboard-profile")
-@paint(component)
+@paint(component, style)
 class Profile extends HTMLElement {
   #user;
   #progress;
@@ -27,7 +28,7 @@ class Profile extends HTMLElement {
   @willPaint
   async [hydrate]() {
     this.#user = await User.logged();
-    this.#progress = await Progress.from(this.user.id);
+    this.#progress = await Progress.from();
     return this;
   }
 }

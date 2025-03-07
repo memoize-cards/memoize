@@ -1,3 +1,5 @@
+import formatStudyTime from "./formatStudyTime";
+
 class User {
   #data = {};
 
@@ -14,6 +16,10 @@ class User {
     return full_name ?? name;
   }
 
+  get reviewTime() {
+    return formatStudyTime(this.#data?.user_metadata?.reviewTime ?? 0);
+  }
+
   constructor(data) {
     this.#data = data;
   }
@@ -23,6 +29,7 @@ class User {
     const {
       data: { user },
     } = await supabase.auth.getUser();
+    console.log(user);
     return new User(user);
   }
 }

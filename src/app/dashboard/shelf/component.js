@@ -10,7 +10,7 @@ function component(self) {
           <m-stack direction="column" spacing="nano">
             <m-chart learn="${deck.cards.learn}" relearn="${deck.cards.relearn}" review="${deck.cards.review}"></m-chart>
             <m-stack direction="column" spacing="none">
-              <m-text size="xxxs">${deck.cards.total} Revisões</m-text>
+              <m-text size="xxxs" color="info">${deck.cards.total} Revisões</m-text>
               <m-text size="xs" family="highlight" weight="bold" color="master-darker">${deck.name}</m-text>
             </m-stack>
           </m-stack>

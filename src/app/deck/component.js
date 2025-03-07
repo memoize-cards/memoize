@@ -12,8 +12,8 @@ function component(self) {
     <m-main>
       <app>
         <m-cover aspect="wide" src="${self.deck.cover}"></m-cover>
-        <m-stack direction="column" spacing="quarck">
-          <m-text size="xxxs">${self.deck.progress.total} Revisões</m-text>
+        <m-stack direction="column" spacing="none">
+          <m-text size="xxxs" color="info">${self.deck.progress.total} Revisões</m-text>
           <m-text size="sm" family="highlight" weight="bold" color="master-darker">${self.deck.name}</m-text>
           <m-text size="xxs">${self.deck.description}</m-text>
         </m-stack>

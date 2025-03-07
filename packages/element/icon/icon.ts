@@ -7,6 +7,7 @@ import style from "./style";
 @paint(component, style)
 class Icon extends HTMLElement {
   #color;
+  #size;
   #use;
 
   get color() {
@@ -17,6 +18,16 @@ class Icon extends HTMLElement {
   @repaint
   set color(value) {
     this.#color = value;
+  }
+
+  get size() {
+    return (this.#size ??= "md");
+  }
+
+  @attributeChanged("size")
+  @repaint
+  set size(value) {
+    this.#size = value;
   }
 
   get use() {

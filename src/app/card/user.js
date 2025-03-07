@@ -26,8 +26,7 @@ class User {
   }
 
   async endReview() {
-    this.#timer.stop();
-    this.reviewTime = this.#timer.elapsed;
+    this.reviewTime = this.#timer.stop().elapsed;
     const { default: supabase } = await import("artifact/supabase");
     await supabase.auth.updateUser({ data: this.#data.user_metadata });
     return this;

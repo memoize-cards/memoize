@@ -21,9 +21,9 @@ function style(self) {
       border-radius: var(--border-radius-circular);
       box-sizing: border-box;
       display: flex;
-      height: 138px;
+      height: 76px;
       justify-content: center;
-      width: 138px;
+      width: 76px;
 
       &:before {
         content: "";
@@ -32,8 +32,8 @@ function style(self) {
         border-radius: inherit;
         box-sizing: border-box;
         display: block;
-        height: 128px;
-        width: 128px;
+        height: 70px;
+        width: 70px;
       }
 
       img {
@@ -42,9 +42,9 @@ function style(self) {
         border-radius: inherit;
         box-sizing: border-box;
         color: transparent;
-        height: 120px;
+        height: 64px;
         position: absolute;
-        width: 120px;
+        width: 64px;
       }
     }
   `;

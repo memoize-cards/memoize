@@ -21,8 +21,8 @@ function style(self) {
       
       img {
         aspect-ratio: 1 / 1;
-        height: 120px;
-        width: 120px;
+        height: 80px;
+        width: 80px;
       }
 
       m-button {

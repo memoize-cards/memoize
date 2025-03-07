@@ -4,8 +4,14 @@ function style(self) {
   return css`
     :host {
       color: var(--color-${self.color});
-      height: 24px;
-      width: 24px;
+      display: block;
+      height: var(--font-size-${self.size});
+      width: var(--font-size-${self.size});
+
+      svg {
+        height: inherit;
+        width: inherit;
+      }
     }
   `;
 }

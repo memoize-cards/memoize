@@ -48,12 +48,9 @@ class Progress {
     return descriptor;
   }
 
-  static async from(userId) {
+  static async from() {
     const { default: supabase } = await import("artifact/supabase");
-    const { data: cards } = await supabase
-      .from("card")
-      .select("type")
-      .eq("user_id", userId);
+    const { data: cards } = await supabase.from("card").select("type");
 
     const {
       1: learn = [],
