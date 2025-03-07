@@ -21,14 +21,18 @@ function style(self) {
       border-radius: var(--border-radius-circular);
       box-sizing: border-box;
       display: flex;
-      height: 76px;
       justify-content: center;
-      width: 76px;
+      height: auto;
+      max-height: 76px;
+      max-width: 76px;
+      min-height: 76px;
+      min-width: 76px;
+      width: auto;
 
       &:before {
         content: "";
         background-color: var(--color-master-lighter);
-        border: var(--border-width-heavy) solid var(--color-master-lightest);
+        border: var(--border-width-thick) solid var(--color-master-lightest);
         border-radius: inherit;
         box-sizing: border-box;
         display: block;
