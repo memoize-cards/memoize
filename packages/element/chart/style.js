@@ -7,24 +7,24 @@ function style(self) {
       border-radius: var(--border-radius-pill);
       display: flex;
       overflow: hidden;
-      height: 8px;
+      height: 6px;
       width: 100%;
 
       div:first-child {
         background-color: var(--color-success);
-        height: 8px;
+        height: 6px;
         width: ${self.review}%;
       }
 
       div:nth-child(2) {
         background-color: var(--color-warning);
-        height: 8px;
+        height: 6px;
         width: ${self.learn}%;
       }
 
       div:last-child {
         background-color: var(--color-danger);
-        height: 8px;
+        height: 6px;
         width: ${self.relearn}%;
       }
     }

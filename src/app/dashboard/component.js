@@ -4,6 +4,7 @@ import "./header";
 import "./profile";
 import "./shelf";
 import "./study";
+import "./week";
 
 import { html } from "standard/dom";
 
@@ -13,6 +14,7 @@ function component() {
     <m-main>
       <app>
         <m-dashboard-profile></m-dashboard-profile>
+        <m-dashboard-week></m-dashboard-week>
         <m-dashboard-study></m-dashboard-study>
         <m-dashboard-shelf></m-dashboard-shelf>
         <m-dashboard-empty></m-dashboard-empty>

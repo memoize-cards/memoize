@@ -4,8 +4,8 @@ function style() {
   return css`
     :host {
       color: var(--color-primary);
-      height: 56px;
-      width: 56px;
+      height: 42px;
+      width: 42px;
 
       svg {
         height: inherit;

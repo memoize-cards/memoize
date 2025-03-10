@@ -11,7 +11,7 @@ function style(self) {
       justify-content: start;
       margin: 0 auto;
       max-width: 1024;
-      padding: var(--spacing_inset-md) 0;
+      padding: var(--spacing_inset-sm) 0;
       width: 100%;
     }
   `;
