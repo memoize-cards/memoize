@@ -1,19 +1,28 @@
 import { define } from "directive";
-import { paint } from "standard/dom";
+import { paint, willPaint } from "standard/dom";
 import component from "./component";
-import getWeekDays from "./getWeekDays";
+import Habit from "./habit";
+import { hydrate } from "./interfaces";
 import style from "./style";
 
 @define("m-dashboard-week")
 @paint(component, style)
 class Week extends HTMLElement {
-  get days() {
-    return getWeekDays();
+  #habit;
+
+  get habit() {
+    return (this.#habit ??= []);
   }
 
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
+  }
+
+  @willPaint
+  async [hydrate]() {
+    this.#habit = await Habit.now();
+    return this;
   }
 }
 

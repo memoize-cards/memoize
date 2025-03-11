@@ -1,6 +1,7 @@
 const medias = {
   add: () => import("./add"),
   arrowBack: () => import("./arrowBack"),
+  check: () => import("./check"),
   cognition: () => import("./cognition"),
   delete: () => import("./delete"),
   language: () => import("./language"),

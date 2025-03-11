@@ -4,6 +4,7 @@ import on, { stop } from "standard/event";
 import { params } from "standard/router";
 import Card from "./card";
 import component from "./component";
+import Habit from "./habit";
 import { hydrate } from "./interfaces";
 import Navigate from "./navigate";
 import style from "./style";
@@ -13,6 +14,7 @@ import User from "./user";
 @paint(component, style)
 class App extends HTMLElement {
   #user;
+  #habit;
   #card;
 
   get card() {
@@ -28,6 +30,7 @@ class App extends HTMLElement {
   @repaint
   async again() {
     await this.#card.again();
+    await this.#habit.endReview();
     await this.#user.endReview();
     return this;
   }
@@ -36,6 +39,7 @@ class App extends HTMLElement {
   @repaint
   async easy() {
     await this.#card.easy();
+    await this.#habit.endReview();
     await this.#user.endReview();
     return this;
   }
@@ -44,6 +48,7 @@ class App extends HTMLElement {
   @repaint
   async good() {
     await this.#card.good();
+    await this.#habit.endReview();
     await this.#user.endReview();
     return this;
   }
@@ -52,6 +57,7 @@ class App extends HTMLElement {
   @repaint
   async hard() {
     await this.#card.hard();
+    await this.#habit.endReview();
     await this.#user.endReview();
     return this;
   }
@@ -59,6 +65,9 @@ class App extends HTMLElement {
   @willPaint
   async [hydrate]() {
     this.#user = await User.logged();
+    this.#habit = await Habit.from(this.#user.id);
+
+    this.#habit.beginReview();
     this.#user.beginReview();
 
     this.#card = await Card.current();

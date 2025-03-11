@@ -3,7 +3,9 @@ import { css } from "standard/dom";
 function style(self) {
   return css`
     :host {
-      display: ${self.when ? "block" : "none"};
+      align-items: ${self.align};
+      display: ${self.display};
+      justify-content: ${self.justify};
       width: 100%;
     }
   `;
