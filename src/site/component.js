@@ -6,8 +6,8 @@ function component() {
   return html`
     <m-main>
       <site>
-        <m-stack direction="column" spacing="nano" align="center">
-          <m-logo></m-logo>
+        <m-logo></m-logo>
+        <m-stack direction="column" spacing="none" align="center">
           <m-text color="master-darker" family="highlight" size="md" weight="bold">Aprenda <m-text color="primary" family="highlight" size="md" weight="bold">5x mais rápido!</m-text></m-text>
           <m-text align="center" size="xxxs">Com a ciência da repetição espaçada, você obtém uma retenção de conhecimento superior. Domine qualquer assunto <m-text size="xxxs" weight="bold">2 a 5 vezes mais rápido que os métodos tradicionais</m-text></m-text>
         </m-stack>
