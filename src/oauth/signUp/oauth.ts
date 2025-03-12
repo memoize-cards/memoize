@@ -1,8 +1,8 @@
 import { define } from "directive";
-import Navigate from "oauth/signIn/navigate";
 import style from "oauth/signIn/style";
 import { paint } from "standard/dom";
 import on, { detail, stop } from "standard/event";
+import * as Navigate from "standard/navigate";
 import component from "./component";
 import User from "./user";
 

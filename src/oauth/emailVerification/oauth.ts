@@ -3,9 +3,9 @@ import User from "oauth/forgotPassword/user";
 import style from "oauth/signIn/style";
 import { paint } from "standard/dom";
 import on, { stop } from "standard/event";
+import * as Navigate from "standard/navigate";
 import { args } from "standard/router";
 import component from "./component";
-import Navigate from "./navigate";
 
 @define("m-email-verification")
 @paint(component, style)

@@ -12,9 +12,9 @@ function component() {
     <m-main>
       <oauth>
         <m-logo></m-logo>
-        <m-stack direction="column" spacing="nano" align="center">
-          <m-text color="master-darker" family="highlight" size="lg" weight="bold" align="center">Verifique seu e-mail</m-text>
-          <m-text align="center">Enviamos um link para redefinir sua senha para o endereço de e-mail abaixo:</m-text>
+        <m-stack direction="column" spacing="none" align="center">
+          <m-text color="master-darker" family="highlight" size="md" weight="bold" align="center">Verifique seu e-mail</m-text>
+          <m-text align="center" size="xxxs">Enviamos um link para redefinir sua senha para o endereço de e-mail abaixo:</m-text>
           <m-text weight="bold" align="center">${args.email}</m-text>
         </m-stack>
         <m-button id="openEmailApp" width="100%">Abrir aplicativo de e-mail</m-button>

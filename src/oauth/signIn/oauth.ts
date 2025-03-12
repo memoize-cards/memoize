@@ -1,8 +1,8 @@
 import { define } from "directive";
 import { paint } from "standard/dom";
 import on, { detail, prevent, stop } from "standard/event";
+import * as Navigate from "standard/navigate";
 import component from "./component";
-import Navigate from "./navigate";
 import style from "./style";
 import User from "./user";
 

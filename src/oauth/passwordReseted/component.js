@@ -1,5 +1,5 @@
 import { html } from "standard/dom";
-import { args, urlFor } from "standard/router";
+import { urlFor } from "standard/router";
 
 function component() {
   return html`
@@ -12,9 +12,9 @@ function component() {
     <m-main>
       <oauth>
         <m-logo></m-logo>
-        <m-stack direction="column" spacing="nano" align="center">
-          <m-text color="master-darker" family="highlight" size="lg" weight="bold" align="center">Redefinição de senha</m-text>
-          <m-text align="center">Sua senha foi redefinida com sucesso. Clique abaixo para fazer login de forma rápida e segura.</m-text>
+        <m-stack direction="column" spacing="none" align="center">
+          <m-text color="master-darker" family="highlight" size="md" weight="bold" align="center">Redefinição de senha</m-text>
+          <m-text align="center" size="xxxs">Sua senha foi redefinida com sucesso. Clique abaixo para fazer login de forma rápida e segura.</m-text>
         </m-stack>
         <m-button id="continue" width="100%">
           Continuar

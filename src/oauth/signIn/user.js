@@ -1,18 +1,13 @@
-import { urlFor } from "standard/router";
-
 const User = {
   async signInWithOAuth() {
-    const { default: supabase } = await import("artifact/supabase");
-    supabase.auth.signInWithOAuth({
-      provider: "google",
-      options: { redirectTo: urlFor("dashboard") },
-    });
+    const { signInWithOAuth } = await import("artifact/supabase");
+    signInWithOAuth();
     return User;
   },
 
   async signInWithPassword(data) {
-    const { default: supabase } = await import("artifact/supabase");
-    const { data: user } = await supabase.auth.signInWithPassword(data);
+    const { signInWithPassword } = await import("artifact/supabase");
+    const { data: user } = await signInWithPassword(data);
     return user;
   },
 };

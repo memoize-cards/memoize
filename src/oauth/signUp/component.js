@@ -12,9 +12,9 @@ function component() {
     <m-main>
       <oauth>
         <m-logo></m-logo>
-        <m-stack direction="column" spacing="nano" align="center">
-          <m-text color="master-darker" family="highlight" size="lg" weight="bold" align="center">Criar uma conta</m-text>
-          <m-text align="center">Inicie sua avaliação gratuita</m-text>
+        <m-stack direction="column" spacing="none" align="center">
+          <m-text color="master-darker" family="highlight" size="md" weight="bold" align="center">Criar uma conta</m-text>
+          <m-text align="center" size="xxxs">Inicie sua avaliação gratuita</m-text>
         </m-stack>
         <m-form>
           <template>

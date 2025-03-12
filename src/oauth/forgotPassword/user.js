@@ -1,11 +1,7 @@
-import { urlFor } from "standard/router";
-
 const User = {
   async resetPasswordForEmail(email) {
-    const { default: supabase } = await import("artifact/supabase");
-    const { data: user } = await supabase.auth.resetPasswordForEmail(email, {
-      redirectTo: urlFor("setNewPassword"),
-    });
+    const { resetPasswordForEmail } = await import("artifact/supabase");
+    const { data: user } = await resetPasswordForEmail(email);
     return user;
   },
 };

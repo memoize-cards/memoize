@@ -1,6 +1,5 @@
 import { html } from "standard/dom";
 import { urlFor } from "standard/router";
-import logo from "./image.svg";
 import image from "./image.svg";
 
 function component() {
@@ -14,9 +13,9 @@ function component() {
     <m-main>
       <oauth>
         <m-logo></m-logo>
-        <m-stack direction="column" spacing="nano" align="center">
-          <m-text color="master-darker" family="highlight" size="lg" weight="bold" align="center">Você terminou por hoje?</m-text>
-          <m-text align="center">Você será desconectado do aplicativo. Sentiremos sua falta! Volte logo para continuar seus estudos</m-text>
+        <m-stack direction="column" spacing="none" align="center">
+          <m-text color="master-darker" family="highlight" size="md" weight="bold" align="center">Você terminou por hoje?</m-text>
+          <m-text align="center" size="xxxs">Você será desconectado do aplicativo. Sentiremos sua falta! Volte logo para continuar seus estudos</m-text>
         </m-stack>
         <img alt="Memoize" src="${image}" loading="lazy" />
         <m-button id="logOut" width="100%">Sair</m-button>

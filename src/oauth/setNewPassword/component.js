@@ -12,9 +12,9 @@ function component() {
     <m-main>
       <oauth>
         <m-logo></m-logo>
-        <m-stack direction="column" spacing="nano" align="center">
-          <m-text color="master-darker" family="highlight" size="lg" weight="bold" align="center">Definir nova senha</m-text>
-          <m-text align="center">Sua nova senha deve ser diferente das senhas anteriormente utilizadas.</m-text>
+        <m-stack direction="column" spacing="none" align="center">
+          <m-text color="master-darker" family="highlight" size="md" weight="bold" align="center">Definir nova senha</m-text>
+          <m-text align="center" size="xxxs">Sua nova senha deve ser diferente das senhas anteriormente utilizadas.</m-text>
         </m-stack>
         <m-form>
           <template>

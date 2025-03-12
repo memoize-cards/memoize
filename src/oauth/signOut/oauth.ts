@@ -3,7 +3,7 @@ import style from "oauth/signIn/style";
 import { paint } from "standard/dom";
 import on, { stop } from "standard/event";
 import component from "./component";
-import Navigate from "./navigate";
+import * as Navigate from "./navigate";
 import User from "./user";
 
 @define("m-sign-out")

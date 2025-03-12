@@ -13,9 +13,9 @@ function component() {
     <m-main>
       <oauth>
         <m-logo></m-logo>
-        <m-stack direction="column" spacing="nano" align="center">
-          <m-text color="master-darker" family="highlight" size="lg" weight="bold" align="center">Faça login na sua conta</m-text>
-          <m-text align="center">Bem-vindo de volta! Por favor, insira seus dados</m-text>
+        <m-stack direction="column" spacing="none" align="center">
+          <m-text color="master-darker" family="highlight" size="md" weight="bold" align="center">Faça login na sua conta</m-text>
+          <m-text align="center" size="xxxs">Bem-vindo de volta! Por favor, insira seus dados</m-text>
         </m-stack>
         <m-form>
           <template>
@@ -39,12 +39,7 @@ function component() {
         </m-stack>
       </oauth>
     </m-main>
-    <m-footer>
-      <m-text slot="leading">© 2024 Memoize. Todos os direitos reservados.</m-text>
-      <m-button slot="trailing" variant="link">
-        <m-icon use="language"></m-icon>
-      </m-button>
-    </m-footer>
+    <m-footer></m-footer>
   `;
 }
 
