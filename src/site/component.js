@@ -6,10 +6,10 @@ function component() {
   return html`
     <m-main>
       <site>
-        <m-logo></m-logo>
         <m-stack direction="column" spacing="nano" align="center">
-          <m-text color="master-darker" family="highlight" size="lg" weight="bold">Aprenda <m-text color="primary" family="highlight" size="lg" weight="bold">5x mais rápido!</m-text></m-text>
-          <m-text align="center">Com a ciência da repetição espaçada, você obtém uma retenção de conhecimento superior. Domine qualquer assunto <m-text weight="bold">2 a 5 vezes mais rápido que os métodos tradicionais</m-text></m-text>
+          <m-logo></m-logo>
+          <m-text color="master-darker" family="highlight" size="md" weight="bold">Aprenda <m-text color="primary" family="highlight" size="md" weight="bold">5x mais rápido!</m-text></m-text>
+          <m-text align="center" size="xxxs">Com a ciência da repetição espaçada, você obtém uma retenção de conhecimento superior. Domine qualquer assunto <m-text size="xxxs" weight="bold">2 a 5 vezes mais rápido que os métodos tradicionais</m-text></m-text>
         </m-stack>
         <img alt="Memoize" src="${image}" loading="lazy" />
         <m-stack direction="column">

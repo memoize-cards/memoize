@@ -1,8 +1,8 @@
 import { define } from "directive";
 import { paint, willPaint } from "standard/dom";
+import { hydrate } from "standard/interface";
+import * as Navigate from "standard/navigate";
 import component from "./component";
-import { hydrate } from "./interfaces";
-import Navigate from "./navigate";
 import style from "./style";
 import User from "./user";
 

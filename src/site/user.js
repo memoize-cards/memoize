@@ -1,8 +1,8 @@
 const User = {
   async isItAuthenticated() {
-    const { default: supabase } = await import("artifact/supabase");
-    const { data } = await supabase.auth.getSession();
-    return !!data?.session?.user;
+    const { getSession } = await import("artifact/supabase");
+    const { data } = await getSession();
+    return Boolean(data?.session?.user);
   },
 };
 
