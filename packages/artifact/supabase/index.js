@@ -1,1 +1,2 @@
-export { default } from "./supabase";
+export { default } from "./client";
+export { default as getSession } from "./getSession";
