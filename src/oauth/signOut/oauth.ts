@@ -2,8 +2,8 @@ import { define } from "directive";
 import style from "oauth/signIn/style";
 import { paint } from "standard/dom";
 import on, { stop } from "standard/event";
+import * as Navigate from "standard/navigate";
 import component from "./component";
-import * as Navigate from "./navigate";
 import User from "./user";
 
 @define("m-sign-out")
