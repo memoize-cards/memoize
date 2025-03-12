@@ -1,6 +1,6 @@
 import client from "./client";
 
-function SignUp(data) {
+function signUp(data) {
   const { email, password, name } = data;
   return client.auth.signUp({
     email,
