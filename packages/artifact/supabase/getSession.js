@@ -1,7 +1,8 @@
+import runLock from "standard/runLock";
 import client from "./client";
 
 function getSession() {
-  return client.auth.getSession();
+  return runLock("session", () => client.auth.getSession());
 }
 
 export default getSession;
