@@ -1,5 +1,5 @@
 import { define } from "directive";
-import User from "oauth/forgotPassword";
+import User from "oauth/forgotPassword/user";
 import style from "oauth/signIn/style";
 import { paint, willPaint } from "standard/dom";
 import on, { stop } from "standard/event";
