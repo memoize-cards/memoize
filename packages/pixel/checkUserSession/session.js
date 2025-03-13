@@ -1,8 +1,8 @@
 const Session = {
   get expired() {
     return (async () => {
-      const { default: supabase } = await import("artifact/supabase");
-      const { data } = await supabase.auth.getSession();
+      const { getSession } = await import("artifact/supabase");
+      const { data } = await getSession();
       return !data?.session?.user;
     })();
   },

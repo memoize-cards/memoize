@@ -1,5 +1,5 @@
+import * as Navigate from "standard/navigate";
 import CurrentPage from "./currentPage";
-import Navigate from "./navigate";
 import Session from "./session";
 
 async function handle() {
