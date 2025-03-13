@@ -1,7 +1,8 @@
 import { define } from "directive";
 import style from "oauth/signIn/style";
-import { paint } from "standard/dom";
+import { paint, willPaint } from "standard/dom";
 import on, { detail, stop } from "standard/event";
+import { hydrate } from "standard/interface";
 import component from "./component";
 import * as Navigate from "./navigate";
 import User from "./user";
@@ -18,6 +19,12 @@ class OAuth extends HTMLElement {
   async reset(data) {
     const user = await User.updateUser(data);
     user && Navigate.goToPasswordReseted();
+    return this;
+  }
+
+  @willPaint
+  async [hydrate]() {
+    if (await User.isItAuthenticated()) Navigate.goToDashboard();
     return this;
   }
 }

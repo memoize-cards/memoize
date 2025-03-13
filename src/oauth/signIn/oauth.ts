@@ -1,6 +1,7 @@
 import { define } from "directive";
-import { paint } from "standard/dom";
+import { paint, willPaint } from "standard/dom";
 import on, { detail, prevent, stop } from "standard/event";
+import { hydrate } from "standard/interface";
 import * as Navigate from "standard/navigate";
 import component from "./component";
 import style from "./style";
@@ -24,6 +25,12 @@ class OAuth extends HTMLElement {
   @on.click("#logInWithGoogle", stop)
   async logInWithGoogle() {
     await User.signInWithOAuth();
+    return this;
+  }
+
+  @willPaint
+  async [hydrate]() {
+    if (await User.isItAuthenticated()) Navigate.goToDashboard();
     return this;
   }
 }
