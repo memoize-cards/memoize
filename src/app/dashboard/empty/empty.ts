@@ -1,16 +1,14 @@
 import { define } from "directive";
 import { paint, willPaint } from "standard/dom";
+import { hydrate } from "standard/interface";
 import component from "./component";
 import Decks from "./decks";
-import { hydrate } from "./interfaces";
 import style from "./style";
-import User from "./user";
 
 @define("m-dashboard-empty")
 @paint(component, style)
 class Empty extends HTMLElement {
   #decks;
-  #user;
 
   get decks() {
     return (this.#decks ??= {});
@@ -23,8 +21,7 @@ class Empty extends HTMLElement {
 
   @willPaint
   async [hydrate]() {
-    this.#user = await User.logged();
-    this.#decks = await Decks.from(this.#user.id);
+    this.#decks = await Decks.ofUserLogged();
     return this;
   }
 }

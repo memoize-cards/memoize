@@ -25,10 +25,10 @@ class User {
   }
 
   static async logged() {
-    const { default: supabase } = await import("artifact/supabase");
+    const { getUser } = await import("artifact/supabase");
     const {
       data: { user },
-    } = await supabase.auth.getUser();
+    } = await getUser();
     return new User(user);
   }
 }

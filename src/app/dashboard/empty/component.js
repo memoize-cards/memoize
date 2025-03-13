@@ -4,9 +4,9 @@ import image from "./image.svg";
 
 function component() {
   return html`
-    <m-stack direction="column" spacing="nano" align="center">
-      <m-text color="master-darker" family="highlight" size="lg" weight="bold" align="center">Pronto para começar?</m-text>
-      <m-text align="center">Para começar a estudar, vamos criar sua primeira coleção de estudo</m-text>
+    <m-stack direction="column" spacing="none" align="center">
+      <m-text color="master-darker" family="highlight" size="md" weight="bold" align="center">Pronto para começar?</m-text>
+      <m-text align="center" size="xxxs">Para começar a estudar, vamos criar sua primeira coleção de estudo</m-text>
     </m-stack>
     <img alt="Memoize" src="${image}" loading="lazy" />
     <m-stack direction="column" align="center">

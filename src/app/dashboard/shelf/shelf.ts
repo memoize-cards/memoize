@@ -1,16 +1,14 @@
 import { define } from "directive";
 import { paint, willPaint } from "standard/dom";
+import { hydrate } from "standard/interface";
 import component from "./component";
-import Deck from "./deck";
-import { hydrate } from "./interfaces";
+import Decks from "./decks";
 import style from "./style";
-import User from "./user";
 
 @define("m-dashboard-shelf")
 @paint(component, style)
 class Shelf extends HTMLElement {
   #decks;
-  #user;
 
   get decks() {
     return (this.#decks ??= []);
@@ -23,8 +21,7 @@ class Shelf extends HTMLElement {
 
   @willPaint
   async [hydrate]() {
-    this.#user = await User.logged();
-    this.#decks = await Deck.from(this.#user.id);
+    this.#decks = await Decks.ofUserLogged();
     return this;
   }
 }

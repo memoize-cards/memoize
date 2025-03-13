@@ -1,7 +1,7 @@
 import { define } from "directive";
 import { paint, willPaint } from "standard/dom";
+import { hydrate } from "standard/interface";
 import component from "./component";
-import { hydrate } from "./interfaces";
 import Progress from "./progress";
 import style from "./style";
 import User from "./user";
@@ -28,7 +28,7 @@ class Profile extends HTMLElement {
   @willPaint
   async [hydrate]() {
     this.#user = await User.logged();
-    this.#progress = await Progress.from();
+    this.#progress = await Progress.ofUserLogged();
     return this;
   }
 }

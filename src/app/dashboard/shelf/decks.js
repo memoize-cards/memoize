@@ -24,12 +24,9 @@ class Deck {
     this.#data = data;
   }
 
-  static async from(userId) {
-    const { default: supabase } = await import("artifact/supabase");
-    const { data: decks } = await supabase
-      .from("deck")
-      .select("id, cover, name, cards:card(type)")
-      .eq("user_id", userId);
+  static async ofUserLogged() {
+    const { decksOfUserLogged } = await import("artifact/supabase");
+    const { data: decks } = await decksOfUserLogged();
     return decks?.map((deck) => new Deck(deck));
   }
 }
