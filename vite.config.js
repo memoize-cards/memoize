@@ -13,6 +13,11 @@ export default defineConfig({
   plugins: [
     VitePWA({
       injectRegister: "auto",
+      registerType: "autoUpdate",
+      workbox: {
+        clientsClaim: true,
+        skipWaiting: true,
+      },
     }),
   ],
   resolve: {
