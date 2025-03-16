@@ -1,11 +1,10 @@
 import { define } from "directive";
 import { paint, willPaint } from "standard/dom";
 import { hydrate } from "standard/interface";
-import Card from "./card";
+import Cards from "./cards";
 import component from "./component";
 import style from "./style";
 import timeUntilReview from "./timeUntilReview";
-import User from "./user";
 
 @define("m-dashboard-study")
 @paint(component, style)
@@ -31,7 +30,7 @@ class Study extends HTMLElement {
 
   @willPaint
   async [hydrate]() {
-    this.#card = await Card.current();
+    this.#card = await Cards.reviewStats();
     return this;
   }
 }
