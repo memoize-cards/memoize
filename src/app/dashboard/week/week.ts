@@ -1,8 +1,8 @@
 import { define } from "directive";
 import { paint, willPaint } from "standard/dom";
+import { hydrate } from "standard/interface";
 import component from "./component";
 import Habit from "./habit";
-import { hydrate } from "./interfaces";
 import style from "./style";
 
 @define("m-dashboard-week")

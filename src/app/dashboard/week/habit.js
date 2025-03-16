@@ -17,13 +17,9 @@ class Habit {
     return this.#days.map(callback);
   }
 
-  static async now() {
-    const { default: supabase } = await import("artifact/supabase");
-    const { data: days } = await supabase
-      .from("habit")
-      .select("date, goalAchieved")
-      .order("date", { ascending: true })
-      .limit(7);
+  static async ofUserLogged() {
+    const { habitOfUserLogged } = await import("artifact/supabase");
+    const { data: days } = await habitOfUserLogged();
 
     return new Habit(
       Sunday.from(days),

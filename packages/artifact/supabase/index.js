@@ -2,6 +2,7 @@ export { default } from "./client";
 export { default as decksOfUserLogged } from "./decksOfUserLogged";
 export { default as getSession } from "./getSession";
 export { default as getUser } from "./getUser";
+export { default as habitOfUserLogged } from "./habitOfUserLogged";
 export { default as nextReviewCardOfUserLogged } from "./nextReviewCardOfUserLogged";
 export { default as progressOfUserLogged } from "./progressOfUserLogged";
 export { default as resetPasswordForEmail } from "./resetPasswordForEmail";
