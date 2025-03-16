@@ -21,7 +21,7 @@ class Week extends HTMLElement {
 
   @willPaint
   async [hydrate]() {
-    this.#habit = await Habit.now();
+    this.#habit = await Habit.ofUserLogged();
     return this;
   }
 }
