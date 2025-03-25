@@ -6,7 +6,7 @@ function habitOfUserLogged() {
     client
       .from("habit")
       .select("date, goalAchieved")
-      .order("date", { ascending: true })
+      .order("date", { ascending: false })
       .limit(7),
   );
 }
