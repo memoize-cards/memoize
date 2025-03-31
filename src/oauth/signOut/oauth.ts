@@ -3,6 +3,7 @@ import style from "oauth/signIn/style";
 import { paint } from "standard/dom";
 import on, { stop } from "standard/event";
 import * as Navigate from "standard/navigate";
+import Cache from "./cache";
 import component from "./component";
 import User from "./user";
 
@@ -17,6 +18,7 @@ class OAuth extends HTMLElement {
   @on.click("#logOut", stop)
   async logOut(data) {
     await User.signOut();
+    Cache.clear();
     Navigate.goToSignIn();
     return this;
   }
