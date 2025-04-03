@@ -1,7 +1,7 @@
 import client from "./client";
 
-function updateUser(data) {
+function updateUserMetaData(data) {
   return client.auth.updateUser(data);
 }
 
-export default updateUser;
+export default updateUserMetaData;

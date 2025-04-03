@@ -18,8 +18,9 @@ class Habit {
   }
 
   static async ofUserLogged() {
-    const { habitOfUserLogged } = await import("artifact/supabase");
-    const { data: days } = await habitOfUserLogged();
+    const { getUserLogged, habitOfUser } = await import("artifact/supabase");
+    const { data: user } = await getUserLogged();
+    const { data: days } = await habitOfUser(user.id);
 
     return new Habit(
       Sunday.from(days),

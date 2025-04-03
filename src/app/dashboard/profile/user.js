@@ -25,10 +25,8 @@ class User {
   }
 
   static async logged() {
-    const { getUser } = await import("artifact/supabase");
-    const {
-      data: { user },
-    } = await getUser();
+    const { getUserLogged } = await import("artifact/supabase");
+    const { data: user } = await getUserLogged();
     return new User(user);
   }
 }

@@ -27,16 +27,14 @@ class User {
 
   async endReview() {
     this.reviewTime = this.#timer.stop().elapsed;
-    const { default: supabase } = await import("artifact/supabase");
-    await supabase.auth.updateUser({ data: this.#data.user_metadata });
+    const { updateUserMetaData } = await import("artifact/supabase");
+    await updateUserMetaData(this.#data.user_metadata);
     return this;
   }
 
   static async logged() {
-    const { default: supabase } = await import("artifact/supabase");
-    const {
-      data: { user },
-    } = await supabase.auth.getUser();
+    const { getUserLogged } = await import("artifact/supabase");
+    const { data: user } = await getUserLogged();
     return new User(user);
   }
 }

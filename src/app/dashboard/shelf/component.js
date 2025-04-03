@@ -8,9 +8,9 @@ function component(self) {
         <m-stack id="deck_${deck.id}" direction="column">
           <m-cover src="${deck.cover}" aspect="portrait"></m-cover>
           <m-stack direction="column" spacing="nano">
-            <m-chart learn="${deck.cards.learn}" relearn="${deck.cards.relearn}" review="${deck.cards.review}"></m-chart>
+            <m-chart learn="${deck.progress.learn}" relearn="${deck.progress.relearn}" review="${deck.progress.review}"></m-chart>
             <m-stack direction="column" spacing="none">
-              <m-text size="xxxs" color="info">${deck.cards.total} Revisões</m-text>
+              <m-text size="xxxs" color="info">${deck.progress.total} Revisões</m-text>
               <m-text size="xs" family="highlight" weight="bold" color="master-darker">${deck.name}</m-text>
             </m-stack>
           </m-stack>

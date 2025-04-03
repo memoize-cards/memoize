@@ -1,20 +1,22 @@
-class Card {
+import Card from "./card";
+
+class Progress {
   #learn;
   #relearn;
   #review;
   #total;
 
-  @Card.asPercentageOfTotal
+  @Progress.asPercentageOfTotal
   get learn() {
     return (this.#learn ??= 0);
   }
 
-  @Card.asPercentageOfTotal
+  @Progress.asPercentageOfTotal
   get relearn() {
     return (this.#relearn ??= 0);
   }
 
-  @Card.asPercentageOfTotal
+  @Progress.asPercentageOfTotal
   get review() {
     return (this.#review ??= 0);
   }
@@ -35,8 +37,13 @@ class Card {
       1: learn = [],
       2: review = [],
       3: relearn = [],
-    } = data.group((card) => card.type);
-    return new Card(learn.length, review.length, relearn.length, data.length);
+    } = data.map(Card.from).group((card) => card.type);
+    return new Progress(
+      learn.length,
+      review.length,
+      relearn.length,
+      data.length,
+    );
   }
 
   static asPercentageOfTotal(_target, _key, descriptor) {
@@ -54,4 +61,4 @@ class Card {
   }
 }
 
-export default Card;
+export default Progress;

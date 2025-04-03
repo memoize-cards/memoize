@@ -1,3 +1,4 @@
+import { params } from "standard/router";
 import Validity from "./validity";
 
 class Cards {
@@ -18,14 +19,15 @@ class Cards {
   }
 
   static async reviewStats() {
-    const { getUserLogged, nextReviewCardOfUser, totalReviewCardsOfUser } =
+    const { getUserLogged, nextReviewCardOfDeck, totalReviewCardsOfDeck } =
       await import("artifact/supabase");
     const { data: user } = await getUserLogged();
-    const { data: totalReviewCards } = await totalReviewCardsOfUser(
+    const { data: totalReviewCards } = await totalReviewCardsOfDeck(
+      params.deck,
       Validity.expired,
       user.id,
     );
-    const { data: nextCard } = await nextReviewCardOfUser(user.id);
+    const { data: nextCard } = await nextReviewCardOfDeck(params.deck, user.id);
     return new Cards(totalReviewCards, nextCard);
   }
 }
