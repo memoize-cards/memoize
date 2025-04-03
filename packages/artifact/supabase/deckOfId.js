@@ -6,7 +6,7 @@ function decksOfId(deckId, userId) {
     return client
       .from("deck")
       .select(
-        "id, cover, description, name, cards:card(progress(type, validity))",
+        "id, cover, description, name, paused, cards:card(progress(type, validity))",
       )
       .eq("id", deckId)
       .eq("cards.progress.user_id", userId)

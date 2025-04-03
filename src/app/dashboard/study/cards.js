@@ -18,15 +18,16 @@ class Cards {
   }
 
   static async reviewStats() {
-    const { getUserLogged, nextReviewCardOfUser, totalReviewCardsOfUser } =
-      await import("artifact/supabase");
+    const { getUserLogged, nextReviewCard, totalReviewCards } = await import(
+      "artifact/supabase"
+    );
     const { data: user } = await getUserLogged();
-    const { data: totalReviewCards } = await totalReviewCardsOfUser(
+    const { data: totalReview } = await totalReviewCards(
       Validity.expired,
       user.id,
     );
-    const { data: nextCard } = await nextReviewCardOfUser(user.id);
-    return new Cards(totalReviewCards, nextCard);
+    const { data: nextReview } = await nextReviewCard(user.id);
+    return new Cards(totalReview, nextReview);
   }
 }
 

@@ -12,10 +12,12 @@ function component(self) {
           <m-redirect href="${urlFor("createCard", params)}" on="goToCreateCard/click:method/go"></m-redirect>
         </m-button>
       </m-stack>
-      <m-stack direction="column" spacing="xs">
+      <m-stack direction="column" spacing="nano">
         ${self.cards.map(
           (card) => html`
-            <m-link href="${urlFor("editCard", { ...params, card: card.id })}">${card.front}</m-link>
+            <card>
+              <m-link href="${urlFor("editCard", { ...params, card: card.id })}">${card.front}</m-link>
+            </card>
           `,
         )}
       </m-stack>
