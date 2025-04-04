@@ -10,6 +10,10 @@
       "complexity": {
         "noForEach": "off"
       },
+      "correctness": {
+        "noUnusedImports": "error",
+        "noUnusedVariables": "error"
+      },
       "recommended": true,
       "style": {
         "noArguments": "off",
@@ -19,8 +23,8 @@
       },
       "suspicious": {
         "noAssignInExpressions": "off",
-        "noExplicitAny": "off",
         "noDoubleEquals": "off",
+        "noExplicitAny": "off",
         "noShadowRestrictedNames": "off",
         "noThenProperty": "off"
       }

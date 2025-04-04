@@ -1,3 +1,5 @@
+import Permission from "./permission";
+
 class Deck {
   #data;
 
@@ -10,16 +12,13 @@ class Deck {
   }
 
   static async create(data, userId) {
-    const payload = {
-      ...data,
+    const { createDeck } = await import("artifact/supabase");
+    const { data: deck } = await createDeck({ ...data, user_id: userId });
+    const { data: collab } = await addCollab({
+      deck: deck.id,
+      permission: Permission.OWNER,
       user_id: userId,
-    };
-    const { default: supabase } = await import("artifact/supabase");
-    const { data: deck } = await supabase
-      .from("deck")
-      .insert([payload])
-      .select()
-      .single();
+    });
     return new Deck(deck);
   }
 }

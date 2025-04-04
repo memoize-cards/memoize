@@ -16,43 +16,30 @@ class Deck {
   }
 
   async delete() {
-    const { default: supabase } = await import("artifact/supabase");
-    await supabase.from("deck").delete().eq("id", this.id);
+    const { deleteDeckOfId } = await import("artifact/supabase");
+    await deleteDeckOfId(this.id);
     this.#data = {};
     return this;
   }
 
   async pause() {
-    const { default: supabase } = await import("artifact/supabase");
-    const { data: deck } = await supabase
-      .from("deck")
-      .update({ paused: true })
-      .eq("id", this.id)
-      .select()
-      .single();
+    const { pauseDeckOfId } = await import("artifact/supabase");
+    const { data: deck } = await pauseDeckOfId(this.id);
     this.#data = deck;
     return this;
   }
 
   async play() {
-    const { default: supabase } = await import("artifact/supabase");
-    const { data: deck } = await supabase
-      .from("deck")
-      .update({ paused: false })
-      .eq("id", this.id)
-      .select()
-      .single();
+    const { playDeckOfId } = await import("artifact/supabase");
+    const { data: deck } = await playDeckOfId(this.id);
     this.#data = deck;
     return this;
   }
 
   static async current() {
-    const { default: supabase } = await import("artifact/supabase");
-    const { data: deck } = await supabase
-      .from("deck")
-      .select("id, paused")
-      .eq("id", params.deck)
-      .single();
+    const { deckOfId, getUserLogged } = await import("artifact/supabase");
+    const { data: user } = await getUserLogged();
+    const { data: deck } = await deckOfId(params.deck, user.id);
     return new Deck(deck);
   }
 }
