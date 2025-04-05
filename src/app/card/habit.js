@@ -46,15 +46,12 @@ class Habit {
     return this;
   }
 
-  static async from(user_id) {
-    const { default: supabase } = await import("artifact/supabase");
-    const { data: habit } = await supabase
-      .from("habit")
-      .select("*")
-      .eq("date", new Date().setHours(0, 0, 0, 0))
-      .single();
-
-    return new Habit({ ...habit, user_id });
+  static async ofToday() {
+    const today = new Date().setHours(0, 0, 0, 0);
+    const { getUserLogged, habitOfToday } = await import("artifact/supabase");
+    const { data: user } = await getUserLogged();
+    const { data: habit } = await habitOfToday(today, user.id);
+    return new Habit(habit);
   }
 }
 

@@ -1,8 +1,8 @@
 import runLock from "standard/runLock";
 import client from "./client";
 
-function habitOfUser(userId) {
-  return runLock(`habitOfUser__${userId}`, () =>
+function habitsOfUser(userId) {
+  return runLock(`habitsOfUser__${userId}`, () =>
     client
       .from("habit")
       .select("date, goalAchieved")
@@ -12,4 +12,4 @@ function habitOfUser(userId) {
   );
 }
 
-export default habitOfUser;
+export default habitsOfUser;
