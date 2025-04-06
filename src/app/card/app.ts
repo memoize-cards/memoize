@@ -79,7 +79,7 @@ class App extends HTMLElement {
 
   @didPaint
   [validate]() {
-    if (!this.#card.id) {
+    if (this.#card.notExist) {
       params.deck
         ? Navigate.goToStudyCompletedOfDeck(params.deck)
         : Navigate.goToStudyCompleted();

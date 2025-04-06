@@ -1,8 +1,6 @@
 import { valueOf } from "standard/interface";
 import { params } from "standard/router";
-import Deck from "./deck";
 import Progress from "./progress";
-import Validity from "./validity";
 
 class Card {
   #data;
@@ -21,7 +19,7 @@ class Card {
   }
 
   get deck() {
-    return (this.#deck ??= Deck.from(this.#data?.deck));
+    return this.#data?.deck;
   }
 
   get front() {
@@ -32,13 +30,17 @@ class Card {
     return this.#data?.id;
   }
 
+  get notExist() {
+    return !this.#data;
+  }
+
   get type() {
-    return this.#progress?.type;
+    return this.#data?.type;
   }
 
   constructor(data) {
     this.#data = data;
-    this.#progress = Progress.from((this.#data.progress ??= {}));
+    this.#progress = Progress.from((this.#data));
   }
 
   @Card.#update
@@ -66,14 +68,18 @@ class Card {
   }
 
   [valueOf]() {
-    return {
-      ...this.#data.progress,
-      easyFactor: this.#progress.easyFactor,
-      interval: this.#progress.interval,
-      lapse: this.#progress.lapse,
-      type: this.#progress.type,
-      validity: this.#progress.validity,
+    const data = {
+      id: this.#data.id,
+      card: this.#data.card,
+      easyFactor: this.#data.easyFactor,
+      interval: this.#data.interval,
+      lapse: this.#data.lapse,
+      type: this.#data.type,
+      validity: this.#data.validity,
+      user_id: this.#data.user_id,
     };
+    !this.#data.id && delete data.id;
+    return data;
   }
 
   static #update(_target, _key, descriptor) {
@@ -92,10 +98,9 @@ class Card {
   }
 
   static async current() {
-    const { getUserLogged, validCard } = await import("artifact/supabase");
+    const { getUserLogged, expiredCard } = await import("artifact/supabase");
     const { data: user } = await getUserLogged();
-    const { data: card } = await validCard(
-      Validity.expired,
+    const { data: card } = await expiredCard(
       params.deck,
       user.id,
     );
