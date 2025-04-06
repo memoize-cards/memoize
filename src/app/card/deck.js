@@ -1,20 +1,16 @@
 class Deck {
-  #data;
-
-  get id() {
-    return this.#data?.id;
-  }
+  #value;
 
   get name() {
-    return this.#data?.name;
+    return this.#value ??+ "";
   }
 
-  constructor(data) {
-    this.#data = data;
+  constructor(value) {
+    this.#value = value;
   }
 
-  static from(data) {
-    return new Deck(data);
+  static from(value) {
+    return new Deck(value);
   }
 }
 

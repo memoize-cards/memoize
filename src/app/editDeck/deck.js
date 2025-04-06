@@ -24,24 +24,16 @@ class Deck {
   }
 
   async update(data) {
-    const { default: supabase } = await import("artifact/supabase");
-    const { data: deck } = await supabase
-      .from("deck")
-      .update(data)
-      .eq("id", this.id)
-      .select()
-      .single();
+    const { updateDeckOfId } = await import("artifact/supabase");
+    const { data: deck } = await updateDeckOfId(data, this.id);
     this.#data = deck;
     return this;
   }
 
   static async current() {
-    const { default: supabase } = await import("artifact/supabase");
-    const { data: deck } = await supabase
-      .from("deck")
-      .select("id, cover, description, name, user_id")
-      .eq("id", params.deck)
-      .single();
+    const { deckOfId, getUserLogged } = await import("artifact/supabase");
+    const { data: user } = await getUserLogged();
+    const { data: deck } = await deckOfId(params.deck, user.id);
     return new Deck(deck);
   }
 }

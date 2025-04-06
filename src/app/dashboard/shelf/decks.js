@@ -1,11 +1,11 @@
-import Card from "./card";
+import Progress from "./progress";
 
 class Deck {
   #cards;
   #data;
 
-  get cards() {
-    return (this.#cards ??= Card.from(this.#data.cards));
+  get progress() {
+    return (this.#cards ??= Progress.from(this.#data.cards));
   }
 
   get cover() {
@@ -25,9 +25,10 @@ class Deck {
   }
 
   static async ofUserLogged() {
-    const { decksOfUserLogged } = await import("artifact/supabase");
-    const { data: decks } = await decksOfUserLogged();
-    return decks?.map((deck) => new Deck(deck));
+    const { decksOfUser, getUserLogged } = await import("artifact/supabase");
+    const { data: user } = await getUserLogged();
+    const { data: decks } = await decksOfUser(user.id);
+    return decks.map((deck) => new Deck(deck));
   }
 }
 

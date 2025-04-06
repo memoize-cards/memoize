@@ -1,3 +1,5 @@
+import Card from "./card";
+
 class Progress {
   #learn;
   #relearn;
@@ -35,7 +37,7 @@ class Progress {
       1: learn = [],
       2: review = [],
       3: relearn = [],
-    } = data.group((card) => card.type);
+    } = data.map(Card.from).group((card) => card.type);
     return new Progress(
       learn.length,
       review.length,

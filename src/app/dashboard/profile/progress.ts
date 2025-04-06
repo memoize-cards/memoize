@@ -1,3 +1,5 @@
+import Card from "./card";
+
 class Progress {
   #learn;
   #relearn;
@@ -49,14 +51,15 @@ class Progress {
   }
 
   static async ofUserLogged() {
-    const { progressOfUserLogged } = await import("artifact/supabase");
-    const { data: cards } = await progressOfUserLogged();
+    const { getUserLogged, progressOfUser } = await import("artifact/supabase");
+    const { data: user } = await getUserLogged();
+    const { data: cards } = await progressOfUser(user.id);
 
     const {
       1: learn = [],
       2: review = [],
       3: relearn = [],
-    } = cards.group((card) => card.type);
+    } = cards.map(Card.from).group((card) => card.type);
 
     return new Progress(
       learn.length,

@@ -10,8 +10,9 @@ class Decks {
   }
 
   static async ofUserLogged() {
-    const { decksOfUserLogged } = await import("artifact/supabase");
-    const { data: decks } = await decksOfUserLogged();
+    const { decksOfUser, getUserLogged } = await import("artifact/supabase");
+    const { data: user } = await getUserLogged();
+    const { data: decks } = await decksOfUser(user.id);
     return new Decks(decks);
   }
 }

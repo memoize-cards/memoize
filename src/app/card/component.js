@@ -10,7 +10,7 @@ async function component(self) {
     <m-card-header></m-card-header>
     <m-main>
       <app>
-        <m-card-front deck="${self.card.deck.name}" type="${self.card.type}">
+        <m-card-front deck="${self.card.deck}" type="${self.card.type}">
           ${await self.card.front}
         </m-card-front>
         <m-show when="${!!self.card.cover}">

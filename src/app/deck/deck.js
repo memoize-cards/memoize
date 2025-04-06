@@ -31,12 +31,9 @@ class Deck {
   }
 
   static async current() {
-    const { default: supabase } = await import("artifact/supabase");
-    const { data: deck } = await supabase
-      .from("deck")
-      .select("id, cover, description, name, cards:card(type, validity)")
-      .eq("id", params.deck)
-      .single();
+    const { deckOfId, getUserLogged } = await import("artifact/supabase");
+    const { data: user } = await getUserLogged();
+    const { data: deck } = await deckOfId(params.deck, user.id);
     return new Deck(deck);
   }
 }

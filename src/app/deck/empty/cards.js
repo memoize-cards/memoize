@@ -12,11 +12,8 @@ class Cards {
   }
 
   static async current() {
-    const { default: supabase } = await import("artifact/supabase");
-    const { count } = await supabase
-      .from("card")
-      .select("id", { count: "exact", head: true })
-      .eq("deck", params.deck);
+    const { countCardsOfDeck } = await import("artifact/supabase");
+    const { data: count } = await countCardsOfDeck(params.deck);
     return new Cards(count);
   }
 }
