@@ -1,3 +1,4 @@
+import "./cards";
 import "./empty";
 import "./footer";
 import "./header";
@@ -16,7 +17,10 @@ function component() {
         <m-dashboard-profile></m-dashboard-profile>
         <m-dashboard-week></m-dashboard-week>
         <m-dashboard-study></m-dashboard-study>
-        <m-dashboard-shelf></m-dashboard-shelf>
+        <m-stack direction="column" spacing="xs">
+          <m-dashboard-cards></m-dashboard-cards>
+          <m-dashboard-shelf></m-dashboard-shelf>
+        <m-stack>
         <m-dashboard-empty></m-dashboard-empty>
       </app>      
     </m-main>
