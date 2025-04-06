@@ -1,3 +1,4 @@
+import { valueOf } from "standard/interface";
 import Timer from "./timer";
 
 class Habit {
@@ -29,21 +30,19 @@ class Habit {
     return this;
   }
 
-  async endReview() {
+  @Habit.#upsert
+  endReview() {
     this.reviewTime = this.#timer.stop().elapsed;
-    const { default: supabase } = await import("artifact/supabase");
-    await supabase.from("habit").upsert(
-      [
-        {
-          ...this.#data,
-          date: this.date,
-          reviewTime: this.reviewTime,
-          goalAchieved: this.goalAchieved,
-        },
-      ],
-      { onConflict: ["id"] },
-    );
     return this;
+  }
+
+  [valueOf]() {
+    return {
+      ...this.#data,
+      date: this.date,
+      reviewTime: this.reviewTime,
+      goalAchieved: this.goalAchieved,
+    };
   }
 
   static async ofToday() {
@@ -52,6 +51,21 @@ class Habit {
     const { data: user } = await getUserLogged();
     const { data: habit } = await habitOfToday(today, user.id);
     return new Habit(habit);
+  }
+
+  static #upsert(_target, _key, descriptor) {
+    const method = descriptor.value;
+
+    Object.assign(descriptor, {
+      async value() {
+        method.call(this);
+        const { upsertHabit } = await import("artifact/supabase");
+        await upsertHabit(this[valueOf]());
+        return this;
+      },
+    });
+
+    return descriptor;
   }
 }
 

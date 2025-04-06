@@ -1,13 +1,13 @@
+import { valueOf } from "standard/interface";
 import { params } from "standard/router";
 import Deck from "./deck";
-import { __data__ } from "./interfaces";
-import Phase from "./phase";
+import Progress from "./progress";
 import Validity from "./validity";
 
 class Card {
-  #phase;
   #data;
   #deck;
+  #progress;
 
   get back() {
     return (async () => {
@@ -33,45 +33,46 @@ class Card {
   }
 
   get type() {
-    return this.#data?.type;
+    return this.#progress?.type;
   }
 
   constructor(data) {
     this.#data = data;
-    this.#phase = Phase.from(this.#data);
+    this.#progress = Progress.from((this.#data.progress ??= {}));
   }
 
   @Card.#update
   async again() {
-    this.#phase.again();
+    this.#progress.again();
     return this;
   }
 
   @Card.#update
   async easy() {
-    this.#phase.easy();
+    this.#progress.easy();
     return this;
   }
 
   @Card.#update
   async good() {
-    this.#phase.good();
+    this.#progress.good();
     return this;
   }
 
   @Card.#update
   async hard() {
-    this.#phase.hard();
+    this.#progress.hard();
     return this;
   }
 
-  [__data__]() {
+  [valueOf]() {
     return {
-      easyFactor: this.#data.easyFactor,
-      interval: this.#data.interval,
-      lapse: this.#data.lapse,
-      type: this.#data.type,
-      validity: this.#data.validity,
+      ...this.#data.progress,
+      easyFactor: this.#progress.easyFactor,
+      interval: this.#progress.interval,
+      lapse: this.#progress.lapse,
+      type: this.#progress.type,
+      validity: this.#progress.validity,
     };
   }
 
@@ -81,9 +82,8 @@ class Card {
     Object.assign(descriptor, {
       async value() {
         method.call(this);
-        const data = this[__data__]();
-        const { default: supabase } = await import("artifact/supabase");
-        await supabase.from("card").update(data).eq("id", this.id);
+        const { upsertProgress } = await import("artifact/supabase");
+        await upsertProgress(this[valueOf]());
         return this;
       },
     });
@@ -92,19 +92,13 @@ class Card {
   }
 
   static async current() {
-    const { default: supabase } = await import("artifact/supabase");
-    const query = supabase
-      .from("card")
-      .select("*, deck!inner(id, name, paused)");
-
-    query.eq("deck.paused", false);
-    query.lte("validity", Validity.expired);
-    query.limit(1);
-    query.single();
-
-    params.deck && query.eq("deck", params.deck);
-
-    const { data: card } = await query;
+    const { getUserLogged, validCard } = await import("artifact/supabase");
+    const { data: user } = await getUserLogged();
+    const { data: card } = await validCard(
+      Validity.expired,
+      params.deck,
+      user.id,
+    );
     return new Card(card);
   }
 }

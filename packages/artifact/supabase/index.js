@@ -23,3 +23,6 @@ export { default as totalReviewCards } from "./totalReviewCards";
 export { default as totalReviewCardsOfDeck } from "./totalReviewCardsOfDeck";
 export { default as updateDeckOfId } from "./updateDeckOfId";
 export { default as updateUserMetaData } from "./updateUserMetaData";
+export { default as upsertHabit } from "./upsertHabit";
+export { default as upsertProgress } from "./upsertProgress";
+export { default as validCard } from "./validCard";
