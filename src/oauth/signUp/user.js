@@ -5,7 +5,7 @@ const User = {
     return Boolean(data?.session?.user);
   },
 
-  async SignUp(data) {
+  async signUp(data) {
     const { signUp } = await import("artifact/supabase");
     const { data: user } = await signUp(data);
     return user;
