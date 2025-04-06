@@ -1,11 +1,11 @@
 import { define } from "directive";
-import { paint, repaint, willPaint } from "standard/dom";
+import { didPaint, paint, repaint, willPaint } from "standard/dom";
 import on, { stop } from "standard/event";
+import { hydrate, prepare, validate } from "standard/interface";
 import { params } from "standard/router";
 import Card from "./card";
 import component from "./component";
 import Habit from "./habit";
-import { hydrate } from "./interfaces";
 import Navigate from "./navigate";
 import style from "./style";
 import User from "./user";
@@ -64,20 +64,26 @@ class App extends HTMLElement {
 
   @willPaint
   async [hydrate]() {
+    this.#card = await Card.current();
+    this.#habit = await Habit.ofToday();
     this.#user = await User.logged();
-    this.#habit = await Habit.from(this.#user.id);
+    return this;
+  }
 
+  @didPaint
+  [prepare]() {
     this.#habit.beginReview();
     this.#user.beginReview();
+    return this;
+  }
 
-    this.#card = await Card.current();
-
-    if (!this.#card.id) {
+  @didPaint
+  [validate]() {
+    if (this.#card.notExist) {
       params.deck
         ? Navigate.goToStudyCompletedOfDeck(params.deck)
         : Navigate.goToStudyCompleted();
     }
-
     return this;
   }
 }

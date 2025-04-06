@@ -18,6 +18,7 @@ function timeUntilReview(validity = 0) {
   if (days > 0) return `${days} dia${days > 1 ? "s" : ""}`;
   if (hours > 0) return `${hours} hora${hours > 1 ? "s" : ""}`;
   if (minutes > 0) return `${minutes} minuto${minutes > 1 ? "s" : ""}`;
+  if (seconds > 0) return `${seconds} segundo${seconds > 1 ? "s" : ""}`;
 
   return "";
 }

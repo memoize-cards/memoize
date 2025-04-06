@@ -1,6 +1,6 @@
 import { define } from "directive";
 import { paint, willPaint } from "standard/dom";
-import Card from "./card";
+import Cards from "./cards";
 import component from "./component";
 import { hydrate } from "./interfaces";
 import style from "./style";
@@ -21,7 +21,7 @@ class Shelf extends HTMLElement {
 
   @willPaint
   async [hydrate]() {
-    this.#cards = await Card.current();
+    this.#cards = await Cards.current();
     return this;
   }
 }

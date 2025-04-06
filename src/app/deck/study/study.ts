@@ -1,6 +1,6 @@
 import { define } from "directive";
 import { paint, willPaint } from "standard/dom";
-import Card from "./card";
+import Cards from "./cards";
 import component from "./component";
 import { hydrate } from "./interfaces";
 import style from "./style";
@@ -31,7 +31,7 @@ class Study extends HTMLElement {
 
   @willPaint
   async [hydrate]() {
-    this.#card = await Card.current();
+    this.#card = await Cards.reviewStats();
     return this;
   }
 }
