@@ -3,7 +3,7 @@ import { html } from "standard/dom";
 function component(self) {
   return html`
     <m-stack spacing="xs" direction="column">
-      <m-text color="primary-darker" weight="bold" size="xs" family="highlight">Rotina de estudos</m-text>
+      <m-text color="master-darker" weight="bold" size="sm" family="highlight">Rotina de estudos</m-text>
       <m-stack justify="space-between">
         ${self.habit.map(
           (day) => html`
