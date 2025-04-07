@@ -36,12 +36,9 @@ class Card {
   }
 
   static async current() {
-    const { default: supabase } = await import("artifact/supabase");
-    const { data: card } = await supabase
-      .from("card")
-      .select("id, back, cover, front, user_id")
-      .eq("id", params.card)
-      .single();
+    const { cardOfId, getUserLogged } = await import("artifact/supabase");
+    const { data: user } = await getUserLogged();
+    const { data: card } = await cardOfId(params.card, user.id);
     return new Card(card);
   }
 }
