@@ -5,16 +5,16 @@ import Validity from "./validity";
 
 const Card = {
   async create(data, userId) {
-    const payload = {
+    const { createCard } = await import("artifact/supabase");
+    await createCard({
       ...data,
       deck: params.deck,
       interval: Interval.oneMinute,
       type: Type.LEARN,
       user_id: userId,
       validity: Validity.now,
-    };
-    const { default: supabase } = await import("artifact/supabase");
-    return supabase.from("card").insert([payload]);
+    });
+    return Card;
   },
 };
 
