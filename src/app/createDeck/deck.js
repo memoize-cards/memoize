@@ -12,9 +12,9 @@ class Deck {
   }
 
   static async create(data, userId) {
-    const { createDeck } = await import("artifact/supabase");
+    const { addCollab, createDeck } = await import("artifact/supabase");
     const { data: deck } = await createDeck({ ...data, user_id: userId });
-    const { data: collab } = await addCollab({
+    const { data: _collab } = await addCollab({
       deck: deck.id,
       permission: Permission.OWNER,
       user_id: userId,

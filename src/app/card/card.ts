@@ -104,6 +104,7 @@ class Card {
       params.deck,
       user.id,
     );
+    console.log(card)
     return new Card(card);
   }
 }
