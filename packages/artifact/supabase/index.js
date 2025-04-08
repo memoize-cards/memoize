@@ -12,6 +12,7 @@ export { default as deleteDeckOfId } from "./deleteDeckOfId";
 export { default as expiredCard } from "./expiredCard";
 export { default as getSession } from "./getSession";
 export { default as getUserLogged } from "./getUserLogged";
+export { default as getUserMetaData } from "./getUserMetaData";
 export { default as habitOfToday } from "./habitOfToday";
 export { default as habitsOfUser } from "./habitsOfUser";
 export { default as nextReviewCard } from "./nextReviewCard";
