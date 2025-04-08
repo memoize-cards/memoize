@@ -2,7 +2,7 @@ class Decks {
   #data;
 
   get length() {
-    return this.#data?.length || 0;
+    return this.#data?.length ?? 0;
   }
 
   constructor(data) {
