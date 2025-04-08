@@ -1,6 +1,6 @@
 import { css } from "standard/dom";
 
-function style(self) {
+function style() {
   return css`
     app {
       align-items: center;
