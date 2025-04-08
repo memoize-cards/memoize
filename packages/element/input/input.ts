@@ -2,7 +2,7 @@ import { define, disconnected, formAssociated, formReset } from "directive";
 import attributeChanged, { booleanAttribute } from "directive/attributeChanged";
 import { didPaint, paint, repaint } from "standard/dom";
 import Echo, { dispatchEvent } from "standard/echo";
-import on, { prevent, value } from "standard/event";
+import on, { value } from "standard/event";
 import joinCut from "standard/joinCut";
 import component from "./component";
 import { change, remove, setFormValue, setValidity } from "./interfaces";
