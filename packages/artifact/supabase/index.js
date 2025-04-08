@@ -7,6 +7,7 @@ export { default as createCard } from "./createCard";
 export { default as createDeck } from "./crateDeck";
 export { default as deckOfId } from "./deckOfId";
 export { default as decksOfUser } from "./decksOfUser";
+export { default as deleteCardOfId } from "./deleteCardOfId";
 export { default as deleteDeckOfId } from "./deleteDeckOfId";
 export { default as expiredCard } from "./expiredCard";
 export { default as getSession } from "./getSession";

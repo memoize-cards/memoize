@@ -2,8 +2,9 @@ import { params } from "standard/router";
 
 const Deck = {
   async delete() {
-    const { default: supabase } = await import("artifact/supabase");
-    return supabase.from("card").delete().eq("id", params.card);
+    const { deleteCardOfId } = await import("artifact/supabase");
+    await deleteCardOfId(params.card);
+    return Deck;
   },
 };
 
