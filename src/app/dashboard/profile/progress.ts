@@ -11,6 +11,10 @@ class Progress {
     return (this.#learn ??= 0);
   }
 
+  get mastered() {
+    return (this.#review ??= 0);
+  }
+
   @Progress.asPercentageOfTotal
   get relearn() {
     return (this.#relearn ??= 0);
