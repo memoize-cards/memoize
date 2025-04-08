@@ -24,13 +24,8 @@ class Card {
   }
 
   async update(data) {
-    const { default: supabase } = await import("artifact/supabase");
-    const { data: card } = await supabase
-      .from("card")
-      .update(data)
-      .eq("id", this.id)
-      .select()
-      .single();
+    const { updateCardOfId } = await import("artifact/supabase");
+    const { data: card } = await updateCardOfId(data, this.id);
     this.#data = card;
     return this;
   }

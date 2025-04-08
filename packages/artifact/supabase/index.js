@@ -24,6 +24,7 @@ export { default as signOut } from "./signOut";
 export { default as signUp } from "./signUp";
 export { default as totalReviewCards } from "./totalReviewCards";
 export { default as totalReviewCardsOfDeck } from "./totalReviewCardsOfDeck";
+export { default as updateCardOfId } from "./updateCardOfId";
 export { default as updateDeckOfId } from "./updateDeckOfId";
 export { default as updateUserMetaData } from "./updateUserMetaData";
 export { default as upsertHabit } from "./upsertHabit";
