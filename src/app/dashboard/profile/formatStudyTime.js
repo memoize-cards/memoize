@@ -1,7 +1,7 @@
-function formatStudyTime(ms = 0) {
-  if (ms <= 0) return "0 minutos";
+function formatStudyTime(reviewTime = 0) {
+  if (reviewTime <= 0) return "0 minutos";
 
-  const totalMinutes = Math.floor(ms / 60000);
+  const totalMinutes = Math.floor(reviewTime / 60000);
   const days = Math.floor(totalMinutes / 1440);
   const hours = Math.floor((totalMinutes % 1440) / 60);
   const minutes = totalMinutes % 60;

@@ -4,20 +4,15 @@ class User {
   #data = {};
 
   get avatar() {
-    return this.#data?.user_metadata?.avatar_url;
-  }
-
-  get id() {
-    return this.#data?.id;
+    return this.#data?.avatar_url;
   }
 
   get name() {
-    const { full_name, name } = this.#data?.user_metadata ?? {};
-    return full_name ?? name;
+    return this.#data?.full_name ?? this.#data.name;
   }
 
   get reviewTime() {
-    return formatStudyTime(this.#data?.user_metadata?.reviewTime ?? 0);
+    return formatStudyTime(this.#data?.reviewTime ?? 0);
   }
 
   constructor(data) {
@@ -26,8 +21,10 @@ class User {
 
   static async logged() {
     const { getUserLogged } = await import("artifact/supabase");
-    const { data: user } = await getUserLogged();
-    return new User(user);
+    const {
+      data: { user_metadata },
+    } = await getUserLogged();
+    return new User(user_metadata);
   }
 }
 

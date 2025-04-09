@@ -1,39 +1,33 @@
-import Card from "./card";
+import percentageOfTotal from "./percentageOfTotal";
 
 class Progress {
-  #learn;
-  #relearn;
-  #review;
-  #total;
+  #data;
 
   @Progress.asPercentageOfTotal
   get learn() {
-    return (this.#learn ??= 0);
+    return (this.#data.learn ??= 0);
   }
 
   get mastered() {
-    return (this.#review ??= 0);
+    return (this.#data.review ??= 0);
   }
 
   @Progress.asPercentageOfTotal
   get relearn() {
-    return (this.#relearn ??= 0);
+    return (this.#data.relearn ??= 0);
   }
 
   @Progress.asPercentageOfTotal
   get review() {
-    return (this.#review ??= 0);
+    return (this.#data.review ??= 0);
   }
 
   get total() {
-    return (this.#total ??= 0);
+    return Object.values(this.#data).reduce((x, y) => x + y);
   }
 
-  constructor(learn, review, relearn, total) {
-    this.#learn = learn;
-    this.#review = review;
-    this.#relearn = relearn;
-    this.#total = total;
+  constructor(data) {
+    this.#data = data;
   }
 
   static asPercentageOfTotal(_target, _key, descriptor) {
@@ -41,9 +35,7 @@ class Progress {
 
     Object.assign(descriptor, {
       get() {
-        return this.total
-          ? Math.round((count.call(this) / this.total) * 100)
-          : 0;
+        return percentageOfTotal(count.call(this), this.total);
       },
     });
 
@@ -53,20 +45,8 @@ class Progress {
   static async ofUserLogged() {
     const { getUserLogged, progressOfUser } = await import("artifact/supabase");
     const { data: user } = await getUserLogged();
-    const { data: cards } = await progressOfUser(user.id);
-
-    const {
-      1: learn = [],
-      2: review = [],
-      3: relearn = [],
-    } = cards.map(Card.from).group((card) => card.type);
-
-    return new Progress(
-      learn.length,
-      review.length,
-      relearn.length,
-      cards.length,
-    );
+    const { data: progress } = await progressOfUser(user.id);
+    return new Progress(progress);
   }
 }
 
