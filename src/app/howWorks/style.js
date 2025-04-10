@@ -6,7 +6,7 @@ function style() {
       align-items: center;
       display: flex;
       flex-direction: column;
-      gap: calc(var(--spacing_inset-giant) * 1.62);
+      gap: var(--spacing_inset-giant);
       justify-content: center;
       margin: 0 auto;
       max-width: 425px;
@@ -17,8 +17,9 @@ function style() {
         align-items: center;
         display: flex;
         flex-direction: column;
-        gap: calc(var(--spacing_inset-giant) * 1.62);
+        gap: var(--spacing_inset-giant);
         list-style: none;
+        padding: 0;
       }
 
       li {

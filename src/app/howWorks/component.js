@@ -2,7 +2,7 @@ import "./header";
 import { html } from "standard/dom";
 import { urlFor } from "standard/router";
 
-function component(self) {
+function component() {
   return html`
     <m-how-works-header></m-how-works-header>
     <m-main>
@@ -13,7 +13,7 @@ function component(self) {
         <ul>
           <li>
             <span>1</span>
-            <m-text color="master-darker" size="sm" weight="medium" align="center">
+            <m-text color="master-darker" family="highlight" size="sm" weight="bold" align="center">
               Crie seus flashcards
             </m-text>
             <m-text color="master-dark" size="xxs" align="center">
@@ -22,7 +22,7 @@ function component(self) {
           </li>
           <li>
             <span>2</span>
-            <m-text color="master-darker" size="sm" weight="medium" align="center">
+            <m-text color="master-darker" family="highlight" size="sm" weight="bold" align="center">
               Estude regularmente
             </m-text>
             <m-text color="master-dark" size="xxs" align="center">
@@ -31,7 +31,7 @@ function component(self) {
           </li>
           <li>
             <span>3</span>
-            <m-text color="master-darker" size="sm" weight="medium" align="center">
+            <m-text color="master-darker" family="highlight" size="sm" weight="bold" align="center">
               Cuidamos do resto
             </m-text>
             <m-text color="master-dark" size="xxs" align="center">

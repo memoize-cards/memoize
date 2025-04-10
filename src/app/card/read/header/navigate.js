@@ -6,7 +6,7 @@ const Navigate = {
     return this;
   },
 
-  goToDeck(deckId) {
+  goToDeck() {
     history.pushState({}, "", urlFor("deck", params));
     return this;
   },

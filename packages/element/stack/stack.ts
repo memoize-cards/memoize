@@ -1,5 +1,8 @@
 import { define } from "directive";
-import attributeChanged, { booleanAttribute } from "directive/attributeChanged";
+import attributeChanged, {
+  booleanAttribute,
+  resizing,
+} from "directive/attributeChanged";
 import { didPaint, paint, repaint } from "standard/dom";
 import Echo, { dispatchEvent } from "standard/echo";
 import on from "standard/event";
@@ -12,9 +15,11 @@ import style from "./style";
 class Stack extends Echo(HTMLElement) {
   #align;
   #direction;
+  #height;
   #hidden;
   #justify;
   #spacing;
+  #width;
 
   get align() {
     return (this.#align ??= "start");
@@ -34,6 +39,16 @@ class Stack extends Echo(HTMLElement) {
   @repaint
   set direction(value) {
     this.#direction = value;
+  }
+
+  get height() {
+    return (this.#height ??= "auto");
+  }
+
+  @attributeChanged("height", resizing)
+  @repaint
+  set height(value) {
+    this.#height = value;
   }
 
   get hidden() {
@@ -64,6 +79,16 @@ class Stack extends Echo(HTMLElement) {
   @repaint
   set spacing(value) {
     this.#spacing = value;
+  }
+
+  get width() {
+    return (this.#width ??= "100%");
+  }
+
+  @attributeChanged("width", resizing)
+  @repaint
+  set width(value) {
+    this.#width = value;
   }
 
   constructor() {

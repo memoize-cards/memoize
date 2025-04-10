@@ -1,6 +1,6 @@
 import { html } from "standard/dom";
 
-async function component(self) {
+async function component() {
   return html`
     <m-stack direction="column">
       <m-text size="xs" family="highlight" color="master-darker" weight="medium">Você conseguiu se lembrar?</m-text>

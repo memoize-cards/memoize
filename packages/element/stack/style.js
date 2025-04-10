@@ -7,8 +7,9 @@ function style(self) {
       display: flex;
       flex-direction: ${self.direction};
       gap: var(--spacing_inset-${self.spacing});
+      height: ${self.height};
       justify-content: ${self.justify};
-      width: 100%;
+      width: ${self.width};
     }
   `;
 }
