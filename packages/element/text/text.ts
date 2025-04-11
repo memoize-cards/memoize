@@ -1,5 +1,5 @@
 import { define } from "directive";
-import attributeChanged, { booleanAttribute } from "directive/attributeChanged";
+import attributeChanged from "directive/attributeChanged";
 import { paint, repaint } from "standard/dom";
 import component from "./component";
 import style from "./style";
