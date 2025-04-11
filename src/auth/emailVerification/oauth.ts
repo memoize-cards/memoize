@@ -1,6 +1,6 @@
 import User from "auth/forgotPassword/user";
+import style from "auth/signIn/style";
 import { define } from "directive";
-import style from "oauth/signIn/style";
 import { paint, willPaint } from "standard/dom";
 import on, { stop } from "standard/event";
 import { hydrate } from "standard/interface";
