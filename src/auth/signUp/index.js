@@ -1,7 +1,7 @@
 import renderer from "standard/renderer";
 import router from "standard/router";
 
-router("/oauth/sign-up", function signUp() {
-  import("./oauth");
+router("/auth/sign-up", function signUp() {
+  import("./auth");
   renderer("<m-sign-up></m-sign-up>");
 });
