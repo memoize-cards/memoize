@@ -23,7 +23,7 @@ function style() {
     input {
       appearance: none;
       background-color: transparent;
-      border: var(--border-width-hairline) solid var(--color-master-light);
+      border: var(--border-width-thin) solid var(--color-master-light);
       border-radius: var(--border-radius-sm);
       box-sizing: border-box;
       color: var(--color-master-dark);

@@ -8,7 +8,7 @@ function style(self) {
       button {
         align-items: center;
         background-color: var(--color-${self.color});
-        border: var(--border-width-hairline) solid transparent;
+        border: var(--border-width-thin) solid transparent;
         border-radius: var(--border-radius-sm);
         box-sizing: border-box;
         color: var(--color-pure-white);
@@ -44,7 +44,7 @@ function style(self) {
     :host(:state(naked)) {
       button {
         background-color: transparent;
-        border: var(--border-width-hairline) solid var(--color-${self.color});
+        border: var(--border-width-thin) solid var(--color-${self.color});
         color: var(--color-${self.color});
       }
     }
@@ -52,7 +52,7 @@ function style(self) {
     :host(:state(ghost)) {
       button {
         background-color: var(--color-master-lighter);
-        border: var(--border-width-hairline) solid transparent;
+        border: var(--border-width-thin) solid transparent;
         color: var(--color-${self.color});
       }
     }
@@ -60,7 +60,7 @@ function style(self) {
     :host(:state(link)) {
       button {
         background-color: transparent;
-        border: var(--border-width-hairline) solid transparent;
+        border: var(--border-width-thin) solid transparent;
         color: var(--color-${self.color});
       }
     }
@@ -68,7 +68,7 @@ function style(self) {
     :host(:state(icon)) {
       button {
         background-color: transparent;
-        border: var(--border-width-hairline) solid transparent;
+        border: var(--border-width-thin) solid transparent;
         color: var(--color-${self.color});
         padding: 0;
         width: 42px;
