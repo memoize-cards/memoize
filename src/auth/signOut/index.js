@@ -1,7 +1,7 @@
 import renderer from "standard/renderer";
 import router from "standard/router";
 
-router("/oauth/sign-out", function signOut() {
-  import("./oauth");
+router("/auth/sign-out", function signOut() {
+  import("./auth");
   renderer("<m-sign-out></m-sign-out>");
 });

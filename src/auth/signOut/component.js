@@ -14,8 +14,8 @@ function component() {
       <auth>
         <m-logo></m-logo>
         <m-stack direction="column" spacing="none" align="center">
-          <m-text color="master-darker" family="highlight" size="md" weight="bold" align="center">Você terminou por hoje?</m-text>
-          <m-text align="center" size="xxxs">Você será desconectado do aplicativo. Sentiremos sua falta! Volte logo para continuar seus estudos</m-text>
+          <m-text color="master-darker" family="highlight" size="md" weight="bold" align="center">Até logo!</m-text>
+          <m-text align="center" size="xxxs">Você está saindo do Memoize. Bom descanso! Volte quando quiser continuar aprendendo no seu ritmo.</m-text>
         </m-stack>
         <img alt="Memoize" src="${image}" loading="lazy" />
         <m-button id="logOut" width="100%">Sair</m-button>
