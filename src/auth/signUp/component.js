@@ -13,8 +13,8 @@ function component() {
       <auth>
         <m-logo></m-logo>
         <m-stack direction="column" spacing="none" align="center">
-          <m-text color="master-darker" family="highlight" size="md" weight="bold" align="center">Criar uma conta</m-text>
-          <m-text align="center" size="xxxs">Inicie sua avaliação gratuita</m-text>
+          <m-text color="master-darker" family="highlight" size="md" weight="bold" align="center">Vamos começar?</m-text>
+          <m-text align="center" size="xxxs">Crie sua conta e desbloqueie uma nova forma de estudar</m-text>
         </m-stack>
         <m-form>
           <template>
@@ -25,14 +25,15 @@ function component() {
               <m-validity state="typeMismatch">Email inválido</m-validity>
               <m-validity state="valueMissing">Email é obrigatório</m-validity>
             </m-input>
-            <m-input label="Senha" name="password" type="password" autocomplete="off" required>
+            <m-input label="Senha" name="password" type="password" minlength="6" autocomplete="off" required>
               <m-validity state="valueMissing">Senha é obrigatória</m-validity>
+              <m-validity state="rangeUnderflow">A senha deve ter no mínimo 6 caracteres</m-validity>
             </m-input>
-            <m-button width="100%">Começar</m-button>
+            <m-button width="100%">Criar conta</m-button>
           </template>
         </m-form>
         <m-stack direction="column" align="center">
-          <m-text align="center">Já tem uma conta? <m-link href="${urlFor("signIn")}">Entrar</m-link></m-text>
+          <m-text align="center">Já tem uma conta? <m-link href="${urlFor("signIn")}">Entrar aqui</m-link></m-text>
         </m-stack>
       </auth>
     </m-main>

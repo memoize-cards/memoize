@@ -14,8 +14,8 @@ function component(self) {
       placeholder="${self.placeholder}"
       type="${self.type}"
       value="${self.value}"
-      ${self.max ? `max="${self.max}"` : ""}
-      ${self.min ? `min="${self.min}"` : ""}
+      ${self.maxlength ? `maxlength="${self.maxlength}"` : ""}
+      ${self.minlength ? `minlength="${self.minlength}"` : ""}
       ${self.required ? "required" : ""}
     />
     <slot name="hint"></slot>

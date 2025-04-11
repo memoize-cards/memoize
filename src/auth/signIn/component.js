@@ -28,7 +28,7 @@ function component() {
               <m-validity state="typeMismatch">E-mail inválido</m-validity>
               <m-validity state="valueMissing">E-mail é obrigatório</m-validity>
             </m-input>
-            <m-input label="Senha" name="password" type="password" min="6" autocomplete="off" required>
+            <m-input label="Senha" name="password" type="password" minlength="6" autocomplete="off" required>
               <m-validity state="valueMissing">Senha é obrigatória</m-validity>
               <m-validity state="rangeUnderflow">A senha deve ter no mínimo 6 caracteres</m-validity>
             </m-input>
