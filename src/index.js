@@ -3,7 +3,7 @@ import "pixel";
 import "element";
 
 import "./app";
-import "./oauth";
+import "./auth";
 import "./site";
 
 import router from "standard/router";

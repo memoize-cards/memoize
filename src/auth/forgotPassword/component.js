@@ -1,5 +1,5 @@
 import { html } from "standard/dom";
-import { args, urlFor } from "standard/router";
+import { urlFor } from "standard/router";
 
 function component() {
   return html`
