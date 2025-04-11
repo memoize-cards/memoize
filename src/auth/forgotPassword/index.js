@@ -1,7 +1,7 @@
 import renderer from "standard/renderer";
 import router from "standard/router";
 
-router("/oauth/forgot-password", function forgotPassword() {
-  import("./oauth");
+router("/auth/forgot-password", function forgotPassword() {
+  import("./auth");
   renderer("<m-forgot-password></m-forgot-password>");
 });

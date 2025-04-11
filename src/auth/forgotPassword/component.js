@@ -13,8 +13,8 @@ function component() {
       <auth>
         <m-logo></m-logo>
         <m-stack direction="column" spacing="none" align="center">
-          <m-text color="master-darker" family="highlight" size="md" weight="bold" align="center">Esqueceu a senha?</m-text>
-          <m-text align="center" size="xxxs">Não se preocupe! Enviaremos instruções de redefinição para o seu e-mail abaixo:</m-text>
+          <m-text color="master-darker" family="highlight" size="md" weight="bold" align="center">Tudo bem, isso acontece!</m-text>
+          <m-text align="center" size="xxxs">Vamos te ajudar a recuperar o acesso. Informe seu e-mail abaixo</m-text>
         </m-stack>
         <m-form>
           <template>
@@ -22,11 +22,11 @@ function component() {
               <m-validity state="typeMismatch">E-mail inválido</m-validity>
               <m-validity state="valueMissing">E-mail é obrigatório</m-validity>
             </m-input>
-            <m-button width="100%">Redefinir senha</m-button>
+            <m-button width="100%">Enviar link de recuperação</m-button>
           </template>
         </m-form>
         <m-stack direction="column" align="center">
-          <m-link href="${urlFor("signIn")}">Voltar para a tela de login</m-link>
+          <m-link href="${urlFor("signIn")}">Voltar para o login</m-link>
         </m-stack>
       </auth>
     </m-main>
