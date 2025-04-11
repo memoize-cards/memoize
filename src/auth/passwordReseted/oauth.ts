@@ -1,5 +1,5 @@
+import User from "auth/forgotPassword/user";
 import { define } from "directive";
-import User from "oauth/forgotPassword/user";
 import style from "oauth/signIn/style";
 import { paint, willPaint } from "standard/dom";
 import { hydrate } from "standard/interface";

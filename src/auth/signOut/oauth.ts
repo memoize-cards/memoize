@@ -1,5 +1,5 @@
+import style from "auth/signIn/style";
 import { define } from "directive";
-import style from "oauth/signIn/style";
 import { paint } from "standard/dom";
 import on, { stop } from "standard/event";
 import * as Navigate from "standard/navigate";

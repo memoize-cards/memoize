@@ -1,5 +1,4 @@
 import { resolve } from "path";
-import { terser } from "rollup-plugin-terser";
 import { defineConfig } from "vite";
 import { VitePWA } from "vite-plugin-pwa";
 
@@ -28,7 +27,9 @@ export default defineConfig({
       pixel: resolve(__dirname, "packages/pixel"),
       polyfill: resolve(__dirname, "packages/polyfill"),
       standard: resolve(__dirname, "packages/standard"),
-      oauth: resolve(__dirname, "src/oauth"),
+      app: resolve(__dirname, "src/app"),
+      auth: resolve(__dirname, "src/auth"),
+      splash: resolve(__dirname, "src/splash"),
     },
   },
 });
