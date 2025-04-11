@@ -5,7 +5,7 @@ import image from "./image.svg";
 function component() {
   return html`
     <m-main>
-      <site>
+      <splash>
         <m-logo></m-logo>
         <m-stack direction="column" spacing="none" align="center">
           <m-text color="master-darker" family="highlight" size="md" weight="bold">Aprenda <m-text color="primary" family="highlight" size="md" weight="bold">5x mais rápido!</m-text></m-text>
@@ -19,7 +19,7 @@ function component() {
           </m-button>
           <m-install></m-install>
         </m-stack>
-      </site>
+      </splash>
     </m-main>
     <m-footer></m-footer>
   `;

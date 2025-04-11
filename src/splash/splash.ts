@@ -6,9 +6,9 @@ import component from "./component";
 import style from "./style";
 import User from "./user";
 
-@define("m-site")
+@define("m-splash")
 @paint(component, style)
-class Site extends HTMLElement {
+class Splash extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
@@ -21,4 +21,4 @@ class Site extends HTMLElement {
   }
 }
 
-export default Site;
+export default Splash;

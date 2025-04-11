@@ -4,7 +4,7 @@ import "element";
 
 import "./app";
 import "./auth";
-import "./site";
+import "./splash";
 
 import router from "standard/router";
 

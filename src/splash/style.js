@@ -2,7 +2,7 @@ import { css } from "standard/dom";
 
 function style() {
   return css`
-    site {
+    splash {
       align-items: center;
       display: flex;
       flex-direction: column;

@@ -5,9 +5,9 @@ import image from "./image.svg";
 function component() {
   return html`
     <m-header>
-      <m-button id="backToSite" variant="link" slot="leading">
+      <m-button id="backToDashboard" variant="link" slot="leading">
         <m-icon use="arrowBack"></m-icon>
-        <m-redirect href="${urlFor("site")}" on="backToSite/click:method/go"></m-redirect>
+        <m-redirect href="${urlFor("dashboard")}" on="backToDashboard/click:method/go"></m-redirect>
       </m-button>
     </m-header>
     <m-main>

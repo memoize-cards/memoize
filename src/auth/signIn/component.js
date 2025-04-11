@@ -5,9 +5,9 @@ import logo from "./google.svg";
 function component() {
   return html`
     <m-header>
-      <m-button id="backToSite" variant="link" slot="leading">
+      <m-button id="backToSplash" variant="link" slot="leading">
         <m-icon use="arrowBack"></m-icon>
-        <m-redirect href="${urlFor("site")}" on="backToSite/click:method/go"></m-redirect>
+        <m-redirect href="${urlFor("splash")}" on="backToSplash/click:method/go"></m-redirect>
       </m-button>
     </m-header>
     <m-main>
