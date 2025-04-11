@@ -10,7 +10,7 @@ function component() {
       </m-button>
     </m-header>
     <m-main>
-      <oauth>
+      <auth>
         <m-logo></m-logo>
         <m-stack direction="column" spacing="none" align="center">
           <m-text color="master-darker" family="highlight" size="md" weight="bold" align="center">Redefinição de senha</m-text>
@@ -23,7 +23,7 @@ function component() {
         <m-stack direction="column" align="center">
           <m-link href="${urlFor("signIn")}">Voltar para a tela de login</m-link>
         </m-stack>
-      </oauth>
+      </auth>
     </m-main>
     <m-footer></m-footer>
   `;

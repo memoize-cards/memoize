@@ -10,7 +10,7 @@ function component() {
       </m-button>
     </m-header>
     <m-main>
-      <oauth>
+      <auth>
         <m-logo></m-logo>
         <m-stack direction="column" spacing="none" align="center">
           <m-text color="master-darker" family="highlight" size="md" weight="bold" align="center">Criar uma conta</m-text>
@@ -34,7 +34,7 @@ function component() {
         <m-stack direction="column" align="center">
           <m-text align="center">Já tem uma conta? <m-link href="${urlFor("signIn")}">Entrar</m-link></m-text>
         </m-stack>
-      </oauth>
+      </auth>
     </m-main>
     <m-footer></m-footer>
   `;

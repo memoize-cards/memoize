@@ -10,7 +10,7 @@ function component() {
       </m-button>
     </m-header>
     <m-main>
-      <oauth>
+      <auth>
         <m-logo></m-logo>
         <m-stack direction="column" spacing="none" align="center">
           <m-text color="master-darker" family="highlight" size="md" weight="bold" align="center">Verifique seu e-mail</m-text>
@@ -22,7 +22,7 @@ function component() {
           <m-text align="center">Não recebeu o e-mail? <m-link id="resend">Clique aqui para reenviar</m-link></m-text>
           <m-link href="${urlFor("signIn")}">Voltar para a tela de login</m-link>
         </m-stack>
-      </oauth>
+      </auth>
     </m-main>
     <m-footer></m-footer>
   `;
